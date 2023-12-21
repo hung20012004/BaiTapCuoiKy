@@ -62,6 +62,7 @@
             usernameTextbox.Name = "usernameTextbox";
             usernameTextbox.Size = new Size(492, 34);
             usernameTextbox.TabIndex = 2;
+            usernameTextbox.TextChanged += usernameTextbox_TextChanged;
             // 
             // passwordTextbox
             // 
@@ -71,6 +72,7 @@
             passwordTextbox.PasswordChar = '*';
             passwordTextbox.Size = new Size(492, 34);
             passwordTextbox.TabIndex = 3;
+            passwordTextbox.TextChanged += passwordTextbox_TextChanged;
             // 
             // loginBtn
             // 

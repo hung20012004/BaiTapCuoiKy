@@ -30,12 +30,16 @@ namespace DAL
                 while (reader.Read())
                 {
                     Staff staff = new Staff();
-                    staff.ID =Convert.ToInt32(reader.GetString("staff_id"));
+                    staff.ID =reader.GetInt32("staff_id");
                     staff.Name= reader.GetString("staff_name");
                     staff.Username= reader.GetString("username");
                     staff.Password= reader.GetString("password");
-                    staff.Role = Convert.ToInt32(reader.GetString("role"));
+                    staff.Role = reader.GetInt32("role");
                     list.Add(staff);
+                }
+                foreach (Staff item in list) 
+                {
+                    Console.WriteLine(item.Username);
                 }
             }
             conn.Close();
