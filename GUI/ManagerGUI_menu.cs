@@ -16,5 +16,24 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void btnQuanLyNhanSu_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void tab0Reset()
+        {
+            tabControl1.SelectedIndex = 0;
+
+        }
+        private void tab1Reset()
+        {
+            tabControl1.SelectedIndex = 1;
+        }
     }
 }

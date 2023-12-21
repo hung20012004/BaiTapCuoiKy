@@ -29,23 +29,29 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            button1 = new Button();
+            btnQuanLyNhanSu = new Button();
             pictureBox1 = new PictureBox();
             button3 = new Button();
-            btnCustomer = new Button();
+            btnThongKe = new Button();
             tabPage3 = new TabPage();
             tabPage2 = new TabPage();
-            dataGridView1 = new DataGridView();
-            button2 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            tabControl1 = new TabControl();
+            textBox5 = new TextBox();
+            label5 = new Label();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
             button13 = new Button();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            btnSua = new Button();
+            btnThem = new Button();
+            btnHuy = new Button();
+            btnGhi = new Button();
+            dataGridView1 = new DataGridView();
+            tabControl1 = new TabControl();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
@@ -55,10 +61,10 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnQuanLyNhanSu);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(btnCustomer);
+            groupBox1.Controls.Add(btnThongKe);
             groupBox1.Location = new Point(6, 14);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(323, 943);
@@ -66,14 +72,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = " ";
             // 
-            // button1
+            // btnQuanLyNhanSu
             // 
-            button1.Location = new Point(0, 288);
-            button1.Name = "button1";
-            button1.Size = new Size(323, 83);
-            button1.TabIndex = 4;
-            button1.Text = "Quản lý nhân sự";
-            button1.UseVisualStyleBackColor = true;
+            btnQuanLyNhanSu.Location = new Point(0, 288);
+            btnQuanLyNhanSu.Name = "btnQuanLyNhanSu";
+            btnQuanLyNhanSu.Size = new Size(323, 83);
+            btnQuanLyNhanSu.TabIndex = 4;
+            btnQuanLyNhanSu.Text = "Quản lý nhân sự";
+            btnQuanLyNhanSu.UseVisualStyleBackColor = true;
+            btnQuanLyNhanSu.Click += btnQuanLyNhanSu_Click;
             // 
             // pictureBox1
             // 
@@ -92,35 +99,42 @@
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
             // 
-            // btnCustomer
+            // btnThongKe
             // 
-            btnCustomer.Location = new Point(0, 377);
-            btnCustomer.Name = "btnCustomer";
-            btnCustomer.Size = new Size(323, 83);
-            btnCustomer.TabIndex = 0;
-            btnCustomer.Text = "Thống kê";
-            btnCustomer.UseVisualStyleBackColor = true;
+            btnThongKe.Location = new Point(0, 377);
+            btnThongKe.Name = "btnThongKe";
+            btnThongKe.Size = new Size(323, 83);
+            btnThongKe.TabIndex = 0;
+            btnThongKe.Text = "Thống kê";
+            btnThongKe.UseVisualStyleBackColor = true;
+            btnThongKe.Click += btnThongKe_Click;
             // 
             // tabPage3
             // 
-            tabPage3.Location = new Point(4, 37);
+            tabPage3.Location = new Point(4, 34);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 902);
+            tabPage3.Size = new Size(1145, 905);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(textBox5);
+            tabPage2.Controls.Add(label5);
+            tabPage2.Controls.Add(textBox4);
+            tabPage2.Controls.Add(textBox3);
+            tabPage2.Controls.Add(label4);
+            tabPage2.Controls.Add(label3);
             tabPage2.Controls.Add(button13);
             tabPage2.Controls.Add(textBox2);
             tabPage2.Controls.Add(textBox1);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label1);
-            tabPage2.Controls.Add(button6);
-            tabPage2.Controls.Add(button5);
-            tabPage2.Controls.Add(button4);
-            tabPage2.Controls.Add(button2);
+            tabPage2.Controls.Add(btnSua);
+            tabPage2.Controls.Add(btnThem);
+            tabPage2.Controls.Add(btnHuy);
+            tabPage2.Controls.Add(btnGhi);
             tabPage2.Controls.Add(dataGridView1);
             tabPage2.Location = new Point(4, 37);
             tabPage2.Name = "tabPage2";
@@ -129,6 +143,131 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(876, 58);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(150, 34);
+            textBox5.TabIndex = 15;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(753, 58);
+            label5.Name = "label5";
+            label5.Size = new Size(91, 28);
+            label5.TabIndex = 14;
+            label5.Text = "Tìm kiếm";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(172, 225);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(150, 34);
+            textBox4.TabIndex = 13;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(166, 152);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(150, 34);
+            textBox3.TabIndex = 12;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(26, 156);
+            label4.Name = "label4";
+            label4.Size = new Size(94, 28);
+            label4.TabIndex = 11;
+            label4.Text = "Tài khoản";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(21, 26);
+            label3.Name = "label3";
+            label3.Size = new Size(31, 28);
+            label3.TabIndex = 10;
+            label3.Text = "ID";
+            // 
+            // button13
+            // 
+            button13.Location = new Point(347, 191);
+            button13.Name = "button13";
+            button13.Size = new Size(41, 34);
+            button13.TabIndex = 9;
+            button13.Text = "button13";
+            button13.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(160, 26);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(190, 34);
+            textBox2.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(149, 88);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(201, 34);
+            textBox1.TabIndex = 7;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(41, 227);
+            label2.Name = "label2";
+            label2.Size = new Size(94, 28);
+            label2.TabIndex = 6;
+            label2.Text = "Mật khẩu";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(21, 93);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 28);
+            label1.TabIndex = 5;
+            label1.Text = "Họ tên";
+            // 
+            // btnSua
+            // 
+            btnSua.Location = new Point(597, 97);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(112, 34);
+            btnSua.TabIndex = 4;
+            btnSua.Text = "Sửa";
+            btnSua.UseVisualStyleBackColor = true;
+            // 
+            // btnThem
+            // 
+            btnThem.Location = new Point(592, 38);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(112, 34);
+            btnThem.TabIndex = 3;
+            btnThem.Text = "Thêm";
+            btnThem.UseVisualStyleBackColor = true;
+            // 
+            // btnHuy
+            // 
+            btnHuy.Location = new Point(482, 227);
+            btnHuy.Name = "btnHuy";
+            btnHuy.Size = new Size(112, 34);
+            btnHuy.TabIndex = 2;
+            btnHuy.Text = "Hủy";
+            btnHuy.UseVisualStyleBackColor = true;
+            // 
+            // btnGhi
+            // 
+            btnGhi.Location = new Point(625, 227);
+            btnGhi.Name = "btnGhi";
+            btnGhi.Size = new Size(112, 34);
+            btnGhi.TabIndex = 1;
+            btnGhi.Text = "Ghi";
+            btnGhi.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -140,74 +279,6 @@
             dataGridView1.Size = new Size(1140, 604);
             dataGridView1.TabIndex = 0;
             // 
-            // button2
-            // 
-            button2.Location = new Point(798, 207);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(648, 207);
-            button4.Name = "button4";
-            button4.Size = new Size(112, 34);
-            button4.TabIndex = 2;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(873, 88);
-            button5.Name = "button5";
-            button5.Size = new Size(112, 34);
-            button5.TabIndex = 3;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(878, 147);
-            button6.Name = "button6";
-            button6.Size = new Size(112, 34);
-            button6.TabIndex = 4;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(21, 54);
-            label1.Name = "label1";
-            label1.Size = new Size(65, 28);
-            label1.TabIndex = 5;
-            label1.Text = "label1";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(34, 110);
-            label2.Name = "label2";
-            label2.Size = new Size(65, 28);
-            label2.TabIndex = 6;
-            label2.Text = "label2";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(149, 49);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 34);
-            textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(149, 110);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 34);
-            textBox2.TabIndex = 8;
-            // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage2);
@@ -217,15 +288,6 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1153, 943);
             tabControl1.TabIndex = 18;
-            // 
-            // button13
-            // 
-            button13.Location = new Point(877, 52);
-            button13.Name = "button13";
-            button13.Size = new Size(112, 34);
-            button13.TabIndex = 9;
-            button13.Text = "button13";
-            button13.UseVisualStyleBackColor = true;
             // 
             // ManagerGUI_menu
             // 
@@ -248,10 +310,10 @@
 
         #endregion
         private GroupBox groupBox1;
-        private Button button1;
+        private Button btnQuanLyNhanSu;
         private PictureBox pictureBox1;
         private Button button3;
-        private Button btnCustomer;
+        private Button btnThongKe;
         private TabPage tabPage3;
         private TabPage tabPage2;
         private Button button13;
@@ -259,11 +321,17 @@
         private TextBox textBox1;
         private Label label2;
         private Label label1;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button2;
+        private Button btnSua;
+        private Button btnThem;
+        private Button btnHuy;
+        private Button btnGhi;
         private DataGridView dataGridView1;
         private TabControl tabControl1;
+        private Label label4;
+        private Label label3;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private TextBox textBox5;
+        private Label label5;
     }
 }

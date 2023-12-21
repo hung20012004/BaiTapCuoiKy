@@ -10,5 +10,11 @@ namespace BUS
 {
     public class CustomerBUS
     {
+        private static CustomerBUS instance = new();
+        public static CustomerBUS Instance
+        {
+            get { return instance; }
+            set { instance = value; }
+        }
     }
 }
