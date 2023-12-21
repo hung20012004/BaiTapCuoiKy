@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="AccGUI_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerSeviceUI_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LoginGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ManagerGUI_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SellGUI_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="WarehouseUI_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

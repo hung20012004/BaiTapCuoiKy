@@ -1,0 +1,11 @@
+{
+  "solution": {
+    "path": "GUI.sln",
+    "projects": [
+      "..\\BUS\\BUS.csproj",
+      "..\\DAL\\DAL.csproj",
+      "..\\DTO\\DTO.csproj",
+      "GUI.csproj"
+    ]
+  }
+}

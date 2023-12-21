@@ -1,0 +1,11 @@
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\bin\Debug\net7.0\DTO.deps.json
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\bin\Debug\net7.0\DTO.dll
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\bin\Debug\net7.0\DTO.pdb
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\obj\Debug\net7.0\DTO.dll
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\obj\Debug\net7.0\refint\DTO.dll
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\obj\Debug\net7.0\DTO.pdb
+C:\Users\Manh Hung\Desktop\UTT\Project\Laptop-Store\DTO\obj\Debug\net7.0\ref\DTO.dll
