@@ -69,7 +69,6 @@
             passwordTextbox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             passwordTextbox.Location = new Point(262, 220);
             passwordTextbox.Name = "passwordTextbox";
-            passwordTextbox.PasswordChar = '*';
             passwordTextbox.Size = new Size(492, 34);
             passwordTextbox.TabIndex = 3;
             passwordTextbox.TextChanged += passwordTextbox_TextChanged;
@@ -99,6 +98,7 @@
             Name = "LoginGUI";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";
+            Load += LoginGUI_Load;
             ResumeLayout(false);
             PerformLayout();
         }

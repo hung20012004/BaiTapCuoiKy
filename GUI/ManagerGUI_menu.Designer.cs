@@ -37,13 +37,13 @@
             tabPage2 = new TabPage();
             textBox5 = new TextBox();
             label5 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
+            tbMatKhau = new TextBox();
+            tbTaiKhoan = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            button13 = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            btnShowLogInfo = new Button();
+            tbID = new TextBox();
+            tbHoTen = new TextBox();
             label2 = new Label();
             label1 = new Label();
             btnSua = new Button();
@@ -51,6 +51,10 @@
             btnHuy = new Button();
             btnGhi = new Button();
             dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             tabControl1 = new TabControl();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -122,13 +126,13 @@
             // 
             tabPage2.Controls.Add(textBox5);
             tabPage2.Controls.Add(label5);
-            tabPage2.Controls.Add(textBox4);
-            tabPage2.Controls.Add(textBox3);
+            tabPage2.Controls.Add(tbMatKhau);
+            tabPage2.Controls.Add(tbTaiKhoan);
             tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(label3);
-            tabPage2.Controls.Add(button13);
-            tabPage2.Controls.Add(textBox2);
-            tabPage2.Controls.Add(textBox1);
+            tabPage2.Controls.Add(btnShowLogInfo);
+            tabPage2.Controls.Add(tbID);
+            tabPage2.Controls.Add(tbHoTen);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(btnSua);
@@ -160,19 +164,21 @@
             label5.TabIndex = 14;
             label5.Text = "Tìm kiếm";
             // 
-            // textBox4
+            // tbMatKhau
             // 
-            textBox4.Location = new Point(172, 225);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(150, 34);
-            textBox4.TabIndex = 13;
+            tbMatKhau.Location = new Point(172, 225);
+            tbMatKhau.Name = "tbMatKhau";
+            tbMatKhau.Size = new Size(150, 34);
+            tbMatKhau.TabIndex = 13;
+            tbMatKhau.TextChanged += tbMatKhau_TextChanged;
             // 
-            // textBox3
+            // tbTaiKhoan
             // 
-            textBox3.Location = new Point(166, 152);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 34);
-            textBox3.TabIndex = 12;
+            tbTaiKhoan.Location = new Point(166, 152);
+            tbTaiKhoan.Name = "tbTaiKhoan";
+            tbTaiKhoan.Size = new Size(150, 34);
+            tbTaiKhoan.TabIndex = 12;
+            tbTaiKhoan.TextChanged += tbTaiKhoan_TextChanged;
             // 
             // label4
             // 
@@ -192,28 +198,31 @@
             label3.TabIndex = 10;
             label3.Text = "ID";
             // 
-            // button13
+            // btnShowLogInfo
             // 
-            button13.Location = new Point(347, 191);
-            button13.Name = "button13";
-            button13.Size = new Size(41, 34);
-            button13.TabIndex = 9;
-            button13.Text = "button13";
-            button13.UseVisualStyleBackColor = true;
+            btnShowLogInfo.Location = new Point(347, 191);
+            btnShowLogInfo.Name = "btnShowLogInfo";
+            btnShowLogInfo.Size = new Size(41, 34);
+            btnShowLogInfo.TabIndex = 9;
+            btnShowLogInfo.Text = "button13";
+            btnShowLogInfo.UseVisualStyleBackColor = true;
+            btnShowLogInfo.Click += btnShowLogInfo_Click;
             // 
-            // textBox2
+            // tbID
             // 
-            textBox2.Location = new Point(160, 26);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(190, 34);
-            textBox2.TabIndex = 8;
+            tbID.Location = new Point(160, 26);
+            tbID.Name = "tbID";
+            tbID.Size = new Size(190, 34);
+            tbID.TabIndex = 8;
+            tbID.TextChanged += tbID_TextChanged;
             // 
-            // textBox1
+            // tbHoTen
             // 
-            textBox1.Location = new Point(149, 88);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(201, 34);
-            textBox1.TabIndex = 7;
+            tbHoTen.Location = new Point(149, 88);
+            tbHoTen.Name = "tbHoTen";
+            tbHoTen.Size = new Size(201, 34);
+            tbHoTen.TabIndex = 7;
+            tbHoTen.TextChanged += tbHoTen_TextChanged;
             // 
             // label2
             // 
@@ -272,12 +281,45 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
             dataGridView1.Location = new Point(5, 290);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
             dataGridView1.Size = new Size(1140, 604);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 8;
+            Column1.Name = "Column1";
+            Column1.Width = 150;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Tên";
+            Column2.MinimumWidth = 8;
+            Column2.Name = "Column2";
+            Column2.Width = 300;
+            // 
+            // Column3
+            // 
+            Column3.FillWeight = 1F;
+            Column3.HeaderText = "Tên đăng nhập";
+            Column3.MinimumWidth = 100;
+            Column3.Name = "Column3";
+            Column3.Visible = false;
+            Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Mật khẩu";
+            Column4.MinimumWidth = 100;
+            Column4.Name = "Column4";
+            Column4.Visible = false;
+            Column4.Width = 150;
             // 
             // tabControl1
             // 
@@ -299,6 +341,7 @@
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "ManagerGUI_menu";
             Text = "ManagerGUI_menu";
+            Load += ManagerGUI_menu_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
@@ -316,9 +359,9 @@
         private Button btnThongKe;
         private TabPage tabPage3;
         private TabPage tabPage2;
-        private Button button13;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Button btnShowLogInfo;
+        private TextBox tbID;
+        private TextBox tbHoTen;
         private Label label2;
         private Label label1;
         private Button btnSua;
@@ -329,9 +372,13 @@
         private TabControl tabControl1;
         private Label label4;
         private Label label3;
-        private TextBox textBox4;
-        private TextBox textBox3;
+        private TextBox tbMatKhau;
+        private TextBox tbTaiKhoan;
         private TextBox textBox5;
         private Label label5;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
     }
 }

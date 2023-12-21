@@ -37,6 +37,7 @@ namespace GUI
                     menu1.ShowDialog();
                     break;
                 case 2:
+
                     break;
                 case 3:
                     break;
@@ -53,6 +54,12 @@ namespace GUI
         private void passwordTextbox_TextChanged(object sender, EventArgs e)
         {
             staff.Password = passwordTextbox.Text;
+        }
+
+        private void LoginGUI_Load(object sender, EventArgs e)
+        {
+            passwordTextbox.UseSystemPasswordChar = true;
+            
         }
     }
 }
