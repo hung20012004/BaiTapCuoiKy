@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "lKJjtbLmnI8yP7FTJOFaaoxIQXC3SRULyj88qBQI6fCE90g5zYHg8bIOk5BhK+eogf58wnJ3l6mKwLoUG9Vsag==",
   "success": true,
   "projectFilePath": "G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\DAL\\DAL.csproj",
@@ -14,5 +15,11 @@
     "C:\\Users\\Hi\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\Hi\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "L+FeaYKzBzlthRaIrG4jcwyIz89J0tEr4KLzqFkKNthEpU4SnQ5qlxOv2PzIdXXPLveUgTg7Ho30CCaRn7kBFA==",
+  "success": true,
+  "projectFilePath": "G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\DAL\\DAL.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> Stashed changes
   "logs": []
 }
