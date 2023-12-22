@@ -114,10 +114,19 @@ namespace GUI
         }
         private void cbRole_SelectedIndexChanged(object sender, EventArgs e)
         {
-            staff.RoleString=cbRole.Text;
+            staff.RoleString = cbRole.Text;
         }
         #endregion
 
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

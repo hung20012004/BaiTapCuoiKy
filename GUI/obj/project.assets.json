@@ -524,24 +524,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Manh Hung\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\GUI\\GUI.csproj",
+      "projectUniqueName": "C:\\GIT-HUB\\BaiTapCuoiKy\\GUI\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\GUI\\GUI.csproj",
-      "packagesPath": "C:\\Users\\Manh Hung\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\GUI\\obj\\",
+      "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\GUI\\GUI.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\GUI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Manh Hung\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -555,11 +550,11 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\BUS\\BUS.csproj": {
-              "projectPath": "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\BUS\\BUS.csproj"
+            "C:\\GIT-HUB\\BaiTapCuoiKy\\BUS\\BUS.csproj": {
+              "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\BUS\\BUS.csproj"
             },
-            "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\DTO\\DTO.csproj"
+            "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj"
             }
           }
         }
@@ -592,7 +587,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

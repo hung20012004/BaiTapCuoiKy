@@ -118,9 +118,9 @@
             // 
             // tabPage3
             // 
-            tabPage3.Location = new Point(4, 34);
+            tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 905);
+            tabPage3.Size = new Size(1145, 910);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -145,10 +145,10 @@
             tabPage2.Controls.Add(btnHuy);
             tabPage2.Controls.Add(btnGhi);
             tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Location = new Point(4, 37);
+            tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 902);
+            tabPage2.Size = new Size(1145, 907);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             cbRole.FormattingEnabled = true;
             cbRole.Location = new Point(479, 34);
             cbRole.Name = "cbRole";
-            cbRole.Size = new Size(182, 36);
+            cbRole.Size = new Size(182, 31);
             cbRole.TabIndex = 18;
             cbRole.SelectedIndexChanged += cbRole_SelectedIndexChanged;
             // 
@@ -167,7 +167,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(375, 29);
             label6.Name = "label6";
-            label6.Size = new Size(82, 28);
+            label6.Size = new Size(72, 23);
             label6.TabIndex = 17;
             label6.Text = "Chức vụ";
             // 
@@ -175,7 +175,7 @@
             // 
             textBox5.Location = new Point(956, 104);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 34);
+            textBox5.Size = new Size(150, 30);
             textBox5.TabIndex = 15;
             // 
             // label5
@@ -183,7 +183,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(833, 104);
             label5.Name = "label5";
-            label5.Size = new Size(91, 28);
+            label5.Size = new Size(79, 23);
             label5.TabIndex = 14;
             label5.Text = "Tìm kiếm";
             // 
@@ -191,7 +191,7 @@
             // 
             tbMatKhau.Location = new Point(172, 225);
             tbMatKhau.Name = "tbMatKhau";
-            tbMatKhau.Size = new Size(150, 34);
+            tbMatKhau.Size = new Size(150, 30);
             tbMatKhau.TabIndex = 13;
             tbMatKhau.TextChanged += tbMatKhau_TextChanged;
             // 
@@ -199,7 +199,7 @@
             // 
             tbTaiKhoan.Location = new Point(166, 152);
             tbTaiKhoan.Name = "tbTaiKhoan";
-            tbTaiKhoan.Size = new Size(150, 34);
+            tbTaiKhoan.Size = new Size(150, 30);
             tbTaiKhoan.TabIndex = 12;
             tbTaiKhoan.TextChanged += tbTaiKhoan_TextChanged;
             // 
@@ -208,7 +208,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(26, 156);
             label4.Name = "label4";
-            label4.Size = new Size(94, 28);
+            label4.Size = new Size(82, 23);
             label4.TabIndex = 11;
             label4.Text = "Tài khoản";
             // 
@@ -217,7 +217,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(21, 26);
             label3.Name = "label3";
-            label3.Size = new Size(31, 28);
+            label3.Size = new Size(27, 23);
             label3.TabIndex = 10;
             label3.Text = "ID";
             // 
@@ -235,7 +235,7 @@
             // 
             tbID.Location = new Point(160, 26);
             tbID.Name = "tbID";
-            tbID.Size = new Size(190, 34);
+            tbID.Size = new Size(190, 30);
             tbID.TabIndex = 8;
             tbID.TextChanged += tbID_TextChanged;
             // 
@@ -243,7 +243,7 @@
             // 
             tbHoTen.Location = new Point(149, 88);
             tbHoTen.Name = "tbHoTen";
-            tbHoTen.Size = new Size(201, 34);
+            tbHoTen.Size = new Size(201, 30);
             tbHoTen.TabIndex = 7;
             tbHoTen.TextChanged += tbHoTen_TextChanged;
             // 
@@ -252,7 +252,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(41, 227);
             label2.Name = "label2";
-            label2.Size = new Size(94, 28);
+            label2.Size = new Size(82, 23);
             label2.TabIndex = 6;
             label2.Text = "Mật khẩu";
             // 
@@ -261,7 +261,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(21, 93);
             label1.Name = "label1";
-            label1.Size = new Size(71, 28);
+            label1.Size = new Size(62, 23);
             label1.TabIndex = 5;
             label1.Text = "Họ tên";
             // 
@@ -282,6 +282,7 @@
             btnThem.TabIndex = 3;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
             // btnHuy
             // 
@@ -312,6 +313,7 @@
             dataGridView1.Size = new Size(1140, 604);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
@@ -363,7 +365,7 @@
             // 
             // ManagerGUI_menu
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1478, 944);
             Controls.Add(tabControl1);
