@@ -1,6 +1,5 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "6kWLcnCTan/p2hsPq3l8bmr5N5IgGGkG0SLrH8gX8qyZQwL28//oYBpI60qIht7RQJahI5MZ9DM9cTO+faVAmw==",
   "success": true,
   "projectFilePath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\DAL.csproj",
@@ -15,11 +14,12 @@
     "C:\\Users\\DELL\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
-=======
-  "dgSpecHash": "wqi2hy/mRLZbPnnW0FM7L9oaBObf+EFGWEUlEWAIhYKZr+gKXIeTw/NGTDr+Zqd3wIbFeejdP0yPKRNGzv+Hew==",
-  "success": true,
-  "projectFilePath": "C:\\Duy-Git\\BaiTapCuoiKy\\DAL\\DAL.csproj",
-  "expectedPackageFiles": [],
->>>>>>> a8d43efb7ef08061f873b46401e648f7b7166f48
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\GIT-HUB\\BaiTapCuoiKy\\BUS\\BUS.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\BUS\\BUS.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
         "outputPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\BUS\\obj\\",
-=======
-    "C:\\Duy-Git\\BaiTapCuoiKy\\BUS\\BUS.csproj": {}
-  },
-  "projects": {
-    "C:\\Duy-Git\\BaiTapCuoiKy\\BUS\\BUS.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Duy-Git\\BaiTapCuoiKy\\BUS\\BUS.csproj",
-        "projectName": "BUS",
-        "projectPath": "C:\\Duy-Git\\BaiTapCuoiKy\\BUS\\BUS.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Duy-Git\\BaiTapCuoiKy\\BUS\\obj\\",
->>>>>>> a8d43efb7ef08061f873b46401e648f7b7166f48
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,19 +28,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\DAL.csproj": {
                 "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\DAL.csproj"
               },
               "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
                 "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj"
-=======
-              "C:\\Duy-Git\\BaiTapCuoiKy\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Duy-Git\\BaiTapCuoiKy\\DAL\\DAL.csproj"
-              },
-              "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj"
->>>>>>> a8d43efb7ef08061f873b46401e648f7b7166f48
               }
             }
           }
@@ -88,7 +66,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -97,16 +74,6 @@
         "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
         "outputPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\obj\\",
-=======
-    "C:\\Duy-Git\\BaiTapCuoiKy\\DAL\\DAL.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Duy-Git\\BaiTapCuoiKy\\DAL\\DAL.csproj",
-        "projectName": "DAL",
-        "projectPath": "C:\\Duy-Git\\BaiTapCuoiKy\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Duy-Git\\BaiTapCuoiKy\\DAL\\obj\\",
->>>>>>> a8d43efb7ef08061f873b46401e648f7b7166f48
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -123,13 +90,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
                 "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj"
-=======
-              "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj"
->>>>>>> a8d43efb7ef08061f873b46401e648f7b7166f48
               }
             }
           }
@@ -143,6 +105,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -163,7 +131,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -172,16 +139,6 @@
         "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
         "outputPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\obj\\",
-=======
-    "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj",
-        "projectName": "DTO",
-        "projectPath": "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\obj\\",
->>>>>>> a8d43efb7ef08061f873b46401e648f7b7166f48
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "55hZklvxBOILEMSFKA9Tpjo6U6R5mz3bxTLS74kBABo80qetNeoNeZ8drYleR+PZMr2P1k4DD3FY9WmXpdTkmw==",
   "success": true,
   "projectFilePath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj",
-=======
-  "dgSpecHash": "beGE8nLHw0kDj5thrCCJUCn895FduZqJWTjv2b7+lEALcwPQmOXqzLLQQWI3uOsQAIZ2h4Oa9RvoAoO/rFZLlQ==",
-  "success": true,
-  "projectFilePath": "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj",
->>>>>>> a8d43efb7ef08061f873b46401e648f7b7166f48
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
