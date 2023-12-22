@@ -53,12 +53,12 @@
             btnHuy = new Button();
             btnGhi = new Button();
             dataGridView1 = new DataGridView();
-            tabControl1 = new TabControl();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            tabControl1 = new TabControl();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
@@ -160,6 +160,7 @@
             cbRole.Name = "cbRole";
             cbRole.Size = new Size(182, 36);
             cbRole.TabIndex = 18;
+            cbRole.SelectedIndexChanged += cbRole_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -284,7 +285,7 @@
             // 
             // btnHuy
             // 
-            btnHuy.Location = new Point(482, 227);
+            btnHuy.Location = new Point(756, 227);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(112, 34);
             btnHuy.TabIndex = 2;
@@ -293,7 +294,7 @@
             // 
             // btnGhi
             // 
-            btnGhi.Location = new Point(625, 227);
+            btnGhi.Location = new Point(899, 227);
             btnGhi.Name = "btnGhi";
             btnGhi.Size = new Size(112, 34);
             btnGhi.TabIndex = 1;
@@ -311,16 +312,6 @@
             dataGridView1.Size = new Size(1140, 604);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            // 
-            // tabControl1
-            // 
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(329, 14);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1153, 943);
-            tabControl1.TabIndex = 18;
             // 
             // Column1
             // 
@@ -359,6 +350,16 @@
             Column4.Name = "Column4";
             Column4.Visible = false;
             Column4.Width = 150;
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Location = new Point(329, 14);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1153, 943);
+            tabControl1.TabIndex = 18;
             // 
             // ManagerGUI_menu
             // 

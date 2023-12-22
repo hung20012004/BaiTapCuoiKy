@@ -18,7 +18,6 @@ namespace DAL
         public static StaffDAL Instance
         {
             get { return instance; }
-            set { instance = value; }
         }
         public List<Staff> get()
         {

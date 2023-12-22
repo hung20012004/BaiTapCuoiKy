@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
+using BUS;
 using DTO;
 
 namespace GUI
@@ -33,9 +33,9 @@ namespace GUI
             tbMatKhau.UseSystemPasswordChar = true;
             tbTaiKhoan.UseSystemPasswordChar = true;
             tabControl1.SelectedIndex = 0;
-            foreach (Staff item in StaffDAL.Instance.get())
+            foreach (Staff item in StaffBUS.Instance.get())
             {
-                dataGridView1.Rows.Add(item.ID, item.Name, item.Username, item.Password, item.RoleString);
+                dataGridView1.Rows.Add(item.ID, item.Name, item.RoleString, item.Username, item.Password);
             }
             DataGridViewRow row = dataGridView1.Rows[0];
             if (Convert.ToString(row.Cells["Column1"].Value) != "")
@@ -66,6 +66,7 @@ namespace GUI
         }
         private void btnShowLogInfo_Click(object sender, EventArgs e)
         {
+
             tbMatKhau.UseSystemPasswordChar = false;
             tbTaiKhoan.UseSystemPasswordChar = false;
         }
@@ -111,6 +112,12 @@ namespace GUI
         {
             staff.Password = tbMatKhau.Text;
         }
+        private void cbRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            staff.RoleString=cbRole.Text;
+        }
         #endregion
+
+
     }
 }

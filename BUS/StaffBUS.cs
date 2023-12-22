@@ -17,7 +17,6 @@ namespace BUS
         public static StaffBUS Instance
         {
             get { return instance; }
-            set { instance = value; }
         }
         public bool checkLogInfo(Staff staff)
         {
@@ -31,20 +30,20 @@ namespace BUS
             }
             return false;
         }
-        public void get(List<Staff> list)
+        public List<Staff> get()
         {
-            list = StaffDAL.Instance.get();
+            return  StaffDAL.Instance.get();
         }
-        public void insert(Staff staff)
+        public bool insert(Staff staff)
         {
-            StaffDAL.Instance.insert(staff);
+            return StaffDAL.Instance.insert(staff);
         }
-        public void update(Staff staff) {
-            StaffDAL.Instance.update(staff);
+        public bool update(Staff staff) {
+            return StaffDAL.Instance.update(staff);
         }
-        public void delete(Staff staff)
+        public bool delete(Staff staff)
         {
-            StaffDAL.Instance.delete(staff);
+            return StaffDAL.Instance.delete(staff);
         }
     }
 }

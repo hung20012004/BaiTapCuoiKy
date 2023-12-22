@@ -67,7 +67,7 @@
             // passwordTextbox
             // 
             passwordTextbox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordTextbox.Location = new Point(262, 220);
+            passwordTextbox.Location = new Point(262, 217);
             passwordTextbox.Name = "passwordTextbox";
             passwordTextbox.Size = new Size(492, 34);
             passwordTextbox.TabIndex = 3;
