@@ -49,3 +49,12 @@ C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.dll
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\BUS\obj\Debug\net7.0\refint\BUS.dll
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.pdb
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\BUS\obj\Debug\net7.0\ref\BUS.dll
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.AssemblyInfo.cs
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.sourcelink.json
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.dll
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\refint\BUS.dll
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.pdb
