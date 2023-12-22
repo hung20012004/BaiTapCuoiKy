@@ -33,13 +33,13 @@ namespace GUI
                 dgvKhachHang.Rows.Add(item.ID, item.Name, item.Phone, item.Address);
             }
             DataGridViewRow row = dgvKhachHang.Rows[0];
-            if (Convert.ToString(row.Cells["colID"].Value) != "")
+            /*if (Convert.ToString(row.Cells["colID"].Value) != "")
             {
                 txbID.Text = Convert.ToString(row.Cells["colID"].Value);
                 txbName.Text = Convert.ToString(row.Cells["colName"].Value);
                 txbPhone.Text = Convert.ToString(row.Cells["colPhone"].Value);
                 txbAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
-            }
+            }*/
         }
         private void SellGUI_menu_Load(object sender, EventArgs e)
         {
@@ -67,13 +67,13 @@ namespace GUI
         {
             DataGridViewRow row = new DataGridViewRow();
             row = dgvKhachHang.Rows[e.RowIndex];
-            /*if (Convert.ToString(row.Cells["colID"]) != null)
+            if (Convert.ToString(row.Cells["colID"]) != null)
             {
                 txbID.Text = Convert.ToString(row.Cells["colID"].Value);
                 txbName.Text = Convert.ToString(row.Cells["colName"].Value);
                 txbPhone.Text = Convert.ToString(row.Cells["colPhone"].Value);
                 txbAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
-            }*/
+            }
 
         }
         public void ManageInterface(string state)
@@ -113,6 +113,13 @@ namespace GUI
                     btnHuy.Enabled = true;
                     btnGhi.Enabled = true;
                     break;
+                case "Delete":
+                    btnThem.Enabled = false;
+                    btnSua.Enabled = false;
+                    btnXoa.Enabled = false;
+                    btnHuy.Enabled = true;
+                    btnGhi.Enabled = true;
+                    break;
             }
         }
         private void tabPage2_Click(object sender, EventArgs e)
@@ -129,19 +136,32 @@ namespace GUI
         {
             if (state == "Add")
             {
-                CustomerBUS bus = new CustomerBUS();
-                bus.insert(customer);
+                CustomerBUS.Instance.insert(customer);
+                this.dgvKhachHang.DataSource = null;
+                this.dgvKhachHang.Rows.Clear();
                 Loading();
                 MessageBox.Show("Thêm thông tin thành công", "Thông báo");
                 ManageInterface("Start");
             }
             if (state == "Update")
             {
-                CustomerBUS bUS = new CustomerBUS();
-                bUS.update(customer);
+                CustomerBUS.Instance.update(customer);
+                this.dgvKhachHang.DataSource = null;
+                this.dgvKhachHang.Rows.Clear();
                 Loading();
                 MessageBox.Show("Sửa thông tin thành công", "Thông báo");
                 ManageInterface("Start");
+            }
+            if (state == "Delete")
+            {
+                if (MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    CustomerBUS.Instance.delete(customer);
+                    this.dgvKhachHang.DataSource = null;
+                    this.dgvKhachHang.Rows.Clear();
+                    Loading();
+                    ManageInterface("Start");
+                }
             }
         }
 
@@ -171,6 +191,12 @@ namespace GUI
         private void btnSua_Click(object sender, EventArgs e)
         {
             state = "Update";
+            ManageInterface(state);
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            state = "Delete";
             ManageInterface(state);
         }
     }

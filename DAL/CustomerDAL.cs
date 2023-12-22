@@ -54,7 +54,7 @@ namespace DAL
             Close();
             return list;
         }
-        public void insert(Customer customer)
+        public bool insert (Customer customer)
         {
             try
             {
@@ -68,11 +68,11 @@ namespace DAL
                     cmd.ExecuteNonQuery();
                 }
                 Close();
-                
+                return true;
             }
             catch (Exception ex)
             {
-                throw ex;
+                return false;
             }
         }
         public bool update(Customer customer)
@@ -87,6 +87,25 @@ namespace DAL
                     cmd.Parameters.Add("@customer_name", SqlDbType.NVarChar).Value = customer.Name;
                     cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = customer.Phone;
                     cmd.Parameters.Add("@address", SqlDbType.NVarChar).Value = customer.Address;
+                    cmd.ExecuteNonQuery();
+                }
+                Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool delete(Customer customer)
+        {
+            try
+            {
+                Open();
+                using (var cmd = new SqlCommand("deleteKhachHang", conn))
+                {
+                    cmd.Parameters.Add("@customer_id", SqlDbType.Int).Value = customer.ID;
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
                 Close();

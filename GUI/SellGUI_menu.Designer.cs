@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             contextMenuStrip1 = new ContextMenuStrip(components);
             groupBox1 = new GroupBox();
-            button1 = new Button();
+            btnSanPham = new Button();
             pictureBox1 = new PictureBox();
             button3 = new Button();
             btnOrder = new Button();
@@ -91,7 +91,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnSanPham);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(btnOrder);
@@ -103,15 +103,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = " ";
             // 
-            // button1
+            // btnSanPham
             // 
-            button1.Location = new Point(0, 288);
-            button1.Name = "button1";
-            button1.Size = new Size(323, 83);
-            button1.TabIndex = 4;
-            button1.Text = "Sản phẩm";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnSanPham.Location = new Point(0, 288);
+            btnSanPham.Name = "btnSanPham";
+            btnSanPham.Size = new Size(323, 83);
+            btnSanPham.TabIndex = 4;
+            btnSanPham.Text = "Sản phẩm";
+            btnSanPham.UseVisualStyleBackColor = true;
+            btnSanPham.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -198,7 +198,7 @@
             // 
             // btnHuy
             // 
-            btnHuy.Location = new Point(690, 54);
+            btnHuy.Location = new Point(598, 50);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(94, 29);
             btnHuy.TabIndex = 13;
@@ -209,7 +209,7 @@
             // 
             txbAddress.Location = new Point(146, 226);
             txbAddress.Name = "txbAddress";
-            txbAddress.Size = new Size(153, 30);
+            txbAddress.Size = new Size(188, 30);
             txbAddress.TabIndex = 12;
             txbAddress.TextChanged += txbAddress_TextChanged;
             // 
@@ -217,7 +217,7 @@
             // 
             txbPhone.Location = new Point(148, 172);
             txbPhone.Name = "txbPhone";
-            txbPhone.Size = new Size(151, 30);
+            txbPhone.Size = new Size(186, 30);
             txbPhone.TabIndex = 11;
             txbPhone.TextChanged += txbPhone_TextChanged;
             // 
@@ -243,7 +243,7 @@
             // 
             txbName.Location = new Point(149, 110);
             txbName.Name = "txbName";
-            txbName.Size = new Size(150, 30);
+            txbName.Size = new Size(185, 30);
             txbName.TabIndex = 8;
             txbName.TextChanged += txbName_TextChanged;
             // 
@@ -251,7 +251,7 @@
             // 
             txbID.Location = new Point(149, 49);
             txbID.Name = "txbID";
-            txbID.Size = new Size(150, 30);
+            txbID.Size = new Size(185, 30);
             txbID.TabIndex = 7;
             txbID.TextChanged += txbID_TextChanged;
             // 
@@ -277,7 +277,7 @@
             // 
             btnGhi.ContextMenuStrip = contextMenuStrip1;
             btnGhi.DialogResult = DialogResult.Abort;
-            btnGhi.Location = new Point(531, 226);
+            btnGhi.Location = new Point(438, 222);
             btnGhi.Name = "btnGhi";
             btnGhi.Size = new Size(112, 34);
             btnGhi.TabIndex = 4;
@@ -287,16 +287,17 @@
             // 
             // btnXoa
             // 
-            btnXoa.Location = new Point(531, 172);
+            btnXoa.Location = new Point(438, 168);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(112, 34);
             btnXoa.TabIndex = 3;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnThem
             // 
-            btnThem.Location = new Point(531, 49);
+            btnThem.Location = new Point(438, 45);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(112, 34);
             btnThem.TabIndex = 2;
@@ -306,7 +307,7 @@
             // 
             // btnSua
             // 
-            btnSua.Location = new Point(531, 109);
+            btnSua.Location = new Point(438, 104);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(112, 34);
             btnSua.TabIndex = 1;
@@ -507,7 +508,7 @@
             colName.HeaderText = "Tên";
             colName.MinimumWidth = 6;
             colName.Name = "colName";
-            colName.Width = 125;
+            colName.Width = 200;
             // 
             // colPhone
             // 
@@ -561,7 +562,7 @@
         private TabPage tabPage2;
         private TabPage tabPage1;
         private TabPage tabPage3;
-        private Button button1;
+        private Button btnSanPham;
         private Button btnGhi;
         private Button btnXoa;
         private Button btnThem;
@@ -587,14 +588,14 @@
         private Button button11;
         private Button button13;
         private Button button14;
-        private DataGridViewTextBoxColumn colID;
-        private DataGridViewTextBoxColumn colName;
-        private DataGridViewTextBoxColumn colPhone;
-        private DataGridViewTextBoxColumn colAddress;
         private TextBox txbAddress;
         private TextBox txbPhone;
         private Label label9;
         private Label label8;
         private Button btnHuy;
+        private DataGridViewTextBoxColumn colID;
+        private DataGridViewTextBoxColumn colName;
+        private DataGridViewTextBoxColumn colPhone;
+        private DataGridViewTextBoxColumn colAddress;
     }
 }

@@ -21,13 +21,17 @@ namespace BUS
         {
             return CustomerDAL.Instance.get();
         }
-        public void insert (Customer customer)
+        public bool insert (Customer customer)
         {
-           CustomerDAL.Instance.insert(customer);
+           return CustomerDAL.Instance.insert(customer);
         }
         public bool update(Customer customer)
         {
             return CustomerDAL.Instance.update(customer);
+        }
+        public bool delete(Customer customer)
+        {
+            return CustomerDAL.Instance.delete(customer);
         }
     }
 }
