@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -34,15 +35,16 @@ namespace BUS
         {
             list = StaffDAL.Instance.get();
         }
-        public void insert()
+        public void insert(Staff staff)
         {
-
+            StaffDAL.Instance.insert(staff);
         }
-        public void update() { 
+        public void update(Staff staff) {
+            StaffDAL.Instance.update(staff);
         }
-        public void delete()
+        public void delete(Staff staff)
         {
-
+            StaffDAL.Instance.delete(staff);
         }
     }
 }
