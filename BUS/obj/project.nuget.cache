@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Y5Phyg6fUWGKzkKZbQh89pSWzDv9Ir1o4Bj3OKNhOCbbXl3PLNkxSmC4Ojwiu/4GOc9WPQDvrTjbgsSOSTPNLA==",
   "success": true,
   "projectFilePath": "C:\\GIT-HUB\\BaiTapCuoiKy\\BUS\\BUS.csproj",
@@ -14,5 +15,11 @@
     "C:\\Users\\DELL\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "qSKR+nXWnxZ1i6KmxyIBE5CE/0V7IeAesC0v37JsFIiUbibdopkcC4UddHRmAcWuI9fg3sTiRDi2KVWzMz6k+A==",
+  "success": true,
+  "projectFilePath": "C:\\Duy-Git\\BaiTapCuoiKy\\BUS\\BUS.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> a8d43efb7ef08061f873b46401e648f7b7166f48
   "logs": []
 }

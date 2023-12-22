@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
         "outputPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\obj\\",
+=======
+    "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj": {}
+  },
+  "projects": {
+    "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Duy-Git\\BaiTapCuoiKy\\DTO\\obj\\",
+>>>>>>> a8d43efb7ef08061f873b46401e648f7b7166f48
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
