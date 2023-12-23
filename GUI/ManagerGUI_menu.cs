@@ -64,37 +64,7 @@ namespace GUI
         {
             tabControl1.SelectedIndex = 1;
         }
-        private string createUsername()
-        {
-            string username = "";
-            string str = tbHoTen.Text;
-            DateTime dateTime = DateTime.Now;
-            for (int i = str.Length - 1; i > -1; i--)
-            {
-                if (str[i] == ' ')
-                {
-                    str = str.Remove(0, i + 1);
-                    break;
-                }
-            }
-            username = utf8Convert.Convert(str) + dateTime.Minute + dateTime.Second + dateTime.Hour;
-            return username;
-        }
-        public string createPassword()
-        {
-            char[] password = new char[8];
-            string charSet = "";
-            System.Random random = new Random();
-            charSet += "abcdefghijklmnopqursuvwxyz";
-            charSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            charSet += "123456789";
-            charSet += @"!@£$%^&*()#€";
-            for (int i = 0; i < 8; i++)
-            {
-                password[i] = charSet[random.Next(charSet.Length - 1)];
-            }
-            return string.Join(null, password);
-        }
+        
         #endregion
 
         #region ClickEvent
@@ -116,17 +86,24 @@ namespace GUI
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbMatKhau.UseSystemPasswordChar = true;
-            tbTaiKhoan.UseSystemPasswordChar = true;
-            DataGridViewRow row = new DataGridViewRow();
-            row = dataGridView1.Rows[e.RowIndex];
-            if (Convert.ToString(row.Cells["Column1"].Value) != "")
+            try
             {
-                tbID.Text = Convert.ToString(row.Cells["Column1"].Value);
-                tbHoTen.Text = Convert.ToString(row.Cells["Column2"].Value);
-                tbTaiKhoan.Text = Convert.ToString(row.Cells["Column3"].Value);
-                tbMatKhau.Text = Convert.ToString(row.Cells["Column4"].Value);
-                cbRole.Text = Convert.ToString(row.Cells["Column5"].Value);
+                tbMatKhau.UseSystemPasswordChar = true;
+                tbTaiKhoan.UseSystemPasswordChar = true;
+                DataGridViewRow row = new DataGridViewRow();
+                row = dataGridView1.Rows[e.RowIndex];
+                if (Convert.ToString(row.Cells["Column1"].Value) != "")
+                {
+                    tbID.Text = Convert.ToString(row.Cells["Column1"].Value);
+                    tbHoTen.Text = Convert.ToString(row.Cells["Column2"].Value);
+                    tbTaiKhoan.Text = Convert.ToString(row.Cells["Column3"].Value);
+                    tbMatKhau.Text = Convert.ToString(row.Cells["Column4"].Value);
+                    cbRole.Text = Convert.ToString(row.Cells["Column5"].Value);
+                }
+            }
+            catch
+            {
+
             }
         }
         private void btnThem1_Click(object sender, EventArgs e)
@@ -138,7 +115,6 @@ namespace GUI
             btnHuy1.Enabled = true;
             btnSua1.Enabled = false;
             btnXoa1.Enabled = false;
-            btnThem1.Enabled = false;
             tbID.Text = "";
             tbHoTen.Text = "";
             tbTaiKhoan.Text = "********";
@@ -154,7 +130,7 @@ namespace GUI
             tbMatKhau.Enabled = true;
             btnGhi1.Enabled = true;
             btnHuy1.Enabled = true;
-            btnSua1.Enabled = false;
+            //btnSua1.Enabled = false;
             btnXoa1.Enabled = false;
             btnThem1.Enabled = false;
             
@@ -186,8 +162,8 @@ namespace GUI
                 {
                     if (tbHoTen.Text != "" && cbRole.Text != "")
                     {
-                        tbMatKhau.Text = createPassword();
-                        tbTaiKhoan.Text = createUsername();
+                        tbMatKhau.Text = CreateUser.createPassword();
+                        tbTaiKhoan.Text = CreateUser.createUsername(tbHoTen.Text);
                         if (StaffBUS.Instance.insert(staff))
                         {
                             tab0Reset();
