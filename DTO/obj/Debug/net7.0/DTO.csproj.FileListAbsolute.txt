@@ -31,3 +31,14 @@ G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
 G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
 G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
 G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.deps.json
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.pdb
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll

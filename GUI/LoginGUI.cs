@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DAL;
 using DTO;
 
 namespace GUI
@@ -14,7 +15,7 @@ namespace GUI
         
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            if (StaffBUS.Instance.checkLogInfo(user))
+            if (StaffBUS.Instance.checkLogInfo(user)==true)
             {
                 this.Hide();
                 userRole();
@@ -34,6 +35,13 @@ namespace GUI
         }
         private void userRole()
         {
+            foreach (Staff item in StaffDAL.Instance.get())
+            {
+                if (user.Username == item.Username && user.Password == item.Password)
+                {
+                    user = item;
+                }
+            }
             switch (user.RoleInt)
             {
                 case 0:
@@ -45,7 +53,7 @@ namespace GUI
                     menu1.ShowDialog();
                     break;
                 case 2:
-                    SellGUI_menu menu2 = new(user);
+                    AccGUI_menu menu2 = new(user);
                     menu2.ShowDialog();
                     break;
                 case 3:
@@ -57,6 +65,7 @@ namespace GUI
                     menu4.ShowDialog();
                     break;
             }
+
         }
         #endregion
         #region textChangeEvent

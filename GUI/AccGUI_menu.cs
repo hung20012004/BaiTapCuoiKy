@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace GUI
 {
     public partial class AccGUI_menu : Form
     {
-        public AccGUI_menu()
+        private Staff user = new();
+        public AccGUI_menu(Staff user)
         {
+            this.user = user;
             InitializeComponent();
         }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6QLjoQHOtX1IsZ0rZWL4DVh0Rmq5BfJusysDkERWPqQWQE8mwcpQFzNjGcPHLWg8LhR5J02ee+b5ofhC9zB0zg==",
+  "dgSpecHash": "cdk5F9zT07fifE8iziZktFDrSsWksujUe9cXlgF9iU6AkgH4gFXQSBcSGhK+5/zW93iksElLmPaHeBzb7irNKw==",
   "success": true,
-  "projectFilePath": "G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\BUS\\BUS.csproj",
+  "projectFilePath": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\BUS\\BUS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hi\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Hi\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
@@ -14,12 +14,5 @@
     "C:\\Users\\Hi\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\Hi\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\BUS\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

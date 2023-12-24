@@ -511,11 +511,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\BUS\\BUS.csproj",
+      "projectUniqueName": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\BUS\\BUS.csproj",
       "projectName": "BUS",
-      "projectPath": "G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\BUS\\BUS.csproj",
+      "projectPath": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\BUS\\BUS.csproj",
       "packagesPath": "C:\\Users\\Hi\\.nuget\\packages\\",
-      "outputPath": "G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\BUS\\obj\\",
+      "outputPath": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\BUS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -537,11 +537,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\DAL\\DAL.csproj": {
-              "projectPath": "G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\DAL\\DAL.csproj"
+            "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\DAL\\DAL.csproj": {
+              "projectPath": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\DAL\\DAL.csproj"
             },
-            "G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
-              "projectPath": "G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\DTO\\DTO.csproj"
+            "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
+              "projectPath": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\DTO\\DTO.csproj"
             }
           }
         }
@@ -574,13 +574,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file G:\\C#\\CS\\Cuoi_Ky\\Laptop_Store\\BaiTapCuoiKy\\BUS\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
