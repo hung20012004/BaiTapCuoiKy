@@ -18,13 +18,14 @@ namespace GUI
         private Customer customer = new Customer();
         private Staff user = new();
         string state = null;
+        private Order order = new Order();
 
         public SellGUI_menu(Staff user)
         {
             this.user = user;
             InitializeComponent();
         }
-        private void Loading()
+        private void LoadingCustomer()
         {
 
             foreach (Customer item in CustomerBUS.Instance.get())
@@ -41,12 +42,23 @@ namespace GUI
                 txbAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
             }*/
         }
+        private void LoadingOrder()
+        {
+
+            foreach (Order item in OrderBUS.Instance.get())
+            {
+
+               dgvOrder.Rows.Add(item.Order_ID, item.Laptop_ID, item.Price, item.Quantity, item.Customer_ID, item.Accountant_ID, item.Seller_ID, item.DATE, item.STATUS);
+            }
+        }
         private void SellGUI_menu_Load(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
-            Loading();
+            LoadingCustomer();
+            LoadingOrder();
             state = "Start";
             ManageInterface(state);
+            cbTimKiem_CheckedChanged(sender, e);
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -136,21 +148,35 @@ namespace GUI
         {
             if (state == "Add")
             {
-                CustomerBUS.Instance.insert(customer);
-                this.dgvKhachHang.DataSource = null;
-                this.dgvKhachHang.Rows.Clear();
-                Loading();
-                MessageBox.Show("Thêm thông tin thành công", "Thông báo");
-                ManageInterface("Start");
+                if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
+                {
+                    CustomerBUS.Instance.insert(customer);
+                    this.dgvKhachHang.DataSource = null;
+                    this.dgvKhachHang.Rows.Clear();
+                    LoadingCustomer();
+                    MessageBox.Show("Thêm thông tin thành công", "Thông báo");
+                    ManageInterface("Start");
+                }
+                else
+                {
+                    MessageBox.Show("Yêu cầu nhập đầy đủ thông tin!", "Thông báo");
+                }
             }
             if (state == "Update")
             {
-                CustomerBUS.Instance.update(customer);
-                this.dgvKhachHang.DataSource = null;
-                this.dgvKhachHang.Rows.Clear();
-                Loading();
-                MessageBox.Show("Sửa thông tin thành công", "Thông báo");
-                ManageInterface("Start");
+                if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
+                {
+                    CustomerBUS.Instance.update(customer);
+                    this.dgvKhachHang.DataSource = null;
+                    this.dgvKhachHang.Rows.Clear();
+                    LoadingCustomer();
+                    MessageBox.Show("Sửa thông tin thành công", "Thông báo");
+                    ManageInterface("Start");
+                }
+                else
+                {
+                    MessageBox.Show("Yêu cầu nhập đầy đủ thông tin!", "Thông báo");
+                }
             }
             if (state == "Delete")
             {
@@ -159,7 +185,7 @@ namespace GUI
                     CustomerBUS.Instance.delete(customer);
                     this.dgvKhachHang.DataSource = null;
                     this.dgvKhachHang.Rows.Clear();
-                    Loading();
+                    LoadingCustomer();
                     ManageInterface("Start");
                 }
             }
@@ -198,6 +224,81 @@ namespace GUI
         {
             state = "Delete";
             ManageInterface(state);
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (cboTimKiem.Text == "ID")
+            {
+                this.dgvKhachHang.DataSource = null;
+                this.dgvKhachHang.Rows.Clear();
+
+                foreach (Customer item in CustomerBUS.Instance.get())
+                {
+                    if (item.ID == Convert.ToInt32(txbTimKiem.Text))
+                    {
+                        dgvKhachHang.Rows.Add(item.ID, item.Name, item.Phone, item.Address);
+                    }
+                }
+            }
+            else if (cboTimKiem.Text == "Tên")
+            {
+                this.dgvKhachHang.DataSource = null;
+                this.dgvKhachHang.Rows.Clear();
+
+                foreach (Customer item in CustomerBUS.Instance.get())
+                {
+                    if (item.Name == txbTimKiem.Text)
+                    {
+                        dgvKhachHang.Rows.Add(item.ID, item.Name, item.Phone, item.Address);
+                    }
+                }
+            }
+            else
+            {
+                this.dgvKhachHang.DataSource = null;
+                this.dgvKhachHang.Rows.Clear();
+
+                foreach (Customer item in CustomerBUS.Instance.get())
+                {
+                    if (item.Phone == txbTimKiem.Text)
+                    {
+                        dgvKhachHang.Rows.Add(item.ID, item.Name, item.Phone, item.Address);
+                    }
+                }
+            }
+        }
+
+        private void cbTimKiem_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTimKiem.Checked == true)
+            {
+                btnTimKiem.Visible = true;
+                txbTimKiem.Visible = true;
+                cboTimKiem.Visible = true;
+            }
+            else
+            {
+                LoadingCustomer();
+                btnTimKiem.Visible = false;
+                txbTimKiem.Visible = false;
+                cboTimKiem.Visible = false;
+            }
+        }
+
+        private void txbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

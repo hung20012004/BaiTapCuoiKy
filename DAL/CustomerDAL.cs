@@ -116,5 +116,27 @@ namespace DAL
                 return false;
             }
         }
+        public bool TimKiem(Customer customer)
+        {
+            try
+            {
+                Open();
+                using (var cmd = new SqlCommand("timkiemKhachHang", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = customer.ID;
+                    cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
+                    cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = customer.Phone;
+                    cmd.ExecuteNonQuery();
+                }
+                Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+           
+        }
     }
 }
