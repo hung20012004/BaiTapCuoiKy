@@ -486,19 +486,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {}
+    "C:\\Users\\Manh Hung\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\obj\\",
+      "projectPath": "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\Manh Hung\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\DAL\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Manh Hung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -512,8 +517,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj"
+            "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\Manh Hung\\Desktop\\UTT\\Project\\BaiTapCuoiKy\\DTO\\DTO.csproj"
             }
           }
         }
@@ -549,16 +554,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\GIT-HUB\\BaiTapCuoiKy\\DAL\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
