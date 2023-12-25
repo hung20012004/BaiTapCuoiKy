@@ -34,6 +34,7 @@
             button3 = new Button();
             btnCustomer = new Button();
             tabPage3 = new TabPage();
+            textBox6 = new TextBox();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
             label11 = new Label();
@@ -45,6 +46,7 @@
             button7 = new Button();
             label6 = new Label();
             lb5 = new Label();
+            label12 = new Label();
             dataGridView2 = new DataGridView();
             OrderID = new DataGridViewTextBoxColumn();
             CustomerID = new DataGridViewTextBoxColumn();
@@ -68,6 +70,7 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage3.SuspendLayout();
@@ -130,6 +133,8 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(dateTimePicker1);
+            tabPage3.Controls.Add(textBox6);
             tabPage3.Controls.Add(textBox5);
             tabPage3.Controls.Add(textBox4);
             tabPage3.Controls.Add(label11);
@@ -141,6 +146,7 @@
             tabPage3.Controls.Add(button7);
             tabPage3.Controls.Add(label6);
             tabPage3.Controls.Add(lb5);
+            tabPage3.Controls.Add(label12);
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Controls.Add(label3);
             tabPage3.Location = new Point(4, 32);
@@ -150,59 +156,65 @@
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(181, 184);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(192, 30);
+            textBox6.TabIndex = 17;
+            // 
             // textBox5
             // 
-            textBox5.Location = new Point(174, 146);
+            textBox5.Location = new Point(181, 127);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 30);
+            textBox5.Size = new Size(192, 30);
             textBox5.TabIndex = 17;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(175, 106);
+            textBox4.Location = new Point(181, 73);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(150, 30);
+            textBox4.Size = new Size(192, 30);
             textBox4.TabIndex = 16;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(55, 150);
+            label11.Location = new Point(41, 76);
             label11.Name = "label11";
-            label11.Size = new Size(64, 23);
+            label11.Size = new Size(134, 23);
             label11.TabIndex = 15;
-            label11.Text = "label11";
+            label11.Text = "Tên khách hàng:";
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Location = new Point(49, 99);
             label10.Name = "label10";
-            label10.Size = new Size(64, 23);
+            label10.Size = new Size(0, 23);
             label10.TabIndex = 14;
-            label10.Text = "label10";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(171, 49);
+            textBox3.Location = new Point(181, 24);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 30);
+            textBox3.Size = new Size(192, 30);
             textBox3.TabIndex = 13;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(47, 43);
+            label4.Location = new Point(41, 27);
             label4.Name = "label4";
-            label4.Size = new Size(55, 23);
+            label4.Size = new Size(31, 23);
             label4.TabIndex = 12;
-            label4.Text = "label4";
+            label4.Text = "ID:";
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "banking" });
-            comboBox1.Location = new Point(173, 185);
+            comboBox1.Location = new Point(820, 24);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(182, 31);
             comboBox1.TabIndex = 11;
@@ -242,6 +254,15 @@
             lb5.Size = new Size(46, 23);
             lb5.TabIndex = 3;
             lb5.Text = "tổng";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(604, 76);
+            label12.Name = "label12";
+            label12.Size = new Size(104, 23);
+            label12.TabIndex = 0;
+            label12.Text = "Ngày tháng:";
             // 
             // dataGridView2
             // 
@@ -313,11 +334,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(32, 185);
+            label3.Location = new Point(604, 27);
             label3.Name = "label3";
-            label3.Size = new Size(109, 23);
+            label3.Size = new Size(203, 23);
             label3.TabIndex = 0;
-            label3.Text = "phương thức";
+            label3.Text = "Phương thức thanh toán:";
             // 
             // tabPage2
             // 
@@ -327,10 +348,10 @@
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(button5);
             tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Location = new Point(4, 32);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 907);
+            tabPage2.Size = new Size(1145, 910);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -446,6 +467,13 @@
             label7.TabIndex = 0;
             label7.Text = "label7";
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(820, 73);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(250, 30);
+            dateTimePicker1.TabIndex = 18;
+            // 
             // AccGUI_menu
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -479,7 +507,6 @@
         private Button button3;
         private Button btnCustomer;
         private TabPage tabPage3;
-        private ComboBox comboBox2;
         private ComboBox comboBox1;
         private Button button8;
         private Button button7;
@@ -514,5 +541,8 @@
         private DataGridViewTextBoxColumn Status;
         private DataGridViewTextBoxColumn StatusTime;
         private DataGridViewTextBoxColumn Payment;
+        private TextBox textBox6;
+        private Label label12;
+        private DateTimePicker dateTimePicker1;
     }
 }
