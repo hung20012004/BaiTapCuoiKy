@@ -25,6 +25,7 @@ namespace GUI
             this.user = user;
             InitializeComponent();
         }
+        #region LoadingEvent
         private void LoadingCustomer()
         {
 
@@ -34,13 +35,13 @@ namespace GUI
                 dgvKhachHang.Rows.Add(item.ID, item.Name, item.Phone, item.Address);
             }
             DataGridViewRow row = dgvKhachHang.Rows[0];
-            /*if (Convert.ToString(row.Cells["colID"].Value) != "")
+            if (Convert.ToString(row.Cells["colID"].Value) != "")
             {
                 txbID.Text = Convert.ToString(row.Cells["colID"].Value);
                 txbName.Text = Convert.ToString(row.Cells["colName"].Value);
                 txbPhone.Text = Convert.ToString(row.Cells["colPhone"].Value);
                 txbAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
-            }*/
+            }
         }
         private void LoadingOrder()
         {
@@ -48,9 +49,11 @@ namespace GUI
             foreach (Order item in OrderBUS.Instance.get())
             {
 
-               dgvOrder.Rows.Add(item.Order_ID, item.Laptop_ID, item.Price, item.Quantity, item.Customer_ID, item.Accountant_ID, item.Seller_ID, item.DATE, item.STATUS);
+                dgvOrder.Rows.Add(item.Order_ID, item.Laptop_ID, item.Price, item.Quantity, item.Customer_ID, item.Accountant_ID, item.Seller_ID, item.DATE, item.STATUS);
             }
         }
+        #endregion
+
         private void SellGUI_menu_Load(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
@@ -60,7 +63,7 @@ namespace GUI
             ManageInterface(state);
             cbTimKiem_CheckedChanged(sender, e);
         }
-
+        #region ClickEvent
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 1;
@@ -88,74 +91,48 @@ namespace GUI
             }
 
         }
-        public void ManageInterface(string state)
-        {
-            switch (state)
-            {
-                case "Start":
-                    txbID.Enabled = false;
-                    txbName.Enabled = false;
-                    txbPhone.Enabled = false;
-                    txbAddress.Enabled = false;
-                    btnThem.Enabled = true;
-                    btnSua.Enabled = true;
-                    btnXoa.Enabled = true;
-                    btnHuy.Enabled = false;
-                    btnGhi.Enabled = false;
-                    break;
-                case "Add":
-                    txbID.Enabled = false;
-                    txbName.Enabled = true;
-                    txbPhone.Enabled = true;
-                    txbAddress.Enabled = true;
-                    btnThem.Enabled = false;
-                    btnSua.Enabled = false;
-                    btnXoa.Enabled = false;
-                    btnHuy.Enabled = true;
-                    btnGhi.Enabled = true;
-                    break;
-                case "Update":
-                    txbID.Enabled = false;
-                    txbName.Enabled = true;
-                    txbPhone.Enabled = true;
-                    txbAddress.Enabled = true;
-                    btnThem.Enabled = false;
-                    btnSua.Enabled = false;
-                    btnXoa.Enabled = false;
-                    btnHuy.Enabled = true;
-                    btnGhi.Enabled = true;
-                    break;
-                case "Delete":
-                    btnThem.Enabled = false;
-                    btnSua.Enabled = false;
-                    btnXoa.Enabled = false;
-                    btnHuy.Enabled = true;
-                    btnGhi.Enabled = true;
-                    break;
-            }
-        }
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             state = "Add";
             ManageInterface(state);
         }
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            state = "Update";
+            ManageInterface(state);
+        }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CustomerBUS.Instance.delete(customer);
+                this.dgvKhachHang.DataSource = null;
+                this.dgvKhachHang.Rows.Clear();
+                LoadingCustomer();
+                ManageInterface("Start");
+            }
+        }
         private void btnGhi_Click(object sender, EventArgs e)
         {
             if (state == "Add")
             {
                 if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
                 {
-                    CustomerBUS.Instance.insert(customer);
-                    this.dgvKhachHang.DataSource = null;
-                    this.dgvKhachHang.Rows.Clear();
-                    LoadingCustomer();
-                    MessageBox.Show("Thêm thông tin thành công", "Thông báo");
-                    ManageInterface("Start");
+                    if (CustomerBUS.Instance.check(customer) == true)
+                    {
+                        MessageBox.Show("Số điện thoại đã tồn tại");
+                    }
+                    else
+                    {
+                        CustomerBUS.Instance.insert(customer);
+                        this.dgvKhachHang.DataSource = null;
+                        this.dgvKhachHang.Rows.Clear();
+                        LoadingCustomer();
+                        MessageBox.Show("Thêm thông tin thành công", "Thông báo");
+                        ManageInterface("Start");
+                    }
                 }
                 else
                 {
@@ -178,54 +155,14 @@ namespace GUI
                     MessageBox.Show("Yêu cầu nhập đầy đủ thông tin!", "Thông báo");
                 }
             }
-            if (state == "Delete")
-            {
-                if (MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    CustomerBUS.Instance.delete(customer);
-                    this.dgvKhachHang.DataSource = null;
-                    this.dgvKhachHang.Rows.Clear();
-                    LoadingCustomer();
-                    ManageInterface("Start");
-                }
-            }
         }
-
-        private void txbID_TextChanged(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
-            if (txbID.Text.Length > 0)
-            {
-                customer.ID = Convert.ToInt32(txbID.Text);
-            }
+            txbID.Text = "";
+            txbName.Text = "";
+            txbPhone.Text = "";
+            txbAddress.Text = "";
         }
-
-        private void txbName_TextChanged(object sender, EventArgs e)
-        {
-            customer.Name = txbName.Text;
-        }
-
-        private void txbPhone_TextChanged(object sender, EventArgs e)
-        {
-            customer.Phone = txbPhone.Text;
-        }
-
-        private void txbAddress_TextChanged(object sender, EventArgs e)
-        {
-            customer.Address = txbAddress.Text;
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            state = "Update";
-            ManageInterface(state);
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            state = "Delete";
-            ManageInterface(state);
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             if (cboTimKiem.Text == "ID")
@@ -285,20 +222,78 @@ namespace GUI
                 cboTimKiem.Visible = false;
             }
         }
-
-        private void txbTimKiem_TextChanged(object sender, EventArgs e)
+        #endregion
+        public void ManageInterface(string state)
         {
-
+            switch (state)
+            {
+                case "Start":
+                    txbID.Enabled = false;
+                    txbName.Enabled = false;
+                    txbPhone.Enabled = false;
+                    txbAddress.Enabled = false;
+                    btnThem.Enabled = true;
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
+                    btnHuy.Enabled = false;
+                    btnGhi.Enabled = false;
+                    break;
+                case "Add":
+                    txbID.Enabled = false;
+                    txbName.Enabled = true;
+                    txbPhone.Enabled = true;
+                    txbAddress.Enabled = true;
+                    btnThem.Enabled = false;
+                    btnSua.Enabled = false;
+                    btnXoa.Enabled = false;
+                    btnHuy.Enabled = true;
+                    btnGhi.Enabled = true;
+                    break;
+                case "Update":
+                    txbID.Enabled = false;
+                    txbName.Enabled = true;
+                    txbPhone.Enabled = true;
+                    txbAddress.Enabled = true;
+                    btnThem.Enabled = false;
+                    btnSua.Enabled = false;
+                    btnXoa.Enabled = false;
+                    btnHuy.Enabled = true;
+                    btnGhi.Enabled = true;
+                    break;
+                case "Delete":
+                    btnThem.Enabled = false;
+                    btnSua.Enabled = false;
+                    btnXoa.Enabled = false;
+                    btnHuy.Enabled = true;
+                    btnGhi.Enabled = true;
+                    break;
+            }
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        #region TextChangeEvent
+        private void txbID_TextChanged(object sender, EventArgs e)
         {
-
+            if (txbID.Text.Length > 0)
+            {
+                customer.ID = Convert.ToInt32(txbID.Text);
+            }
         }
 
-        private void tabPage3_Click(object sender, EventArgs e)
+        private void txbName_TextChanged(object sender, EventArgs e)
         {
-
+            customer.Name = txbName.Text;
         }
+
+        private void txbPhone_TextChanged(object sender, EventArgs e)
+        {
+            customer.Phone = txbPhone.Text;
+        }
+
+        private void txbAddress_TextChanged(object sender, EventArgs e)
+        {
+            customer.Address = txbAddress.Text;
+        }
+        #endregion
+
     }
 }

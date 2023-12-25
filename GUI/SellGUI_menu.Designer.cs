@@ -208,14 +208,13 @@
             tabPage2.Controls.Add(btnThem);
             tabPage2.Controls.Add(btnSua);
             tabPage2.Controls.Add(dgvKhachHang);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 910);
+            tabPage2.Size = new Size(1145, 907);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
-            tabPage2.Click += tabPage2_Click;
             // 
             // cboTimKiem
             // 
@@ -243,7 +242,6 @@
             txbTimKiem.Name = "txbTimKiem";
             txbTimKiem.Size = new Size(125, 30);
             txbTimKiem.TabIndex = 15;
-            txbTimKiem.TextChanged += txbTimKiem_TextChanged;
             // 
             // btnTimKiem
             // 
@@ -263,6 +261,7 @@
             btnHuy.TabIndex = 13;
             btnHuy.Text = "Hủy";
             btnHuy.UseVisualStyleBackColor = true;
+            btnHuy.Click += btnHuy_Click;
             // 
             // txbAddress
             // 
@@ -445,7 +444,6 @@
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
-            tabPage3.Click += tabPage3_Click;
             // 
             // btnSuaOrder
             // 
@@ -480,7 +478,6 @@
             label10.Size = new Size(78, 23);
             label10.TabIndex = 17;
             label10.Text = "Số lượng";
-            label10.Click += label10_Click;
             // 
             // button14
             // 
@@ -493,7 +490,7 @@
             // 
             // button13
             // 
-            button13.Location = new Point(213, 250);
+            button13.Location = new Point(391, 164);
             button13.Name = "button13";
             button13.Size = new Size(112, 34);
             button13.TabIndex = 15;
@@ -534,7 +531,7 @@
             // 
             // button11
             // 
-            button11.Location = new Point(68, 250);
+            button11.Location = new Point(392, 206);
             button11.Name = "button11";
             button11.Size = new Size(112, 34);
             button11.TabIndex = 9;

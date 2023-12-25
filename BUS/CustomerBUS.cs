@@ -33,9 +33,9 @@ namespace BUS
         {
             return CustomerDAL.Instance.delete(customer);
         }
-        public bool TimKiem(Customer customer)
+        public bool check(Customer customer)
         {
-            return CustomerDAL.Instance.TimKiem(customer);
+            return CustomerDAL.Instance.Check(customer);
         }
     }
 }
