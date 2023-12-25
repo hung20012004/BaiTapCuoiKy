@@ -18,7 +18,8 @@ namespace GUI
             {
                 this.Hide();
                 userRole();
-                this.Show();
+                /*this.Show();*/
+                
             }
             else
             {
@@ -42,7 +43,7 @@ namespace GUI
                     break;
                 case 1:
                     SellGUI_menu menu1 = new(user);
-                    menu1.ShowDialog();
+                    menu1.Show();
                     break;
                 case 2:
                     SellGUI_menu menu2 = new(user);
