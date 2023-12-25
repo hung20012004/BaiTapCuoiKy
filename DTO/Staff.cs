@@ -12,8 +12,8 @@ namespace DTO
         private string name;
         private string username;
         private string password;
-        private int roleInt=0;
-        private string roleString="Quản lý";
+        private int roleInt = 1;
+        private string roleString;
         public int ID
         {
             get { return id; }
