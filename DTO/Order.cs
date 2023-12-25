@@ -16,23 +16,23 @@ namespace DTO
             set { order_id = value; }
         }
 
-        private int customer_id;
+        private string customer_id;
 
-        public int Customer_id
+        public string Customer_id
         {
             get { return customer_id; }
             set { customer_id = value; }
         }
 
-        private int accoutant_id;
-        public int Accoutant_id
+        private string accoutant_id;
+        public string Accoutant_id
         {
             get { return accoutant_id; }
             set { accoutant_id = value; }
         }
 
-        private int seller_id;
-        public int Seller_id
+        private string seller_id;
+        public string Seller_id
         {
             get { return seller_id; }
             set { seller_id = value; }
@@ -64,15 +64,12 @@ namespace DTO
             switch (statusInt)
             {
                 case 0:
-                    statusString = "Chưa thanh toán";
-                    break;
-                case 1:
                     statusString = "Đang xử lý";
                     break;
-                case 2:
+                case 1:
                     statusString = "Đã thanh toán";
                     break;
-                case 3:
+                case 2:
                     statusString = "Hủy";
                     break;
             }
@@ -81,17 +78,14 @@ namespace DTO
         {
             switch (statusString)
             {
-                case "Chưa thanh toán":
+                case "Đang xử lý":
                     statusInt = 0;
                     break;
-                case "Đang xử lý":
+                case "Đã thanh toán":
                     statusInt = 1;
                     break;
-                case "Đã thanh toán":
-                    statusInt = 2;
-                    break;
                 case "Hủy":
-                    statusInt = 3;
+                    statusInt = 2;
                     break;
             }
         }

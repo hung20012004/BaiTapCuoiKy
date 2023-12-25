@@ -31,9 +31,9 @@ namespace DAL
                 {
                     Order order = new Order();
                     order.Order_id = reader.GetInt32("order_id");
-                    order.Customer_id = reader.GetInt32("customer_id");
-                    order.Accoutant_id = reader.GetInt32("accoutant_id");
-                    order.Seller_id = reader.GetInt32("seller_id");
+                    order.Customer_id = reader.GetString("customer_id");
+                    order.Accoutant_id = reader.GetString("accoutant_id");
+                    order.Seller_id = reader.GetString("seller_id");
                     order.Order_date = reader.GetDateTime("order_date");
                     order.StatusInt = reader.GetInt32("status");
                     order.UpdateStatusTime = reader.GetDateTime("update_status_time");
@@ -44,5 +44,6 @@ namespace DAL
             conn.Close();
             return list;
         }
+
     }
 }
