@@ -118,12 +118,17 @@ namespace GUI
         {
             if (state == "Add")
             {
+                char [] PhoneArr = customer.Phone.ToCharArray();
                 if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
                 {
-                    if (CustomerBUS.Instance.check(customer) == true)
+                    if (CustomerBUS.Instance.CheckPhone(customer)==true)
                     {
                         MessageBox.Show("Số điện thoại đã tồn tại");
                     }
+                    else if(PhoneArr.Length != 10)
+                    {
+                        MessageBox.Show("Số điện thoại phải đúng đủ 10 số!");
+                    }    
                     else
                     {
                         CustomerBUS.Instance.insert(customer);
@@ -286,7 +291,8 @@ namespace GUI
 
         private void txbPhone_TextChanged(object sender, EventArgs e)
         {
-            customer.Phone = txbPhone.Text;
+         
+                customer.Phone = txbPhone.Text;
         }
 
         private void txbAddress_TextChanged(object sender, EventArgs e)
