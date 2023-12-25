@@ -52,7 +52,10 @@ namespace GUI
             tabControl1.SelectedIndex = 1;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of be05ec6 (23/12)
         private string createUsername()
         {
             string username = "";
@@ -84,6 +87,9 @@ namespace GUI
             }
             return string.Join(null, password);
         }
+<<<<<<< HEAD
+>>>>>>> parent of be05ec6 (23/12)
+=======
 >>>>>>> parent of be05ec6 (23/12)
         #endregion
 
@@ -119,8 +125,11 @@ namespace GUI
                 cbRole.Text = Convert.ToString(row.Cells["Column5"].Value);
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> parent of be05ec6 (23/12)
         }
         private void btnThem1_Click(object sender, EventArgs e)
         {
