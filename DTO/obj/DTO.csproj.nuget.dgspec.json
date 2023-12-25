@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C\\GitHub\\BaiTapCuoiKy\\DTO\\DTO.csproj": {}
+    "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj": {}
   },
   "projects": {
-    "D:\\C\\GitHub\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
+    "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C\\GitHub\\BaiTapCuoiKy\\DTO\\DTO.csproj",
+        "projectUniqueName": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "D:\\C\\GitHub\\BaiTapCuoiKy\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\khoa6\\.nuget\\packages\\",
-        "outputPath": "D:\\C\\GitHub\\BaiTapCuoiKy\\DTO\\obj\\",
+        "projectPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\GIT-HUB\\BaiTapCuoiKy\\DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\khoa6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,26 +50,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.14, 7.0.14]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.14, 7.0.14]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.14, 7.0.14]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
