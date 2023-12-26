@@ -53,7 +53,10 @@ namespace GUI
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of be05ec6 (23/12)
 =======
 >>>>>>> parent of be05ec6 (23/12)
         private string createUsername()
@@ -88,6 +91,9 @@ namespace GUI
             return string.Join(null, password);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of be05ec6 (23/12)
+=======
 >>>>>>> parent of be05ec6 (23/12)
 =======
 >>>>>>> parent of be05ec6 (23/12)
@@ -126,8 +132,11 @@ namespace GUI
             }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> parent of be05ec6 (23/12)
 =======
 >>>>>>> parent of be05ec6 (23/12)
         }
