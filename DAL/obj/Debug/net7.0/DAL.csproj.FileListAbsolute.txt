@@ -43,6 +43,7 @@ C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.dll
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DAL\obj\Debug\net7.0\refint\DAL.dll
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.pdb
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll
+<<<<<<< HEAD
 C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
 C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
@@ -59,3 +60,20 @@ C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.dll
 C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.pdb
 C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
 C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll
+=======
+C:\GIT-HUB\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.deps.json
+C:\GIT-HUB\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.dll
+C:\GIT-HUB\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.pdb
+C:\GIT-HUB\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.dll
+C:\GIT-HUB\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.pdb
+C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
+C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.dll
+C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\refint\DAL.dll
+C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.pdb
+C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll
+>>>>>>> upstream/23/12
