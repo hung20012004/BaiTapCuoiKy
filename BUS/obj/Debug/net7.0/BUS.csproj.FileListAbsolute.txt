@@ -58,3 +58,12 @@ C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.source
 C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.dll
 C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\refint\BUS.dll
 C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.pdb
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\bin\Debug\net7.0\BUS.deps.json
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\bin\Debug\net7.0\BUS.dll
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\bin\Debug\net7.0\BUS.pdb
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\bin\Debug\net7.0\DAL.dll
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\bin\Debug\net7.0\DTO.dll
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\bin\Debug\net7.0\DAL.pdb
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\bin\Debug\net7.0\DTO.pdb
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.csproj.CopyComplete
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\BUS\obj\Debug\net7.0\ref\BUS.dll

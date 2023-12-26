@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,55 @@ namespace GUI
         public WarehouseUI_menu()
         {
             InitializeComponent();
+        }
+        void loading()
+        {
+            btGhi.Enabled = false;
+            btHuy.Enabled = false;
+            btThem.Enabled = true;
+            btSua.Enabled = true;
+            btXoa.Enabled = true;
+        }
+        void reset()
+        {
+
+        }
+
+        private void WarehouseUI_menu_Load(object sender, EventArgs e)
+        {
+            loading();
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            btGhi.Enabled = true;
+            btHuy.Enabled = true;
+            btSua.Enabled = false;
+            btXoa.Enabled = false;
+            reset();
+        }
+
+        private void btSua_Click(object sender, EventArgs e)
+        {
+            btGhi.Enabled = true;
+            btHuy.Enabled = true;
+            btThem.Enabled = false;
+            btXoa.Enabled = false;
+            reset();
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            btSua.Enabled = false;
+            btThem.Enabled = false;
+            if (tbNCC.Text != "")
+            {
+                if (MessageBox.Show("Ban muon xoa nha cung cap", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    DBConfig.deleteData(...);
+                else MessageBox.Show("Xóa nha cung cap thanh cong!");
+
+            }
+            Loading();
         }
     }
 }
