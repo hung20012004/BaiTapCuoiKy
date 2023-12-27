@@ -43,7 +43,7 @@ namespace GUI
                 txbAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
             }
         }
-       /* private void LoadingOrder()
+        private void LoadingOrder()
         {
 
             foreach (Order item in OrderBUS.Instance.get())
@@ -51,14 +51,14 @@ namespace GUI
 
                 dgvOrder.Rows.Add(item.Order_ID, item.Laptop_ID, item.Price, item.Quantity, item.Customer_ID, item.Accountant_ID, item.Seller_ID, item.DATE, item.STATUS);
             }
-        }*/
+        }
         #endregion
 
         private void SellGUI_menu_Load(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
             LoadingCustomer();
-            //LoadingOrder();
+            LoadingOrder();
             state = "Start";
             ManageInterface(state);
             cbTimKiem_CheckedChanged(sender, e);

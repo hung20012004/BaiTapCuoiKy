@@ -20,7 +20,7 @@ namespace DAL
         }
         public void Open()
         {
-            if(conn.State != ConnectionState.Open)
+            if (conn.State != ConnectionState.Open)
             {
                 conn.Open();
             }
@@ -37,7 +37,7 @@ namespace DAL
             List<Customer> list = new List<Customer>();
 
             Open();
-            using (var cmd = new SqlCommand("GetStaff", conn))
+            using (var cmd = new SqlCommand("getKhachHang", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 DbDataReader reader = cmd.ExecuteReader();
@@ -46,7 +46,7 @@ namespace DAL
                     Customer customer = new Customer();
                     customer.ID = reader.GetInt32("customer_id");
                     customer.Name = reader.GetString("customer_name");
-                    customer.Phone= reader.GetString("phone");
+                    customer.Phone = reader.GetString("phone");
                     customer.Address = reader.GetString("address");
                     list.Add(customer);
                 }
@@ -70,13 +70,13 @@ namespace DAL
             return false;
 
         }
-        public bool insert (Customer customer)
+        public bool insert(Customer customer)
         {
             try
             {
-                Open ();
+                Open();
                 using (var cmd = new SqlCommand("addKhachHang", conn))
-                {   
+                {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
                     cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = customer.Phone;
