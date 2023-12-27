@@ -84,6 +84,7 @@ namespace DAL
                     cmd.Parameters.Add("@order_id", SqlDbType.Int).Value = order.ID;
                     cmd.Parameters.Add("@payment", SqlDbType.NVarChar).Value = order.PaymentInt;
                     cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = order.StatusInt;
+                    cmd.Parameters.Add("@accountant_id", SqlDbType.Int).Value = order.Accountant.ID;
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();
