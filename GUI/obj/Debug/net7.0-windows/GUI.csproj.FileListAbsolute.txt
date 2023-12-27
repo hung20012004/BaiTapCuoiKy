@@ -138,3 +138,4 @@ C:\GIT-HUB\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.CopyComplete
 C:\GIT-HUB\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.genruntimeconfig.cache
 C:\GIT-HUB\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\ref\GUI.dll
 >>>>>>> upstream/23/12
+C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ValidateMessageBox.resources

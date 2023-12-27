@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
@@ -120,7 +121,7 @@ namespace DTO
         public string Size
         {
             get { return size; }
-            set { size  = value; }
+            set { size = value; }
         }
         public string OS
         {
@@ -132,7 +133,7 @@ namespace DTO
             get { return warranty_period; }
             set { warranty_period = value; }
         }
-        public decimal  Price
+        public decimal Price
         {
             get { return price; }
             set { price = value; }
@@ -140,7 +141,8 @@ namespace DTO
         public int Quantity
         {
             get { return quantity; }
-            set { quantity   = value; }
+            set { quantity = value; }
         }
+
     }
 }
