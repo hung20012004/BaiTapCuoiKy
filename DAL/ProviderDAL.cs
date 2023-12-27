@@ -29,8 +29,8 @@ namespace DAL
                 while (reader.Read())
                 {
                     Provider provider = new Provider();
-                    provider.ID = reader.GetInt32("id");
-                    provider.Name = reader.GetString("name");
+                    provider.ID = reader.GetInt32("provider_id");
+                    provider.Name = reader.GetString("provider_name");
                     provider.Address = reader.GetString("address");
                     provider.Phone = reader.GetString("phone");
                     list.Add(provider);

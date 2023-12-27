@@ -23,7 +23,7 @@ namespace DAL
         {
             List<Staff> list = new List<Staff>();
             conn.Open();
-            using (var cmd = new SqlCommand("GetStaff", conn))
+            using (var cmd = new SqlCommand("GetStaffData", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 DbDataReader reader = cmd.ExecuteReader();           
@@ -46,7 +46,7 @@ namespace DAL
             try
             {
                 conn.Open();
-                using (var cmd = new SqlCommand("InsertStaff", conn))
+                using (var cmd = new SqlCommand("InsertStaffData", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@staff_name", SqlDbType.NVarChar).Value = staff.Name;
@@ -68,7 +68,7 @@ namespace DAL
             try
             {
                 conn.Open();
-                using (var cmd = new SqlCommand("UpdateStaff", conn))
+                using (var cmd = new SqlCommand("UpdateStaffData", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@staff_id", SqlDbType.Int).Value = staff.ID;
@@ -91,7 +91,7 @@ namespace DAL
             try
             {
                 conn.Open();
-                using (var cmd = new SqlCommand("DeleteStaff", conn))
+                using (var cmd = new SqlCommand("DeleteStaffData", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@staff_id", SqlDbType.Int).Value = staff.ID;

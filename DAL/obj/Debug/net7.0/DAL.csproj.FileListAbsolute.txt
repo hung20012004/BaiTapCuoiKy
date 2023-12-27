@@ -43,53 +43,64 @@ C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.dll
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DAL\obj\Debug\net7.0\refint\DAL.dll
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.pdb
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll
-<<<<<<< HEAD
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.sourcelink.json
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.dll
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\refint\DAL.dll
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.pdb
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.deps.json
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.dll
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.pdb
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.dll
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.pdb
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll
-=======
-C:\GIT-HUB\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.deps.json
-C:\GIT-HUB\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.dll
-C:\GIT-HUB\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.pdb
-C:\GIT-HUB\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.dll
-C:\GIT-HUB\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.pdb
-C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
-C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
-C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
-C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
-C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
-C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.dll
-C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\refint\DAL.dll
-C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.pdb
-C:\GIT-HUB\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll
->>>>>>> upstream/23/12
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.sourcelink.json
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.dll
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\refint\DAL.dll
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.pdb
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.deps.json
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.dll
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.pdb
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.dll
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.pdb
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.deps.json
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.dll
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.pdb
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.dll
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.pdb
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.dll
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\obj\Debug\net7.0\refint\DAL.dll
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.pdb
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.deps.json
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.pdb
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.pdb
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\refint\DAL.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.pdb
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll
+D:\C\GitHub\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.deps.json
+D:\C\GitHub\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.dll
+D:\C\GitHub\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.pdb
+D:\C\GitHub\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.dll
+D:\C\GitHub\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.pdb
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.sourcelink.json
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.dll
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\refint\DAL.dll
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.pdb
+D:\C\GitHub\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\obj\Debug\net7.0\refint\DAL.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.pdb
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.deps.json
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DAL.pdb
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\bin\Debug\net7.0\DTO.pdb
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DAL\obj\Debug\net7.0\ref\DAL.dll

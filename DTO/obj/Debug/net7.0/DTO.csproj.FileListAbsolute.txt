@@ -20,42 +20,48 @@ C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
 C:\Users\Manh Hung\Desktop\UTT\Project\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll
-<<<<<<< HEAD
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.deps.json
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.dll
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.pdb
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.sourcelink.json
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
-C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll
-=======
-C:\GIT-HUB\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.deps.json
-C:\GIT-HUB\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.dll
-C:\GIT-HUB\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.pdb
-C:\GIT-HUB\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.AssemblyReference.cache
-C:\GIT-HUB\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
-C:\GIT-HUB\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
-C:\GIT-HUB\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
-C:\GIT-HUB\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
-C:\GIT-HUB\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
-C:\GIT-HUB\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
-C:\GIT-HUB\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
-C:\GIT-HUB\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll
->>>>>>> upstream/23/12
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.deps.json
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.dll
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.pdb
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.sourcelink.json
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
-C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.deps.json
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.dll
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.pdb
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
+G:\C#\CS\Cuoi_Ky\Laptop_Store\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.deps.json
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.pdb
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll
+D:\C\GitHub\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.deps.json
+D:\C\GitHub\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.dll
+D:\C\GitHub\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.pdb
+D:\C\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+D:\C\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
+D:\C\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
+D:\C\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
+D:\C\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.sourcelink.json
+D:\C\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
+D:\C\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
+D:\C\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
+D:\C\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.deps.json
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.pdb
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll

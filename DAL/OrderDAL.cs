@@ -45,28 +45,6 @@ namespace DAL
             conn.Close();
             return list;
         }
-        public bool insert(Order order)
-        {
-            try
-            {
-                conn.Open();
-                using (var cmd = new SqlCommand("InsertOrder", conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@", SqlDbType.NVarChar).Value = order.Customer;
-                    cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = order.Seller;
-                    cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = order.PaymentInt;
-        //            cmd.Parameters.Add("@role", SqlDbType.Int).Value = order.;
-                    cmd.ExecuteNonQuery();
-                }
-                conn.Close();
-                return true;
-            
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        
     }
 }
