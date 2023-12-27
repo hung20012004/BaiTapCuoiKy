@@ -52,7 +52,7 @@ namespace GUI
                     menu2.ShowDialog();
                     break;
                 case 3:
-                    SellGUI_menu menu3 = new(user);
+                    WarehouseUI_menu menu3 = new(user);
                     menu3.ShowDialog();
                     break;
                 case 4:
