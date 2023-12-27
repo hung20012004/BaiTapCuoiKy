@@ -28,26 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            button5 = new Button();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
-            tpSP = new TabControl();
+            tabControl1 = new TabControl();
             tabPage2 = new TabPage();
+            tbPhone = new TextBox();
+            tbAddress = new TextBox();
             btSua = new Button();
             btHuy = new Button();
             btXoa = new Button();
-            tbNCC = new TextBox();
+            tbID = new TextBox();
             label11 = new Label();
-            textBox6 = new TextBox();
+            tbName = new TextBox();
             label10 = new Label();
-            button10 = new Button();
             btGhi = new Button();
             btThem = new Button();
-            textBox2 = new TextBox();
             dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             tabPage1 = new TabPage();
             btHuy1 = new Button();
             cbbManufactory_ID = new ComboBox();
@@ -116,13 +118,13 @@
             dataGridView2 = new DataGridView();
             label4 = new Label();
             label3 = new Label();
-            button1 = new Button();
             pictureBox1 = new PictureBox();
             button3 = new Button();
-            btnCustomer = new Button();
+            btSanPham = new Button();
             groupBox1 = new GroupBox();
-            button4 = new Button();
-            tpSP.SuspendLayout();
+            btNhaCungCap = new Button();
+            btNhapKho = new Button();
+            tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage1.SuspendLayout();
@@ -133,37 +135,23 @@
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(150, 60);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 25);
-            textBox1.TabIndex = 7;
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(50, 110);
             label2.Name = "label2";
-            label2.Size = new Size(45, 19);
+            label2.Size = new Size(89, 19);
             label2.TabIndex = 6;
-            label2.Text = "label2";
+            label2.Text = "Số điện thoại";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(50, 60);
             label1.Name = "label1";
-            label1.Size = new Size(45, 19);
+            label1.Size = new Size(50, 19);
             label1.TabIndex = 5;
-            label1.Text = "label1";
-            // 
-            // button5
-            // 
-            button5.Location = new Point(0, 0);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 19;
+            label1.Text = "Địa chỉ";
             // 
             // comboBox2
             // 
@@ -181,34 +169,32 @@
             comboBox1.Size = new Size(182, 25);
             comboBox1.TabIndex = 11;
             // 
-            // tpSP
+            // tabControl1
             // 
-            tpSP.Controls.Add(tabPage2);
-            tpSP.Controls.Add(tabPage1);
-            tpSP.Controls.Add(tabPage3);
-            tpSP.Location = new Point(324, 1);
-            tpSP.Name = "tpSP";
-            tpSP.SelectedIndex = 0;
-            tpSP.Size = new Size(1153, 943);
-            tpSP.TabIndex = 20;
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Location = new Point(324, 1);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1153, 943);
+            tabControl1.TabIndex = 20;
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(tbPhone);
+            tabPage2.Controls.Add(tbAddress);
             tabPage2.Controls.Add(btSua);
             tabPage2.Controls.Add(btHuy);
             tabPage2.Controls.Add(btXoa);
-            tabPage2.Controls.Add(tbNCC);
+            tabPage2.Controls.Add(tbID);
             tabPage2.Controls.Add(label11);
-            tabPage2.Controls.Add(textBox6);
+            tabPage2.Controls.Add(tbName);
             tabPage2.Controls.Add(label10);
-            tabPage2.Controls.Add(button10);
             tabPage2.Controls.Add(btGhi);
             tabPage2.Controls.Add(btThem);
-            tabPage2.Controls.Add(textBox2);
-            tabPage2.Controls.Add(textBox1);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label1);
-            tabPage2.Controls.Add(button5);
             tabPage2.Controls.Add(dataGridView1);
             tabPage2.Location = new Point(4, 26);
             tabPage2.Name = "tabPage2";
@@ -217,6 +203,20 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tbPhone
+            // 
+            tbPhone.Location = new Point(150, 107);
+            tbPhone.Name = "tbPhone";
+            tbPhone.Size = new Size(150, 25);
+            tbPhone.TabIndex = 22;
+            // 
+            // tbAddress
+            // 
+            tbAddress.Location = new Point(150, 60);
+            tbAddress.Name = "tbAddress";
+            tbAddress.Size = new Size(150, 25);
+            tbAddress.TabIndex = 21;
             // 
             // btSua
             // 
@@ -247,44 +247,37 @@
             btXoa.UseVisualStyleBackColor = true;
             btXoa.Click += btXoa_Click;
             // 
-            // tbNCC
+            // tbID
             // 
-            tbNCC.Location = new Point(150, 10);
-            tbNCC.Name = "tbNCC";
-            tbNCC.Size = new Size(150, 25);
-            tbNCC.TabIndex = 15;
+            tbID.Location = new Point(150, 10);
+            tbID.Name = "tbID";
+            tbID.Size = new Size(150, 25);
+            tbID.TabIndex = 15;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(50, 10);
+            label11.Location = new Point(34, 163);
             label11.Name = "label11";
             label11.Size = new Size(93, 19);
             label11.TabIndex = 14;
             label11.Text = "Nhà cung cấp";
             // 
-            // textBox6
+            // tbName
             // 
-            textBox6.Location = new Point(150, 160);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(150, 25);
-            textBox6.TabIndex = 13;
+            tbName.Location = new Point(150, 160);
+            tbName.Name = "tbName";
+            tbName.Size = new Size(150, 25);
+            tbName.TabIndex = 13;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(50, 160);
+            label10.Location = new Point(52, 19);
             label10.Name = "label10";
-            label10.Size = new Size(53, 19);
+            label10.Size = new Size(23, 19);
             label10.TabIndex = 12;
-            label10.Text = "label10";
-            // 
-            // button10
-            // 
-            button10.Location = new Point(0, 0);
-            button10.Name = "button10";
-            button10.Size = new Size(75, 23);
-            button10.TabIndex = 17;
+            label10.Text = "ID";
             // 
             // btGhi
             // 
@@ -305,22 +298,36 @@
             btThem.UseVisualStyleBackColor = true;
             btThem.Click += btThem_Click;
             // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(150, 110);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 25);
-            textBox2.TabIndex = 8;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
             dataGridView1.Location = new Point(5, 290);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(1140, 604);
+            dataGridView1.Size = new Size(1101, 604);
             dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Nhà cung cấp";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Địa chỉ";
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Số điện thoại";
+            Column4.Name = "Column4";
             // 
             // tabPage1
             // 
@@ -377,9 +384,9 @@
             tabPage1.Controls.Add(label9);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
-            tabPage1.Location = new Point(4, 26);
+            tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1145, 913);
+            tabPage1.Size = new Size(1145, 915);
             tabPage1.TabIndex = 4;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -956,15 +963,6 @@
             label3.TabIndex = 0;
             label3.Text = "Nhà cung cấp";
             // 
-            // button1
-            // 
-            button1.Location = new Point(0, 288);
-            button1.Name = "button1";
-            button1.Size = new Size(323, 83);
-            button1.TabIndex = 4;
-            button1.Text = "Nhà cung cấp";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             pictureBox1.Location = new Point(0, 0);
@@ -982,22 +980,23 @@
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
             // 
-            // btnCustomer
+            // btSanPham
             // 
-            btnCustomer.Location = new Point(0, 377);
-            btnCustomer.Name = "btnCustomer";
-            btnCustomer.Size = new Size(323, 83);
-            btnCustomer.TabIndex = 0;
-            btnCustomer.Text = "Sản phẩm";
-            btnCustomer.UseVisualStyleBackColor = true;
+            btSanPham.Location = new Point(0, 377);
+            btSanPham.Name = "btSanPham";
+            btSanPham.Size = new Size(323, 83);
+            btSanPham.TabIndex = 0;
+            btSanPham.Text = "Sản phẩm";
+            btSanPham.UseVisualStyleBackColor = true;
+            btSanPham.Click += btSanPham_Click;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btNhaCungCap);
+            groupBox1.Controls.Add(btNhapKho);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(btnCustomer);
+            groupBox1.Controls.Add(btSanPham);
             groupBox1.Location = new Point(1, 1);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(323, 943);
@@ -1005,28 +1004,38 @@
             groupBox1.TabStop = false;
             groupBox1.Text = " ";
             // 
-            // button4
+            // btNhaCungCap
             // 
-            button4.Location = new Point(0, 466);
-            button4.Name = "button4";
-            button4.Size = new Size(323, 83);
-            button4.TabIndex = 5;
-            button4.Text = "Hóa đơn nhập kho";
-            button4.UseVisualStyleBackColor = true;
+            btNhaCungCap.Location = new Point(3, 288);
+            btNhaCungCap.Name = "btNhaCungCap";
+            btNhaCungCap.Size = new Size(323, 83);
+            btNhaCungCap.TabIndex = 23;
+            btNhaCungCap.Text = "Nhà cung cấp";
+            btNhaCungCap.UseVisualStyleBackColor = true;
+            btNhaCungCap.Click += btNhaCungCap_Click;
+            // 
+            // btNhapKho
+            // 
+            btNhapKho.Location = new Point(0, 466);
+            btNhapKho.Name = "btNhapKho";
+            btNhapKho.Size = new Size(323, 83);
+            btNhapKho.TabIndex = 5;
+            btNhapKho.Text = "Hóa đơn nhập kho";
+            btNhapKho.UseVisualStyleBackColor = true;
             // 
             // WarehouseUI_menu
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1478, 944);
-            Controls.Add(tpSP);
+            Controls.Add(tabControl1);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "WarehouseUI_menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "WarehouseStaff";
             Load += WarehouseUI_menu_Load;
-            tpSP.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -1049,7 +1058,7 @@
         private Button button5;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
-        private TabControl tpSP;
+        private TabControl tabControl1;
         private TabPage tabPage3;
         private DataGridView dataGridView2;
         private Label label4;
@@ -1065,9 +1074,9 @@
         private Button button1;
         private PictureBox pictureBox1;
         private Button button3;
-        private Button btnCustomer;
+        private Button btSanPham;
         private GroupBox groupBox1;
-        private Button button4;
+        private Button btNhapKho;
         private Button button10;
         private Button btGhi;
         private Button btThem;
@@ -1078,9 +1087,9 @@
         private TextBox tbHD;
         private TextBox tbVGA;
         private Button btThem1;
-        private TextBox tbNCC;
+        private TextBox tbID;
         private Label label11;
-        private TextBox textBox6;
+        private TextBox tbName;
         private Label label10;
         private Button button14;
         private Button button15;
@@ -1137,5 +1146,12 @@
         private ComboBox cbbManufactory_ID;
         private ComboBox cbbCategory_ID;
         private Button btHuy1;
+        private TextBox tbPhone;
+        private TextBox tbAddress;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private Button btNhaCungCap;
     }
 }

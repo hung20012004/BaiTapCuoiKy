@@ -139,3 +139,40 @@ C:\GIT-HUB\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.genruntimeconfig.cache
 C:\GIT-HUB\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\ref\GUI.dll
 >>>>>>> upstream/23/12
 C:\Users\Admin\Documents\New folder\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ValidateMessageBox.resources
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AccGUI_menu.resources
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.CustomerSeviceUI_menu.resources
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.LoginGUI.resources
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ManagerGUI_menu.resources
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.SellGUI_menu.resources
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ValidateMessageBox.resources
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.WarehouseUI_menu.resources
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AssemblyInfo.cs
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.sourcelink.json
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\refint\GUI.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.pdb
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\GUI.exe
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\GUI.deps.json
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\GUI.runtimeconfig.json
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\GUI.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\GUI.pdb
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\System.Data.SqlClient.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\BUS.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\DAL.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\DTO.dll
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\BUS.pdb
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\DTO.pdb
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\DAL.pdb
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.CopyComplete
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.genruntimeconfig.cache
+C:\Users\Admin\Documents\Pham Quang Ha\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\ref\GUI.dll

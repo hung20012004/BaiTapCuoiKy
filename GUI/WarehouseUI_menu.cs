@@ -1,4 +1,6 @@
-﻿using DAL;
+﻿using BUS;
+using DAL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,27 +15,51 @@ namespace GUI
 {
     public partial class WarehouseUI_menu : Form
     {
-        public WarehouseUI_menu()
+        private Staff user = new();
+
+        public WarehouseUI_menu(Staff user)
         {
+            this.user = user;
             InitializeComponent();
         }
-        void loading()
+        #region LoadingEvent
+        private void WarehouseUI_menu_Load(object sender, EventArgs e)
+        {
+            tab0loading();
+        }
+
+        void tab0loading()
         {
             btGhi.Enabled = false;
             btHuy.Enabled = false;
             btThem.Enabled = true;
             btSua.Enabled = true;
             btXoa.Enabled = true;
+            tabControl1.SelectedIndex = 0;
+            dataGridView1.Enabled = true;
+            dataGridView1.Rows.Clear();
+            foreach (Provider item in ProviderBUS.Instance.get())
+            {
+                dataGridView1.Rows.Add(item.ID, item.Name, item.Address, item.Phone);
+            }
+            DataGridViewRow row = dataGridView1.Rows[0];
+            if (Convert.ToString(row.Cells["Column1"].Value) != "")
+            {
+                tbID.Text = Convert.ToString(row.Cells["Column1"].Value);
+                tbName.Text = Convert.ToString(row.Cells["Column2"].Value);
+                tbAddress.Text = Convert.ToString(row.Cells["Column3"].Value);
+                tbPhone.Text = Convert.ToString(row.Cells["Column4"].Value);
+            }
         }
-        void reset()
+        #endregion
+        #region ClickEvent
+        private void btNhaCungCap_Click(object sender, EventArgs e)
         {
-
+            tab0loading();
         }
-
-        private void WarehouseUI_menu_Load(object sender, EventArgs e)
-        {
-            loading();
-        }
+        #endregion
+        #region textChangeEvent
+        #endregion
 
         private void btThem_Click(object sender, EventArgs e)
         {
@@ -41,7 +67,6 @@ namespace GUI
             btHuy.Enabled = true;
             btSua.Enabled = false;
             btXoa.Enabled = false;
-            reset();
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -50,18 +75,22 @@ namespace GUI
             btHuy.Enabled = true;
             btThem.Enabled = false;
             btXoa.Enabled = false;
-            reset();
+
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
             btSua.Enabled = false;
             btThem.Enabled = false;
-            if (tbNCC.Text != "")
+            if (tbID.Text != "")
             {
             }
-            //Loading();
+
         }
 
+        private void btSanPham_Click(object sender, EventArgs e)
+        {
+         //   tab1loading();
+        }
     }
 }
