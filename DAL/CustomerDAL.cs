@@ -37,7 +37,7 @@ namespace DAL
             List<Customer> list = new List<Customer>();
 
             Open();
-            using (var cmd = new SqlCommand("getKhachHang", conn))
+            using (var cmd = new SqlCommand("GetStaff", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 DbDataReader reader = cmd.ExecuteReader();

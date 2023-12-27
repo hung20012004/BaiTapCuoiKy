@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Data.SqlClient;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using System.Data;
+using System.Data.Common;
+using System.Collections;
+
 namespace DAL
 {
     public class OrderDAL
@@ -17,130 +19,50 @@ namespace DAL
         {
             get { return instance; }
         }
-        public void Open()
-        {
-            if (conn.State != ConnectionState.Open)
-            {
-                conn.Open();
-            }
-        }
-        public void Close()
-        {
-            if (conn.State != ConnectionState.Closed)
-            {
-                conn.Close();
-            }
-        }
-        public List<Order> get()
+        public List<Order> GetOrders()
         {
             List<Order> list = new List<Order>();
-
-            Open();
-            using (var cmd = new SqlCommand("getOrder", conn))
+            conn.Open();
+            using (var cmd = new SqlCommand("GetOrder", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 DbDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+
                     Order order = new Order();
-                    order.Order_ID = reader.GetInt32("order_id");
-                    order.Customer_ID = reader.GetInt32("customer_id");
-                    order.Accountant_ID = reader.GetInt32("accountant_id");
-                    order.Seller_ID= reader.GetInt32("seller_id");
-                    order.Laptop_ID = reader.GetInt32("laptop_id");
-                    order.DATE = reader.GetDateTime("order_date");
-                    order.STATUS = reader.GetInt32("status");
-                    order.Price = reader.GetDecimal("unit_price");
-                    order.Quantity = reader.GetInt32("quantity");
+                    order.Order_id = reader.GetInt32("order_id");
+                    order.Customer.ID = reader.GetInt32("customer_id");
+                    order.Accoutant.ID = reader.GetInt32("accoutant_id");
+                    order.Seller.ID = reader.GetInt32("seller_id");
+                    order.Order_date = reader.GetDateTime("order_date");
+                    order.StatusInt = reader.GetInt32("status");
+                    order.UpdateStatusTime = reader.GetDateTime("update_status_time");
+                    order.PaymentInt = reader.GetInt32("payment");
                     list.Add(order);
                 }
             }
-            Close();
+            conn.Close();
             return list;
         }
-        public bool insert(Customer customer)
+        public bool insert(Order order)
         {
             try
             {
-                Open();
-                using (var cmd = new SqlCommand("addKhachHang", conn))
+                conn.Open();
+                using (var cmd = new SqlCommand("InsertOrder", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
-                    cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = customer.Phone;
-                    cmd.Parameters.Add("@diachi", SqlDbType.NVarChar).Value = customer.Address;
+                    cmd.Parameters.Add("@", SqlDbType.NVarChar).Value = order.Customer;
+                    cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = order.Seller;
+                    cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = order.PaymentInt;
+                    cmd.Parameters.Add("@role", SqlDbType.Int).Value = order.;
                     cmd.ExecuteNonQuery();
                 }
-                Close();
+                conn.Close();
                 return true;
             }
-            catch (Exception ex)
-            {
-                return false;
             }
-        }
-        public bool update(Customer customer)
-        {
-            try
-            {
-                Open();
-                using (var cmd = new SqlCommand("updateKhachHang", conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@customer_id", SqlDbType.Int).Value = customer.ID;
-                    cmd.Parameters.Add("@customer_name", SqlDbType.NVarChar).Value = customer.Name;
-                    cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = customer.Phone;
-                    cmd.Parameters.Add("@address", SqlDbType.NVarChar).Value = customer.Address;
-                    cmd.ExecuteNonQuery();
-                }
-                Close();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-        public bool delete(Customer customer)
-        {
-            try
-            {
-                Open();
-                using (var cmd = new SqlCommand("deleteKhachHang", conn))
-                {
-                    cmd.Parameters.Add("@customer_id", SqlDbType.Int).Value = customer.ID;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.ExecuteNonQuery();
-                }
-                Close();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-        public bool TimKiem(Customer customer)
-        {
-            try
-            {
-                Open();
-                using (var cmd = new SqlCommand("timkiemKhachHang", conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = customer.ID;
-                    cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
-                    cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = customer.Phone;
-                    cmd.ExecuteNonQuery();
-                }
-                Close();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-
         }
     }
 }

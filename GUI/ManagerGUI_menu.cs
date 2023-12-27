@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using DAL;
 using DTO;
 
 namespace GUI
@@ -30,9 +31,21 @@ namespace GUI
         }
         private void tab0Reset()
         {
+            tbHoTen.Enabled = false;
+            tbID.Enabled = false;
+            tbMatKhau.Enabled = false;
+            tbTaiKhoan.Enabled = false;
+            cbRole.Enabled = false;
+            btnGhi1.Enabled = false;
+            btnHuy1.Enabled = false;
+            btnSua1.Enabled = true;
+            btnXoa1.Enabled = true;
+            btnThem1.Enabled = true;
             tbMatKhau.UseSystemPasswordChar = true;
             tbTaiKhoan.UseSystemPasswordChar = true;
             tabControl1.SelectedIndex = 0;
+            dataGridView1.Enabled = true;
+            dataGridView1.Rows.Clear();
             foreach (Staff item in StaffBUS.Instance.get())
             {
                 dataGridView1.Rows.Add(item.ID, item.Name, item.RoleString, item.Username, item.Password);
@@ -51,46 +64,7 @@ namespace GUI
         {
             tabControl1.SelectedIndex = 1;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of be05ec6 (23/12)
-        private string createUsername()
-        {
-            string username = "";
-            string str = tbHoTen.Text;
-            DateTime dateTime = DateTime.Now;
-            for (int i = str.Length - 1; i > -1; i--)
-            {
-                if (str[i] == ' ')
-                {
-                    str = str.Remove(0, i + 1);
-                    break;
-                }
-            }
-            username = utf8Convert.Convert(str) + dateTime.Minute + dateTime.Second + dateTime.Hour;
-            return username;
-        }
-        public string createPassword()
-        {
-            char[] password = new char[8];
-            string charSet = "";
-            System.Random random = new Random();
-            charSet += "abcdefghijklmnopqursuvwxyz";
-            charSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            charSet += "123456789";
-            charSet += @"!@£$%^&*()#€";
-            for (int i = 0; i < 8; i++)
-            {
-                password[i] = charSet[random.Next(charSet.Length - 1)];
-            }
-            return string.Join(null, password);
-        }
-<<<<<<< HEAD
->>>>>>> parent of be05ec6 (23/12)
-=======
->>>>>>> parent of be05ec6 (23/12)
+        
         #endregion
 
         #region ClickEvent
@@ -112,24 +86,25 @@ namespace GUI
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbMatKhau.UseSystemPasswordChar = true;
-            tbTaiKhoan.UseSystemPasswordChar = true;
-            DataGridViewRow row = new DataGridViewRow();
-            row = dataGridView1.Rows[e.RowIndex];
-            if (Convert.ToString(row.Cells["Column1"].Value) != "")
+            try
             {
-                tbID.Text = Convert.ToString(row.Cells["Column1"].Value);
-                tbHoTen.Text = Convert.ToString(row.Cells["Column2"].Value);
-                tbTaiKhoan.Text = Convert.ToString(row.Cells["Column3"].Value);
-                tbMatKhau.Text = Convert.ToString(row.Cells["Column4"].Value);
-                cbRole.Text = Convert.ToString(row.Cells["Column5"].Value);
+                tbMatKhau.UseSystemPasswordChar = true;
+                tbTaiKhoan.UseSystemPasswordChar = true;
+                DataGridViewRow row = new DataGridViewRow();
+                row = dataGridView1.Rows[e.RowIndex];
+                if (Convert.ToString(row.Cells["Column1"].Value) != "")
+                {
+                    tbID.Text = Convert.ToString(row.Cells["Column1"].Value);
+                    tbHoTen.Text = Convert.ToString(row.Cells["Column2"].Value);
+                    tbTaiKhoan.Text = Convert.ToString(row.Cells["Column3"].Value);
+                    tbMatKhau.Text = Convert.ToString(row.Cells["Column4"].Value);
+                    cbRole.Text = Convert.ToString(row.Cells["Column5"].Value);
+                }
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
+            catch
+            {
 
-=======
-=======
->>>>>>> parent of be05ec6 (23/12)
+            }
         }
         private void btnThem1_Click(object sender, EventArgs e)
         {
@@ -140,7 +115,6 @@ namespace GUI
             btnHuy1.Enabled = true;
             btnSua1.Enabled = false;
             btnXoa1.Enabled = false;
-            btnThem1.Enabled = false;
             tbID.Text = "";
             tbHoTen.Text = "";
             tbTaiKhoan.Text = "********";
@@ -156,7 +130,7 @@ namespace GUI
             tbMatKhau.Enabled = true;
             btnGhi1.Enabled = true;
             btnHuy1.Enabled = true;
-            btnSua1.Enabled = false;
+            //btnSua1.Enabled = false;
             btnXoa1.Enabled = false;
             btnThem1.Enabled = false;
             
@@ -188,8 +162,8 @@ namespace GUI
                 {
                     if (tbHoTen.Text != "" && cbRole.Text != "")
                     {
-                        tbMatKhau.Text = createPassword();
-                        tbTaiKhoan.Text = createUsername();
+                        tbMatKhau.Text = CreateUser.createPassword();
+                        tbTaiKhoan.Text = CreateUser.createUsername(tbHoTen.Text);
                         if (StaffBUS.Instance.insert(staff))
                         {
                             tab0Reset();
@@ -225,7 +199,6 @@ namespace GUI
             {
                 tab0Reset();
             }
->>>>>>> parent of be05ec6 (23/12)
         }
         #endregion
 
@@ -259,15 +232,5 @@ namespace GUI
         }
         #endregion
 
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

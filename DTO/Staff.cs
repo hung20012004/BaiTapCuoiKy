@@ -12,7 +12,7 @@ namespace DTO
         private string name;
         private string username;
         private string password;
-        private int roleInt = 1;
+        private int roleInt;
         private string roleString;
         public int ID
         {
@@ -86,5 +86,6 @@ namespace DTO
                     break;
             }
         }
+
     }
 }

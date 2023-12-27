@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,14 +24,14 @@ namespace DTO
         }
         public string Phone
         {
-            get { return phone ; }
-            set { phone= value; }
+            get { return phone; }
+            set { phone = value; }
         }
         public string Address
         {
-            get { return address ; }
+            get { return address; }
             set { address = value; }
         }
-       
+
     }
 }

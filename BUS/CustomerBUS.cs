@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using DTO;
-
 namespace BUS
 {
     public class CustomerBUS
@@ -16,14 +15,14 @@ namespace BUS
             get { return instance; }
             set { instance = value; }
         }
-         
+
         public List<Customer> get()
         {
             return CustomerDAL.Instance.get();
         }
-        public bool insert (Customer customer)
+        public bool insert(Customer customer)
         {
-           return CustomerDAL.Instance.insert(customer);
+            return CustomerDAL.Instance.insert(customer);
         }
         public bool update(Customer customer)
         {
@@ -33,9 +32,19 @@ namespace BUS
         {
             return CustomerDAL.Instance.delete(customer);
         }
-        public bool check(Customer customer)
+        
+        public bool CheckPhone(Customer customer)
         {
             return CustomerDAL.Instance.Check(customer);
+            foreach (Customer item in CustomerDAL.Instance.get())
+            {
+                if (customer.Phone == item.Phone)
+                {
+                    customer = item;
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

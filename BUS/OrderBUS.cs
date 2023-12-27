@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,13 +14,11 @@ namespace BUS
         private static OrderBUS instance = new();
         public static OrderBUS Instance
         {
-            get { return instance; }
-            set { instance = value; }
+            get {  return instance; }
         }
-
-        public List<Order> get()
+        public List<Order> GetOrders()
         {
-            return OrderDAL.Instance.get();
+           return OrderDAL.Instance.GetOrders();
         }
     }
 }
