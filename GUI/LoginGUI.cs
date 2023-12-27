@@ -14,7 +14,7 @@ namespace GUI
         
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            if (StaffBUS.Instance.checkLogInfo(user))
+            if (StaffBUS.Instance.checkLogInfo(ref user))
             {
                 this.Hide();
                 userRole();
@@ -47,15 +47,15 @@ namespace GUI
                     break;
                 case 2:
                     SellGUI_menu menu2 = new(user);
-                    menu2.ShowDialog();
+                    menu2.Show();
                     break;
                 case 3:
                     SellGUI_menu menu3 = new(user);
-                    menu3.ShowDialog();
+                    menu3.Show();
                     break;
                 case 4:
                     SellGUI_menu menu4 = new(user);
-                    menu4.ShowDialog();
+                    menu4.Show();
                     break;
             }
         }
