@@ -120,7 +120,7 @@ namespace GUI
             {
                 if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
                 {
-                    if (CustomerBUS.Instance.check(customer) == true)
+                    if (CustomerBUS.Instance.CheckPhone(customer) == true)
                     {
                         MessageBox.Show("Số điện thoại đã tồn tại");
                     }
