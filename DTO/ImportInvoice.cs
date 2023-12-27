@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class ImportInvoice
+    public class ImportInvoice
     {
         private List<Laptop> laptops = new List<Laptop>();
         public List<Laptop> Laptops

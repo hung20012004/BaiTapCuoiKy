@@ -59,12 +59,8 @@ namespace GUI
             btThem.Enabled = false;
             if (tbNCC.Text != "")
             {
-                if (MessageBox.Show("Ban muon xoa nha cung cap", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    DBConfig.deleteData(...);
-                else MessageBox.Show("Xóa nha cung cap thanh cong!");
-
             }
-            Loading();
+            //Loading();
         }
 
     }

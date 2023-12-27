@@ -15,34 +15,22 @@ namespace BUS
         public static LaptopBUS Instance
         {
             get { return instance; }
-            set { instance = value; }
         }
-        public bool checkLogInfo(Staff staff)
+        public List<Laptop> get()
         {
-            foreach (Staff item in StaffDAL.Instance.get())
-            {
-                if (staff.Username == item.Username && staff.Password == item.Password)
-                {
-                    staff = item;
-                    return true;
-                }
-            }
-            return false;
+            return LaptopDAL.Instance.get();
         }
-        public void get(List<Laptop> list)
+        public bool insert(Laptop laptop)
         {
-            list = LaptopDAL.Instance.get();
+            return LaptopDAL.Instance.insert(laptop);
         }
-        public void insert()
+        public bool update(Laptop laptop)
         {
-
+            return LaptopDAL.Instance.update(laptop);
         }
-        public void update()
+        public bool delete(Laptop laptop)
         {
-        }
-        public void delete()
-        {
-
+            return LaptopDAL.Instance.delete(laptop);
         }
     }
 }
