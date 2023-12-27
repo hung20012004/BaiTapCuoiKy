@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using DTO;
+
 namespace BUS
 {
     public class CustomerBUS
@@ -32,19 +33,9 @@ namespace BUS
         {
             return CustomerDAL.Instance.delete(customer);
         }
-        
-        public bool CheckPhone(Customer customer)
+        public bool check(Customer customer)
         {
             return CustomerDAL.Instance.Check(customer);
-            foreach (Customer item in CustomerDAL.Instance.get())
-            {
-                if (customer.Phone == item.Phone)
-                {
-                    customer = item;
-                    return true;
-                }
-            }
-            return false;
         }
     }
 }

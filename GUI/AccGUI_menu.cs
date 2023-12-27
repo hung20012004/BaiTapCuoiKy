@@ -15,6 +15,7 @@ namespace GUI
     public partial class AccGUI_menu : Form
     {
         private Staff user = new();
+        private Order order = new();
         public AccGUI_menu(Staff user)
         {
             this.user = user;
@@ -24,9 +25,9 @@ namespace GUI
         {
             dataGridView1.Enabled = true;
             dataGridView1.Rows.Clear();
-            foreach (Order item in OrderBUS.Instance.GetOrders())
+            foreach (Order item in OrderBUS.Instance.get())
             {
-                dataGridView1.Rows.Add(item.Order_id, item.Customer, item.Seller, item.Order_date, item.PaymentString);
+                dataGridView1.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.PaymentString);
             }
             DataGridViewRow row = dataGridView1.Rows[0];
             if (Convert.ToString(row.Cells["ID"].Value) != "")
@@ -47,6 +48,21 @@ namespace GUI
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 1;
+        }
+
+        private void btHuy_Click(object sender, EventArgs e)
+        {
+
+            order.StatusInt = 0;
+            order.Accountant.ID = user.ID;
+            OrderBUS.Instance.update(order);
+        }
+
+        private void btXong_Click(object sender, EventArgs e)
+        {
+            order.StatusInt = 2;
+            order.Accountant.ID = user.ID;
+            OrderBUS.Instance.update(order);
         }
     }
 }
