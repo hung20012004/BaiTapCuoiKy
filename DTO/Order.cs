@@ -15,12 +15,12 @@ namespace DTO
             set { laptop = value; }
         }
 
-        private int order_id;
+        private int id;
 
-        public int Order_id
+        public int ID
         {
-            get { return order_id; }
-            set { order_id = value; }
+            get { return id; }
+            set { id = value; }
         }
 
         private Customer customer;
@@ -31,11 +31,11 @@ namespace DTO
             set { customer = value; }
         }
 
-        private Staff accoutant;
-        public Staff Accoutant
+        private Staff accountant;
+        public Staff Accountant
         {
-            get { return accoutant; }
-            set { accoutant = value; }
+            get { return accountant; }
+            set { accountant = value; }
         }
 
         private Staff seller;
@@ -70,13 +70,13 @@ namespace DTO
         {
             switch (statusInt)
             {
-                case 0:
+                case 1:
                     statusString = "Đang xử lý";
                     break;
-                case 1:
+                case 2:
                     statusString = "Đã thanh toán";
                     break;
-                case 2:
+                case 0:
                     statusString = "Hủy";
                     break;
             }
@@ -86,13 +86,13 @@ namespace DTO
             switch (statusString)
             {
                 case "Đang xử lý":
-                    statusInt = 0;
-                    break;
-                case "Đã thanh toán":
                     statusInt = 1;
                     break;
-                case "Hủy":
+                case "Đã thanh toán":
                     statusInt = 2;
+                    break;
+                case "Hủy":
+                    statusInt = 0;
                     break;
             }
         }
