@@ -19,7 +19,7 @@ namespace DAL
         {
             get { return instance; }
         }
-        public List<Order> GetOrders()
+        public List<Order> get()
         {
             List<Order> list = new List<Order>();
             conn.Open();
@@ -31,14 +31,16 @@ namespace DAL
                 {
 
                     Order order = new Order();
-                    order.Order_id = reader.GetInt32("order_id");
+                    order.ID = reader.GetInt32("order_id");
                     order.Customer.ID = reader.GetInt32("customer_id");
-                    order.Accoutant.ID = reader.GetInt32("accoutant_id");
+                    order.Accountant.ID = reader.GetInt32("accoutant_id");
                     order.Seller.ID = reader.GetInt32("seller_id");
                     order.Order_date = reader.GetDateTime("order_date");
                     order.StatusInt = reader.GetInt32("status");
                     order.UpdateStatusTime = reader.GetDateTime("update_status_time");
-                    order.PaymentInt = reader.GetInt32("payment");
+                    order.Customer.Name = reader.GetString("customer_name");
+                    order.Accountant.Name = reader.GetString("staff_name");
+                    order.Seller.Name = reader.GetString("seller_name");
                     list.Add(order);
                 }
             }
@@ -53,15 +55,82 @@ namespace DAL
                 using (var cmd = new SqlCommand("InsertOrder", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@", SqlDbType.NVarChar).Value = order.Customer;
-                    cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = order.Seller;
-                    cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = order.PaymentInt;
-                    cmd.Parameters.Add("@role", SqlDbType.Int).Value = order.;
+                    cmd.Parameters.Add("@Customer_id", SqlDbType.Int).Value = order.Customer.ID;
+                    cmd.Parameters.Add("@Seller_id", SqlDbType.Int).Value = order.Seller.ID;
+                    cmd.Parameters.Add("@Order_date", SqlDbType.DateTime).Value = DateTime.Now; 
+                    cmd.ExecuteNonQuery();
+                }
+                foreach (Laptop item in order.Laptop)
+                {
+                    insertdetail(item,order);
+                }
+                conn.Close();
+
+                return true;
+            }
+            catch(Exception ex) 
+            {
+                return false; 
+            }
+        }
+        public bool update(Order order)
+        {
+            try
+            {
+                conn.Open();
+                using (var cmd = new SqlCommand("UpdateOrder", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@order_id", SqlDbType.Int).Value = order.ID;
+                    cmd.Parameters.Add("@payment", SqlDbType.NVarChar).Value = order.PaymentInt;
+                    cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = order.StatusInt;
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();
                 return true;
             }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool delete(Order order)
+        {
+            try
+            {
+                conn.Open();
+                using (var cmd = new SqlCommand("DeleteOrder", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@Order_id", SqlDbType.Int).Value = order.ID;
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool insertdetail(Laptop laptop, Order order)
+        {
+            try
+            {
+                using (var cmd = new SqlCommand("InsertOrderDetail", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@order_id", SqlDbType.Int).Value = order.ID;
+                    cmd.Parameters.Add("@laptop_id", SqlDbType.Int).Value = laptop.ID;
+                    cmd.Parameters.Add("@quantity_bought", SqlDbType.Int).Value = laptop.QuantityBought;
+                    cmd.Parameters.Add("@price", SqlDbType.VarChar).Value = laptop.Price;
+                    cmd.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
     }

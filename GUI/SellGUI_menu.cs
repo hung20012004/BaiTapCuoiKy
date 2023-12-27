@@ -49,7 +49,7 @@ namespace GUI
             foreach (Order item in OrderBUS.Instance.get())
             {
 
-                dgvOrder.Rows.Add(item.Order_ID, item.Laptop_ID, item.Price, item.Quantity, item.Customer_ID, item.Accountant_ID, item.Seller_ID, item.DATE, item.STATUS);
+                dgvOrder.Rows.Add(item.Order_id, item.Laptop.ID, item.Price, item.Quantity, item.Customer.ID, item.Accountant.ID, item.Seller.ID, item.Order_date, item.StatusString);
             }
         }
         #endregion

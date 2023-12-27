@@ -54,6 +54,11 @@
             lb5 = new Label();
             label12 = new Label();
             dataGridView2 = new DataGridView();
+            OrderID = new DataGridViewTextBoxColumn();
+            CustomerID = new DataGridViewTextBoxColumn();
+            SellerID = new DataGridViewTextBoxColumn();
+            OrderTime = new DataGridViewTextBoxColumn();
+            Payment = new DataGridViewTextBoxColumn();
             label3 = new Label();
             tabPage2 = new TabPage();
             textBox2 = new TextBox();
@@ -68,11 +73,6 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            OrderID = new DataGridViewTextBoxColumn();
-            CustomerID = new DataGridViewTextBoxColumn();
-            SellerID = new DataGridViewTextBoxColumn();
-            OrderTime = new DataGridViewTextBoxColumn();
-            Payment = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage3.SuspendLayout();
@@ -156,9 +156,9 @@
             tabPage3.Controls.Add(label12);
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 26);
+            tabPage3.Location = new Point(4, 32);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 913);
+            tabPage3.Size = new Size(1145, 907);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -177,35 +177,35 @@
             dtpOrder.Format = DateTimePickerFormat.Short;
             dtpOrder.Location = new Point(663, 73);
             dtpOrder.Name = "dtpOrder";
-            dtpOrder.Size = new Size(128, 25);
+            dtpOrder.Size = new Size(128, 30);
             dtpOrder.TabIndex = 18;
             // 
             // tbSeller
             // 
-            tbSeller.Location = new Point(137, 184);
+            tbSeller.Location = new Point(148, 184);
             tbSeller.Name = "tbSeller";
-            tbSeller.Size = new Size(192, 25);
+            tbSeller.Size = new Size(192, 30);
             tbSeller.TabIndex = 17;
             // 
             // textBox3
             // 
             textBox3.Location = new Point(590, 165);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(192, 25);
+            textBox3.Size = new Size(192, 30);
             textBox3.TabIndex = 17;
             // 
             // tbAcc
             // 
-            tbAcc.Location = new Point(137, 127);
+            tbAcc.Location = new Point(148, 127);
             tbAcc.Name = "tbAcc";
-            tbAcc.Size = new Size(192, 25);
+            tbAcc.Size = new Size(192, 30);
             tbAcc.TabIndex = 17;
             // 
             // tbCus
             // 
-            tbCus.Location = new Point(137, 73);
+            tbCus.Location = new Point(148, 73);
             tbCus.Name = "tbCus";
-            tbCus.Size = new Size(192, 25);
+            tbCus.Size = new Size(192, 30);
             tbCus.TabIndex = 16;
             // 
             // label14
@@ -213,7 +213,7 @@
             label14.AutoSize = true;
             label14.Location = new Point(487, 168);
             label14.Name = "label14";
-            label14.Size = new Size(67, 19);
+            label14.Size = new Size(83, 23);
             label14.TabIndex = 15;
             label14.Text = "Tìm kiếm:";
             // 
@@ -222,7 +222,7 @@
             label13.AutoSize = true;
             label13.Location = new Point(41, 187);
             label13.Name = "label13";
-            label13.Size = new Size(44, 19);
+            label13.Size = new Size(55, 23);
             label13.TabIndex = 15;
             label13.Text = "Seller:";
             // 
@@ -231,7 +231,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(41, 130);
             label5.Name = "label5";
-            label5.Size = new Size(59, 19);
+            label5.Size = new Size(73, 23);
             label5.TabIndex = 15;
             label5.Text = "Kế toán:";
             // 
@@ -249,14 +249,14 @@
             label10.AutoSize = true;
             label10.Location = new Point(49, 99);
             label10.Name = "label10";
-            label10.Size = new Size(0, 19);
+            label10.Size = new Size(0, 23);
             label10.TabIndex = 14;
             // 
             // tbID
             // 
-            tbID.Location = new Point(137, 27);
+            tbID.Location = new Point(148, 24);
             tbID.Name = "tbID";
-            tbID.Size = new Size(192, 25);
+            tbID.Size = new Size(192, 30);
             tbID.TabIndex = 13;
             // 
             // label4
@@ -264,7 +264,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(41, 27);
             label4.Name = "label4";
-            label4.Size = new Size(26, 19);
+            label4.Size = new Size(31, 23);
             label4.TabIndex = 12;
             label4.Text = "ID:";
             // 
@@ -274,7 +274,7 @@
             cboPayment.Items.AddRange(new object[] { "Tiền mặt", "Chuyển khoản" });
             cboPayment.Location = new Point(663, 27);
             cboPayment.Name = "cboPayment";
-            cboPayment.Size = new Size(128, 25);
+            cboPayment.Size = new Size(128, 31);
             cboPayment.TabIndex = 11;
             // 
             // button8
@@ -300,7 +300,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(97, 842);
             label6.Name = "label6";
-            label6.Size = new Size(45, 19);
+            label6.Size = new Size(55, 23);
             label6.TabIndex = 4;
             label6.Text = "label6";
             // 
@@ -309,7 +309,7 @@
             lb5.AutoSize = true;
             lb5.Location = new Point(41, 842);
             lb5.Name = "lb5";
-            lb5.Size = new Size(38, 19);
+            lb5.Size = new Size(46, 23);
             lb5.TabIndex = 3;
             lb5.Text = "tổng";
             // 
@@ -318,7 +318,7 @@
             label12.AutoSize = true;
             label12.Location = new Point(487, 76);
             label12.Name = "label12";
-            label12.Size = new Size(84, 19);
+            label12.Size = new Size(104, 23);
             label12.TabIndex = 0;
             label12.Text = "Ngày tháng:";
             // 
@@ -333,12 +333,47 @@
             dataGridView2.Size = new Size(1140, 522);
             dataGridView2.TabIndex = 2;
             // 
+            // OrderID
+            // 
+            OrderID.HeaderText = "ID";
+            OrderID.MinimumWidth = 6;
+            OrderID.Name = "OrderID";
+            OrderID.Width = 125;
+            // 
+            // CustomerID
+            // 
+            CustomerID.HeaderText = "Khách hàng";
+            CustomerID.MinimumWidth = 6;
+            CustomerID.Name = "CustomerID";
+            CustomerID.Width = 125;
+            // 
+            // SellerID
+            // 
+            SellerID.HeaderText = "Seller";
+            SellerID.MinimumWidth = 6;
+            SellerID.Name = "SellerID";
+            SellerID.Width = 125;
+            // 
+            // OrderTime
+            // 
+            OrderTime.HeaderText = "Ngày tháng";
+            OrderTime.MinimumWidth = 6;
+            OrderTime.Name = "OrderTime";
+            OrderTime.Width = 125;
+            // 
+            // Payment
+            // 
+            Payment.HeaderText = "Phương thức thanh toán";
+            Payment.MinimumWidth = 6;
+            Payment.Name = "Payment";
+            Payment.Width = 125;
+            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(487, 27);
             label3.Name = "label3";
-            label3.Size = new Size(163, 19);
+            label3.Size = new Size(203, 23);
             label3.TabIndex = 0;
             label3.Text = "Phương thức thanh toán:";
             // 
@@ -350,10 +385,10 @@
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(button5);
             tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Location = new Point(4, 26);
+            tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 913);
+            tabPage2.Size = new Size(1145, 907);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -362,14 +397,14 @@
             // 
             textBox2.Location = new Point(132, 79);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 25);
+            textBox2.Size = new Size(150, 30);
             textBox2.TabIndex = 8;
             // 
             // textBox1
             // 
             textBox1.Location = new Point(132, 20);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 25);
+            textBox1.Size = new Size(150, 30);
             textBox1.TabIndex = 7;
             // 
             // label2
@@ -377,7 +412,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(34, 79);
             label2.Name = "label2";
-            label2.Size = new Size(45, 19);
+            label2.Size = new Size(55, 23);
             label2.TabIndex = 6;
             label2.Text = "label2";
             // 
@@ -386,7 +421,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(34, 20);
             label1.Name = "label1";
-            label1.Size = new Size(45, 19);
+            label1.Size = new Size(55, 23);
             label1.TabIndex = 5;
             label1.Text = "label1";
             // 
@@ -426,9 +461,9 @@
             tabPage1.Controls.Add(label9);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1145, 915);
+            tabPage1.Size = new Size(1145, 910);
             tabPage1.TabIndex = 4;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -447,7 +482,7 @@
             label9.AutoSize = true;
             label9.Location = new Point(156, 110);
             label9.Name = "label9";
-            label9.Size = new Size(45, 19);
+            label9.Size = new Size(55, 23);
             label9.TabIndex = 2;
             label9.Text = "label9";
             // 
@@ -456,7 +491,7 @@
             label8.AutoSize = true;
             label8.Location = new Point(280, 261);
             label8.Name = "label8";
-            label8.Size = new Size(45, 19);
+            label8.Size = new Size(55, 23);
             label8.TabIndex = 1;
             label8.Text = "label8";
             // 
@@ -465,48 +500,13 @@
             label7.AutoSize = true;
             label7.Location = new Point(267, 464);
             label7.Name = "label7";
-            label7.Size = new Size(45, 19);
+            label7.Size = new Size(55, 23);
             label7.TabIndex = 0;
             label7.Text = "label7";
             // 
-            // OrderID
-            // 
-            OrderID.HeaderText = "ID";
-            OrderID.MinimumWidth = 6;
-            OrderID.Name = "OrderID";
-            OrderID.Width = 125;
-            // 
-            // CustomerID
-            // 
-            CustomerID.HeaderText = "Khách hàng";
-            CustomerID.MinimumWidth = 6;
-            CustomerID.Name = "CustomerID";
-            CustomerID.Width = 125;
-            // 
-            // SellerID
-            // 
-            SellerID.HeaderText = "Seller";
-            SellerID.MinimumWidth = 6;
-            SellerID.Name = "SellerID";
-            SellerID.Width = 125;
-            // 
-            // OrderTime
-            // 
-            OrderTime.HeaderText = "Ngày tháng";
-            OrderTime.MinimumWidth = 6;
-            OrderTime.Name = "OrderTime";
-            OrderTime.Width = 125;
-            // 
-            // Payment
-            // 
-            Payment.HeaderText = "Phương thức thanh toán";
-            Payment.MinimumWidth = 6;
-            Payment.Name = "Payment";
-            Payment.Width = 125;
-            // 
             // AccGUI_menu
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1478, 944);
             Controls.Add(tabControl1);
