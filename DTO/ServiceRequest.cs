@@ -8,41 +8,40 @@ namespace DTO
 {
     public class ServiceRequest
     {
-        private List<Laptop> laptops = new List<Laptop>();
-        public List<Laptop> Laptops
-        {
-            get { return laptops; }
-            set { laptops = value; }
-        }
-        private Staff warehouseKeeper = new Staff();
-        public Staff WarehouseKeeper
-        {
-            get { return warehouseKeeper; }
-            set {  warehouseKeeper = value; }
+        private Order order=new Order();
+        public Order Order { 
+            get { return order; } 
+            set { order = value; }
         }
         private int id;
         public int ID
         {
             get { return id; }
-            set {  id = value; }
+            set { id = value; }
         }
-        private Provider provider=new Provider();
-        public Provider Provider
+        private string decription;
+        public string Decription
         {
-            get { return provider; }
-            set { provider = value; }
+            get { return decription; }
+            set {  decription = value; }
         }
-        private DateTime importDate;
-        public DateTime ImportDate
+        private int typeINT;
+        public int TypeINT
         {
-            get { return importDate; } 
-            set {  importDate = value; }
+            get { return typeINT; }
+            set {  typeINT = value; }
+        }
+        private string typeSTRING;
+        public string TypeSTRING
+        {
+            get { return typeSTRING; }
+            set { typeSTRING = value; }
         }
         private int statusINT;
         public int StatusINT
         {
             get { return statusINT; }
-            set { statusINT = value; }
+            set {  statusINT = value; }
         }
         private string statusSTRING;
         public string StatusSTRING
@@ -50,13 +49,17 @@ namespace DTO
             get { return statusSTRING; }
             set { statusSTRING = value; }
         }
-        private void getStatusString()
+        private int rating;
+        public int Rating
         {
-
+            get { return rating; }
+            set {  rating = value; }
         }
-        private void getStatusInt() 
-        { 
-        
+        private DateTime updateStatusTime;
+        public DateTime UpdateStatusTime
+        {
+            get { return updateStatusTime; }
+            set { updateStatusTime = value; }
         }
 
     }
