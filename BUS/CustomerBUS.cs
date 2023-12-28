@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,9 +34,16 @@ namespace BUS
         {
             return CustomerDAL.Instance.delete(customer);
         }
-        public bool check(Customer customer)
+        public bool CheckCustomer(Customer customer)
         {
-            return CustomerDAL.Instance.Check(customer);
+            foreach (Customer item in CustomerDAL.Instance.get())
+            {
+                if (customer.Phone== item.Phone)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

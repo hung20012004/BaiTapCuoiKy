@@ -19,7 +19,7 @@ namespace GUI
             {
                 this.Hide();
                 userRole();
-                this.Show();
+               // this.Show();
                 
             }
             else

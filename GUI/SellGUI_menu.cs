@@ -43,22 +43,13 @@ namespace GUI
                 txbAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
             }
         }
-        private void LoadingOrder()
-        {
-
-            foreach (Order item in OrderBUS.Instance.get())
-            {
-
-                dgvOrder.Rows.Add(item.Order_id, item.Laptop.ID, item.Price, item.Quantity, item.Customer.ID, item.Accountant.ID, item.Seller.ID, item.Order_date, item.StatusString);
-            }
-        }
+   
         #endregion
 
         private void SellGUI_menu_Load(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
             LoadingCustomer();
-            LoadingOrder();
             state = "Start";
             ManageInterface(state);
             cbTimKiem_CheckedChanged(sender, e);
@@ -120,7 +111,7 @@ namespace GUI
             {
                 if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
                 {
-                    if (CustomerBUS.Instance.CheckPhone(customer) == true)
+                    if (CustomerBUS.Instance.CheckCustomer(customer) == true)
                     {
                         MessageBox.Show("Số điện thoại đã tồn tại");
                     }
@@ -137,6 +128,7 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Yêu cầu nhập đầy đủ thông tin!", "Thông báo");
+                    txbName.Focus();
                 }
             }
             if (state == "Update")
@@ -153,6 +145,7 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Yêu cầu nhập đầy đủ thông tin!", "Thông báo");
+                    txbName.Focus();
                 }
             }
         }
