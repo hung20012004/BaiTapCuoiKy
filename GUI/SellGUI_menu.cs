@@ -112,11 +112,7 @@ namespace GUI
                 char [] PhoneArr = customer.Phone.ToCharArray();
                 if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
                 {
-<<<<<<< HEAD
-                    if (CustomerBUS.Instance.CheckCustomer(customer) == true)
-=======
-                    if (CustomerBUS.Instance.CheckPhone(customer)==true)
->>>>>>> f63757c1c858d9336ea6711b0157f34bb8da6d98
+                    if (CustomerBUS.Instance.CheckPhone(customer) == true)
                     {
                         MessageBox.Show("Số điện thoại đã tồn tại");
                     }

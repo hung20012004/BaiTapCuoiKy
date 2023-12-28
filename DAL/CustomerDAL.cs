@@ -53,13 +53,9 @@ namespace DAL
             }
             Close();
             return list;
-        }
-<<<<<<< HEAD
-        public bool insert(Customer customer)
-=======
-       
+        }  
         public bool insert (Customer customer)
->>>>>>> f63757c1c858d9336ea6711b0157f34bb8da6d98
+
         {
             try
             {
