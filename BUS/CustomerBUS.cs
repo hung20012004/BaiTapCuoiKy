@@ -34,12 +34,22 @@ namespace BUS
         {
             return CustomerDAL.Instance.delete(customer);
         }
+<<<<<<< HEAD
         public bool CheckCustomer(Customer customer)
         {
             foreach (Customer item in CustomerDAL.Instance.get())
             {
                 if (customer.Phone== item.Phone)
                 {
+=======
+        public bool CheckPhone(Customer customer)
+        {
+            foreach (Customer item in CustomerDAL.Instance.get())
+            {
+                if (customer.Phone == item.Phone )
+                {
+                    customer = item;
+>>>>>>> f63757c1c858d9336ea6711b0157f34bb8da6d98
                     return true;
                 }
             }
