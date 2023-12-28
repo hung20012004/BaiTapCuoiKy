@@ -107,6 +107,24 @@ namespace DAL
                 return false;
             }
         }
-
+        public bool insertDetail(Laptop laptop, ImportInvoice importInvoice)
+        {
+            try
+            {
+                using (var cmd = new SqlCommand("InsertInvoiceDetail", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@invoice_id", SqlDbType.Int).Value = importInvoice.ID;
+                    cmd.Parameters.Add("@laptop_id", SqlDbType.Int).Value = laptop.ID;
+                    cmd.Parameters.Add("@quantity_import", SqlDbType.Int).Value = laptop.QuantityImport;
+                    cmd.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

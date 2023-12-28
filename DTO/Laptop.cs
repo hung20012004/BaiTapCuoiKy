@@ -150,7 +150,12 @@ namespace DTO
             get { return quantityBought; }
             set { quantityBought = value; }
         }
-
+        private int quantityImport;
+        public int QuantityImport
+        {
+            get { return quantityImport; }
+            set { quantityImport = value; }
+        }
 
     }
 }
