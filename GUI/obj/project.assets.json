@@ -524,24 +524,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Manh Hung\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\GUI\\GUI.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\GUI\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\GUI\\GUI.csproj",
-      "packagesPath": "C:\\Users\\Manh Hung\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\GUI\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\GUI\\GUI.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\GUI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Manh Hung\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -556,11 +551,11 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\BUS\\BUS.csproj": {
-              "projectPath": "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\BUS\\BUS.csproj"
+            "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\BUS\\BUS.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\BUS\\BUS.csproj"
             },
-            "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\DTO\\DTO.csproj"
+            "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\DTO\\DTO.csproj"
             }
           }
         }
@@ -593,7 +588,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

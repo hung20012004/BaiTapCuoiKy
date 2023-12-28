@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace DAL
 {
@@ -17,10 +18,9 @@ namespace DAL
         {
             string connetionString;
             SqlConnection cnn;
-            connetionString = @"Data Source=LAPTOP-F45JGTQ4\HUNGDATABASE;Initial Catalog=Laptop_Store;User ID=sa;Password=20012004";
+            connetionString = @"Data Source=LAPTOP-42KL1AQC;Initial Catalog=Laptop_Store;Integrated Security=True;Trust Server Certificate=True";
             cnn = new SqlConnection(connetionString);
             return cnn;
         }
-
     }
 }
