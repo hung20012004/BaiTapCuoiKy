@@ -49,7 +49,7 @@ namespace GUI
             foreach (Order item in OrderBUS.Instance.get())
             {
 
-                dgvOrder.Rows.Add(item.Order_id, item.Laptop.ID, item.Price, item.Quantity, item.Customer.ID, item.Accountant.ID, item.Seller.ID, item.Order_date, item.StatusString);
+                //dgvOrder.Rows.Add(item.ID, item.Laptop.ID, item.Price, item.Quantity, item.Customer.ID, item.Accountant.ID, item.Seller.ID, item.Order_date, item.StatusString);
             }
         }
         #endregion
@@ -120,7 +120,7 @@ namespace GUI
             {
                 if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
                 {
-                    if (CustomerBUS.Instance.CheckPhone(customer) == true)
+                    /*if (CustomerBUS.Instance.CheckPhone(customer) == true)
                     {
                         MessageBox.Show("Số điện thoại đã tồn tại");
                     }
@@ -132,7 +132,7 @@ namespace GUI
                         LoadingCustomer();
                         MessageBox.Show("Thêm thông tin thành công", "Thông báo");
                         ManageInterface("Start");
-                    }
+                    }*/
                 }
                 else
                 {
