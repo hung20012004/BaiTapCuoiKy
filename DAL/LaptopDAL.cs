@@ -20,7 +20,7 @@ namespace DAL
         }
         public List<Laptop> get()
         {
-            List<Laptop> list = new List<Laptop>();
+            List< Laptop> list = new List<Laptop>();
             conn.Open();
             using (var cmd = new SqlCommand("GetStaff", conn))
             {
