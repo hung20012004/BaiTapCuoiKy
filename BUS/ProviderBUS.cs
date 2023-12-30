@@ -15,7 +15,7 @@ namespace BUS
         {
             get { return instance; }
         }
-
+      
         public List<Provider> get()
         {
             return ProviderDAL.Instance.get();

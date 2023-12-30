@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BUS;
+using DAL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
-using DTO;
 
 namespace GUI
 {
@@ -89,7 +90,7 @@ namespace GUI
 
         private void btSanPham_Click(object sender, EventArgs e)
         {
-            //   tab1loading();
+         //   tab1loading();
         }
     }
 }
