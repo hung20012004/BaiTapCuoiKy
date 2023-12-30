@@ -524,19 +524,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\C# Hoc ki\\BaiTapCuoiKy\\GUI\\GUI.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\GUI\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "C:\\C# Hoc ki\\BaiTapCuoiKy\\GUI\\GUI.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\C# Hoc ki\\BaiTapCuoiKy\\GUI\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\GUI\\GUI.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\GUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -550,11 +550,11 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\C# Hoc ki\\BaiTapCuoiKy\\BUS\\BUS.csproj": {
-              "projectPath": "C:\\C# Hoc ki\\BaiTapCuoiKy\\BUS\\BUS.csproj"
+            "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\BUS\\BUS.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\BUS\\BUS.csproj"
             },
-            "C:\\C# Hoc ki\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\C# Hoc ki\\BaiTapCuoiKy\\DTO\\DTO.csproj"
+            "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\DTO\\DTO.csproj"
             }
           }
         }
@@ -587,7 +587,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
