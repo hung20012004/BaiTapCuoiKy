@@ -33,22 +33,23 @@ namespace GUI
             tbCus.Enabled = false;
             tbSeller.Enabled = false;
             cboPayment.Enabled = true;
-            dataGridView1.Enabled = true;
-            dataGridView1.Rows.Clear();
+            dataGridView2.Enabled = true;
+            dataGridView2.Rows.Clear();
+
             foreach (Order item in OrderBUS.Instance.get())
             {
-                dataGridView1.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.PaymentString);
+                item.Customer = CustomerBUS.Instance.getCustomer(item.Customer);
+                item.Seller = StaffBUS.Instance.getSeller(item.Seller);
+                dataGridView2.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date);
             }
-            DataGridViewRow row = dataGridView1.Rows[0];
-            if (Convert.ToString(row.Cells["ID"].Value) != "")
+            DataGridViewRow row = dataGridView2.Rows[0];
+            if (Convert.ToString(row.Cells["OrderID"].Value) != "")
             {
-                tbID.Text = Convert.ToString(row.Cells["ID"].Value);
-                tbCus.Text = Convert.ToString(row.Cells["CustomerID"].Value);
-                tbSeller.Text = Convert.ToString(row.Cells["SellerID"].Value);
-                cboPayment.Text = Convert.ToString(row.Cells["Payment"].Value);
+                tbID.Text = Convert.ToString(row.Cells["OrderID"].Value);
+                tbCus.Text = Convert.ToString(row.Cells["CusName"].Value);
+                tbSeller.Text = Convert.ToString(row.Cells["SellerName"].Value);
                 tbOrder.Text = Convert.ToString(row.Cells["OrderTime"].Value);
             }
-
         }
         public void loadTab1()
         {
@@ -113,9 +114,8 @@ namespace GUI
             if (Convert.ToString(row.Cells["ID"].Value) != "")
             {
                 tbID.Text = Convert.ToString(row.Cells["ID"].Value);
-                tbCus.Text = Convert.ToString(row.Cells["CustomerID"].Value);
-                tbSeller.Text = Convert.ToString(row.Cells["SellerID"].Value);
-                cboPayment.Text = Convert.ToString(row.Cells["Payment"].Value);
+                tbCus.Text = Convert.ToString(row.Cells["CusName"].Value);
+                tbSeller.Text = Convert.ToString(row.Cells["SellerName"].Value);
                 tbOrder.Text = Convert.ToString(row.Cells["OrderTime"].Value);
             }
         }
@@ -128,17 +128,6 @@ namespace GUI
                 order.ID = Convert.ToInt32(tbID.Text);
             }
         }
-
-        private void tbCus_TextChanged(object sender, EventArgs e)
-        {
-            order.Customer.Name = tbCus.Text;
-        }
-
-        private void tbSeller_TextChanged(object sender, EventArgs e)
-        {
-            order.Seller.Name = tbSeller.Text;
-        }
-
         private void cboPayment_SelectedIndexChanged(object sender, EventArgs e)
         {
             order.PaymentString = cboPayment.Text;

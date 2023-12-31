@@ -132,5 +132,25 @@ namespace DAL
                 return false;
             }
         }
+        public Customer GetCustomer(Customer cus)
+        {
+            Open();
+            using (var cmd = new SqlCommand("GetCustomerByID", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@customer_id", SqlDbType.Int).Value = cus.ID;
+                
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    cus.Name = reader.GetString("customer_name");
+                    cus.Phone = reader.GetString("phone");
+                    cus.Address = reader.GetString("address");
+
+                }
+            }
+            Close();
+            return cus;
+        }
     }
 }

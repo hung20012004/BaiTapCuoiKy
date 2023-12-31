@@ -41,18 +41,16 @@
             tabPage2 = new TabPage();
             textBox7 = new TextBox();
             textBox6 = new TextBox();
-            textBox5 = new TextBox();
             textBox4 = new TextBox();
             tbID1 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             label2 = new Label();
-            label17 = new Label();
             label16 = new Label();
             label15 = new Label();
             label12 = new Label();
             label1 = new Label();
-            button5 = new Button();
+            btnXuat = new Button();
             dataGridView1 = new DataGridView();
             tabPage3 = new TabPage();
             tbOrder = new TextBox();
@@ -73,12 +71,14 @@
             lb5 = new Label();
             dataGridView2 = new DataGridView();
             OrderID = new DataGridViewTextBoxColumn();
-            CustomerID = new DataGridViewTextBoxColumn();
-            SellerID = new DataGridViewTextBoxColumn();
+            CusName = new DataGridViewTextBoxColumn();
+            SellerName = new DataGridViewTextBoxColumn();
             OrderTime = new DataGridViewTextBoxColumn();
-            Payment = new DataGridViewTextBoxColumn();
             label3 = new Label();
             tabControl1 = new TabControl();
+            label18 = new Label();
+            textBox5 = new TextBox();
+            label17 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage1.SuspendLayout();
@@ -190,6 +190,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(label18);
             tabPage2.Controls.Add(textBox7);
             tabPage2.Controls.Add(textBox6);
             tabPage2.Controls.Add(textBox5);
@@ -203,36 +204,29 @@
             tabPage2.Controls.Add(label15);
             tabPage2.Controls.Add(label12);
             tabPage2.Controls.Add(label1);
-            tabPage2.Controls.Add(button5);
+            tabPage2.Controls.Add(btnXuat);
             tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 910);
+            tabPage2.Size = new Size(1145, 907);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(865, 113);
+            textBox7.Location = new Point(616, 24);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(150, 30);
             textBox7.TabIndex = 8;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(540, 24);
+            textBox6.Location = new Point(540, 80);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(150, 30);
             textBox6.TabIndex = 8;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(540, 190);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 30);
-            textBox5.TabIndex = 8;
             // 
             // textBox4
             // 
@@ -271,23 +265,14 @@
             label2.TabIndex = 6;
             label2.Text = "Khách hàng:";
             // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(455, 193);
-            label17.Name = "label17";
-            label17.Size = new Size(55, 23);
-            label17.TabIndex = 5;
-            label17.Text = "label1";
-            // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(432, 27);
+            label16.Location = new Point(407, 83);
             label16.Name = "label16";
-            label16.Size = new Size(55, 23);
+            label16.Size = new Size(104, 23);
             label16.TabIndex = 5;
-            label16.Text = "label1";
+            label16.Text = "Ngày tháng:";
             // 
             // label15
             // 
@@ -316,14 +301,14 @@
             label1.TabIndex = 5;
             label1.Text = "ID:";
             // 
-            // button5
+            // btnXuat
             // 
-            button5.Location = new Point(810, 34);
-            button5.Name = "button5";
-            button5.Size = new Size(112, 34);
-            button5.TabIndex = 3;
-            button5.Text = "xuất hóa đơn";
-            button5.UseVisualStyleBackColor = true;
+            btnXuat.Location = new Point(889, 21);
+            btnXuat.Name = "btnXuat";
+            btnXuat.Size = new Size(112, 34);
+            btnXuat.TabIndex = 3;
+            btnXuat.Text = "Xuất đơn";
+            btnXuat.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -384,7 +369,6 @@
             tbSeller.Name = "tbSeller";
             tbSeller.Size = new Size(192, 30);
             tbSeller.TabIndex = 17;
-            tbSeller.TextChanged += tbSeller_TextChanged;
             // 
             // tbTim
             // 
@@ -400,7 +384,6 @@
             tbCus.Name = "tbCus";
             tbCus.Size = new Size(192, 30);
             tbCus.TabIndex = 16;
-            tbCus.TextChanged += tbCus_TextChanged;
             // 
             // tbID
             // 
@@ -505,7 +488,7 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { OrderID, CustomerID, SellerID, OrderTime, Payment });
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { OrderID, CusName, SellerName, OrderTime });
             dataGridView2.Location = new Point(5, 290);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 62;
@@ -521,19 +504,19 @@
             OrderID.Name = "OrderID";
             OrderID.Width = 125;
             // 
-            // CustomerID
+            // CusName
             // 
-            CustomerID.HeaderText = "Khách hàng";
-            CustomerID.MinimumWidth = 6;
-            CustomerID.Name = "CustomerID";
-            CustomerID.Width = 125;
+            CusName.HeaderText = "Khách hàng";
+            CusName.MinimumWidth = 6;
+            CusName.Name = "CusName";
+            CusName.Width = 125;
             // 
-            // SellerID
+            // SellerName
             // 
-            SellerID.HeaderText = "Seller";
-            SellerID.MinimumWidth = 6;
-            SellerID.Name = "SellerID";
-            SellerID.Width = 125;
+            SellerName.HeaderText = "Seller";
+            SellerName.MinimumWidth = 6;
+            SellerName.Name = "SellerName";
+            SellerName.Width = 125;
             // 
             // OrderTime
             // 
@@ -541,13 +524,6 @@
             OrderTime.MinimumWidth = 6;
             OrderTime.Name = "OrderTime";
             OrderTime.Width = 125;
-            // 
-            // Payment
-            // 
-            Payment.HeaderText = "Phương thức thanh toán";
-            Payment.MinimumWidth = 6;
-            Payment.Name = "Payment";
-            Payment.Width = 125;
             // 
             // label3
             // 
@@ -568,6 +544,31 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1153, 943);
             tabControl1.TabIndex = 18;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(407, 27);
+            label18.Name = "label18";
+            label18.Size = new Size(203, 23);
+            label18.TabIndex = 12;
+            label18.Text = "Phương thức thanh toán:";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(540, 135);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(150, 30);
+            textBox5.TabIndex = 8;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(407, 138);
+            label17.Name = "label17";
+            label17.Size = new Size(93, 23);
+            label17.TabIndex = 5;
+            label17.Text = "Tình trạng:";
             // 
             // AccGUI_menu
             // 
@@ -611,7 +612,7 @@
         private TextBox textBox1;
         private Label label2;
         private Label label1;
-        private Button button5;
+        private Button btnXuat;
         private DataGridView dataGridView1;
         private TabPage tabPage3;
         private TextBox tbSeller;
@@ -629,23 +630,23 @@
         private Label label6;
         private Label lb5;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn OrderID;
-        private DataGridViewTextBoxColumn CustomerID;
-        private DataGridViewTextBoxColumn SellerID;
-        private DataGridViewTextBoxColumn OrderTime;
-        private DataGridViewTextBoxColumn Payment;
         private Label label3;
         private TabControl tabControl1;
         private TextBox tbOrder;
         private Label label5;
         private TextBox textBox7;
         private TextBox textBox6;
-        private TextBox textBox5;
         private TextBox textBox4;
         private TextBox tbID1;
-        private Label label17;
         private Label label16;
         private Label label15;
         private Label label12;
+        private DataGridViewTextBoxColumn OrderID;
+        private DataGridViewTextBoxColumn CusName;
+        private DataGridViewTextBoxColumn SellerName;
+        private DataGridViewTextBoxColumn OrderTime;
+        private Label label18;
+        private TextBox textBox5;
+        private Label label17;
     }
 }
