@@ -43,22 +43,13 @@ namespace GUI
                 txbAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
             }
         }
-        private void LoadingOrder()
-        {
-
-            foreach (Order item in OrderBUS.Instance.get())
-            {
-
-                //dgvOrder.Rows.Add(item.ID, item.Laptop.ID, item.Price, item.Quantity, item.Customer.ID, item.Accountant.ID, item.Seller.ID, item.Order_date, item.StatusString);
-            }
-        }
+   
         #endregion
 
         private void SellGUI_menu_Load(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
             LoadingCustomer();
-            LoadingOrder();
             state = "Start";
             ManageInterface(state);
             cbTimKiem_CheckedChanged(sender, e);
@@ -118,12 +109,17 @@ namespace GUI
         {
             if (state == "Add")
             {
+                char [] PhoneArr = customer.Phone.ToCharArray();
                 if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
                 {
-                    /*if (CustomerBUS.Instance.CheckPhone(customer) == true)
+                    if (CustomerBUS.Instance.CheckPhone(customer) == true)
                     {
                         MessageBox.Show("Số điện thoại đã tồn tại");
                     }
+                    else if(PhoneArr.Length != 10)
+                    {
+                        MessageBox.Show("Số điện thoại phải đúng đủ 10 số!");
+                    }    
                     else
                     {
                         CustomerBUS.Instance.insert(customer);
@@ -132,11 +128,12 @@ namespace GUI
                         LoadingCustomer();
                         MessageBox.Show("Thêm thông tin thành công", "Thông báo");
                         ManageInterface("Start");
-                    }*/
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Yêu cầu nhập đầy đủ thông tin!", "Thông báo");
+                    txbName.Focus();
                 }
             }
             if (state == "Update")
@@ -153,6 +150,7 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Yêu cầu nhập đầy đủ thông tin!", "Thông báo");
+                    txbName.Focus();
                 }
             }
         }
@@ -286,7 +284,8 @@ namespace GUI
 
         private void txbPhone_TextChanged(object sender, EventArgs e)
         {
-            customer.Phone = txbPhone.Text;
+         
+                customer.Phone = txbPhone.Text;
         }
 
         private void txbAddress_TextChanged(object sender, EventArgs e)

@@ -29,7 +29,6 @@ namespace DAL
                 DbDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-
                     Order order = new Order();
                     order.ID = reader.GetInt32("order_id");
                     order.Customer = new Customer();

@@ -53,24 +53,9 @@ namespace DAL
             }
             Close();
             return list;
-        }
-        public bool Check(Customer customer)
-        {
-            Open();
-            SqlCommand command = new SqlCommand("select phone from customers ", conn);
-            SqlDataReader dr = command.ExecuteReader();
-            while (dr.Read())
-            {
-                if (customer.Phone == dr["phone"])
-                {
-                    return true;
-                }
-            }
-            Close();
-            return false;
+        }  
+        public bool insert (Customer customer)
 
-        }
-        public bool insert(Customer customer)
         {
             try
             {
