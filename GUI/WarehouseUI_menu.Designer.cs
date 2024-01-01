@@ -130,7 +130,6 @@
             groupBox1 = new GroupBox();
             btNhaCungCap = new Button();
             btTaoHoaDonNhap = new Button();
-            tbLaptopID2 = new TextBox();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -163,9 +162,9 @@
             // cbLaptop2
             // 
             cbLaptop2.FormattingEnabled = true;
-            cbLaptop2.Location = new Point(197, 166);
+            cbLaptop2.Location = new Point(197, 120);
             cbLaptop2.Name = "cbLaptop2";
-            cbLaptop2.Size = new Size(182, 36);
+            cbLaptop2.Size = new Size(283, 36);
             cbLaptop2.TabIndex = 12;
             cbLaptop2.SelectedIndexChanged += cbLaptop2_SelectedIndexChanged;
             // 
@@ -841,7 +840,6 @@
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(tbLaptopID2);
             tabPage3.Controls.Add(btnHuy2);
             tabPage3.Controls.Add(tbSoluong2);
             tabPage3.Controls.Add(btnXoa2);
@@ -876,10 +874,11 @@
             // 
             // tbSoluong2
             // 
-            tbSoluong2.Location = new Point(197, 226);
+            tbSoluong2.Location = new Point(197, 191);
             tbSoluong2.Name = "tbSoluong2";
             tbSoluong2.Size = new Size(150, 34);
             tbSoluong2.TabIndex = 26;
+            tbSoluong2.TextChanged += tbSoluong2_TextChanged;
             // 
             // btnXoa2
             // 
@@ -908,6 +907,7 @@
             btnGhi2.TabIndex = 23;
             btnGhi2.Text = "Ghi";
             btnGhi2.UseVisualStyleBackColor = true;
+            btnGhi2.Click += btnGhi2_Click;
             // 
             // btnSua2
             // 
@@ -974,6 +974,7 @@
             dataGridView2.RowTemplate.Height = 33;
             dataGridView2.Size = new Size(1140, 522);
             dataGridView2.TabIndex = 2;
+            dataGridView2.CellClick += dataGridView2_CellClick;
             // 
             // Col1
             // 
@@ -1088,14 +1089,6 @@
             btTaoHoaDonNhap.Text = "Hóa đơn nhập kho";
             btTaoHoaDonNhap.UseVisualStyleBackColor = true;
             btTaoHoaDonNhap.Click += btTaoHoaDonNhap_Click;
-            // 
-            // tbLaptopID2
-            // 
-            tbLaptopID2.Enabled = false;
-            tbLaptopID2.Location = new Point(197, 112);
-            tbLaptopID2.Name = "tbLaptopID2";
-            tbLaptopID2.Size = new Size(150, 34);
-            tbLaptopID2.TabIndex = 28;
             // 
             // WarehouseUI_menu
             // 
@@ -1232,6 +1225,5 @@
         private DataGridViewTextBoxColumn Col3;
         private DataGridViewTextBoxColumn Col4;
         private DataGridViewTextBoxColumn Col5;
-        private TextBox tbLaptopID2;
     }
 }
