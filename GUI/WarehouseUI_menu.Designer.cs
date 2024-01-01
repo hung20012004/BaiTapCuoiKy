@@ -33,7 +33,7 @@
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             tabControl1 = new TabControl();
-            tabPage2 = new TabPage();
+            tab0 = new TabPage();
             tbPhone = new TextBox();
             tbAddress = new TextBox();
             btSua = new Button();
@@ -50,10 +50,10 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            tabPage1 = new TabPage();
+            tab1 = new TabPage();
             btHuy1 = new Button();
-            cbbManufactory_ID = new ComboBox();
-            cbbCategory_ID = new ComboBox();
+            cbbManufactory = new ComboBox();
+            cbbCategory = new ComboBox();
             tbQuantity = new TextBox();
             tbPrice = new TextBox();
             tbWP = new TextBox();
@@ -62,9 +62,9 @@
             tbAudio = new TextBox();
             tbKeyboard = new TextBox();
             tbSecurity = new TextBox();
-            tbNAC = new TextBox();
-            tbPorts = new TextBox();
-            tbMaterials = new TextBox();
+            tbConnection = new TextBox();
+            tbPort = new TextBox();
+            tbMaterial = new TextBox();
             tbWeight = new TextBox();
             tbBattery = new TextBox();
             tbDisplay = new TextBox();
@@ -73,7 +73,6 @@
             tbLaptop_Name = new TextBox();
             label33 = new Label();
             label32 = new Label();
-            label31 = new Label();
             label30 = new Label();
             label29 = new Label();
             label28 = new Label();
@@ -87,11 +86,9 @@
             label20 = new Label();
             label19 = new Label();
             label18 = new Label();
-            label17 = new Label();
             label16 = new Label();
             label15 = new Label();
             label14 = new Label();
-            label6 = new Label();
             label5 = new Label();
             btThem1 = new Button();
             tbLaptop_ID = new TextBox();
@@ -100,11 +97,33 @@
             btSua1 = new Button();
             btGhi1 = new Button();
             dataGridView3 = new DataGridView();
+            ColID = new DataGridViewTextBoxColumn();
+            ColName = new DataGridViewTextBoxColumn();
+            ColCategory = new DataGridViewTextBoxColumn();
+            ColManufacory = new DataGridViewTextBoxColumn();
+            ColCPU = new DataGridViewTextBoxColumn();
+            ColRam = new DataGridViewTextBoxColumn();
+            ColHardDrive = new DataGridViewTextBoxColumn();
+            ColVGA = new DataGridViewTextBoxColumn();
+            ColDisplay = new DataGridViewTextBoxColumn();
+            ColBattery = new DataGridViewTextBoxColumn();
+            ColWeight = new DataGridViewTextBoxColumn();
+            ColMaterial = new DataGridViewTextBoxColumn();
+            ColPort = new DataGridViewTextBoxColumn();
+            ColConnection = new DataGridViewTextBoxColumn();
+            ColSecurity = new DataGridViewTextBoxColumn();
+            ColKeyboard = new DataGridViewTextBoxColumn();
+            ColAudio = new DataGridViewTextBoxColumn();
+            ColSize = new DataGridViewTextBoxColumn();
+            ColOS = new DataGridViewTextBoxColumn();
+            ColWarrantyPeriod = new DataGridViewTextBoxColumn();
+            ColPrice = new DataGridViewTextBoxColumn();
+            ColQuantity = new DataGridViewTextBoxColumn();
             btXoa1 = new Button();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            tabPage3 = new TabPage();
+            tab2 = new TabPage();
             textBox8 = new TextBox();
             button14 = new Button();
             button15 = new Button();
@@ -125,11 +144,11 @@
             btNhaCungCap = new Button();
             btNhapKho = new Button();
             tabControl1.SuspendLayout();
-            tabPage2.SuspendLayout();
+            tab0.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tabPage1.SuspendLayout();
+            tab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            tabPage3.SuspendLayout();
+            tab2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
@@ -171,38 +190,38 @@
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tab0);
+            tabControl1.Controls.Add(tab1);
+            tabControl1.Controls.Add(tab2);
             tabControl1.Location = new Point(324, 1);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1153, 943);
             tabControl1.TabIndex = 20;
             // 
-            // tabPage2
+            // tab0
             // 
-            tabPage2.Controls.Add(tbPhone);
-            tabPage2.Controls.Add(tbAddress);
-            tabPage2.Controls.Add(btSua);
-            tabPage2.Controls.Add(btHuy);
-            tabPage2.Controls.Add(btXoa);
-            tabPage2.Controls.Add(tbID);
-            tabPage2.Controls.Add(label11);
-            tabPage2.Controls.Add(tbName);
-            tabPage2.Controls.Add(label10);
-            tabPage2.Controls.Add(btGhi);
-            tabPage2.Controls.Add(btThem);
-            tabPage2.Controls.Add(label2);
-            tabPage2.Controls.Add(label1);
-            tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Location = new Point(4, 26);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 913);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            tab0.Controls.Add(tbPhone);
+            tab0.Controls.Add(tbAddress);
+            tab0.Controls.Add(btSua);
+            tab0.Controls.Add(btHuy);
+            tab0.Controls.Add(btXoa);
+            tab0.Controls.Add(tbID);
+            tab0.Controls.Add(label11);
+            tab0.Controls.Add(tbName);
+            tab0.Controls.Add(label10);
+            tab0.Controls.Add(btGhi);
+            tab0.Controls.Add(btThem);
+            tab0.Controls.Add(label2);
+            tab0.Controls.Add(label1);
+            tab0.Controls.Add(dataGridView1);
+            tab0.Location = new Point(4, 26);
+            tab0.Name = "tab0";
+            tab0.Padding = new Padding(3);
+            tab0.Size = new Size(1145, 913);
+            tab0.TabIndex = 1;
+            tab0.Text = "Nhà CC";
+            tab0.UseVisualStyleBackColor = true;
             // 
             // tbPhone
             // 
@@ -210,6 +229,7 @@
             tbPhone.Name = "tbPhone";
             tbPhone.Size = new Size(150, 25);
             tbPhone.TabIndex = 22;
+            tbPhone.TextChanged += tbPhone_TextChanged;
             // 
             // tbAddress
             // 
@@ -217,6 +237,7 @@
             tbAddress.Name = "tbAddress";
             tbAddress.Size = new Size(150, 25);
             tbAddress.TabIndex = 21;
+            tbAddress.TextChanged += tbAddress_TextChanged;
             // 
             // btSua
             // 
@@ -236,6 +257,7 @@
             btHuy.TabIndex = 18;
             btHuy.Text = "Hủy";
             btHuy.UseVisualStyleBackColor = true;
+            btHuy.Click += btHuy_Click;
             // 
             // btXoa
             // 
@@ -253,6 +275,7 @@
             tbID.Name = "tbID";
             tbID.Size = new Size(150, 25);
             tbID.TabIndex = 15;
+            tbID.TextChanged += tbID_TextChanged;
             // 
             // label11
             // 
@@ -269,6 +292,7 @@
             tbName.Name = "tbName";
             tbName.Size = new Size(150, 25);
             tbName.TabIndex = 13;
+            tbName.TextChanged += tbName_TextChanged;
             // 
             // label10
             // 
@@ -287,6 +311,7 @@
             btGhi.TabIndex = 10;
             btGhi.Text = "Ghi ";
             btGhi.UseVisualStyleBackColor = true;
+            btGhi.Click += btGhi_Click;
             // 
             // btThem
             // 
@@ -308,6 +333,7 @@
             dataGridView1.RowTemplate.Height = 33;
             dataGridView1.Size = new Size(1101, 604);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
@@ -329,67 +355,64 @@
             Column4.HeaderText = "Số điện thoại";
             Column4.Name = "Column4";
             // 
-            // tabPage1
+            // tab1
             // 
-            tabPage1.Controls.Add(btHuy1);
-            tabPage1.Controls.Add(cbbManufactory_ID);
-            tabPage1.Controls.Add(cbbCategory_ID);
-            tabPage1.Controls.Add(tbQuantity);
-            tabPage1.Controls.Add(tbPrice);
-            tabPage1.Controls.Add(tbWP);
-            tabPage1.Controls.Add(tbOS);
-            tabPage1.Controls.Add(tbSize);
-            tabPage1.Controls.Add(tbAudio);
-            tabPage1.Controls.Add(tbKeyboard);
-            tabPage1.Controls.Add(tbSecurity);
-            tabPage1.Controls.Add(tbNAC);
-            tabPage1.Controls.Add(tbPorts);
-            tabPage1.Controls.Add(tbMaterials);
-            tabPage1.Controls.Add(tbWeight);
-            tabPage1.Controls.Add(tbBattery);
-            tabPage1.Controls.Add(tbDisplay);
-            tabPage1.Controls.Add(tbRAM);
-            tabPage1.Controls.Add(tbCPU);
-            tabPage1.Controls.Add(tbLaptop_Name);
-            tabPage1.Controls.Add(label33);
-            tabPage1.Controls.Add(label32);
-            tabPage1.Controls.Add(label31);
-            tabPage1.Controls.Add(label30);
-            tabPage1.Controls.Add(label29);
-            tabPage1.Controls.Add(label28);
-            tabPage1.Controls.Add(label27);
-            tabPage1.Controls.Add(label26);
-            tabPage1.Controls.Add(label25);
-            tabPage1.Controls.Add(label24);
-            tabPage1.Controls.Add(label23);
-            tabPage1.Controls.Add(label22);
-            tabPage1.Controls.Add(label21);
-            tabPage1.Controls.Add(label20);
-            tabPage1.Controls.Add(label19);
-            tabPage1.Controls.Add(label18);
-            tabPage1.Controls.Add(label17);
-            tabPage1.Controls.Add(label16);
-            tabPage1.Controls.Add(label15);
-            tabPage1.Controls.Add(label14);
-            tabPage1.Controls.Add(label6);
-            tabPage1.Controls.Add(label5);
-            tabPage1.Controls.Add(btThem1);
-            tabPage1.Controls.Add(tbLaptop_ID);
-            tabPage1.Controls.Add(tbHD);
-            tabPage1.Controls.Add(tbVGA);
-            tabPage1.Controls.Add(btSua1);
-            tabPage1.Controls.Add(btGhi1);
-            tabPage1.Controls.Add(dataGridView3);
-            tabPage1.Controls.Add(btXoa1);
-            tabPage1.Controls.Add(label9);
-            tabPage1.Controls.Add(label8);
-            tabPage1.Controls.Add(label7);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1145, 915);
-            tabPage1.TabIndex = 4;
-            tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            tab1.Controls.Add(btHuy1);
+            tab1.Controls.Add(cbbManufactory);
+            tab1.Controls.Add(cbbCategory);
+            tab1.Controls.Add(tbQuantity);
+            tab1.Controls.Add(tbPrice);
+            tab1.Controls.Add(tbWP);
+            tab1.Controls.Add(tbOS);
+            tab1.Controls.Add(tbSize);
+            tab1.Controls.Add(tbAudio);
+            tab1.Controls.Add(tbKeyboard);
+            tab1.Controls.Add(tbSecurity);
+            tab1.Controls.Add(tbConnection);
+            tab1.Controls.Add(tbPort);
+            tab1.Controls.Add(tbMaterial);
+            tab1.Controls.Add(tbWeight);
+            tab1.Controls.Add(tbBattery);
+            tab1.Controls.Add(tbDisplay);
+            tab1.Controls.Add(tbRAM);
+            tab1.Controls.Add(tbCPU);
+            tab1.Controls.Add(tbLaptop_Name);
+            tab1.Controls.Add(label33);
+            tab1.Controls.Add(label32);
+            tab1.Controls.Add(label30);
+            tab1.Controls.Add(label29);
+            tab1.Controls.Add(label28);
+            tab1.Controls.Add(label27);
+            tab1.Controls.Add(label26);
+            tab1.Controls.Add(label25);
+            tab1.Controls.Add(label24);
+            tab1.Controls.Add(label23);
+            tab1.Controls.Add(label22);
+            tab1.Controls.Add(label21);
+            tab1.Controls.Add(label20);
+            tab1.Controls.Add(label19);
+            tab1.Controls.Add(label18);
+            tab1.Controls.Add(label16);
+            tab1.Controls.Add(label15);
+            tab1.Controls.Add(label14);
+            tab1.Controls.Add(label5);
+            tab1.Controls.Add(btThem1);
+            tab1.Controls.Add(tbLaptop_ID);
+            tab1.Controls.Add(tbHD);
+            tab1.Controls.Add(tbVGA);
+            tab1.Controls.Add(btSua1);
+            tab1.Controls.Add(btGhi1);
+            tab1.Controls.Add(dataGridView3);
+            tab1.Controls.Add(btXoa1);
+            tab1.Controls.Add(label9);
+            tab1.Controls.Add(label8);
+            tab1.Controls.Add(label7);
+            tab1.Location = new Point(4, 26);
+            tab1.Name = "tab1";
+            tab1.Size = new Size(1145, 913);
+            tab1.TabIndex = 4;
+            tab1.Text = "phẩm ";
+            tab1.UseVisualStyleBackColor = true;
             // 
             // btHuy1
             // 
@@ -399,24 +422,27 @@
             btHuy1.TabIndex = 55;
             btHuy1.Text = "Huy";
             btHuy1.UseVisualStyleBackColor = true;
+            btHuy1.Click += btHuy1_Click;
             // 
-            // cbbManufactory_ID
+            // cbbManufactory
             // 
-            cbbManufactory_ID.FormattingEnabled = true;
-            cbbManufactory_ID.Items.AddRange(new object[] { "Asus", "Dell", "Lenovo", "HP", "MSI", "Acer", "MacBook", "LG Gram", "Surface", "Gigabyte", "Samsung", "Huawei" });
-            cbbManufactory_ID.Location = new Point(100, 146);
-            cbbManufactory_ID.Name = "cbbManufactory_ID";
-            cbbManufactory_ID.Size = new Size(150, 25);
-            cbbManufactory_ID.TabIndex = 54;
+            cbbManufactory.FormattingEnabled = true;
+            cbbManufactory.Items.AddRange(new object[] { "Asus", "Dell", "Lenovo", "HP", "MSI", "Acer", "MacBook", "LG Gram", "Surface", "Gigabyte", "Samsung", "Huawei" });
+            cbbManufactory.Location = new Point(100, 146);
+            cbbManufactory.Name = "cbbManufactory";
+            cbbManufactory.Size = new Size(150, 25);
+            cbbManufactory.TabIndex = 54;
+            cbbManufactory.SelectedIndexChanged += cbbManufactory_SelectedIndexChanged;
             // 
-            // cbbCategory_ID
+            // cbbCategory
             // 
-            cbbCategory_ID.FormattingEnabled = true;
-            cbbCategory_ID.Items.AddRange(new object[] { "Văn phòng", "Gaming", "Đồ họa", "Mỏng nhẹ" });
-            cbbCategory_ID.Location = new Point(100, 110);
-            cbbCategory_ID.Name = "cbbCategory_ID";
-            cbbCategory_ID.Size = new Size(149, 25);
-            cbbCategory_ID.TabIndex = 53;
+            cbbCategory.FormattingEnabled = true;
+            cbbCategory.Items.AddRange(new object[] { "Văn phòng", "Gaming", "Đồ họa", "Mỏng nhẹ" });
+            cbbCategory.Location = new Point(100, 110);
+            cbbCategory.Name = "cbbCategory";
+            cbbCategory.Size = new Size(149, 25);
+            cbbCategory.TabIndex = 53;
+            cbbCategory.SelectedIndexChanged += cbbCategory_SelectedIndexChanged;
             // 
             // tbQuantity
             // 
@@ -424,6 +450,7 @@
             tbQuantity.Name = "tbQuantity";
             tbQuantity.Size = new Size(150, 25);
             tbQuantity.TabIndex = 52;
+            tbQuantity.TextChanged += tbQuantity_TextChanged;
             // 
             // tbPrice
             // 
@@ -431,6 +458,7 @@
             tbPrice.Name = "tbPrice";
             tbPrice.Size = new Size(150, 25);
             tbPrice.TabIndex = 51;
+            tbPrice.TextChanged += tbPrice_TextChanged;
             // 
             // tbWP
             // 
@@ -438,6 +466,7 @@
             tbWP.Name = "tbWP";
             tbWP.Size = new Size(150, 25);
             tbWP.TabIndex = 50;
+            tbWP.TextChanged += tbWP_TextChanged;
             // 
             // tbOS
             // 
@@ -445,6 +474,7 @@
             tbOS.Name = "tbOS";
             tbOS.Size = new Size(150, 25);
             tbOS.TabIndex = 49;
+            tbOS.TextChanged += tbOS_TextChanged;
             // 
             // tbSize
             // 
@@ -452,6 +482,7 @@
             tbSize.Name = "tbSize";
             tbSize.Size = new Size(150, 25);
             tbSize.TabIndex = 48;
+            tbSize.TextChanged += tbSize_TextChanged;
             // 
             // tbAudio
             // 
@@ -459,6 +490,7 @@
             tbAudio.Name = "tbAudio";
             tbAudio.Size = new Size(150, 25);
             tbAudio.TabIndex = 47;
+            tbAudio.TextChanged += tbAudio_TextChanged;
             // 
             // tbKeyboard
             // 
@@ -466,6 +498,7 @@
             tbKeyboard.Name = "tbKeyboard";
             tbKeyboard.Size = new Size(150, 25);
             tbKeyboard.TabIndex = 46;
+            tbKeyboard.TextChanged += tbKeyboard_TextChanged;
             // 
             // tbSecurity
             // 
@@ -473,27 +506,31 @@
             tbSecurity.Name = "tbSecurity";
             tbSecurity.Size = new Size(150, 25);
             tbSecurity.TabIndex = 45;
+            tbSecurity.TextChanged += tbSecurity_TextChanged;
             // 
-            // tbNAC
+            // tbConnection
             // 
-            tbNAC.Location = new Point(604, 69);
-            tbNAC.Name = "tbNAC";
-            tbNAC.Size = new Size(150, 25);
-            tbNAC.TabIndex = 44;
+            tbConnection.Location = new Point(604, 69);
+            tbConnection.Name = "tbConnection";
+            tbConnection.Size = new Size(150, 25);
+            tbConnection.TabIndex = 44;
+            tbConnection.TextChanged += tbConnection_TextChanged;
             // 
-            // tbPorts
+            // tbPort
             // 
-            tbPorts.Location = new Point(604, 30);
-            tbPorts.Name = "tbPorts";
-            tbPorts.Size = new Size(150, 25);
-            tbPorts.TabIndex = 43;
+            tbPort.Location = new Point(604, 30);
+            tbPort.Name = "tbPort";
+            tbPort.Size = new Size(150, 25);
+            tbPort.TabIndex = 43;
+            tbPort.TextChanged += tbPort_TextChanged;
             // 
-            // tbMaterials
+            // tbMaterial
             // 
-            tbMaterials.Location = new Point(350, 221);
-            tbMaterials.Name = "tbMaterials";
-            tbMaterials.Size = new Size(150, 25);
-            tbMaterials.TabIndex = 42;
+            tbMaterial.Location = new Point(350, 221);
+            tbMaterial.Name = "tbMaterial";
+            tbMaterial.Size = new Size(150, 25);
+            tbMaterial.TabIndex = 42;
+            tbMaterial.TextChanged += tbMaterial_TextChanged;
             // 
             // tbWeight
             // 
@@ -501,6 +538,7 @@
             tbWeight.Name = "tbWeight";
             tbWeight.Size = new Size(150, 25);
             tbWeight.TabIndex = 41;
+            tbWeight.TextChanged += tbWeight_TextChanged;
             // 
             // tbBattery
             // 
@@ -508,6 +546,7 @@
             tbBattery.Name = "tbBattery";
             tbBattery.Size = new Size(150, 25);
             tbBattery.TabIndex = 40;
+            tbBattery.TextChanged += tbBattery_TextChanged;
             // 
             // tbDisplay
             // 
@@ -515,6 +554,7 @@
             tbDisplay.Name = "tbDisplay";
             tbDisplay.Size = new Size(150, 25);
             tbDisplay.TabIndex = 39;
+            tbDisplay.TextChanged += tbDisplay_TextChanged;
             // 
             // tbRAM
             // 
@@ -522,6 +562,7 @@
             tbRAM.Name = "tbRAM";
             tbRAM.Size = new Size(150, 25);
             tbRAM.TabIndex = 38;
+            tbRAM.TextChanged += tbRAM_TextChanged;
             // 
             // tbCPU
             // 
@@ -529,6 +570,7 @@
             tbCPU.Name = "tbCPU";
             tbCPU.Size = new Size(150, 25);
             tbCPU.TabIndex = 37;
+            tbCPU.TextChanged += tbCPU_TextChanged;
             // 
             // tbLaptop_Name
             // 
@@ -536,6 +578,7 @@
             tbLaptop_Name.Name = "tbLaptop_Name";
             tbLaptop_Name.Size = new Size(150, 25);
             tbLaptop_Name.TabIndex = 35;
+            tbLaptop_Name.TextChanged += tbLaptop_Name_TextChanged;
             // 
             // label33
             // 
@@ -554,13 +597,6 @@
             label32.Size = new Size(63, 19);
             label32.TabIndex = 32;
             label32.Text = "Số lượng";
-            // 
-            // label31
-            // 
-            label31.Location = new Point(0, 0);
-            label31.Name = "label31";
-            label31.Size = new Size(100, 23);
-            label31.TabIndex = 0;
             // 
             // label30
             // 
@@ -679,13 +715,6 @@
             label18.TabIndex = 18;
             label18.Text = "Bảo hành";
             // 
-            // label17
-            // 
-            label17.Location = new Point(0, 0);
-            label17.Name = "label17";
-            label17.Size = new Size(100, 23);
-            label17.TabIndex = 31;
-            // 
             // label16
             // 
             label16.AutoSize = true;
@@ -713,13 +742,6 @@
             label14.TabIndex = 13;
             label14.Text = "Ổ cứng";
             // 
-            // label6
-            // 
-            label6.Location = new Point(0, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(100, 23);
-            label6.TabIndex = 14;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -737,6 +759,7 @@
             btThem1.TabIndex = 10;
             btThem1.Text = "Thêm";
             btThem1.UseVisualStyleBackColor = true;
+            btThem1.Click += btThem1_Click;
             // 
             // tbLaptop_ID
             // 
@@ -744,6 +767,7 @@
             tbLaptop_ID.Name = "tbLaptop_ID";
             tbLaptop_ID.Size = new Size(150, 25);
             tbLaptop_ID.TabIndex = 9;
+            tbLaptop_ID.TextChanged += tbLaptop_ID_TextChanged;
             // 
             // tbHD
             // 
@@ -751,6 +775,7 @@
             tbHD.Name = "tbHD";
             tbHD.Size = new Size(150, 25);
             tbHD.TabIndex = 8;
+            tbHD.TextChanged += tbHD_TextChanged;
             // 
             // tbVGA
             // 
@@ -758,6 +783,7 @@
             tbVGA.Name = "tbVGA";
             tbVGA.Size = new Size(150, 25);
             tbVGA.TabIndex = 7;
+            tbVGA.TextChanged += tbVGA_TextChanged;
             // 
             // btSua1
             // 
@@ -767,6 +793,7 @@
             btSua1.TabIndex = 6;
             btSua1.Text = "Sửa";
             btSua1.UseVisualStyleBackColor = true;
+            btSua1.Click += btSua1_Click;
             // 
             // btGhi1
             // 
@@ -776,16 +803,129 @@
             btGhi1.TabIndex = 5;
             btGhi1.Text = "Ghi";
             btGhi1.UseVisualStyleBackColor = true;
+            btGhi1.Click += btGhi1_Click;
             // 
             // dataGridView3
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { ColID, ColName, ColCategory, ColManufacory, ColCPU, ColRam, ColHardDrive, ColVGA, ColDisplay, ColBattery, ColWeight, ColMaterial, ColPort, ColConnection, ColSecurity, ColKeyboard, ColAudio, ColSize, ColOS, ColWarrantyPeriod, ColPrice, ColQuantity });
             dataGridView3.Location = new Point(5, 290);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 62;
             dataGridView3.RowTemplate.Height = 33;
             dataGridView3.Size = new Size(1140, 604);
             dataGridView3.TabIndex = 4;
+            dataGridView3.CellContentClick += dataGridView3_CellContentClick;
+            // 
+            // ColID
+            // 
+            ColID.HeaderText = "ID";
+            ColID.Name = "ColID";
+            // 
+            // ColName
+            // 
+            ColName.HeaderText = "Tên sản phẩm";
+            ColName.Name = "ColName";
+            // 
+            // ColCategory
+            // 
+            ColCategory.HeaderText = "Loại";
+            ColCategory.Name = "ColCategory";
+            // 
+            // ColManufacory
+            // 
+            ColManufacory.HeaderText = "Hãng";
+            ColManufacory.Name = "ColManufacory";
+            // 
+            // ColCPU
+            // 
+            ColCPU.HeaderText = "CPU";
+            ColCPU.Name = "ColCPU";
+            // 
+            // ColRam
+            // 
+            ColRam.HeaderText = "RAM";
+            ColRam.Name = "ColRam";
+            // 
+            // ColHardDrive
+            // 
+            ColHardDrive.HeaderText = "Ổ cứng";
+            ColHardDrive.Name = "ColHardDrive";
+            // 
+            // ColVGA
+            // 
+            ColVGA.HeaderText = "VGA";
+            ColVGA.Name = "ColVGA";
+            // 
+            // ColDisplay
+            // 
+            ColDisplay.HeaderText = "Màn hình";
+            ColDisplay.Name = "ColDisplay";
+            // 
+            // ColBattery
+            // 
+            ColBattery.HeaderText = "Pin";
+            ColBattery.Name = "ColBattery";
+            // 
+            // ColWeight
+            // 
+            ColWeight.HeaderText = "Trọng lượng";
+            ColWeight.Name = "ColWeight";
+            // 
+            // ColMaterial
+            // 
+            ColMaterial.HeaderText = "Chất liệu";
+            ColMaterial.Name = "ColMaterial";
+            // 
+            // ColPort
+            // 
+            ColPort.HeaderText = "Cổng kết nối";
+            ColPort.Name = "ColPort";
+            // 
+            // ColConnection
+            // 
+            ColConnection.HeaderText = "NAC";
+            ColConnection.Name = "ColConnection";
+            // 
+            // ColSecurity
+            // 
+            ColSecurity.HeaderText = "Bảo mật";
+            ColSecurity.Name = "ColSecurity";
+            // 
+            // ColKeyboard
+            // 
+            ColKeyboard.HeaderText = "Bàn phím";
+            ColKeyboard.Name = "ColKeyboard";
+            // 
+            // ColAudio
+            // 
+            ColAudio.HeaderText = "Âm thanh";
+            ColAudio.Name = "ColAudio";
+            // 
+            // ColSize
+            // 
+            ColSize.HeaderText = "Kích cỡ";
+            ColSize.Name = "ColSize";
+            // 
+            // ColOS
+            // 
+            ColOS.HeaderText = "Hệ điều hành";
+            ColOS.Name = "ColOS";
+            // 
+            // ColWarrantyPeriod
+            // 
+            ColWarrantyPeriod.HeaderText = "Bảo hành";
+            ColWarrantyPeriod.Name = "ColWarrantyPeriod";
+            // 
+            // ColPrice
+            // 
+            ColPrice.HeaderText = "Giá";
+            ColPrice.Name = "ColPrice";
+            // 
+            // ColQuantity
+            // 
+            ColQuantity.HeaderText = "Số lượng";
+            ColQuantity.Name = "ColQuantity";
             // 
             // btXoa1
             // 
@@ -795,6 +935,7 @@
             btXoa1.TabIndex = 3;
             btXoa1.Text = "Xóa";
             btXoa1.UseVisualStyleBackColor = true;
+            btXoa1.Click += btXoa1_Click;
             // 
             // label9
             // 
@@ -823,29 +964,29 @@
             label7.TabIndex = 0;
             label7.Text = "ID";
             // 
-            // tabPage3
+            // tab2
             // 
-            tabPage3.Controls.Add(textBox8);
-            tabPage3.Controls.Add(button14);
-            tabPage3.Controls.Add(button15);
-            tabPage3.Controls.Add(button16);
-            tabPage3.Controls.Add(button17);
-            tabPage3.Controls.Add(button18);
-            tabPage3.Controls.Add(button19);
-            tabPage3.Controls.Add(button20);
-            tabPage3.Controls.Add(label12);
-            tabPage3.Controls.Add(label13);
-            tabPage3.Controls.Add(comboBox2);
-            tabPage3.Controls.Add(comboBox1);
-            tabPage3.Controls.Add(dataGridView2);
-            tabPage3.Controls.Add(label4);
-            tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 24);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 915);
-            tabPage3.TabIndex = 3;
-            tabPage3.Text = "tabPage3";
-            tabPage3.UseVisualStyleBackColor = true;
+            tab2.Controls.Add(textBox8);
+            tab2.Controls.Add(button14);
+            tab2.Controls.Add(button15);
+            tab2.Controls.Add(button16);
+            tab2.Controls.Add(button17);
+            tab2.Controls.Add(button18);
+            tab2.Controls.Add(button19);
+            tab2.Controls.Add(button20);
+            tab2.Controls.Add(label12);
+            tab2.Controls.Add(label13);
+            tab2.Controls.Add(comboBox2);
+            tab2.Controls.Add(comboBox1);
+            tab2.Controls.Add(dataGridView2);
+            tab2.Controls.Add(label4);
+            tab2.Controls.Add(label3);
+            tab2.Location = new Point(4, 24);
+            tab2.Name = "tab2";
+            tab2.Size = new Size(1145, 915);
+            tab2.TabIndex = 3;
+            tab2.Text = "tabPage3";
+            tab2.UseVisualStyleBackColor = true;
             // 
             // textBox8
             // 
@@ -944,6 +1085,7 @@
             dataGridView2.RowTemplate.Height = 33;
             dataGridView2.Size = new Size(1140, 522);
             dataGridView2.TabIndex = 2;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // label4
             // 
@@ -1022,6 +1164,7 @@
             btNhapKho.TabIndex = 5;
             btNhapKho.Text = "Hóa đơn nhập kho";
             btNhapKho.UseVisualStyleBackColor = true;
+            btNhapKho.Click += btNhapKho_Click;
             // 
             // WarehouseUI_menu
             // 
@@ -1036,14 +1179,14 @@
             Text = "WarehouseStaff";
             Load += WarehouseUI_menu_Load;
             tabControl1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
+            tab0.ResumeLayout(false);
+            tab0.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            tab1.ResumeLayout(false);
+            tab1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            tabPage3.ResumeLayout(false);
-            tabPage3.PerformLayout();
+            tab2.ResumeLayout(false);
+            tab2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
@@ -1059,14 +1202,14 @@
         private ComboBox comboBox2;
         private ComboBox comboBox1;
         private TabControl tabControl1;
-        private TabPage tabPage3;
+        private TabPage tab2;
         private DataGridView dataGridView2;
         private Label label4;
         private Label label3;
-        private TabPage tabPage2;
+        private TabPage tab0;
         private TextBox textBox2;
         private DataGridView dataGridView1;
-        private TabPage tabPage1;
+        private TabPage tab1;
         private Button btXoa1;
         private Label label9;
         private Label label8;
@@ -1105,10 +1248,8 @@
         private Button btHuy;
         private Button btSua;
         private Label label14;
-        private Label label6;
         private Label label5;
         private Label label15;
-        private Label label31;
         private Label label30;
         private Label label29;
         private Label label28;
@@ -1122,7 +1263,6 @@
         private Label label20;
         private Label label19;
         private Label label18;
-        private Label label17;
         private Label label16;
         private TextBox tbQuantity;
         private TextBox tbPrice;
@@ -1132,9 +1272,9 @@
         private TextBox tbAudio;
         private TextBox tbKeyboard;
         private TextBox tbSecurity;
-        private TextBox tbNAC;
-        private TextBox tbPorts;
-        private TextBox tbMaterials;
+        private TextBox tbConnection;
+        private TextBox tbPort;
+        private TextBox tbMaterial;
         private TextBox tbWeight;
         private TextBox tbBattery;
         private TextBox tbDisplay;
@@ -1143,8 +1283,8 @@
         private TextBox tbLaptop_Name;
         private Label label33;
         private Label label32;
-        private ComboBox cbbManufactory_ID;
-        private ComboBox cbbCategory_ID;
+        private ComboBox cbbManufactory;
+        private ComboBox cbbCategory;
         private Button btHuy1;
         private TextBox tbPhone;
         private TextBox tbAddress;
@@ -1153,5 +1293,27 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private Button btNhaCungCap;
+        private DataGridViewTextBoxColumn ColID;
+        private DataGridViewTextBoxColumn ColName;
+        private DataGridViewTextBoxColumn ColCategory;
+        private DataGridViewTextBoxColumn ColManufacory;
+        private DataGridViewTextBoxColumn ColCPU;
+        private DataGridViewTextBoxColumn ColRam;
+        private DataGridViewTextBoxColumn ColHardDrive;
+        private DataGridViewTextBoxColumn ColVGA;
+        private DataGridViewTextBoxColumn ColDisplay;
+        private DataGridViewTextBoxColumn ColBattery;
+        private DataGridViewTextBoxColumn ColPort;
+        private DataGridViewTextBoxColumn ColConnection;
+        private DataGridViewTextBoxColumn ColSecurity;
+        private DataGridViewTextBoxColumn ColKeyboard;
+        private DataGridViewTextBoxColumn ColAudio;
+        private DataGridViewTextBoxColumn ColSize;
+        private DataGridViewTextBoxColumn ColOS;
+        private DataGridViewTextBoxColumn ColWarrantyPeriod;
+        private DataGridViewTextBoxColumn ColPrice;
+        private DataGridViewTextBoxColumn ColQuantity;
+        private DataGridViewTextBoxColumn ColWeight;
+        private DataGridViewTextBoxColumn ColMaterial;
     }
 }
