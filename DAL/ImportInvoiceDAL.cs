@@ -116,7 +116,7 @@ namespace DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@invoice_id", SqlDbType.Int).Value = importInvoice.ID;
                     cmd.Parameters.Add("@laptop_id", SqlDbType.Int).Value = laptop.ID;
-                    cmd.Parameters.Add("@quantity_import", SqlDbType.Int).Value = laptop.QuantityImport;
+                   // cmd.Parameters.Add("@quantity_import", SqlDbType.Int).Value = laptop.QuantityImport;
                     cmd.ExecuteNonQuery();
                 }
                 return true;

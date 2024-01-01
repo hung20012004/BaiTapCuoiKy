@@ -39,19 +39,29 @@
             label8 = new Label();
             label7 = new Label();
             tabPage2 = new TabPage();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox4 = new TextBox();
+            label18 = new Label();
+            tbPay = new TextBox();
+            tbOrderDate = new TextBox();
+            tbStatus = new TextBox();
+            tbSeller1 = new TextBox();
             tbID1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            tbCustomer = new TextBox();
+            tbAcc = new TextBox();
             label2 = new Label();
+            label17 = new Label();
             label16 = new Label();
             label15 = new Label();
             label12 = new Label();
             label1 = new Label();
             btnXuat = new Button();
-            dataGridView1 = new DataGridView();
+            dataGridView3 = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            CusName1 = new DataGridViewTextBoxColumn();
+            AccName = new DataGridViewTextBoxColumn();
+            SellerName1 = new DataGridViewTextBoxColumn();
+            OrderDate = new DataGridViewTextBoxColumn();
+            Pay = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             tabPage3 = new TabPage();
             tbOrder = new TextBox();
             label5 = new Label();
@@ -76,14 +86,11 @@
             OrderTime = new DataGridViewTextBoxColumn();
             label3 = new Label();
             tabControl1 = new TabControl();
-            label18 = new Label();
-            textBox5 = new TextBox();
-            label17 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabControl1.SuspendLayout();
@@ -191,13 +198,13 @@
             // tabPage2
             // 
             tabPage2.Controls.Add(label18);
-            tabPage2.Controls.Add(textBox7);
-            tabPage2.Controls.Add(textBox6);
-            tabPage2.Controls.Add(textBox5);
-            tabPage2.Controls.Add(textBox4);
+            tabPage2.Controls.Add(tbPay);
+            tabPage2.Controls.Add(tbOrderDate);
+            tabPage2.Controls.Add(tbStatus);
+            tabPage2.Controls.Add(tbSeller1);
             tabPage2.Controls.Add(tbID1);
-            tabPage2.Controls.Add(textBox2);
-            tabPage2.Controls.Add(textBox1);
+            tabPage2.Controls.Add(tbCustomer);
+            tabPage2.Controls.Add(tbAcc);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label17);
             tabPage2.Controls.Add(label16);
@@ -205,7 +212,7 @@
             tabPage2.Controls.Add(label12);
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(btnXuat);
-            tabPage2.Controls.Add(dataGridView1);
+            tabPage2.Controls.Add(dataGridView3);
             tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -214,26 +221,42 @@
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // label18
             // 
-            textBox7.Location = new Point(616, 24);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(150, 30);
-            textBox7.TabIndex = 8;
+            label18.AutoSize = true;
+            label18.Location = new Point(407, 27);
+            label18.Name = "label18";
+            label18.Size = new Size(203, 23);
+            label18.TabIndex = 12;
+            label18.Text = "Phương thức thanh toán:";
             // 
-            // textBox6
+            // tbPay
             // 
-            textBox6.Location = new Point(540, 80);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(150, 30);
-            textBox6.TabIndex = 8;
+            tbPay.Location = new Point(616, 24);
+            tbPay.Name = "tbPay";
+            tbPay.Size = new Size(150, 30);
+            tbPay.TabIndex = 8;
             // 
-            // textBox4
+            // tbOrderDate
             // 
-            textBox4.Location = new Point(169, 186);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(150, 30);
-            textBox4.TabIndex = 8;
+            tbOrderDate.Location = new Point(540, 80);
+            tbOrderDate.Name = "tbOrderDate";
+            tbOrderDate.Size = new Size(150, 30);
+            tbOrderDate.TabIndex = 8;
+            // 
+            // tbStatus
+            // 
+            tbStatus.Location = new Point(540, 135);
+            tbStatus.Name = "tbStatus";
+            tbStatus.Size = new Size(150, 30);
+            tbStatus.TabIndex = 8;
+            // 
+            // tbSeller1
+            // 
+            tbSeller1.Location = new Point(169, 186);
+            tbSeller1.Name = "tbSeller1";
+            tbSeller1.Size = new Size(150, 30);
+            tbSeller1.TabIndex = 8;
             // 
             // tbID1
             // 
@@ -242,19 +265,19 @@
             tbID1.Size = new Size(150, 30);
             tbID1.TabIndex = 8;
             // 
-            // textBox2
+            // tbCustomer
             // 
-            textBox2.Location = new Point(169, 80);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 30);
-            textBox2.TabIndex = 8;
+            tbCustomer.Location = new Point(169, 80);
+            tbCustomer.Name = "tbCustomer";
+            tbCustomer.Size = new Size(150, 30);
+            tbCustomer.TabIndex = 8;
             // 
-            // textBox1
+            // tbAcc
             // 
-            textBox1.Location = new Point(169, 135);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 30);
-            textBox1.TabIndex = 7;
+            tbAcc.Location = new Point(169, 135);
+            tbAcc.Name = "tbAcc";
+            tbAcc.Size = new Size(150, 30);
+            tbAcc.TabIndex = 7;
             // 
             // label2
             // 
@@ -264,6 +287,15 @@
             label2.Size = new Size(105, 23);
             label2.TabIndex = 6;
             label2.Text = "Khách hàng:";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(407, 138);
+            label17.Name = "label17";
+            label17.Size = new Size(93, 23);
+            label17.TabIndex = 5;
+            label17.Text = "Tình trạng:";
             // 
             // label16
             // 
@@ -309,16 +341,68 @@
             btnXuat.TabIndex = 3;
             btnXuat.Text = "Xuất đơn";
             btnXuat.UseVisualStyleBackColor = true;
+            btnXuat.Click += btnXuat_Click;
             // 
-            // dataGridView1
+            // dataGridView3
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(5, 290);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(1140, 604);
-            dataGridView1.TabIndex = 0;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { ID, CusName1, AccName, SellerName1, OrderDate, Pay, Status });
+            dataGridView3.Location = new Point(5, 290);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowHeadersWidth = 62;
+            dataGridView3.RowTemplate.Height = 33;
+            dataGridView3.Size = new Size(1140, 604);
+            dataGridView3.TabIndex = 0;
+            dataGridView3.CellContentClick += dataGridView3_CellContentClick;
+            // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.MinimumWidth = 6;
+            ID.Name = "ID";
+            ID.Width = 125;
+            // 
+            // CusName1
+            // 
+            CusName1.HeaderText = "Khách hàng";
+            CusName1.MinimumWidth = 6;
+            CusName1.Name = "CusName1";
+            CusName1.Width = 125;
+            // 
+            // AccName
+            // 
+            AccName.HeaderText = "Kế toán";
+            AccName.MinimumWidth = 6;
+            AccName.Name = "AccName";
+            AccName.Width = 125;
+            // 
+            // SellerName1
+            // 
+            SellerName1.HeaderText = "Seller";
+            SellerName1.MinimumWidth = 6;
+            SellerName1.Name = "SellerName1";
+            SellerName1.Width = 125;
+            // 
+            // OrderDate
+            // 
+            OrderDate.HeaderText = "Ngày tháng";
+            OrderDate.MinimumWidth = 6;
+            OrderDate.Name = "OrderDate";
+            OrderDate.Width = 125;
+            // 
+            // Pay
+            // 
+            Pay.HeaderText = "Phương thức thanh toán";
+            Pay.MinimumWidth = 6;
+            Pay.Name = "Pay";
+            Pay.Width = 125;
+            // 
+            // Status
+            // 
+            Status.HeaderText = "Tình trạng";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.Width = 125;
             // 
             // tabPage3
             // 
@@ -545,31 +629,6 @@
             tabControl1.Size = new Size(1153, 943);
             tabControl1.TabIndex = 18;
             // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(407, 27);
-            label18.Name = "label18";
-            label18.Size = new Size(203, 23);
-            label18.TabIndex = 12;
-            label18.Text = "Phương thức thanh toán:";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(540, 135);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 30);
-            textBox5.TabIndex = 8;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(407, 138);
-            label17.Name = "label17";
-            label17.Size = new Size(93, 23);
-            label17.TabIndex = 5;
-            label17.Text = "Tình trạng:";
-            // 
             // AccGUI_menu
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -588,7 +647,7 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
@@ -608,12 +667,12 @@
         private Label label8;
         private Label label7;
         private TabPage tabPage2;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tbCustomer;
+        private TextBox tbAcc;
         private Label label2;
         private Label label1;
         private Button btnXuat;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView3;
         private TabPage tabPage3;
         private TextBox tbSeller;
         private TextBox tbTim;
@@ -634,9 +693,9 @@
         private TabControl tabControl1;
         private TextBox tbOrder;
         private Label label5;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox4;
+        private TextBox tbPay;
+        private TextBox tbOrderDate;
+        private TextBox tbSeller1;
         private TextBox tbID1;
         private Label label16;
         private Label label15;
@@ -646,7 +705,14 @@
         private DataGridViewTextBoxColumn SellerName;
         private DataGridViewTextBoxColumn OrderTime;
         private Label label18;
-        private TextBox textBox5;
+        private TextBox tbStatus;
         private Label label17;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn CusName1;
+        private DataGridViewTextBoxColumn AccName;
+        private DataGridViewTextBoxColumn SellerName1;
+        private DataGridViewTextBoxColumn OrderDate;
+        private DataGridViewTextBoxColumn Pay;
+        private DataGridViewTextBoxColumn Status;
     }
 }
