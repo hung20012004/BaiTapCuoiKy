@@ -35,6 +35,7 @@ namespace DAL
                     staff.Username= reader.GetString("username");
                     staff.Password= reader.GetString("password");
                     staff.RoleInt = reader.GetInt32("role");
+                    staff.Password = MD5Security.Decrypt(staff.Password, "20012004", true);
                     list.Add(staff);
                 }
             }
@@ -43,6 +44,7 @@ namespace DAL
         }
         public bool insert(Staff staff)
         {
+            staff.Password = MD5Security.Encrypt(staff.Password,"20012004",true);
             try
             {
                 conn.Open();
@@ -65,6 +67,7 @@ namespace DAL
         }
         public bool update(Staff staff)
         {
+            staff.Password = MD5Security.Encrypt(staff.Password, "20012004", true);
             try
             {
                 conn.Open();

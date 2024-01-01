@@ -58,7 +58,6 @@ C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.LoginGUI.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ManagerGUI_menu.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.SellGUI_menu.resources
-C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ValidateMessageBox.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.WarehouseUI_menu.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.GenerateResource.cache
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.GeneratedMSBuildEditorConfig.editorconfig

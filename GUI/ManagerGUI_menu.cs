@@ -48,6 +48,7 @@ namespace GUI
             dataGridView1.Rows.Clear();
             foreach (Staff item in StaffBUS.Instance.get())
             {
+                if (item.RoleInt == 0 && item.ID!=user.ID) continue;
                 dataGridView1.Rows.Add(item.ID, item.Name, item.RoleString, item.Username, item.Password);
             }
             DataGridViewRow row = dataGridView1.Rows[0];
@@ -126,7 +127,7 @@ namespace GUI
             dataGridView1.Enabled = false;
             tbHoTen.Enabled = true;
             cbRole.Enabled = true;
-            tbTaiKhoan.Enabled = true;
+            tbTaiKhoan.Enabled = false;
             tbMatKhau.Enabled = true;
             btnGhi1.Enabled = true;
             btnHuy1.Enabled = true;

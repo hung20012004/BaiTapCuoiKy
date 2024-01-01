@@ -20,7 +20,7 @@ namespace GUI
             {
                 this.Hide();
                 userRole();
-               // this.Show();
+                this.Show();
                 
             }
             else
@@ -37,7 +37,6 @@ namespace GUI
         }
         private void userRole()
         {
-  
             switch (user.RoleInt)
             {
                 case 0:
