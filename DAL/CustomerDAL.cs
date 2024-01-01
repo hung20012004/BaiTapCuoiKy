@@ -37,7 +37,7 @@ namespace DAL
             List<Customer> list = new List<Customer>();
 
             Open();
-            using (var cmd = new SqlCommand("getKhachHang", conn))
+            using (var cmd = new SqlCommand("getCustomer", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 DbDataReader reader = cmd.ExecuteReader();
@@ -60,7 +60,7 @@ namespace DAL
             try
             {
                 Open();
-                using (var cmd = new SqlCommand("addKhachHang", conn))
+                using (var cmd = new SqlCommand("addCustomer", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
@@ -81,7 +81,7 @@ namespace DAL
             try
             {
                 Open();
-                using (var cmd = new SqlCommand("updateKhachHang", conn))
+                using (var cmd = new SqlCommand("updateCustomer", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@customer_id", SqlDbType.Int).Value = customer.ID;
@@ -103,7 +103,7 @@ namespace DAL
             try
             {
                 Open();
-                using (var cmd = new SqlCommand("deleteKhachHang", conn))
+                using (var cmd = new SqlCommand("deleteCustomer", conn))
                 {
                     cmd.Parameters.Add("@customer_id", SqlDbType.Int).Value = customer.ID;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -116,6 +116,26 @@ namespace DAL
             {
                 return false;
             }
+        }
+        public Customer GetCustomer(Customer cus)
+        {
+            Open();
+            using (var cmd = new SqlCommand("GetCustomerByID", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@customer_id", SqlDbType.Int).Value = cus.ID;
+
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    cus.Name = reader.GetString("customer_name");
+                    cus.Phone = reader.GetString("phone");
+                    cus.Address = reader.GetString("address");
+
+                }
+            }
+            Close();
+            return cus;
         }
     }
 }

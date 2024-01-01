@@ -108,6 +108,41 @@ namespace DAL
                 return false;
             }
         }
-        
+        public Staff GetSeller(Staff seller)
+        {
+            conn.Open();
+            using (var cmd = new SqlCommand("GetSellerByID", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@seller_id", SqlDbType.Int).Value = seller.ID;
+
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    seller.Name = reader.GetString("staff_name");
+                    seller.RoleInt = reader.GetInt32("role");
+                }
+            }
+            conn.Close();
+            return seller;
+        }
+        public Staff GetAccountant(Staff acc)
+        {
+            conn.Open();
+            using (var cmd = new SqlCommand("GetAccountantByID", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@accountant_id", SqlDbType.Int).Value = acc.ID;
+
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    acc.Name = reader.GetString("staff_name");
+                    acc.RoleInt = reader.GetInt32("role");
+                }
+            }
+            conn.Close();
+            return acc;
+        }
     }
 }

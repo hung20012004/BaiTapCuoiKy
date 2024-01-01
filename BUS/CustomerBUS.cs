@@ -46,5 +46,9 @@ namespace BUS
             }
             return false;
         }
+        public Customer getCustomer(Customer cus)
+        {
+            return CustomerDAL.Instance.GetCustomer(cus);
+        }
     }
 }
