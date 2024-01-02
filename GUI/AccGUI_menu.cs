@@ -100,6 +100,7 @@ namespace GUI
             if (MessageBox.Show("Xác nhận hủy đơn", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 order.StatusInt = 0;
+                order.Accountant = new Staff();
                 order.Accountant.ID = user.ID;
                 if (OrderBUS.Instance.update(order))
                 {
@@ -118,6 +119,7 @@ namespace GUI
             if (MessageBox.Show("Xác nhận hoàn thành", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 order.StatusInt = 2;
+                order.Accountant = new Staff();
                 order.Accountant.ID = user.ID;
                 if (OrderBUS.Instance.update(order))
                 {
