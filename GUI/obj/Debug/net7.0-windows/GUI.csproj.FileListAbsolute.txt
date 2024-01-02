@@ -58,7 +58,6 @@ C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.LoginGUI.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ManagerGUI_menu.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.SellGUI_menu.resources
-C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ValidateMessageBox.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.WarehouseUI_menu.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.GenerateResource.cache
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.GeneratedMSBuildEditorConfig.editorconfig
@@ -71,3 +70,39 @@ C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.pdb
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.genruntimeconfig.cache
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\ref\GUI.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.AssemblyReference.cache
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AccGUI_menu.resources
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.CustomerSeviceUI_menu.resources
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.LoginGUI.resources
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ManagerGUI_menu.resources
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.SellGUI_menu.resources
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ValidateMessageBox.resources
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.WarehouseUI_menu.resources
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.GenerateResource.cache
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AssemblyInfoInputs.cache
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AssemblyInfo.cs
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.CoreCompileInputs.cache
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\refint\GUI.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.pdb
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\GUI.exe
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\GUI.deps.json
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\GUI.runtimeconfig.json
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\GUI.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\GUI.pdb
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\System.Data.SqlClient.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win-arm64\native\sni.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win-x64\native\sni.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win-x86\native\sni.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\BUS.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\DAL.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\DTO.dll
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\BUS.pdb
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\DTO.pdb
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\DAL.pdb
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.CopyComplete
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.genruntimeconfig.cache
+C:\C# Hoc ki\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\ref\GUI.dll

@@ -77,8 +77,8 @@ namespace DTO
             get { return os; }
             set { os = value; }
         }
-        private float weight;
-        public float Weight
+        private double weight;
+        public double Weight
         {
             get { return weight; }
             set { weight = value; }
@@ -150,7 +150,12 @@ namespace DTO
             get { return quantityBought; }
             set { quantityBought = value; }
         }
-
+        private int quantityImport;
+        public int QuantityImport
+        {
+            get { return quantityImport; }
+            set { quantityImport = value; }
+        }
 
     }
 }
