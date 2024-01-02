@@ -65,7 +65,7 @@ namespace GUI
 
             foreach (Order item in OrderBUS.Instance.get())
             {
-                dataGridView1.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.PaymentString);
+               // dataGridView1.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.PaymentString);
                 if (item.StatusInt == 2)
                 {
                     item.Customer = CustomerBUS.Instance.getCustomer(item.Customer);
@@ -74,7 +74,7 @@ namespace GUI
                     dataGridView3.Rows.Add(item.ID, item.Customer.Name, item.Accountant.Name, item.Seller.Name, item.Order_date, item.PaymentString, item.StatusString);
                 }
             }
-            DataGridViewRow row = dataGridView1.Rows[0];
+           // DataGridViewRow row = dataGridView1.Rows[0];
             DataGridViewRow row = dataGridView3.Rows[0];
             if (Convert.ToString(row.Cells["ID"].Value) != "")
             {
@@ -82,7 +82,7 @@ namespace GUI
                 tbCus.Text = Convert.ToString(row.Cells["CustomerID"].Value);
                 tbSeller.Text = Convert.ToString(row.Cells["SellerID"].Value);
                 cboPayment.Text = Convert.ToString(row.Cells["Payment"].Value);
-                dtpOrder.Text = Convert.ToString(row.Cells["OrderTime"].Value);
+              //  dtpOrder.Text = Convert.ToString(row.Cells["OrderTime"].Value);
                 tbCustomer.Text = Convert.ToString(row.Cells["CusName1"].Value);
                 tbAcc.Text = Convert.ToString(row.Cells["AccName"].Value);
                 tbSeller1.Text = Convert.ToString(row.Cells["SellName1"].Value);
@@ -92,7 +92,7 @@ namespace GUI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //private void button1_Click(object sender, EventArgs e)
         #endregion
         #region ClickEvent
         private void btnCho_Click(object sender, EventArgs e)
