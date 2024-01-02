@@ -505,19 +505,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\myduy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\BUS\\BUS.csproj",
+      "projectUniqueName": "C:\\Users\\myduy\\OneDrive\\Documents\\GitHub\\BaiTapCuoiKy\\BUS\\BUS.csproj",
       "projectName": "BUS",
-      "projectPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\BUS\\BUS.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\BUS\\obj\\",
+      "projectPath": "C:\\Users\\myduy\\OneDrive\\Documents\\GitHub\\BaiTapCuoiKy\\BUS\\BUS.csproj",
+      "packagesPath": "C:\\Users\\myduy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\myduy\\OneDrive\\Documents\\GitHub\\BaiTapCuoiKy\\BUS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\myduy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -531,11 +531,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\DAL\\DAL.csproj"
+            "C:\\Users\\myduy\\OneDrive\\Documents\\GitHub\\BaiTapCuoiKy\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\myduy\\OneDrive\\Documents\\GitHub\\BaiTapCuoiKy\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Documents\\Pham Quang Ha\\BaiTapCuoiKy\\DTO\\DTO.csproj"
+            "C:\\Users\\myduy\\OneDrive\\Documents\\GitHub\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\myduy\\OneDrive\\Documents\\GitHub\\BaiTapCuoiKy\\DTO\\DTO.csproj"
             }
           }
         }
@@ -565,7 +565,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -17,7 +17,7 @@ namespace DAL
         {
             string connetionString;
             SqlConnection cnn;
-            connetionString = @"Data Source=LAPTOP-42KL1AQC;Initial Catalog=Laptop_Store;Integrated Security=True;Trust Server Certificate=True";
+            connetionString = @"Data Source=LAPTOP-F45JGTQ4\HUNGDATABASE;Initial Catalog=Laptop_Store;User ID=sa;Password=20012004";
             cnn = new SqlConnection(connetionString);
             return cnn;
         }

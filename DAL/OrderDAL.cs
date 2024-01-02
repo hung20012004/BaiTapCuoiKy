@@ -31,8 +31,11 @@ namespace DAL
                 {
                     Order order = new Order();
                     order.ID = reader.GetInt32("order_id");
+                    order.Customer = new Customer();
                     order.Customer.ID = reader.GetInt32("customer_id");
+                    order.Accountant = new Staff();
                     order.Accountant.ID = reader.GetInt32("accoutant_id");
+                    order.Seller = new Staff();
                     order.Seller.ID = reader.GetInt32("seller_id");
                     order.Order_date = reader.GetDateTime("order_date");
                     order.StatusInt = reader.GetInt32("status");

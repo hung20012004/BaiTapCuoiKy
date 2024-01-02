@@ -22,35 +22,39 @@ namespace DAL
         {
             List< Laptop> list = new List<Laptop>();
             conn.Open();
-            using (var cmd = new SqlCommand("GetStaff", conn))
+            using (var cmd = new SqlCommand("GetLaptopData", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 DbDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     Laptop laptop = new Laptop();
-                    laptop.ID = Convert.ToInt32(reader.GetString("ID"));
-                    laptop.Name = reader.GetString("name");
-                    laptop.Category.ID = Convert.ToInt32("categoryID");
-                    laptop.Manufactory.ID = Convert.ToInt32("manufactoryID");
-                    laptop.CPU = reader.GetString("cpu");
+                    laptop.ID = reader.GetInt32("laptop_id");
+                    laptop.Name = reader.GetString("laptop_name");
+                    laptop.Category = new();
+                    laptop.Category.ID = reader.GetInt32("category_id");
+                   // laptop.Category=getCategory(laptop.Category);
+                    laptop.Manufactory = new();
+                    laptop.Manufactory.ID = reader.GetInt32("manufactory_id");
+                    //laptop.Manufactory=getManufactory(laptop.Manufactory);
+                    laptop.CPU = reader.GetString("CPU");
                     laptop.Ram = reader.GetString("ram");
-                    laptop.HardDriver = reader.GetString("hardDriver");
-                    laptop.VGA = reader.GetString("vga");
+                    laptop.HardDriver = reader.GetString("hard_drive");
+                    laptop.VGA = reader.GetString("VGA");
                     laptop.Display = reader.GetString("display");
                     laptop.Battery = reader.GetString("battery");
-                    laptop.Weight = Convert.ToInt32("weight");
-                    laptop.Material = reader.GetString("material");
-                    laptop.Port = reader.GetString("port");
-                    laptop.Connection = reader.GetString("connection");
+                    laptop.Weight = reader.GetDouble("weight");
+                    laptop.Material = reader.GetString("materials");
+                    laptop.Port = reader.GetString("ports");
+                    laptop.Connection = reader.GetString("network_and_connection");
                     laptop.Security = reader.GetString("security");
                     laptop.Keyboard = reader.GetString("keyboard");
                     laptop.Audio = reader.GetString("audio");
                     laptop.Size = reader.GetString("size");
-                    laptop.OS = reader.GetString("os");
-                    laptop.WarrantyPeriod = reader.GetString("warrantyPeriod");
-                    laptop.Price = reader.GetString("price");
-                    laptop.QuantityInStock = Convert.ToInt32("quantityInStock");
+                    laptop.OS = reader.GetString("OS");
+                    laptop.WarrantyPeriod = reader.GetString("warranty_period");
+                    laptop.Price = Convert.ToString( reader.GetDecimal("price"));
+                    laptop.QuantityInStock = reader.GetInt32("quantity");
                     list.Add(laptop);
                 }
             }
@@ -62,16 +66,16 @@ namespace DAL
             try
             {
                 conn.Open();
-                using (var cmd = new SqlCommand("InsertLaptop", conn))
+                using (var cmd = new SqlCommand("InsertLaptopData", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = laptop.Name;
-                    cmd.Parameters.Add("@categoryID", SqlDbType.Int).Value = laptop.Category.ID;
-                    cmd.Parameters.Add("@manufactoryID", SqlDbType.Int).Value = laptop.Manufactory.ID;
-                    cmd.Parameters.Add("@cpu", SqlDbType.NVarChar).Value = laptop.CPU;
-                    cmd.Parameters.Add("@ram", SqlDbType.NVarChar).Value = laptop.Ram;
-                    cmd.Parameters.Add("@hardDriver", SqlDbType.NVarChar).Value = laptop.HardDriver;
-                    cmd.Parameters.Add("@vga", SqlDbType.NVarChar).Value = laptop.VGA;
+                    cmd.Parameters.Add("@category_id", SqlDbType.Int).Value = laptop.Category.ID;
+                    cmd.Parameters.Add("@manufactory_id", SqlDbType.Int).Value = laptop.Manufactory.ID;
+                    cmd.Parameters.Add("@CPU", SqlDbType.NVarChar).Value = laptop.CPU;
+                    cmd.Parameters.Add("@RAM", SqlDbType.NVarChar).Value = laptop.Ram;
+                    cmd.Parameters.Add("@hard_driver", SqlDbType.NVarChar).Value = laptop.HardDriver;
+                    cmd.Parameters.Add("@VGA", SqlDbType.NVarChar).Value = laptop.VGA;
                     cmd.Parameters.Add("@display", SqlDbType.NVarChar).Value = laptop.Display;
                     cmd.Parameters.Add("@battery", SqlDbType.NVarChar).Value = laptop.Battery;
                     cmd.Parameters.Add("@weight", SqlDbType.Float).Value = laptop.Weight;
@@ -82,10 +86,10 @@ namespace DAL
                     cmd.Parameters.Add("@keyboard", SqlDbType.NVarChar).Value = laptop.Keyboard;
                     cmd.Parameters.Add("@audio", SqlDbType.NVarChar).Value = laptop.Audio;
                     cmd.Parameters.Add("@size", SqlDbType.NVarChar).Value = laptop.Size;
-                    cmd.Parameters.Add("@os", SqlDbType.NVarChar).Value = laptop.OS;
-                    cmd.Parameters.Add("@warrantyPeriod", SqlDbType.NVarChar).Value = laptop.WarrantyPeriod;
+                    cmd.Parameters.Add("@OS", SqlDbType.NVarChar).Value = laptop.OS;
+                    cmd.Parameters.Add("@warranty_period", SqlDbType.NVarChar).Value = laptop.WarrantyPeriod;
                     cmd.Parameters.Add("@price", SqlDbType.NVarChar).Value = laptop.Price;
-                    cmd.Parameters.Add("@quantityInStock", SqlDbType.Int).Value = laptop.QuantityInStock;
+                    cmd.Parameters.Add("@quantity", SqlDbType.Int).Value = laptop.QuantityInStock;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -102,31 +106,31 @@ namespace DAL
             try
             {
                 conn.Open();
-                using (var cmd = new SqlCommand("UpdateLaptop", conn))
+                using (var cmd = new SqlCommand("UpdateLaptopData", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id", SqlDbType.Int).Value = laptop.ID;
                     cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = laptop.Name;
-                    cmd.Parameters.Add("@categoryID", SqlDbType.Int).Value = laptop.Category.ID;
-                    cmd.Parameters.Add("@manufactoryID", SqlDbType.Int).Value = laptop.Manufactory.ID;
-                    cmd.Parameters.Add("@cpu", SqlDbType.NVarChar).Value = laptop.CPU;
-                    cmd.Parameters.Add("@ram", SqlDbType.NVarChar).Value = laptop.Ram;
-                    cmd.Parameters.Add("@hardDriver", SqlDbType.NVarChar).Value = laptop.HardDriver;
-                    cmd.Parameters.Add("@vga", SqlDbType.NVarChar).Value = laptop.VGA;
+                    cmd.Parameters.Add("@category_id", SqlDbType.Int).Value = laptop.Category.ID;
+                    cmd.Parameters.Add("@manufactory_id", SqlDbType.Int).Value = laptop.Manufactory.ID;
+                    cmd.Parameters.Add("@CPU", SqlDbType.NVarChar).Value = laptop.CPU;
+                    cmd.Parameters.Add("@RAM", SqlDbType.NVarChar).Value = laptop.Ram;
+                    cmd.Parameters.Add("@hard_driver", SqlDbType.NVarChar).Value = laptop.HardDriver;
+                    cmd.Parameters.Add("@VGA", SqlDbType.NVarChar).Value = laptop.VGA;
                     cmd.Parameters.Add("@display", SqlDbType.NVarChar).Value = laptop.Display;
                     cmd.Parameters.Add("@battery", SqlDbType.NVarChar).Value = laptop.Battery;
                     cmd.Parameters.Add("@weight", SqlDbType.Float).Value = laptop.Weight;
                     cmd.Parameters.Add("@material", SqlDbType.NVarChar).Value = laptop.Material;
-                    cmd.Parameters.Add("@port", SqlDbType.NVarChar).Value = laptop.Port;
-                    cmd.Parameters.Add("@connection", SqlDbType.NVarChar).Value = laptop.Connection;
+                    cmd.Parameters.Add("@ports", SqlDbType.NVarChar).Value = laptop.Port;
+                    cmd.Parameters.Add("@network_and_connection", SqlDbType.NVarChar).Value = laptop.Connection;
                     cmd.Parameters.Add("@security", SqlDbType.NVarChar).Value = laptop.Security;
                     cmd.Parameters.Add("@keyboard", SqlDbType.NVarChar).Value = laptop.Keyboard;
                     cmd.Parameters.Add("@audio", SqlDbType.NVarChar).Value = laptop.Audio;
                     cmd.Parameters.Add("@size", SqlDbType.NVarChar).Value = laptop.Size;
-                    cmd.Parameters.Add("@os", SqlDbType.NVarChar).Value = laptop.OS;
-                    cmd.Parameters.Add("@warrantyPeriod", SqlDbType.NVarChar).Value = laptop.WarrantyPeriod;
+                    cmd.Parameters.Add("@OS", SqlDbType.NVarChar).Value = laptop.OS;
+                    cmd.Parameters.Add("@warranty_period", SqlDbType.NVarChar).Value = laptop.WarrantyPeriod;
                     cmd.Parameters.Add("@price", SqlDbType.NVarChar).Value = laptop.Price;
-                    cmd.Parameters.Add("@quantityInStock", SqlDbType.Int).Value = laptop.QuantityInStock;
+                    cmd.Parameters.Add("@quantity", SqlDbType.Int).Value = laptop.QuantityInStock;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -143,7 +147,7 @@ namespace DAL
             try
             {
                 conn.Open();
-                using (var cmd = new SqlCommand("Deletelaptop", conn))
+                using (var cmd = new SqlCommand("DeleteLaptopData", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id", SqlDbType.Int).Value = laptop.ID;
@@ -157,6 +161,35 @@ namespace DAL
                 return false;
             }
         }
-
+        public Manufactory getManufactory(Manufactory manufactory)
+        {
+            using (var cmd = new SqlCommand("GetManufactoryData", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = manufactory.ID;
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    manufactory.Name = reader.GetString("name");
+                    manufactory.Address= reader.GetString("address");
+                    manufactory.Website = reader.GetString("website");
+                }
+            }
+            return manufactory;
+        }
+        public Category getCategory(Category category)
+        {
+            using (var cmd = new SqlCommand("GetCategoryData", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = category.ID;
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    category.Name = reader.GetString("name");
+                }
+            }
+            return category;
+        }
     }
 }
