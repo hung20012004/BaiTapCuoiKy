@@ -102,8 +102,9 @@ namespace GUI
         #endregion
         #region tab2
 
-        private ImportInvoice ImportInvoice = new ImportInvoice();
+        private ImportInvoice importInvoice = new ImportInvoice();
         private List<Laptop> laptops = new List<Laptop>();
+        private List<Provider> providers = new List<Provider>();
         private Laptop choosenLaptop = new Laptop();
         #region loadingEvent
         void tab2Loading1()
@@ -120,9 +121,12 @@ namespace GUI
             btnXoa2.Enabled = false;
             btnTaoHoaDon.Enabled = true;
             cbNhaCungCap.Enabled = true;
-
             cbNhaCungCap.Items.Clear();
-            foreach (Provider item in ProviderDAL.Instance.get())
+            cbLaptop2.Items.Clear();
+            dataGridView2.Rows.Clear();
+            importInvoice.WarehouseKeeper = user;
+            providers = ProviderDAL.Instance.get();
+            foreach (Provider item in providers)
             {
                 cbNhaCungCap.Items.Add(item.Name);
             }
@@ -145,8 +149,9 @@ namespace GUI
             btnHuy2.Enabled = false;
             btnTaoHoaDon.Enabled = false;
             cbNhaCungCap.Enabled = false;
-            cbLaptop2.Text = "";
-            tbSoluong2.Text = "";
+            cbLaptop2.Enabled = false;
+            tbSoluong2.Enabled = false;
+
         }
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -164,7 +169,7 @@ namespace GUI
             {
 
             }
-        }   
+        }
         #endregion
         #region clickEvent
         private void btTaoHoaDonNhap_Click(object sender, EventArgs e)
@@ -190,17 +195,89 @@ namespace GUI
             btnHuy2.Enabled = true;
             btnSua2.Enabled = false;
             btnXoa2.Enabled = false;
+            cbLaptop2.Text = "";
+            tbSoluong2.Text = "";
+        }
+        private void btnSua2_Click(object sender, EventArgs e)
+        {
+            cbLaptop2.Enabled = true;
+            tbSoluong2.Enabled = true;
+            btnGhi2.Enabled = true;
+            btnHuy2.Enabled = true;
+            btnThem2.Enabled = false;
+            btnXoa2.Enabled = false;
+
+        }
+
+        private void btnXoa2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (Convert.ToString(row.Cells["Col2"].Value) == cbLaptop2.Text)
+                    {
+                        dataGridView2.Rows.Remove(row);
+                    }
+                    tab2Loading2();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Xóa không thành công!");
+            }
         }
         private void btnGhi2_Click(object sender, EventArgs e)
         {
             if (cbLaptop2.Text != "" && tbSoluong2.Text != "")
             {
-                dataGridView2.Rows.Add(choosenLaptop.ID, choosenLaptop.Name, choosenLaptop.QuantityBought, choosenLaptop.Price);
+                if (btnThem2.Enabled)
+                {
+                    dataGridView2.Rows.Add(choosenLaptop.ID, choosenLaptop.Name, choosenLaptop.QuantityBought, choosenLaptop.Price);
+                }
+                else
+                {
+                    foreach (DataGridViewRow row in dataGridView2.Rows)
+                    {
+                        if (Convert.ToString(row.Cells["Col2"].Value) == cbLaptop2.Text)
+                        {
+                            dataGridView2.Rows.Remove(row);
+                        }
+                    }
+                    dataGridView2.Rows.Add(choosenLaptop.ID, choosenLaptop.Name, choosenLaptop.QuantityBought, choosenLaptop.Price);
+                }
                 tab2Loading2();
             }
             else
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin!");
+            }
+        }
+        private void btnHuy2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận hủy", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                tab2Loading2();
+            }
+        }
+        private void btnHoanThanh_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                Laptop laptop = new();
+                laptop.ID = Convert.ToInt32(row.Cells["Col1"].Value);
+                laptop.Name = Convert.ToString(row.Cells["Col2"].Value);
+                laptop.QuantityBought = Convert.ToInt32(row.Cells["Col3"].Value);
+                importInvoice.Laptops.Add(laptop);
+            }
+            if (ImportInvoiceBUS.Instance.insert(importInvoice))
+            {
+                tab2Loading1();
+                MessageBox.Show("Ghi thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Ghi không thành công!");
             }
         }
         #endregion
@@ -221,8 +298,24 @@ namespace GUI
             if (tbSoluong2.Text != "")
                 choosenLaptop.QuantityBought = Convert.ToInt32(tbSoluong2.Text);
         }
+        private void cbNhaCungCap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var item in providers)
+            {
+                if (item.Name == cbNhaCungCap.Text)
+                {
+                    importInvoice.Provider = item;
+                    break;
+                }
+            }
+
+        }
         #endregion
         #endregion
 
+        private void btGhi_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

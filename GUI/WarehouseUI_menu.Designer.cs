@@ -175,6 +175,7 @@
             cbNhaCungCap.Name = "cbNhaCungCap";
             cbNhaCungCap.Size = new Size(182, 36);
             cbNhaCungCap.TabIndex = 11;
+            cbNhaCungCap.SelectedIndexChanged += cbNhaCungCap_SelectedIndexChanged;
             // 
             // tabControl1
             // 
@@ -294,6 +295,7 @@
             btGhi.TabIndex = 10;
             btGhi.Text = "Ghi ";
             btGhi.UseVisualStyleBackColor = true;
+            btGhi.Click += btGhi_Click;
             // 
             // btThem
             // 
@@ -856,9 +858,9 @@
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Controls.Add(label4);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 37);
+            tabPage3.Location = new Point(4, 34);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 902);
+            tabPage3.Size = new Size(1145, 905);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -871,6 +873,7 @@
             btnHuy2.TabIndex = 27;
             btnHuy2.Text = "Hủy";
             btnHuy2.UseVisualStyleBackColor = true;
+            btnHuy2.Click += btnHuy2_Click;
             // 
             // tbSoluong2
             // 
@@ -888,6 +891,7 @@
             btnXoa2.TabIndex = 25;
             btnXoa2.Text = "Xóa";
             btnXoa2.UseVisualStyleBackColor = true;
+            btnXoa2.Click += btnXoa2_Click;
             // 
             // btnTaoHoaDon
             // 
@@ -917,6 +921,7 @@
             btnSua2.TabIndex = 22;
             btnSua2.Text = "Sửa";
             btnSua2.UseVisualStyleBackColor = true;
+            btnSua2.Click += btnSua2_Click;
             // 
             // btnThem2
             // 
@@ -936,6 +941,7 @@
             btnHoanThanh.TabIndex = 20;
             btnHoanThanh.Text = "Hoàn thành";
             btnHoanThanh.UseVisualStyleBackColor = true;
+            btnHoanThanh.Click += btnHoanThanh_Click;
             // 
             // btnHuyHoaDon
             // 
