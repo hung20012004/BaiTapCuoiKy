@@ -156,6 +156,11 @@ namespace GUI
                 tbCus.Text = Convert.ToString(row.Cells["CusName"].Value);
                 tbSeller.Text = Convert.ToString(row.Cells["SellerName"].Value);
                 tbOrder.Text = Convert.ToString(row.Cells["OrderTime"].Value);
+                foreach (Order item in OrderBUS.Instance.getdetail(item))
+                {
+                    lbTong.Text = Convert.ToString(item.Laptop);
+                }
+                
             }
         }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -171,6 +176,7 @@ namespace GUI
                 tbOrderDate.Text = Convert.ToString(row.Cells["OrderDate"].Value);
                 tbPay.Text = Convert.ToString(row.Cells["Pay"].Value);
                 tbStatus_Date.Text = Convert.ToString(row.Cells["Status_Date"].Value);
+                
             }
         }
         private void btnXuat_Click(object sender, EventArgs e)
@@ -198,6 +204,11 @@ namespace GUI
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
         }
+        private void lbTong_DataContextChanged(object sender, EventArgs e)
+        {
+
+        }
         #endregion
+
     }
 }

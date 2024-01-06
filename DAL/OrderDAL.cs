@@ -140,5 +140,27 @@ namespace DAL
                 return false;
             }
         }
+        public Order getdetail(Order order)
+        {
+            conn.Open();
+            using (var cmd = new SqlCommand("GetOrderDetail", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@order_id", SqlDbType.Int).Value = order.ID;
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    order.Laptop = new List<Laptop> { new Laptop() };
+                    foreach (Laptop laptop in order.Laptop)
+                    {
+                        laptop.Price = reader.GetDecimal("price");
+                        laptop.QuantityBought = reader.GetInt32("quantity");
+                    }                    
+                }
+                float totalprice = 
+            }
+            conn.Close();
+            return order;
+        }
     }
 }

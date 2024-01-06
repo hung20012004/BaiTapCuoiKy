@@ -213,10 +213,10 @@
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(btnXuat);
             tabPage2.Controls.Add(dataGridView3);
-            tabPage2.Location = new Point(4, 32);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 907);
+            tabPage2.Size = new Size(1145, 910);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -559,6 +559,7 @@
             lbTong.Size = new Size(15, 23);
             lbTong.TabIndex = 4;
             lbTong.Text = " ";
+            lbTong.DataContextChanged += lbTong_DataContextChanged;
             // 
             // lb5
             // 
