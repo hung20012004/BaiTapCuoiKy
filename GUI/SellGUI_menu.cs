@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using DAL;
 using DTO;
 using Microsoft.VisualBasic.ApplicationServices;
 
@@ -19,7 +21,11 @@ namespace GUI
         private Staff user = new();
         string state = null;
         private Order order = new Order();
-
+        private Laptop choosenlaptop = new Laptop();
+        private List<Laptop> laptops = new List<Laptop>();
+        private List<Customer> customers = new List<Customer>();
+        private List<Staff> staffs = new List<Staff>();
+        decimal sum=0;
         public SellGUI_menu(Staff user)
         {
             this.user = user;
@@ -28,7 +34,6 @@ namespace GUI
         #region LoadingEvent
         private void LoadingCustomer()
         {
-
             foreach (Customer item in CustomerBUS.Instance.get())
             {
 
@@ -37,22 +42,41 @@ namespace GUI
             DataGridViewRow row = dgvKhachHang.Rows[0];
             if (Convert.ToString(row.Cells["colID"].Value) != "")
             {
-                txbID.Text = Convert.ToString(row.Cells["colID"].Value);
-                txbName.Text = Convert.ToString(row.Cells["colName"].Value);
-                txbPhone.Text = Convert.ToString(row.Cells["colPhone"].Value);
-                txbAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
+                txbCustomerID.Text = Convert.ToString(row.Cells["colID"].Value);
+                txbCustomerName.Text = Convert.ToString(row.Cells["colName"].Value);
+                txbCustomerPhone.Text = Convert.ToString(row.Cells["colPhone"].Value);
+                txbCustomerAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
             }
         }
-   
-        #endregion
+        private void LoadingOrder()
+        {
+            dgvOrder.Rows.Clear();
+            foreach (Laptop items in order.Laptop)
+            {
+                dgvOrder.Rows.Add(items.ID, items.Name, items.Price, items.QuantityBought);
+            }
 
+            /*DataGridViewRow row = dgvKhachHang.Rows[0];
+            if (Convert.ToString(row.Cells["colID"].Value) != "")
+            {
+                txbCustomerID.Text = Convert.ToString(row.Cells["colID"].Value);
+                txbCustomerName.Text = Convert.ToString(row.Cells["colName"].Value);
+                txbCustomerPhone.Text = Convert.ToString(row.Cells["colPhone"].Value);
+                txbCustomerAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
+            }*/
+        }
+        
+        #endregion
         private void SellGUI_menu_Load(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
             LoadingCustomer();
             state = "Start";
             ManageInterface(state);
+            ManageInterface("StartOrder");
             cbTimKiem_CheckedChanged(sender, e);
+            tab2Loading1();
+
         }
         #region ClickEvent
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -75,10 +99,10 @@ namespace GUI
             row = dgvKhachHang.Rows[e.RowIndex];
             if (Convert.ToString(row.Cells["colID"]) != null)
             {
-                txbID.Text = Convert.ToString(row.Cells["colID"].Value);
-                txbName.Text = Convert.ToString(row.Cells["colName"].Value);
-                txbPhone.Text = Convert.ToString(row.Cells["colPhone"].Value);
-                txbAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
+                txbCustomerID.Text = Convert.ToString(row.Cells["colID"].Value);
+                txbCustomerName.Text = Convert.ToString(row.Cells["colName"].Value);
+                txbCustomerPhone.Text = Convert.ToString(row.Cells["colPhone"].Value);
+                txbCustomerAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
             }
 
         }
@@ -109,17 +133,17 @@ namespace GUI
         {
             if (state == "Add")
             {
-                char [] PhoneArr = customer.Phone.ToCharArray();
-                if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
+                char[] PhoneArr = customer.Phone.ToCharArray();
+                if (txbCustomerName.Text != "" && txbCustomerPhone.Text != "" && txbCustomerAddress.Text != "")
                 {
                     if (CustomerBUS.Instance.CheckPhone(customer) == true)
                     {
                         MessageBox.Show("Số điện thoại đã tồn tại");
                     }
-                    else if(PhoneArr.Length != 10)
+                    else if (PhoneArr.Length != 10)
                     {
                         MessageBox.Show("Số điện thoại phải đúng đủ 10 số!");
-                    }    
+                    }
                     else
                     {
                         CustomerBUS.Instance.insert(customer);
@@ -133,12 +157,12 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Yêu cầu nhập đầy đủ thông tin!", "Thông báo");
-                    txbName.Focus();
+                    txbCustomerName.Focus();
                 }
             }
             if (state == "Update")
             {
-                if (txbName.Text != "" && txbPhone.Text != "" && txbAddress.Text != "")
+                if (txbCustomerName.Text != "" && txbCustomerPhone.Text != "" && txbCustomerAddress.Text != "")
                 {
                     CustomerBUS.Instance.update(customer);
                     this.dgvKhachHang.DataSource = null;
@@ -150,16 +174,16 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Yêu cầu nhập đầy đủ thông tin!", "Thông báo");
-                    txbName.Focus();
+                    txbCustomerName.Focus();
                 }
             }
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            txbID.Text = "";
-            txbName.Text = "";
-            txbPhone.Text = "";
-            txbAddress.Text = "";
+            txbCustomerID.Text = "";
+            txbCustomerName.Text = "";
+            txbCustomerPhone.Text = "";
+            txbCustomerAddress.Text = "";
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
@@ -226,73 +250,262 @@ namespace GUI
             switch (state)
             {
                 case "Start":
-                    txbID.Enabled = false;
-                    txbName.Enabled = false;
-                    txbPhone.Enabled = false;
-                    txbAddress.Enabled = false;
-                    btnThem.Enabled = true;
-                    btnSua.Enabled = true;
-                    btnXoa.Enabled = true;
-                    btnHuy.Enabled = false;
-                    btnGhi.Enabled = false;
+                    txbCustomerID.Enabled = false;
+                    txbCustomerName.Enabled = false;
+                    txbCustomerPhone.Enabled = false;
+                    txbCustomerAddress.Enabled = false;
+                    btnCustomerThem.Enabled = true;
+                    btnCustomerSua.Enabled = true;
+                    btnCustomerXoa.Enabled = true;
+                    btnCustomerHuy.Enabled = false;
+                    btnCustomerGhi.Enabled = false;
                     break;
                 case "Add":
-                    txbID.Enabled = false;
-                    txbName.Enabled = true;
-                    txbPhone.Enabled = true;
-                    txbAddress.Enabled = true;
-                    btnThem.Enabled = false;
-                    btnSua.Enabled = false;
-                    btnXoa.Enabled = false;
-                    btnHuy.Enabled = true;
-                    btnGhi.Enabled = true;
+                    txbCustomerID.Enabled = false;
+                    txbCustomerName.Enabled = true;
+                    txbCustomerPhone.Enabled = true;
+                    txbCustomerAddress.Enabled = true;
+                    btnCustomerThem.Enabled = false;
+                    btnCustomerSua.Enabled = false;
+                    btnCustomerXoa.Enabled = false;
+                    btnCustomerHuy.Enabled = true;
+                    btnCustomerGhi.Enabled = true;
                     break;
                 case "Update":
-                    txbID.Enabled = false;
-                    txbName.Enabled = true;
-                    txbPhone.Enabled = true;
-                    txbAddress.Enabled = true;
-                    btnThem.Enabled = false;
-                    btnSua.Enabled = false;
-                    btnXoa.Enabled = false;
-                    btnHuy.Enabled = true;
-                    btnGhi.Enabled = true;
+                    txbCustomerID.Enabled = false;
+                    txbCustomerName.Enabled = true;
+                    txbCustomerPhone.Enabled = true;
+                    txbCustomerAddress.Enabled = true;
+                    btnCustomerThem.Enabled = false;
+                    btnCustomerSua.Enabled = false;
+                    btnCustomerXoa.Enabled = false;
+                    btnCustomerHuy.Enabled = true;
+                    btnCustomerGhi.Enabled = true;
                     break;
                 case "Delete":
-                    btnThem.Enabled = false;
-                    btnSua.Enabled = false;
-                    btnXoa.Enabled = false;
-                    btnHuy.Enabled = true;
-                    btnGhi.Enabled = true;
+                    btnCustomerThem.Enabled = false;
+                    btnCustomerSua.Enabled = false;
+                    btnCustomerXoa.Enabled = false;
+                    btnCustomerHuy.Enabled = true;
+                    btnCustomerGhi.Enabled = true;
                     break;
+
+
             }
         }
-
+        void tab2Loading1()
+        {
+            cboOrderKhachHang.Enabled = true;
+            cboOrderLapTop.Enabled = false;
+            txbSoLuongOrder.Enabled = false;
+            btnThemOrder.Enabled = false;
+            btnSuaOrder.Enabled = false;
+            btnTaoOrder.Enabled = true;
+            btnGhiOrder.Enabled = false;
+            cboOrderKhachHang.Items.Clear();
+            cboOrderLapTop.Items.Clear();
+            dgvOrder.Rows.Clear();
+            order.Seller = user;
+            customers = CustomerBUS.Instance.get();
+            foreach (Customer item in customers)
+            {
+                cboOrderKhachHang.Items.Add(item.Name);
+            }
+            laptops.Clear();
+            laptops = LaptopBUS.Instance.get();
+            cboOrderLapTop.Items.Clear();
+            foreach (Laptop item in laptops)
+            {
+                cboOrderLapTop.Items.Add(item.Name);
+            }
+        }
+        void tab2loading2()
+        {
+            cboOrderKhachHang.Enabled = false;
+            cboOrderLapTop.Enabled = false;
+            txbSoLuongOrder.Enabled = false;
+            btnThemOrder.Enabled = true;
+            btnSuaOrder.Enabled = true;
+            btnOrderXoa.Enabled = true;
+            btnTaoOrder.Enabled = false;
+            btnGhiOrder.Enabled = false;
+        }
         #region TextChangeEvent
         private void txbID_TextChanged(object sender, EventArgs e)
         {
-            if (txbID.Text.Length > 0)
+            if (txbCustomerID.Text.Length > 0)
             {
-                customer.ID = Convert.ToInt32(txbID.Text);
+                customer.ID = Convert.ToInt32(txbCustomerID.Text);
             }
         }
 
         private void txbName_TextChanged(object sender, EventArgs e)
         {
-            customer.Name = txbName.Text;
+            customer.Name = txbCustomerName.Text;
         }
 
         private void txbPhone_TextChanged(object sender, EventArgs e)
         {
-         
-                customer.Phone = txbPhone.Text;
+
+            customer.Phone = txbCustomerPhone.Text;
         }
 
         private void txbAddress_TextChanged(object sender, EventArgs e)
         {
-            customer.Address = txbAddress.Text;
+            customer.Address = txbCustomerAddress.Text;
         }
         #endregion
 
+        private void btnThemOrder_Click(object sender, EventArgs e)
+        {
+            btnSuaOrder.Enabled = false;
+            btnOrderXoa.Enabled = false;
+            cboOrderLapTop.Enabled = true;
+            txbSoLuongOrder.Enabled = true;
+            btnGhiOrder.Enabled = true;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (cboOrderLapTop.Text != "" && txbSoLuongOrder.Text != "")
+            {
+                if (btnThemOrder.Enabled)
+                {
+                    decimal payment = choosenlaptop.Price * choosenlaptop.QuantityBought;
+                    dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.Price, choosenlaptop.QuantityBought, payment);
+                    sum += choosenlaptop.Price * choosenlaptop.QuantityBought;
+                    lbTongDonGia.Text = sum.ToString();
+                }
+
+                if (btnSuaOrder.Enabled)
+                {
+                    foreach (DataGridViewRow row in dgvOrder.Rows)
+                    {
+                        if (Convert.ToString(row.Cells["Col2"].Value) == cboOrderLapTop.Text)
+                        {
+                            dgvOrder.Rows.Remove(row);
+                            dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.Price, choosenlaptop.QuantityBought);
+                        }
+                    }
+                }
+                tab2loading2();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+            }
+        }
+
+        private void txbSoLuongOrder_TextChanged(object sender, EventArgs e)
+        {
+            if (txbSoLuongOrder.Text.Length > 0)
+            {
+                choosenlaptop.QuantityBought = Convert.ToInt32(txbSoLuongOrder.Text);
+            }
+        }
+
+        private void cboOrderLapTop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (Laptop item in laptops)
+            {
+                if (item.Name == cboOrderLapTop.Text)
+                {
+                    choosenlaptop = item;
+                    break;
+                }
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+            if (cboOrderKhachHang.Text != "")
+            {
+                tab2loading2();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn khách hàng!");
+            }
+        }
+
+        private void btnHoanThanh_Click(object sender, EventArgs e)
+        {
+            sum = 0;
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                Laptop LapTop = new();
+                order.Seller = user;
+                LapTop.ID = Convert.ToInt32(row.Cells["Col1"].Value);
+                LapTop.Name = Convert.ToString(row.Cells["Col2"].Value);
+                LapTop.Price = Convert.ToDecimal(row.Cells["Col3"].Value);
+                LapTop.QuantityBought = Convert.ToInt32(row.Cells["Col4"].Value);
+                order.Laptop.Add(LapTop);
+            }
+            if (OrderBUS.Instance.insert(order) == true)
+            {
+                tab2Loading1();
+                MessageBox.Show("Ghi thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Ghi không thành công!");
+            }
+        }
+
+        private void cboOrderKhachHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var item in customers)
+            {
+                if (item.Name == cboOrderKhachHang.Text)
+                {
+                    order.Customer = item;
+                    break;
+                }
+            }
+        }
+
+        private void btnOrderXoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in dgvOrder.Rows)
+                {
+                    if (Convert.ToString(row.Cells["Col2"].Value) == cboOrderLapTop.Text)
+                    {
+                        dgvOrder.Rows.Remove(row);
+                    }
+                    tab2loading2();
+                }
+            }
+        }
+
+        private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvOrder.Rows[e.RowIndex];
+                if (Convert.ToString(row.Cells["Col1"].Value) != "")
+                {
+                    cboOrderLapTop.Text = Convert.ToString(row.Cells["Col2"].Value);
+                    txbSoLuongOrder.Text = Convert.ToString(row.Cells["Col4"].Value);
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void btnSuaOrder_Click(object sender, EventArgs e)
+        {
+            btnSuaOrder.Enabled = true;
+            btnThemOrder.Enabled = false;
+            btnOrderXoa.Enabled = false;
+            cboOrderLapTop.Enabled = true;
+            txbSoLuongOrder.Enabled = true;
+            btnGhiOrder.Enabled = true;
+        }
     }
 }

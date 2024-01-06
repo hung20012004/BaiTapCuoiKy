@@ -77,8 +77,8 @@ namespace DTO
             get { return os; }
             set { os = value; }
         }
-        private float weight;
-        public float Weight
+        private double weight;
+        public double Weight
         {
             get { return weight; }
             set { weight = value; }
@@ -89,8 +89,8 @@ namespace DTO
             get { return material; }
             set { material = value; }
         }
-        private string price;
-        public string Price
+        private decimal price;
+        public decimal Price
         {
             get { return price; }
             set { price = value; }

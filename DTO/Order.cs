@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DTO
 {
@@ -14,7 +15,10 @@ namespace DTO
             get { return laptop; }
             set { laptop = value; }
         }
-
+        public Order()
+        {
+            laptop = new List<Laptop>(); 
+        }
         private int id;
 
         public int ID
@@ -97,8 +101,8 @@ namespace DTO
             }
         }
 
-        private DateTime? update_status_time;
-        public DateTime? UpdateStatusTime
+        private DateTime update_status_time;
+        public DateTime UpdateStatusTime
         {
             get { return update_status_time; }
             set { update_status_time = value; }
@@ -142,6 +146,6 @@ namespace DTO
                     break;
             }
         }
-  
+        
     }
 }

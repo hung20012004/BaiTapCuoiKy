@@ -22,35 +22,38 @@ namespace DAL
         {
             List<Laptop> list = new List<Laptop>();
             conn.Open();
-            using (var cmd = new SqlCommand("GetStaff", conn))
+            using (var cmd = new SqlCommand("getLaptop", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 DbDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     Laptop laptop = new Laptop();
-                    laptop.ID = Convert.ToInt32(reader.GetString("ID"));
-                    laptop.Name = reader.GetString("name");
-                    laptop.Category.ID = Convert.ToInt32("categoryID");
-                    laptop.Manufactory.ID = Convert.ToInt32("manufactoryID");
-                    laptop.CPU = reader.GetString("cpu");
-                    laptop.Ram = reader.GetString("ram");
-                    laptop.HardDriver = reader.GetString("hardDriver");
-                    laptop.VGA = reader.GetString("vga");
+                    laptop.Category = new Category();
+                    laptop.Manufactory = new Manufactory();
+                    laptop.ID = reader.GetInt32("laptop_id");
+                    laptop.Name = reader.GetString("laptop_name");
+                    int category_id= reader.GetInt32("category_id");
+                    laptop.Category.ID = category_id;
+                    laptop.Manufactory.ID = reader.GetInt32("manufactory_id");
+                    laptop.CPU = reader.GetString("CPU");
+                    laptop.Ram = reader.GetString("RAM");
+                    laptop.HardDriver = reader.GetString("hard_drive");
+                    laptop.VGA = reader.GetString("VGA");
                     laptop.Display = reader.GetString("display");
                     laptop.Battery = reader.GetString("battery");
-                    laptop.Weight = Convert.ToInt32("weight");
-                    laptop.Material = reader.GetString("material");
-                    laptop.Port = reader.GetString("port");
-                    laptop.Connection = reader.GetString("connection");
+                    laptop.Weight = reader.GetDouble("weight");
+                    laptop.Material = reader.GetString("materials");
+                    laptop.Port = reader.GetString("ports");
+                    laptop.Connection = reader.GetString("network_and_connection");
                     laptop.Security = reader.GetString("security");
                     laptop.Keyboard = reader.GetString("keyboard");
                     laptop.Audio = reader.GetString("audio");
                     laptop.Size = reader.GetString("size");
-                    laptop.OS = reader.GetString("os");
-                    laptop.WarrantyPeriod = reader.GetString("warrantyPeriod");
-                    laptop.Price = reader.GetString("price");
-                    laptop.QuantityInStock = Convert.ToInt32("quantityInStock");
+                    laptop.OS = reader.GetString("OS");
+                    laptop.WarrantyPeriod = reader.GetString("warranty_period");
+                    laptop.Price =reader.GetDecimal("price");
+                    laptop.QuantityInStock = reader.GetInt32("quantity");
                     list.Add(laptop);
                 }
             }

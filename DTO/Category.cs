@@ -8,10 +8,10 @@ namespace DTO
 {
     public class Category
     {
-        private int id;
+        private int id= 0;
         public int ID { 
             get { return id; } 
-            set { id = value; }
+            set { if (value != null) id = value; }
         }
         private string name;
         public string Name
