@@ -39,16 +39,16 @@
             label8 = new Label();
             label7 = new Label();
             tabPage2 = new TabPage();
+            tbStatus_Date = new TextBox();
+            label17 = new Label();
             label18 = new Label();
             tbPay = new TextBox();
             tbOrderDate = new TextBox();
-            tbStatus = new TextBox();
             tbSeller1 = new TextBox();
             tbID1 = new TextBox();
             tbCustomer = new TextBox();
             tbAcc = new TextBox();
             label2 = new Label();
-            label17 = new Label();
             label16 = new Label();
             label15 = new Label();
             label12 = new Label();
@@ -61,7 +61,7 @@
             SellerName1 = new DataGridViewTextBoxColumn();
             OrderDate = new DataGridViewTextBoxColumn();
             Pay = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
+            Status_Date = new DataGridViewTextBoxColumn();
             tabPage3 = new TabPage();
             tbOrder = new TextBox();
             label5 = new Label();
@@ -77,7 +77,7 @@
             cboPayment = new ComboBox();
             btXong = new Button();
             btHuy = new Button();
-            label6 = new Label();
+            lbTong = new Label();
             lb5 = new Label();
             dataGridView2 = new DataGridView();
             OrderID = new DataGridViewTextBoxColumn();
@@ -197,29 +197,45 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(tbStatus_Date);
+            tabPage2.Controls.Add(label17);
             tabPage2.Controls.Add(label18);
             tabPage2.Controls.Add(tbPay);
             tabPage2.Controls.Add(tbOrderDate);
-            tabPage2.Controls.Add(tbStatus);
             tabPage2.Controls.Add(tbSeller1);
             tabPage2.Controls.Add(tbID1);
             tabPage2.Controls.Add(tbCustomer);
             tabPage2.Controls.Add(tbAcc);
             tabPage2.Controls.Add(label2);
-            tabPage2.Controls.Add(label17);
             tabPage2.Controls.Add(label16);
             tabPage2.Controls.Add(label15);
             tabPage2.Controls.Add(label12);
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(btnXuat);
             tabPage2.Controls.Add(dataGridView3);
-            tabPage2.Location = new Point(4, 32);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 907);
+            tabPage2.Size = new Size(1145, 910);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tbStatus_Date
+            // 
+            tbStatus_Date.Location = new Point(616, 135);
+            tbStatus_Date.Name = "tbStatus_Date";
+            tbStatus_Date.Size = new Size(150, 30);
+            tbStatus_Date.TabIndex = 14;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(407, 135);
+            label17.Name = "label17";
+            label17.Size = new Size(144, 23);
+            label17.TabIndex = 13;
+            label17.Text = "Ngày thanh toán:";
             // 
             // label18
             // 
@@ -239,42 +255,35 @@
             // 
             // tbOrderDate
             // 
-            tbOrderDate.Location = new Point(540, 80);
+            tbOrderDate.Location = new Point(616, 80);
             tbOrderDate.Name = "tbOrderDate";
             tbOrderDate.Size = new Size(150, 30);
             tbOrderDate.TabIndex = 8;
             // 
-            // tbStatus
-            // 
-            tbStatus.Location = new Point(540, 135);
-            tbStatus.Name = "tbStatus";
-            tbStatus.Size = new Size(150, 30);
-            tbStatus.TabIndex = 8;
-            // 
             // tbSeller1
             // 
-            tbSeller1.Location = new Point(169, 186);
+            tbSeller1.Location = new Point(200, 186);
             tbSeller1.Name = "tbSeller1";
             tbSeller1.Size = new Size(150, 30);
             tbSeller1.TabIndex = 8;
             // 
             // tbID1
             // 
-            tbID1.Location = new Point(169, 24);
+            tbID1.Location = new Point(200, 24);
             tbID1.Name = "tbID1";
             tbID1.Size = new Size(150, 30);
             tbID1.TabIndex = 8;
             // 
             // tbCustomer
             // 
-            tbCustomer.Location = new Point(169, 80);
+            tbCustomer.Location = new Point(200, 80);
             tbCustomer.Name = "tbCustomer";
             tbCustomer.Size = new Size(150, 30);
             tbCustomer.TabIndex = 8;
             // 
             // tbAcc
             // 
-            tbAcc.Location = new Point(169, 135);
+            tbAcc.Location = new Point(200, 135);
             tbAcc.Name = "tbAcc";
             tbAcc.Size = new Size(150, 30);
             tbAcc.TabIndex = 7;
@@ -288,15 +297,6 @@
             label2.TabIndex = 6;
             label2.Text = "Khách hàng:";
             // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(407, 138);
-            label17.Name = "label17";
-            label17.Size = new Size(93, 23);
-            label17.TabIndex = 5;
-            label17.Text = "Tình trạng:";
-            // 
             // label16
             // 
             label16.AutoSize = true;
@@ -309,20 +309,20 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(41, 193);
+            label15.Location = new Point(41, 189);
             label15.Name = "label15";
-            label15.Size = new Size(51, 23);
+            label15.Size = new Size(126, 23);
             label15.TabIndex = 5;
-            label15.Text = "Seller";
+            label15.Text = "Người tạo đơn:";
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Location = new Point(41, 138);
             label12.Name = "label12";
-            label12.Size = new Size(73, 23);
+            label12.Size = new Size(151, 23);
             label12.TabIndex = 5;
-            label12.Text = "Kế toán:";
+            label12.Text = "Người thanh toán:";
             // 
             // label1
             // 
@@ -346,7 +346,7 @@
             // dataGridView3
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { ID, CusName1, AccName, SellerName1, OrderDate, Pay, Status });
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { ID, CusName1, AccName, SellerName1, OrderDate, Pay, Status_Date });
             dataGridView3.Location = new Point(5, 290);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 62;
@@ -371,14 +371,14 @@
             // 
             // AccName
             // 
-            AccName.HeaderText = "Kế toán";
+            AccName.HeaderText = "Người thanh toán";
             AccName.MinimumWidth = 6;
             AccName.Name = "AccName";
             AccName.Width = 125;
             // 
             // SellerName1
             // 
-            SellerName1.HeaderText = "Seller";
+            SellerName1.HeaderText = "Người tạo đơn";
             SellerName1.MinimumWidth = 6;
             SellerName1.Name = "SellerName1";
             SellerName1.Width = 125;
@@ -397,12 +397,12 @@
             Pay.Name = "Pay";
             Pay.Width = 125;
             // 
-            // Status
+            // Status_Date
             // 
-            Status.HeaderText = "Tình trạng";
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
-            Status.Width = 125;
+            Status_Date.HeaderText = "Ngày thanh toán";
+            Status_Date.MinimumWidth = 6;
+            Status_Date.Name = "Status_Date";
+            Status_Date.Width = 125;
             // 
             // tabPage3
             // 
@@ -420,7 +420,7 @@
             tabPage3.Controls.Add(cboPayment);
             tabPage3.Controls.Add(btXong);
             tabPage3.Controls.Add(btHuy);
-            tabPage3.Controls.Add(label6);
+            tabPage3.Controls.Add(lbTong);
             tabPage3.Controls.Add(lb5);
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Controls.Add(label3);
@@ -551,23 +551,24 @@
             btHuy.UseVisualStyleBackColor = true;
             btHuy.Click += btHuy_Click;
             // 
-            // label6
+            // lbTong
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(93, 842);
-            label6.Name = "label6";
-            label6.Size = new Size(15, 23);
-            label6.TabIndex = 4;
-            label6.Text = " ";
+            lbTong.AutoSize = true;
+            lbTong.Location = new Point(125, 842);
+            lbTong.Name = "lbTong";
+            lbTong.Size = new Size(15, 23);
+            lbTong.TabIndex = 4;
+            lbTong.Text = " ";
+            lbTong.DataContextChanged += lbTong_DataContextChanged;
             // 
             // lb5
             // 
             lb5.AutoSize = true;
             lb5.Location = new Point(41, 842);
             lb5.Name = "lb5";
-            lb5.Size = new Size(46, 23);
+            lb5.Size = new Size(87, 23);
             lb5.TabIndex = 3;
-            lb5.Text = "tổng";
+            lb5.Text = "Tổng tiền:";
             // 
             // dataGridView2
             // 
@@ -686,7 +687,7 @@
         private ComboBox cboPayment;
         private Button btXong;
         private Button btHuy;
-        private Label label6;
+        private Label lbTong;
         private Label lb5;
         private DataGridView dataGridView2;
         private Label label3;
@@ -705,14 +706,14 @@
         private DataGridViewTextBoxColumn SellerName;
         private DataGridViewTextBoxColumn OrderTime;
         private Label label18;
-        private TextBox tbStatus;
-        private Label label17;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn CusName1;
         private DataGridViewTextBoxColumn AccName;
         private DataGridViewTextBoxColumn SellerName1;
         private DataGridViewTextBoxColumn OrderDate;
         private DataGridViewTextBoxColumn Pay;
-        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn Status_Date;
+        private TextBox tbStatus_Date;
+        private Label label17;
     }
 }

@@ -36,13 +36,16 @@ namespace DAL
                     order.Accountant = new Staff();
                     order.Accountant.ID = reader.GetInt32("accoutant_id");
                     order.Seller = new Staff();
-                    order.Seller.ID = reader.GetInt32("seller_id");
+                    order.Seller.ID = reader.GetInt32("seller_id"); 
                     order.Order_date = reader.GetDateTime("order_date");
                     order.StatusInt = reader.GetInt32("status");
-                    order.UpdateStatusTime = reader.GetDateTime("update_status_time");
-                    order.Customer.Name = reader.GetString("customer_name");
-                    order.Accountant.Name = reader.GetString("staff_name");
-                    order.Seller.Name = reader.GetString("seller_name");
+                    order.PaymentInt = reader.GetInt32("payment");
+                    try
+                    {
+                        if (reader.GetDateTime("update_status_time") != null)
+                            order.UpdateStatusTime = reader.GetDateTime("update_status_time");
+                    }
+                    catch { }
                     list.Add(order);
                 }
             }
@@ -84,8 +87,9 @@ namespace DAL
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@order_id", SqlDbType.Int).Value = order.ID;
-                    cmd.Parameters.Add("@payment", SqlDbType.NVarChar).Value = order.PaymentInt;
+                    cmd.Parameters.Add("@payment", SqlDbType.Int).Value = order.PaymentInt;
                     cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = order.StatusInt;
+                    cmd.Parameters.Add("@update_status_date", SqlDbType.DateTime).Value = order.UpdateStatusTime;
                     cmd.Parameters.Add("@accountant_id", SqlDbType.Int).Value = order.Accountant.ID;
                     cmd.ExecuteNonQuery();
                 }
@@ -135,6 +139,28 @@ namespace DAL
             {
                 return false;
             }
+        }
+        public Order getdetail(Order order)
+        {
+            conn.Open();
+            using (var cmd = new SqlCommand("GetOrderDetail", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@order_id", SqlDbType.Int).Value = order.ID;
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    order.Laptop = new List<Laptop> { new Laptop() };
+                    foreach (Laptop laptop in order.Laptop)
+                    {
+                        laptop.Price = reader.GetDecimal("price");
+                        laptop.QuantityBought = reader.GetInt32("quantity");
+                    }                    
+                }
+                float totalprice = 
+            }
+            conn.Close();
+            return order;
         }
     }
 }

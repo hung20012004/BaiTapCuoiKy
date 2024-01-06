@@ -53,7 +53,7 @@ namespace DAL
                     laptop.Size = reader.GetString("size");
                     laptop.OS = reader.GetString("OS");
                     laptop.WarrantyPeriod = reader.GetString("warranty_period");
-                    laptop.Price = Convert.ToString( reader.GetDecimal("price"));
+                    laptop.Price = Convert.ToDecimal( reader.GetDecimal("price"));
                     laptop.QuantityInStock = reader.GetInt32("quantity");
                     list.Add(laptop);
                 }

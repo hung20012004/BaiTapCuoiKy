@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace GUI
 {
     public partial class AccGUI_menu : Form
@@ -20,12 +21,9 @@ namespace GUI
             this.user = user;
             InitializeComponent();
         }
-        //public void load()
         #region LoadingEvent
         private void AccGUI_menu_Load(object sender, EventArgs e)
         {
-            //dataGridView1.Enabled = true;
-            //dataGridView1.Rows.Clear();
             loadTab0();
         }
         public void loadTab0()
@@ -34,15 +32,19 @@ namespace GUI
             tbID.Enabled = false;
             tbCus.Enabled = false;
             tbSeller.Enabled = false;
+            tbOrder.Enabled = false;
             cboPayment.Enabled = true;
             dataGridView2.Enabled = true;
             dataGridView2.Rows.Clear();
 
             foreach (Order item in OrderBUS.Instance.get())
             {
-                item.Customer = CustomerBUS.Instance.getCustomer(item.Customer);
-                item.Seller = StaffBUS.Instance.getSeller(item.Seller);
-                dataGridView2.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date);
+                if (item.StatusInt == 1)
+                {
+                    item.Customer = CustomerBUS.Instance.getCustomer(item.Customer);
+                    item.Seller = StaffBUS.Instance.getSeller(item.Seller);
+                    dataGridView2.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date);
+                }
             }
             DataGridViewRow row = dataGridView2.Rows[0];
             if (Convert.ToString(row.Cells["OrderID"].Value) != "")
@@ -56,66 +58,57 @@ namespace GUI
         public void loadTab1()
         {
             tabControl1.SelectedIndex = 1;
-            tbID.Enabled = false;
-            tbCus.Enabled = false;
-            tbSeller.Enabled = false;
-            cboPayment.Enabled = false;
+            tbID1.Enabled = false;
+            tbCustomer.Enabled = false;
+            tbAcc.Enabled = false;
+            tbSeller1.Enabled = false;
+            tbPay.Enabled = false;
+            tbOrderDate.Enabled = false;
+            tbStatus_Date.Enabled = false;
             dataGridView3.Enabled = true;
             dataGridView3.Rows.Clear();
 
             foreach (Order item in OrderBUS.Instance.get())
             {
-               // dataGridView1.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.PaymentString);
                 if (item.StatusInt == 2)
                 {
                     item.Customer = CustomerBUS.Instance.getCustomer(item.Customer);
                     item.Seller = StaffBUS.Instance.getSeller(item.Seller);
                     item.Accountant = StaffBUS.Instance.getAccountant(item.Accountant);
-                    dataGridView3.Rows.Add(item.ID, item.Customer.Name, item.Accountant.Name, item.Seller.Name, item.Order_date, item.PaymentString, item.StatusString);
+                    dataGridView3.Rows.Add(item.ID, item.Customer.Name, item.Accountant.Name, item.Seller.Name, item.Order_date, item.PaymentString, item.UpdateStatusTime);
                 }
             }
-           // DataGridViewRow row = dataGridView1.Rows[0];
             DataGridViewRow row = dataGridView3.Rows[0];
             if (Convert.ToString(row.Cells["ID"].Value) != "")
             {
-                tbID.Text = Convert.ToString(row.Cells["ID"].Value);
-                tbCus.Text = Convert.ToString(row.Cells["CustomerID"].Value);
-                tbSeller.Text = Convert.ToString(row.Cells["SellerID"].Value);
-                cboPayment.Text = Convert.ToString(row.Cells["Payment"].Value);
-              //  dtpOrder.Text = Convert.ToString(row.Cells["OrderTime"].Value);
+                tbID1.Text = Convert.ToString(row.Cells["ID"].Value);
                 tbCustomer.Text = Convert.ToString(row.Cells["CusName1"].Value);
                 tbAcc.Text = Convert.ToString(row.Cells["AccName"].Value);
-                tbSeller1.Text = Convert.ToString(row.Cells["SellName1"].Value);
+                tbSeller1.Text = Convert.ToString(row.Cells["SellerName1"].Value);
                 tbOrderDate.Text = Convert.ToString(row.Cells["OrderDate"].Value);
                 tbPay.Text = Convert.ToString(row.Cells["Pay"].Value);
-                tbStatus.Text = Convert.ToString(row.Cells["Status"].Value);
+                tbStatus_Date.Text = Convert.ToString(row.Cells["Status_Date"].Value);
             }
         }
-
-        //private void button1_Click(object sender, EventArgs e)
         #endregion
         #region ClickEvent
         private void btnCho_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 0;
             loadTab0();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
             loadTab1();
         }
 
         private void btHuy_Click(object sender, EventArgs e)
         {
-
-            order.StatusInt = 0;
-            order.Accountant.ID = user.ID;
-            OrderBUS.Instance.update(order);
             if (MessageBox.Show("Xác nhận hủy đơn", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 order.StatusInt = 0;
+                order.UpdateStatusTime = DateTime.Now;
+                order.Accountant = new Staff();
                 order.Accountant.ID = user.ID;
                 if (OrderBUS.Instance.update(order))
                 {
@@ -131,13 +124,13 @@ namespace GUI
 
         private void btXong_Click(object sender, EventArgs e)
         {
-            order.StatusInt = 2;
-            order.Accountant.ID = user.ID;
-            OrderBUS.Instance.update(order);
             if (MessageBox.Show("Xác nhận hoàn thành", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 order.StatusInt = 2;
+                order.UpdateStatusTime = DateTime.Now;
+                order.Accountant = new Staff();
                 order.Accountant.ID = user.ID;
+                order.PaymentString = cboPayment.Text;
                 if (OrderBUS.Instance.update(order))
                 {
                     loadTab0();
@@ -163,6 +156,11 @@ namespace GUI
                 tbCus.Text = Convert.ToString(row.Cells["CusName"].Value);
                 tbSeller.Text = Convert.ToString(row.Cells["SellerName"].Value);
                 tbOrder.Text = Convert.ToString(row.Cells["OrderTime"].Value);
+                foreach (Order item in OrderBUS.Instance.getdetail(item))
+                {
+                    lbTong.Text = Convert.ToString(item.Laptop);
+                }
+                
             }
         }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -171,13 +169,14 @@ namespace GUI
             row = dataGridView3.Rows[e.RowIndex];
             if (Convert.ToString(row.Cells["ID"].Value) != "")
             {
-                tbID.Text = Convert.ToString(row.Cells["ID"].Value);
+                tbID1.Text = Convert.ToString(row.Cells["ID"].Value);
                 tbCustomer.Text = Convert.ToString(row.Cells["CusName1"].Value);
                 tbAcc.Text = Convert.ToString(row.Cells["AccName"].Value);
-                tbSeller1.Text = Convert.ToString(row.Cells["SellName1"].Value);
+                tbSeller1.Text = Convert.ToString(row.Cells["SellerName1"].Value);
                 tbOrderDate.Text = Convert.ToString(row.Cells["OrderDate"].Value);
                 tbPay.Text = Convert.ToString(row.Cells["Pay"].Value);
-                tbStatus.Text = Convert.ToString(row.Cells["Status"].Value);
+                tbStatus_Date.Text = Convert.ToString(row.Cells["Status_Date"].Value);
+                
             }
         }
         private void btnXuat_Click(object sender, EventArgs e)
@@ -205,9 +204,11 @@ namespace GUI
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
         }
+        private void lbTong_DataContextChanged(object sender, EventArgs e)
+        {
+
+        }
         #endregion
-
-
 
     }
 }
