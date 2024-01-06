@@ -8,7 +8,6 @@ using DTO;
 using System.Data;
 using System.Data.Common;
 using System.Collections;
-
 namespace DAL
 {
     public class OrderDAL
@@ -31,11 +30,8 @@ namespace DAL
                 {
                     Order order = new Order();
                     order.ID = reader.GetInt32("order_id");
-                    order.Customer = new Customer();
                     order.Customer.ID = reader.GetInt32("customer_id");
-                    order.Accountant = new Staff();
                     order.Accountant.ID = reader.GetInt32("accoutant_id");
-                    order.Seller = new Staff();
                     order.Seller.ID = reader.GetInt32("seller_id");
                     order.Order_date = reader.GetDateTime("order_date");
                     order.StatusInt = reader.GetInt32("status");
@@ -59,20 +55,29 @@ namespace DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@Customer_id", SqlDbType.Int).Value = order.Customer.ID;
                     cmd.Parameters.Add("@Seller_id", SqlDbType.Int).Value = order.Seller.ID;
-                    cmd.Parameters.Add("@Order_date", SqlDbType.DateTime).Value = DateTime.Now; 
+                    cmd.Parameters.Add("@Order_date", SqlDbType.DateTime).Value = DateTime.Now;
                     cmd.ExecuteNonQuery();
+                }
+                using (var cmd = new SqlCommand("getNewOrderID", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        order.ID = reader.GetInt32("max_id");
+                    }
+                    reader.Close();
                 }
                 foreach (Laptop item in order.Laptop)
                 {
-                    insertdetail(item,order);
+                    insertdetail(item, order);
                 }
                 conn.Close();
-
                 return true;
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-                return false; 
+                return false;
             }
         }
         public bool update(Order order)
@@ -116,7 +121,7 @@ namespace DAL
                 return false;
             }
         }
-        public bool insertdetail(Laptop laptop, Order order)
+        public void insertdetail(Laptop laptop, Order order)
         {
             try
             {
@@ -127,13 +132,14 @@ namespace DAL
                     cmd.Parameters.Add("@laptop_id", SqlDbType.Int).Value = laptop.ID;
                     cmd.Parameters.Add("@quantity_bought", SqlDbType.Int).Value = laptop.QuantityBought;
                     cmd.Parameters.Add("@price", SqlDbType.VarChar).Value = laptop.Price;
+                    //cmd.Parameters.Add("@price", SqlDbType.Decimal).Value = laptop.Price;
                     cmd.ExecuteNonQuery();
                 }
-                return true;
+                
             }
             catch (Exception ex)
             {
-                return false;
+
             }
         }
     }
