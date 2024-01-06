@@ -53,7 +53,7 @@ namespace DAL
                     laptop.Size = reader.GetString("size");
                     laptop.OS = reader.GetString("OS");
                     laptop.WarrantyPeriod = reader.GetString("warranty_period");
-                    laptop.Price = Convert.ToString( reader.GetDecimal("price"));
+                    laptop.Price = reader.GetDecimal("price");
                     laptop.QuantityInStock = reader.GetInt32("quantity");
                     list.Add(laptop);
                 }
@@ -129,7 +129,7 @@ namespace DAL
                     cmd.Parameters.Add("@size", SqlDbType.NVarChar).Value = laptop.Size;
                     cmd.Parameters.Add("@OS", SqlDbType.NVarChar).Value = laptop.OS;
                     cmd.Parameters.Add("@warranty_period", SqlDbType.NVarChar).Value = laptop.WarrantyPeriod;
-                    cmd.Parameters.Add("@price", SqlDbType.NVarChar).Value = laptop.Price;
+                    cmd.Parameters.Add("@price", SqlDbType.Decimal).Value = laptop.Price;
                     cmd.Parameters.Add("@quantity", SqlDbType.Int).Value = laptop.QuantityInStock;
 
                     cmd.ExecuteNonQuery();
