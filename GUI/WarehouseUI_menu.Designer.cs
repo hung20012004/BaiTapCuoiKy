@@ -105,6 +105,7 @@
             label8 = new Label();
             label7 = new Label();
             tabPage3 = new TabPage();
+            label12 = new Label();
             btnHuy2 = new Button();
             tbSoluong2 = new TextBox();
             btnXoa2 = new Button();
@@ -114,7 +115,7 @@
             btnThem2 = new Button();
             btnHoanThanh = new Button();
             btnHuyHoaDon = new Button();
-            label12 = new Label();
+            SUM = new Label();
             label13 = new Label();
             dataGridView2 = new DataGridView();
             Col1 = new DataGridViewTextBoxColumn();
@@ -214,17 +215,19 @@
             // 
             // tbPhone
             // 
-            tbPhone.Location = new Point(150, 107);
+            tbPhone.Location = new Point(202, 104);
             tbPhone.Name = "tbPhone";
             tbPhone.Size = new Size(150, 34);
             tbPhone.TabIndex = 22;
+            tbPhone.TextChanged += tbPhone_TextChanged;
             // 
             // tbAddress
             // 
-            tbAddress.Location = new Point(150, 60);
+            tbAddress.Location = new Point(202, 54);
             tbAddress.Name = "tbAddress";
             tbAddress.Size = new Size(150, 34);
             tbAddress.TabIndex = 21;
+            tbAddress.TextChanged += tbAddress_TextChanged;
             // 
             // btSua
             // 
@@ -244,6 +247,7 @@
             btHuy.TabIndex = 18;
             btHuy.Text = "Hủy";
             btHuy.UseVisualStyleBackColor = true;
+            btHuy.Click += btHuy_Click;
             // 
             // btXoa
             // 
@@ -257,26 +261,28 @@
             // 
             // tbID
             // 
-            tbID.Location = new Point(150, 10);
+            tbID.Location = new Point(202, 10);
             tbID.Name = "tbID";
             tbID.Size = new Size(150, 34);
             tbID.TabIndex = 15;
+            tbID.TextChanged += tbID_TextChanged;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Location = new Point(34, 163);
             label11.Name = "label11";
-            label11.Size = new Size(132, 28);
+            label11.Size = new Size(162, 28);
             label11.TabIndex = 14;
-            label11.Text = "Nhà cung cấp";
+            label11.Text = "Tên nhà cung cấp";
             // 
             // tbName
             // 
-            tbName.Location = new Point(150, 160);
+            tbName.Location = new Point(202, 157);
             tbName.Name = "tbName";
             tbName.Size = new Size(150, 34);
             tbName.TabIndex = 13;
+            tbName.TextChanged += tbName_TextChanged;
             // 
             // label10
             // 
@@ -317,6 +323,7 @@
             dataGridView1.RowTemplate.Height = 33;
             dataGridView1.Size = new Size(1101, 604);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // Column1
             // 
@@ -842,6 +849,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(label12);
             tabPage3.Controls.Add(btnHuy2);
             tabPage3.Controls.Add(tbSoluong2);
             tabPage3.Controls.Add(btnXoa2);
@@ -851,19 +859,28 @@
             tabPage3.Controls.Add(btnThem2);
             tabPage3.Controls.Add(btnHoanThanh);
             tabPage3.Controls.Add(btnHuyHoaDon);
-            tabPage3.Controls.Add(label12);
+            tabPage3.Controls.Add(SUM);
             tabPage3.Controls.Add(label13);
             tabPage3.Controls.Add(cbLaptop2);
             tabPage3.Controls.Add(cbNhaCungCap);
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Controls.Add(label4);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 34);
+            tabPage3.Location = new Point(4, 37);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 905);
+            tabPage3.Size = new Size(1145, 902);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(271, 827);
+            label12.Name = "label12";
+            label12.Size = new Size(53, 28);
+            label12.TabIndex = 28;
+            label12.Text = "VND";
             // 
             // btnHuy2
             // 
@@ -951,15 +968,16 @@
             btnHuyHoaDon.TabIndex = 19;
             btnHuyHoaDon.Text = "Hủy hóa đơn";
             btnHuyHoaDon.UseVisualStyleBackColor = true;
+            btnHuyHoaDon.Click += btnHuyHoaDon_Click;
             // 
-            // label12
+            // SUM
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(185, 824);
-            label12.Name = "label12";
-            label12.Size = new Size(67, 28);
-            label12.TabIndex = 18;
-            label12.Text = "20000";
+            SUM.AutoSize = true;
+            SUM.Location = new Point(185, 824);
+            SUM.Name = "SUM";
+            SUM.Size = new Size(67, 28);
+            SUM.TabIndex = 18;
+            SUM.Text = "20000";
             // 
             // label13
             // 
@@ -1171,7 +1189,7 @@
         private Button btnThem2;
         private Button btnHoanThanh;
         private Button btnHuyHoaDon;
-        private Label label12;
+        private Label SUM;
         private Label label13;
         private TextBox tbSoluong2;
         private Button btXoa;
@@ -1231,5 +1249,6 @@
         private DataGridViewTextBoxColumn Col3;
         private DataGridViewTextBoxColumn Col4;
         private DataGridViewTextBoxColumn Col5;
+        private Label label12;
     }
 }
