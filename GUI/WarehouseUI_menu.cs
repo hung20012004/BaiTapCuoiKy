@@ -443,5 +443,12 @@ namespace GUI
         #endregion
         #endregion
 
+
+
+
+        private void btnExcelExport_Click(object sender, EventArgs e)
+        {
+            ExportData.Instance.ToExcel(dataGridView1);
+        }
     }
 }

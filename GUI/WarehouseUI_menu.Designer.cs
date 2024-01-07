@@ -131,6 +131,7 @@
             groupBox1 = new GroupBox();
             btNhaCungCap = new Button();
             btTaoHoaDonNhap = new Button();
+            btnExcelExport = new Button();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -191,6 +192,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnExcelExport);
             tabPage2.Controls.Add(tbPhone);
             tabPage2.Controls.Add(tbAddress);
             tabPage2.Controls.Add(btSua);
@@ -866,9 +868,9 @@
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Controls.Add(label4);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 37);
+            tabPage3.Location = new Point(4, 34);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 902);
+            tabPage3.Size = new Size(1145, 905);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -1114,6 +1116,16 @@
             btTaoHoaDonNhap.UseVisualStyleBackColor = true;
             btTaoHoaDonNhap.Click += btTaoHoaDonNhap_Click;
             // 
+            // btnExcelExport
+            // 
+            btnExcelExport.Location = new Point(964, 63);
+            btnExcelExport.Name = "btnExcelExport";
+            btnExcelExport.Size = new Size(112, 34);
+            btnExcelExport.TabIndex = 23;
+            btnExcelExport.Text = "Xuất excel";
+            btnExcelExport.UseVisualStyleBackColor = true;
+            btnExcelExport.Click += btnExcelExport_Click;
+            // 
             // WarehouseUI_menu
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
@@ -1250,5 +1262,6 @@
         private DataGridViewTextBoxColumn Col4;
         private DataGridViewTextBoxColumn Col5;
         private Label label12;
+        private Button btnExcelExport;
     }
 }
