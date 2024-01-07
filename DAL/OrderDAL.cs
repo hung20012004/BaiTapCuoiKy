@@ -36,7 +36,7 @@ namespace DAL
                     order.Accountant = new Staff();
                     order.Accountant.ID = reader.GetInt32("accoutant_id");
                     order.Seller = new Staff();
-                    order.Seller.ID = reader.GetInt32("seller_id"); 
+                    order.Seller.ID = reader.GetInt32("seller_id");
                     order.Order_date = reader.GetDateTime("order_date");
                     order.StatusInt = reader.GetInt32("status");
                     order.PaymentInt = reader.GetInt32("payment");
@@ -62,20 +62,20 @@ namespace DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@Customer_id", SqlDbType.Int).Value = order.Customer.ID;
                     cmd.Parameters.Add("@Seller_id", SqlDbType.Int).Value = order.Seller.ID;
-                    cmd.Parameters.Add("@Order_date", SqlDbType.DateTime).Value = DateTime.Now; 
+                    cmd.Parameters.Add("@Order_date", SqlDbType.DateTime).Value = DateTime.Now;
                     cmd.ExecuteNonQuery();
                 }
                 foreach (Laptop item in order.Laptop)
                 {
-                    insertdetail(item,order);
+                    insertdetail(item, order);
                 }
                 conn.Close();
 
                 return true;
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-                return false; 
+                return false;
             }
         }
         public bool update(Order order)
@@ -155,12 +155,11 @@ namespace DAL
                     {
                         laptop.Price = reader.GetDecimal("price");
                         laptop.QuantityBought = reader.GetInt32("quantity");
-                    }                    
+                    }
                 }
-                float totalprice = 
+                conn.Close();
+                return order;
             }
-            conn.Close();
-            return order;
         }
     }
 }

@@ -507,5 +507,6 @@ namespace GUI
             txbSoLuongOrder.Enabled = true;
             btnGhiOrder.Enabled = true;
         }
+
     }
 }

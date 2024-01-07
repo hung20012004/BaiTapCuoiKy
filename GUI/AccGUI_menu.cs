@@ -16,6 +16,8 @@ namespace GUI
     {
         private Staff user = new();
         private Order order = new();
+        private List<Laptop> laptops = new();
+        private Laptop laptop = new();
         public AccGUI_menu(Staff user)
         {
             this.user = user;
@@ -156,10 +158,7 @@ namespace GUI
                 tbCus.Text = Convert.ToString(row.Cells["CusName"].Value);
                 tbSeller.Text = Convert.ToString(row.Cells["SellerName"].Value);
                 tbOrder.Text = Convert.ToString(row.Cells["OrderTime"].Value);
-                foreach (Order item in OrderBUS.Instance.getdetail(item))
-                {
-                    lbTong.Text = Convert.ToString(item.Laptop);
-                }
+                
                 
             }
         }
