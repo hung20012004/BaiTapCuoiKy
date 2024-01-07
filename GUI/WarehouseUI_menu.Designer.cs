@@ -30,8 +30,8 @@
         {
             label2 = new Label();
             label1 = new Label();
-            cbLaptop2 = new ComboBox();
-            cbNhaCungCap = new ComboBox();
+            cbbLaptop2 = new ComboBox();
+            cbbNhaCungCap = new ComboBox();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
             tbPhone = new TextBox();
@@ -73,7 +73,6 @@
             tbLaptop_Name = new TextBox();
             label33 = new Label();
             label32 = new Label();
-            label31 = new Label();
             label30 = new Label();
             label29 = new Label();
             label28 = new Label();
@@ -127,13 +126,13 @@
             label8 = new Label();
             label7 = new Label();
             tabPage3 = new TabPage();
-            btnHuy2 = new Button();
+            btHuy2 = new Button();
             tbSoluong2 = new TextBox();
-            btnXoa2 = new Button();
-            btnTaoHoaDon = new Button();
-            btnGhi2 = new Button();
-            btnSua2 = new Button();
-            btnThem2 = new Button();
+            btXoa2 = new Button();
+            btTaoHoaDon = new Button();
+            btGhi2 = new Button();
+            btSua2 = new Button();
+            btThem2 = new Button();
             btnHoanThanh = new Button();
             btnHuyHoaDon = new Button();
             label12 = new Label();
@@ -166,7 +165,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(50, 110);
+            label2.Location = new Point(35, 163);
             label2.Name = "label2";
             label2.Size = new Size(111, 23);
             label2.TabIndex = 6;
@@ -175,29 +174,29 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(50, 60);
+            label1.Location = new Point(50, 113);
             label1.Name = "label1";
             label1.Size = new Size(62, 23);
             label1.TabIndex = 5;
             label1.Text = "Địa chỉ";
             // 
-            // cbLaptop2
+            // cbbLaptop2
             // 
-            cbLaptop2.FormattingEnabled = true;
-            cbLaptop2.Location = new Point(197, 120);
-            cbLaptop2.Name = "cbLaptop2";
-            cbLaptop2.Size = new Size(283, 31);
-            cbLaptop2.TabIndex = 12;
-            cbLaptop2.SelectedIndexChanged += cbLaptop2_SelectedIndexChanged;
+            cbbLaptop2.FormattingEnabled = true;
+            cbbLaptop2.Location = new Point(197, 120);
+            cbbLaptop2.Name = "cbbLaptop2";
+            cbbLaptop2.Size = new Size(283, 31);
+            cbbLaptop2.TabIndex = 12;
+            cbbLaptop2.SelectedIndexChanged += cbLaptop2_SelectedIndexChanged;
             // 
-            // cbNhaCungCap
+            // cbbNhaCungCap
             // 
-            cbNhaCungCap.FormattingEnabled = true;
-            cbNhaCungCap.Location = new Point(197, 33);
-            cbNhaCungCap.Name = "cbNhaCungCap";
-            cbNhaCungCap.Size = new Size(182, 31);
-            cbNhaCungCap.TabIndex = 11;
-            cbNhaCungCap.SelectedIndexChanged += cbNhaCungCap_SelectedIndexChanged;
+            cbbNhaCungCap.FormattingEnabled = true;
+            cbbNhaCungCap.Location = new Point(197, 33);
+            cbbNhaCungCap.Name = "cbbNhaCungCap";
+            cbbNhaCungCap.Size = new Size(182, 31);
+            cbbNhaCungCap.TabIndex = 11;
+            cbbNhaCungCap.SelectedIndexChanged += cbNhaCungCap_SelectedIndexChanged;
             // 
             // tabControl1
             // 
@@ -236,14 +235,14 @@
             // 
             // tbPhone
             // 
-            tbPhone.Location = new Point(150, 107);
+            tbPhone.Location = new Point(150, 160);
             tbPhone.Name = "tbPhone";
             tbPhone.Size = new Size(150, 30);
             tbPhone.TabIndex = 22;
             // 
             // tbAddress
             // 
-            tbAddress.Location = new Point(150, 60);
+            tbAddress.Location = new Point(150, 113);
             tbAddress.Name = "tbAddress";
             tbAddress.Size = new Size(150, 30);
             tbAddress.TabIndex = 21;
@@ -288,7 +287,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(34, 163);
+            label11.Location = new Point(34, 65);
             label11.Name = "label11";
             label11.Size = new Size(117, 23);
             label11.TabIndex = 14;
@@ -296,7 +295,7 @@
             // 
             // tbName
             // 
-            tbName.Location = new Point(150, 160);
+            tbName.Location = new Point(150, 62);
             tbName.Name = "tbName";
             tbName.Size = new Size(150, 30);
             tbName.TabIndex = 13;
@@ -340,6 +339,7 @@
             dataGridView1.RowTemplate.Height = 33;
             dataGridView1.Size = new Size(1101, 604);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
@@ -393,7 +393,6 @@
             tabPage1.Controls.Add(tbLaptop_Name);
             tabPage1.Controls.Add(label33);
             tabPage1.Controls.Add(label32);
-            tabPage1.Controls.Add(label31);
             tabPage1.Controls.Add(label30);
             tabPage1.Controls.Add(label29);
             tabPage1.Controls.Add(label28);
@@ -424,9 +423,9 @@
             tabPage1.Controls.Add(label9);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
-            tabPage1.Location = new Point(4, 32);
+            tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1145, 907);
+            tabPage1.Size = new Size(1145, 910);
             tabPage1.TabIndex = 4;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -453,7 +452,7 @@
             // cbbCategory
             // 
             cbbCategory.FormattingEnabled = true;
-            cbbCategory.Items.AddRange(new object[] { "Văn phòng", "Gaming", "Đồ họa", "Mỏng nhẹ" });
+            cbbCategory.Items.AddRange(new object[] { "1", "2", "3", "4" });
             cbbCategory.Location = new Point(100, 110);
             cbbCategory.Name = "cbbCategory";
             cbbCategory.Size = new Size(149, 31);
@@ -595,13 +594,6 @@
             label32.Size = new Size(78, 23);
             label32.TabIndex = 32;
             label32.Text = "Số lượng";
-            // 
-            // label31
-            // 
-            label31.Location = new Point(0, 0);
-            label31.Name = "label31";
-            label31.Size = new Size(100, 23);
-            label31.TabIndex = 0;
             // 
             // label30
             // 
@@ -831,6 +823,7 @@
             dataGridView3.RowTemplate.Height = 33;
             dataGridView3.Size = new Size(1140, 604);
             dataGridView3.TabIndex = 4;
+            dataGridView3.CellContentClick += dataGridView3_CellContentClick;
             // 
             // ColID
             // 
@@ -1025,38 +1018,38 @@
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(btnHuy2);
+            tabPage3.Controls.Add(btHuy2);
             tabPage3.Controls.Add(tbSoluong2);
-            tabPage3.Controls.Add(btnXoa2);
-            tabPage3.Controls.Add(btnTaoHoaDon);
-            tabPage3.Controls.Add(btnGhi2);
-            tabPage3.Controls.Add(btnSua2);
-            tabPage3.Controls.Add(btnThem2);
+            tabPage3.Controls.Add(btXoa2);
+            tabPage3.Controls.Add(btTaoHoaDon);
+            tabPage3.Controls.Add(btGhi2);
+            tabPage3.Controls.Add(btSua2);
+            tabPage3.Controls.Add(btThem2);
             tabPage3.Controls.Add(btnHoanThanh);
             tabPage3.Controls.Add(btnHuyHoaDon);
             tabPage3.Controls.Add(label12);
             tabPage3.Controls.Add(label13);
-            tabPage3.Controls.Add(cbLaptop2);
-            tabPage3.Controls.Add(cbNhaCungCap);
+            tabPage3.Controls.Add(cbbLaptop2);
+            tabPage3.Controls.Add(cbbNhaCungCap);
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Controls.Add(label4);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 29);
+            tabPage3.Location = new Point(4, 32);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 910);
+            tabPage3.Size = new Size(1145, 907);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // btnHuy2
+            // btHuy2
             // 
-            btnHuy2.Location = new Point(808, 226);
-            btnHuy2.Name = "btnHuy2";
-            btnHuy2.Size = new Size(112, 34);
-            btnHuy2.TabIndex = 27;
-            btnHuy2.Text = "Hủy";
-            btnHuy2.UseVisualStyleBackColor = true;
-            btnHuy2.Click += btnHuy2_Click;
+            btHuy2.Location = new Point(808, 226);
+            btHuy2.Name = "btHuy2";
+            btHuy2.Size = new Size(112, 34);
+            btHuy2.TabIndex = 27;
+            btHuy2.Text = "Hủy";
+            btHuy2.UseVisualStyleBackColor = true;
+            btHuy2.Click += btHuy2_Click;
             // 
             // tbSoluong2
             // 
@@ -1066,55 +1059,55 @@
             tbSoluong2.TabIndex = 26;
             tbSoluong2.TextChanged += tbSoluong2_TextChanged;
             // 
-            // btnXoa2
+            // btXoa2
             // 
-            btnXoa2.Location = new Point(808, 166);
-            btnXoa2.Name = "btnXoa2";
-            btnXoa2.Size = new Size(112, 34);
-            btnXoa2.TabIndex = 25;
-            btnXoa2.Text = "Xóa";
-            btnXoa2.UseVisualStyleBackColor = true;
-            btnXoa2.Click += btnXoa2_Click;
+            btXoa2.Location = new Point(808, 166);
+            btXoa2.Name = "btXoa2";
+            btXoa2.Size = new Size(112, 34);
+            btXoa2.TabIndex = 25;
+            btXoa2.Text = "Xóa";
+            btXoa2.UseVisualStyleBackColor = true;
+            btXoa2.Click += btXoa2_Click;
             // 
-            // btnTaoHoaDon
+            // btTaoHoaDon
             // 
-            btnTaoHoaDon.Location = new Point(413, 33);
-            btnTaoHoaDon.Name = "btnTaoHoaDon";
-            btnTaoHoaDon.Size = new Size(147, 34);
-            btnTaoHoaDon.TabIndex = 24;
-            btnTaoHoaDon.Text = "Tạo hóa đơn";
-            btnTaoHoaDon.UseVisualStyleBackColor = true;
-            btnTaoHoaDon.Click += btnTaoHoaDon_Click;
+            btTaoHoaDon.Location = new Point(413, 33);
+            btTaoHoaDon.Name = "btTaoHoaDon";
+            btTaoHoaDon.Size = new Size(147, 34);
+            btTaoHoaDon.TabIndex = 24;
+            btTaoHoaDon.Text = "Tạo hóa đơn";
+            btTaoHoaDon.UseVisualStyleBackColor = true;
+            btTaoHoaDon.Click += btnTaoHoaDon_Click;
             // 
-            // btnGhi2
+            // btGhi2
             // 
-            btnGhi2.Location = new Point(656, 226);
-            btnGhi2.Name = "btnGhi2";
-            btnGhi2.Size = new Size(112, 34);
-            btnGhi2.TabIndex = 23;
-            btnGhi2.Text = "Ghi";
-            btnGhi2.UseVisualStyleBackColor = true;
-            btnGhi2.Click += btnGhi2_Click;
+            btGhi2.Location = new Point(656, 226);
+            btGhi2.Name = "btGhi2";
+            btGhi2.Size = new Size(112, 34);
+            btGhi2.TabIndex = 23;
+            btGhi2.Text = "Ghi";
+            btGhi2.UseVisualStyleBackColor = true;
+            btGhi2.Click += btGhi2_Click;
             // 
-            // btnSua2
+            // btSua2
             // 
-            btnSua2.Location = new Point(808, 104);
-            btnSua2.Name = "btnSua2";
-            btnSua2.Size = new Size(112, 34);
-            btnSua2.TabIndex = 22;
-            btnSua2.Text = "Sửa";
-            btnSua2.UseVisualStyleBackColor = true;
-            btnSua2.Click += btnSua2_Click;
+            btSua2.Location = new Point(808, 104);
+            btSua2.Name = "btSua2";
+            btSua2.Size = new Size(112, 34);
+            btSua2.TabIndex = 22;
+            btSua2.Text = "Sửa";
+            btSua2.UseVisualStyleBackColor = true;
+            btSua2.Click += btSua2_Click;
             // 
-            // btnThem2
+            // btThem2
             // 
-            btnThem2.Location = new Point(808, 36);
-            btnThem2.Name = "btnThem2";
-            btnThem2.Size = new Size(112, 34);
-            btnThem2.TabIndex = 21;
-            btnThem2.Text = "Thêm";
-            btnThem2.UseVisualStyleBackColor = true;
-            btnThem2.Click += btnThem2_Click;
+            btThem2.Location = new Point(808, 36);
+            btThem2.Name = "btThem2";
+            btThem2.Size = new Size(112, 34);
+            btThem2.TabIndex = 21;
+            btThem2.Text = "Thêm";
+            btThem2.UseVisualStyleBackColor = true;
+            btThem2.Click += btThem2_Click;
             // 
             // btnHoanThanh
             // 
@@ -1312,8 +1305,8 @@
         private Label label2;
         private Label label1;
         private Button button5;
-        private ComboBox cbLaptop2;
-        private ComboBox cbNhaCungCap;
+        private ComboBox cbbLaptop2;
+        private ComboBox cbbNhaCungCap;
         private TabControl tabControl1;
         private TabPage tabPage3;
         private DataGridView dataGridView2;
@@ -1327,7 +1320,7 @@
         private Label label9;
         private Label label8;
         private Label label7;
-        private Button btnHuy2;
+        private Button btHuy2;
         private PictureBox pictureBox1;
         private Button button3;
         private Button btSanPham;
@@ -1347,11 +1340,11 @@
         private Label label11;
         private TextBox tbName;
         private Label label10;
-        private Button btnXoa2;
-        private Button btnTaoHoaDon;
-        private Button btnGhi2;
-        private Button btnSua2;
-        private Button btnThem2;
+        private Button btXoa2;
+        private Button btTaoHoaDon;
+        private Button btGhi2;
+        private Button btSua2;
+        private Button btThem2;
         private Button btnHoanThanh;
         private Button btnHuyHoaDon;
         private Label label12;
@@ -1364,7 +1357,6 @@
         private Label label6;
         private Label label5;
         private Label label15;
-        private Label label31;
         private Label label29;
         private Label label28;
         private Label label27;

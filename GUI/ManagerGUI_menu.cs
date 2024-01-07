@@ -48,7 +48,7 @@ namespace GUI
             dataGridView1.Rows.Clear();
             foreach (Staff item in StaffBUS.Instance.get())
             {
-                if (item.RoleInt == 0 && item.ID!=user.ID) continue;
+                if (item.RoleInt == 0 && item.ID != user.ID) continue;
                 dataGridView1.Rows.Add(item.ID, item.Name, item.RoleString, item.Username, item.Password);
             }
             DataGridViewRow row = dataGridView1.Rows[0];
@@ -65,7 +65,7 @@ namespace GUI
         {
             tabControl1.SelectedIndex = 1;
         }
-        
+
         #endregion
 
         #region ClickEvent
@@ -134,7 +134,7 @@ namespace GUI
             //btnSua1.Enabled = false;
             btnXoa1.Enabled = false;
             btnThem1.Enabled = false;
-            
+
         }
         private void btnXoa1_Click(object sender, EventArgs e)
         {
@@ -233,5 +233,9 @@ namespace GUI
         }
         #endregion
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

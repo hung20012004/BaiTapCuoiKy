@@ -55,14 +55,31 @@ namespace GUI
                 tbPhone.Text = Convert.ToString(row.Cells["Column4"].Value);
             }
         }
+
         #endregion
         #region clickEvent
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dataGridView1.Rows[e.RowIndex];
+            if (Convert.ToString(row.Cells["Column1"].Value) != "")
+            {
+                tbID.Text = Convert.ToString(row.Cells["Column1"].Value);
+                tbName.Text = Convert.ToString(row.Cells["Column2"].Value);
+                tbAddress.Text = Convert.ToString(row.Cells["Column3"].Value);
+                tbPhone.Text = Convert.ToString(row.Cells["Column4"].Value);
+            }
+        }
         private void btThem_Click(object sender, EventArgs e)
         {
             btGhi.Enabled = true;
             btHuy.Enabled = true;
             btSua.Enabled = false;
             btXoa.Enabled = false;
+            tbID.Text = "";
+            tbName.Text = "";
+            tbAddress.Text = "";
+            tbPhone.Text = "";
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -72,11 +89,29 @@ namespace GUI
             btThem.Enabled = false;
             btXoa.Enabled = false;
 
+
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-           
+            btSua.Enabled = false;
+            btThem.Enabled = false;
+            if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (ProviderBUS.Instance.delete(provider))
+                {
+                    tab0loading();
+                    MessageBox.Show("Đã xóa thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Xóa không thành công!");
+            }
         }
         private void btGhi_Click(object sender, EventArgs e)
         {
@@ -127,6 +162,7 @@ namespace GUI
         {
             tab0loading();
         }
+
         #endregion
         #region textChangeEvent
         private void tbID_TextChanged(object sender, EventArgs e)
@@ -202,12 +238,64 @@ namespace GUI
         {
             tab1loading();
         }
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dataGridView3.Rows[e.RowIndex];
+            if (Convert.ToString(row.Cells["ColID"].Value) != "")
+            {
+                tbLaptop_ID.Text = Convert.ToString(row.Cells["ColID"].Value);
+                tbLaptop_Name.Text = Convert.ToString(row.Cells["ColName"].Value);
+                cbbCategory.Text = Convert.ToString(row.Cells["ColCategory"].Value);
+                cbbManufactory.Text = Convert.ToString(row.Cells["ColManufactory"].Value);
+                tbCPU.Text = Convert.ToString(row.Cells["ColCPU"].Value);
+                tbRAM.Text = Convert.ToString(row.Cells["ColRam"].Value);
+                tbHD.Text = Convert.ToString(row.Cells["ColHardDriver"].Value);
+                tbVGA.Text = Convert.ToString(row.Cells["ColVGA"].Value);
+                tbDisplay.Text = Convert.ToString(row.Cells["ColDisplay"].Value);
+                tbBattery.Text = Convert.ToString(row.Cells["ColBattery"].Value);
+                tbWeight.Text = Convert.ToString(row.Cells["ColWeight"].Value);
+                tbMaterial.Text = Convert.ToString(row.Cells["ColMaterial"].Value);
+                tbPort.Text = Convert.ToString(row.Cells["ColPort"].Value);
+                tbConnection.Text = Convert.ToString(row.Cells["ColConnection"].Value);
+                tbSecurity.Text = Convert.ToString(row.Cells["ColSecurity"].Value);
+                tbKeyboard.Text = Convert.ToString(row.Cells["ColKeyboard"].Value);
+                tbAudio.Text = Convert.ToString(row.Cells["ColAudio"].Value);
+                tbSize.Text = Convert.ToString(row.Cells["ColSize"].Value);
+                tbOS.Text = Convert.ToString(row.Cells["ColOS"].Value);
+                tbWP.Text = Convert.ToString(row.Cells["ColWP"].Value);
+                tbPrice.Text = Convert.ToString(row.Cells["ColPrice"].Value);
+                tbQuantity.Text = Convert.ToString(row.Cells["ColQuantity"].Value);
+            }
+        }
         private void btThem1_Click_1(object sender, EventArgs e)
         {
             btGhi1.Enabled = true;
             btHuy1.Enabled = true;
             btSua1.Enabled = false;
             btXoa1.Enabled = false;
+            tbLaptop_ID.Text = "";
+            tbLaptop_Name.Text = "";
+            cbbCategory.Text = "";
+            cbbManufactory.Text = "";
+            tbCPU.Text = "";
+            tbRAM.Text = "";
+            tbHD.Text = "";
+            tbVGA.Text = "";
+            tbDisplay.Text = "";
+            tbBattery.Text = "";
+            tbWeight.Text = "";
+            tbMaterial.Text = "";
+            tbPort.Text = "";
+            tbConnection.Text = "";
+            tbSecurity.Text = "";
+            tbKeyboard.Text = "";
+            tbAudio.Text = "";
+            tbSize.Text = "";
+            tbOS.Text = "";
+            tbWP.Text = "";
+            tbPrice.Text = "";
+            tbQuantity.Text = "";
         }
 
         private void btSua1_Click_1(object sender, EventArgs e)
@@ -220,8 +308,8 @@ namespace GUI
 
         private void btXoa1_Click_1(object sender, EventArgs e)
         {
-            btSua.Enabled = false;
-            btThem.Enabled = false;
+            btSua1.Enabled = false;
+            btThem1.Enabled = false;
             if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (LaptopBUS.Instance.delete(laptop))
@@ -396,7 +484,7 @@ namespace GUI
 
         private void tbQuantity_TextChanged(object sender, EventArgs e)
         {
-            //   laptop.QuantityInStock = tbQuantity.Text;
+            //laptop.QuantityInStock = tbQuantity.Text;
         }
         #endregion
         #endregion
@@ -410,46 +498,46 @@ namespace GUI
         void tab2Loading1()
         {
             tabControl1.SelectedIndex = 2;
-            btnGhi2.Enabled = false;
+            btGhi2.Enabled = false;
             btnHoanThanh.Enabled = false;
-            btnHuy2.Enabled = false;
+            btHuy2.Enabled = false;
             btnHuyHoaDon.Enabled = false;
-            btnSua2.Enabled = false;
-            btnThem2.Enabled = false;
+            btSua2.Enabled = false;
+            btThem2.Enabled = false;
             tbSoluong2.Enabled = false;
-            cbLaptop2.Enabled = false;
-            btnXoa2.Enabled = false;
-            btnTaoHoaDon.Enabled = true;
-            cbNhaCungCap.Enabled = true;
-            cbNhaCungCap.Items.Clear();
-            cbLaptop2.Items.Clear();
+            cbbLaptop2.Enabled = false;
+            btXoa2.Enabled = false;
+            btTaoHoaDon.Enabled = true;
+            cbbNhaCungCap.Enabled = true;
+            cbbNhaCungCap.Items.Clear();
+            cbbLaptop2.Items.Clear();
             dataGridView2.Rows.Clear();
             importInvoice.WarehouseKeeper = user;
             providers = ProviderDAL.Instance.get();
             foreach (Provider item in providers)
             {
-                cbNhaCungCap.Items.Add(item.Name);
+                cbbNhaCungCap.Items.Add(item.Name);
             }
             laptops.Clear();
             laptops = LaptopDAL.Instance.get();
-            cbLaptop2.Items.Clear();
+            cbbLaptop2.Items.Clear();
             foreach (Laptop item in laptops)
             {
-                cbLaptop2.Items.Add(item.Name);
+                cbbLaptop2.Items.Add(item.Name);
             }
         }
         void tab2Loading2()
         {
-            btnXoa2.Enabled = true;
+            btXoa2.Enabled = true;
             btnHoanThanh.Enabled = true;
             btnHuyHoaDon.Enabled = true;
-            btnSua2.Enabled = true;
-            btnThem2.Enabled = true;
-            btnGhi2.Enabled = false;
-            btnHuy2.Enabled = false;
-            btnTaoHoaDon.Enabled = false;
-            cbNhaCungCap.Enabled = false;
-            cbLaptop2.Enabled = false;
+            btSua2.Enabled = true;
+            btThem2.Enabled = true;
+            btGhi2.Enabled = false;
+            btHuy2.Enabled = false;
+            btTaoHoaDon.Enabled = false;
+            cbbNhaCungCap.Enabled = false;
+            cbbLaptop2.Enabled = false;
             tbSoluong2.Enabled = false;
 
         }
@@ -461,7 +549,7 @@ namespace GUI
                 row = dataGridView2.Rows[e.RowIndex];
                 if (Convert.ToString(row.Cells["Col1"].Value) != "")
                 {
-                    cbLaptop2.Text = Convert.ToString(row.Cells["Col2"].Value);
+                    cbbLaptop2.Text = Convert.ToString(row.Cells["Col2"].Value);
                     tbSoluong2.Text = Convert.ToString(row.Cells["Col3"].Value);
                 }
             }
@@ -478,7 +566,7 @@ namespace GUI
         }
         private void btnTaoHoaDon_Click(object sender, EventArgs e)
         {
-            if (cbNhaCungCap.Text != "")
+            if (cbbNhaCungCap.Text != "")
             {
                 tab2Loading2();
             }
@@ -487,35 +575,35 @@ namespace GUI
                 MessageBox.Show("Vui lòng chọn nhà cung cấp!");
             }
         }
-        private void btnThem2_Click(object sender, EventArgs e)
+        private void btThem2_Click(object sender, EventArgs e)
         {
-            cbLaptop2.Enabled = true;
+            cbbLaptop2.Enabled = true;
             tbSoluong2.Enabled = true;
-            btnGhi2.Enabled = true;
-            btnHuy2.Enabled = true;
-            btnSua2.Enabled = false;
-            btnXoa2.Enabled = false;
-            cbLaptop2.Text = "";
+            btGhi2.Enabled = true;
+            btHuy2.Enabled = true;
+            btSua2.Enabled = false;
+            btXoa2.Enabled = false;
+            cbbLaptop2.Text = "";
             tbSoluong2.Text = "";
         }
-        private void btnSua2_Click(object sender, EventArgs e)
+        private void btSua2_Click(object sender, EventArgs e)
         {
-            cbLaptop2.Enabled = true;
+            cbbLaptop2.Enabled = true;
             tbSoluong2.Enabled = true;
-            btnGhi2.Enabled = true;
-            btnHuy2.Enabled = true;
-            btnThem2.Enabled = false;
-            btnXoa2.Enabled = false;
+            btGhi2.Enabled = true;
+            btHuy2.Enabled = true;
+            btThem2.Enabled = false;
+            btXoa2.Enabled = false;
 
         }
 
-        private void btnXoa2_Click(object sender, EventArgs e)
+        private void btXoa2_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
-                    if (Convert.ToString(row.Cells["Col2"].Value) == cbLaptop2.Text)
+                    if (Convert.ToString(row.Cells["Col2"].Value) == cbbLaptop2.Text)
                     {
                         dataGridView2.Rows.Remove(row);
                     }
@@ -527,11 +615,11 @@ namespace GUI
                 MessageBox.Show("Xóa không thành công!");
             }
         }
-        private void btnGhi2_Click(object sender, EventArgs e)
+        private void btGhi2_Click(object sender, EventArgs e)
         {
-            if (cbLaptop2.Text != "" && tbSoluong2.Text != "")
+            if (cbbLaptop2.Text != "" && tbSoluong2.Text != "")
             {
-                if (btnThem2.Enabled)
+                if (btThem2.Enabled)
                 {
                     dataGridView2.Rows.Add(choosenLaptop.ID, choosenLaptop.Name, choosenLaptop.QuantityBought, choosenLaptop.Price);
                 }
@@ -539,7 +627,7 @@ namespace GUI
                 {
                     foreach (DataGridViewRow row in dataGridView2.Rows)
                     {
-                        if (Convert.ToString(row.Cells["Col2"].Value) == cbLaptop2.Text)
+                        if (Convert.ToString(row.Cells["Col2"].Value) == cbbLaptop2.Text)
                         {
                             dataGridView2.Rows.Remove(row);
                         }
@@ -553,7 +641,7 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập đủ thông tin!");
             }
         }
-        private void btnHuy2_Click(object sender, EventArgs e)
+        private void btHuy2_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Xác nhận hủy", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -586,7 +674,7 @@ namespace GUI
         {
             foreach (Laptop item in laptops)
             {
-                if (item.Name == cbLaptop2.Text)
+                if (item.Name == cbbLaptop2.Text)
                 {
                     choosenLaptop = item;
                     break;
@@ -602,7 +690,7 @@ namespace GUI
         {
             foreach (var item in providers)
             {
-                if (item.Name == cbNhaCungCap.Text)
+                if (item.Name == cbbNhaCungCap.Text)
                 {
                     importInvoice.Provider = item;
                     break;
@@ -612,6 +700,7 @@ namespace GUI
         }
         #endregion
         #endregion
+
 
     }
 }
