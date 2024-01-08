@@ -7,16 +7,19 @@ using OfficeOpenXml;
 using DTO;
 using OfficeOpenXml.Style;
 using Microsoft.Office.Interop.Excel;
+using Microsoft.VisualBasic.ApplicationServices;
+
 
 namespace GUI
 {
     public class ExportData
     {
-        private static ExportData instance=new ExportData();
-        public static ExportData Instance {  
-            get { return instance; } 
+        private static ExportData instance = new ExportData();
+        public static ExportData Instance
+        {
+            get { return instance; }
         }
-        public void ToExcel(DataGridView dataGridView1)
+        public void ToExcel(DataGridView dataGridView1,string title)
         {
             Microsoft.Office.Interop.Excel.Application excel;
             Microsoft.Office.Interop.Excel.Workbook workbook;
@@ -26,8 +29,6 @@ namespace GUI
             dialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";
             dialog.ShowDialog();
             filePath = dialog.FileName;
-            
-            
             if (string.IsNullOrEmpty(filePath))
             {
                 MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
@@ -38,133 +39,78 @@ namespace GUI
                 excel = new Microsoft.Office.Interop.Excel.Application();
                 excel.Visible = false;
                 excel.DisplayAlerts = false;
-                //tạo mới một Workbooks bằng phương thức add()
-                workbook = excel.Workbooks.Add(Type.Missing);
-                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
 
-                // export header trong DataGridView
-                for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                {
-                    worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
-                }
-                // export nội dung trong DataGridView
-                for (int i = 0; i < dataGridView1.RowCount; i++)
-                {
-                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                    {
-                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
-                    }
-                }
-                // sử dụng phương thức SaveAs() để lưu workbook với filename
-                workbook.SaveAs(filePath);
-                workbook.Close();
-                excel.Quit();
-                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                workbook = null;
-                worksheet = null;
-            }
-        }
-        /*public void btnExport_Click(Staff user,string fileName)
-        {
-            string filePath = "C:\\Users\\Manh Hung\\Desktop\\Test";
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Excel | *.xlsx | *.xls";
-            filePath = dialog.FileName;
-            if (string.IsNullOrEmpty(filePath))
-            {
-                MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
-                return;
-            }
-
-            try
-            {
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 using (ExcelPackage p = new ExcelPackage())
                 {
-                    p.Workbook.Properties.Author = user.Name;
-                    p.Workbook.Properties.Title = fileName;
+                    p.Workbook.Properties.Title = filePath;
                     p.Workbook.Worksheets.Add("sheet1");
-                    ExcelWorksheet ws = p.Workbook.Worksheets[1];
+                    ExcelWorksheet ws = p.Workbook.Worksheets[0];
                     ws.Cells.Style.Font.Size = 12;
                     ws.Cells.Style.Font.Name = "Calibri";
-                    string[] arrColumnHeader = {
-                                                "Họ tên",
-                                                "Năm sinh"
-                    };
-
-                    // lấy ra số lượng cột cần dùng dựa vào số lượng header
+                    List<string> arrColumnHeader = new List<string>();
+                    for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                    {
+                        arrColumnHeader.Add(dataGridView1.Columns[i].HeaderText);
+                        
+                    }
                     var countColHeader = arrColumnHeader.Count();
-
                     // merge các column lại từ column 1 đến số column header
-                    // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
-                    ws.Cells[1, 1].Value = "Thống kê thông tin User Kteam";
+                    // gán giá trị cho cell vừa merge là title
+                    ws.Cells[1, 1].Value = title;
                     ws.Cells[1, 1, 1, countColHeader].Merge = true;
                     // in đậm
                     ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
                     // căn giữa
                     ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-
                     int colIndex = 1;
-                    int rowIndex = 2;
-
-                    //tạo các header từ column header đã tạo từ bên trên
+                    int rowIndex = 3;
                     foreach (var item in arrColumnHeader)
                     {
                         var cell = ws.Cells[rowIndex, colIndex];
-
                         //set màu thành gray
                         var fill = cell.Style.Fill;
                         fill.PatternType = ExcelFillStyle.Solid;
                         fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
-
                         //căn chỉnh các border
                         var border = cell.Style.Border;
                         border.Bottom.Style =
                             border.Top.Style =
                             border.Left.Style =
                             border.Right.Style = ExcelBorderStyle.Thin;
-
                         //gán giá trị
                         cell.Value = item;
-
+                        cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                         colIndex++;
                     }
-
-                    // lấy ra danh sách UserInfo từ ItemSource của DataGrid
-                    List<UserInfo> userList = dtgExcel.ItemsSource.Cast<UserInfo>().ToList();
-
-                    // với mỗi item trong danh sách sẽ ghi trên 1 dòng
-                    foreach (var item in userList)
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
-                        // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
-                        colIndex = 1;
-                        // rowIndex tương ứng từng dòng dữ liệu
-                        rowIndex++;
-                        //gán giá trị cho từng cell                      
-                        ws.Cells[rowIndex, colIndex++].Value = item.Name;
-                        // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
-                        ws.Cells[rowIndex, colIndex++].Value = item.Birthday.ToShortDateString();
-
+                        for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                        {
+                            ws.Cells[i + 4, j + 1].Value = dataGridView1.Rows[i].Cells[j].Value;
+                            var cell = ws.Cells[i+4, j+1];
+                           // ws.Cells[i + 4, j + 1].AutoFitColumns();
+                            var border = cell.Style.Border;
+                            border.Bottom.Style =
+                                border.Top.Style =
+                                border.Left.Style =
+                                border.Right.Style = ExcelBorderStyle.Thin;
+                            
+                        } 
                     }
-
-                    //Lưu file lại
+                    ws.Cells[1, 1, dataGridView1.RowCount + 5, 4].AutoFitColumns(15);
                     Byte[] bin = p.GetAsByteArray();
                     File.WriteAllBytes(filePath, bin);
+                    excel.Quit();
+                    MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
                 }
-                MessageBox.Show("Xuất excel thành công!");
+                
             }
-            catch 
+            catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi khi lưu file!");
+                MessageBox.Show(ex.Message);
             }
-        }*/
-
+        }
     }
 
 }

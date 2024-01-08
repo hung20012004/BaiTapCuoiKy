@@ -448,7 +448,7 @@ namespace GUI
 
         private void btnExcelExport_Click(object sender, EventArgs e)
         {
-            ExportData.Instance.ToExcel(dataGridView1);
+            ExportData.Instance.ToExcel(dataGridView1, "Thống kê số lượng nhà cung cấp");
         }
     }
 }

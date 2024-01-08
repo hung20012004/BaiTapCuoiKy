@@ -34,6 +34,7 @@
             cbNhaCungCap = new ComboBox();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
+            btnExcelExport = new Button();
             tbPhone = new TextBox();
             tbAddress = new TextBox();
             btSua = new Button();
@@ -46,10 +47,6 @@
             btGhi = new Button();
             btThem = new Button();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             tabPage1 = new TabPage();
             btHuy1 = new Button();
             cbbManufactory_ID = new ComboBox();
@@ -131,7 +128,10 @@
             groupBox1 = new GroupBox();
             btNhaCungCap = new Button();
             btTaoHoaDonNhap = new Button();
-            btnExcelExport = new Button();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -214,6 +214,16 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnExcelExport
+            // 
+            btnExcelExport.Location = new Point(964, 63);
+            btnExcelExport.Name = "btnExcelExport";
+            btnExcelExport.Size = new Size(112, 34);
+            btnExcelExport.TabIndex = 23;
+            btnExcelExport.Text = "Xuất excel";
+            btnExcelExport.UseVisualStyleBackColor = true;
+            btnExcelExport.Click += btnExcelExport_Click;
             // 
             // tbPhone
             // 
@@ -326,34 +336,6 @@
             dataGridView1.Size = new Size(1101, 604);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 8;
-            Column1.Name = "Column1";
-            Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Nhà cung cấp";
-            Column2.MinimumWidth = 8;
-            Column2.Name = "Column2";
-            Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Địa chỉ";
-            Column3.MinimumWidth = 8;
-            Column3.Name = "Column3";
-            Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Số điện thoại";
-            Column4.MinimumWidth = 8;
-            Column4.Name = "Column4";
-            Column4.Width = 150;
             // 
             // tabPage1
             // 
@@ -1116,15 +1098,33 @@
             btTaoHoaDonNhap.UseVisualStyleBackColor = true;
             btTaoHoaDonNhap.Click += btTaoHoaDonNhap_Click;
             // 
-            // btnExcelExport
+            // Column1
             // 
-            btnExcelExport.Location = new Point(964, 63);
-            btnExcelExport.Name = "btnExcelExport";
-            btnExcelExport.Size = new Size(112, 34);
-            btnExcelExport.TabIndex = 23;
-            btnExcelExport.Text = "Xuất excel";
-            btnExcelExport.UseVisualStyleBackColor = true;
-            btnExcelExport.Click += btnExcelExport_Click;
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 8;
+            Column1.Name = "Column1";
+            Column1.Width = 160;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Nhà cung cấp";
+            Column2.MinimumWidth = 8;
+            Column2.Name = "Column2";
+            Column2.Width = 300;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Địa chỉ";
+            Column3.MinimumWidth = 8;
+            Column3.Name = "Column3";
+            Column3.Width = 300;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Số điện thoại";
+            Column4.MinimumWidth = 8;
+            Column4.Name = "Column4";
+            Column4.Width = 270;
             // 
             // WarehouseUI_menu
             // 
@@ -1251,10 +1251,6 @@
         private Button btHuy1;
         private TextBox tbPhone;
         private TextBox tbAddress;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private Button btNhaCungCap;
         private DataGridViewTextBoxColumn Col1;
         private DataGridViewTextBoxColumn Col2;
@@ -1263,5 +1259,9 @@
         private DataGridViewTextBoxColumn Col5;
         private Label label12;
         private Button btnExcelExport;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
     }
 }
