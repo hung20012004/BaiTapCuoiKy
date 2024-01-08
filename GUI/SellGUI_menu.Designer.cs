@@ -38,6 +38,20 @@
             btnCustomer = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            groupBox3 = new GroupBox();
+            txbManufactory = new TextBox();
+            txbPrice = new TextBox();
+            txbWarranty = new TextBox();
+            txbLaptopName = new TextBox();
+            txbLaptopID = new TextBox();
+            label31 = new Label();
+            label30 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            label10 = new Label();
+            groupBox2 = new GroupBox();
+            dgvListLaptop = new DataGridView();
+            label4 = new Label();
             tabPage2 = new TabPage();
             cboTimKiem = new ComboBox();
             cbTimKiem = new CheckBox();
@@ -84,9 +98,18 @@
             Col4 = new DataGridViewTextBoxColumn();
             Col5 = new DataGridViewTextBoxColumn();
             label3 = new Label();
+            ColLaptopID = new DataGridViewTextBoxColumn();
+            ColLapTopName = new DataGridViewTextBoxColumn();
+            ColPrice = new DataGridViewTextBoxColumn();
+            ColManufactory = new DataGridViewTextBoxColumn();
+            ColWarrantyPeriod = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvListLaptop).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKhachHang).BeginInit();
             tabPage3.SuspendLayout();
@@ -173,6 +196,9 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(groupBox3);
+            tabPage1.Controls.Add(groupBox2);
+            tabPage1.Controls.Add(label4);
             tabPage1.Location = new Point(4, 32);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -180,6 +206,137 @@
             tabPage1.TabIndex = 2;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(txbManufactory);
+            groupBox3.Controls.Add(txbPrice);
+            groupBox3.Controls.Add(txbWarranty);
+            groupBox3.Controls.Add(txbLaptopName);
+            groupBox3.Controls.Add(txbLaptopID);
+            groupBox3.Controls.Add(label31);
+            groupBox3.Controls.Add(label30);
+            groupBox3.Controls.Add(label14);
+            groupBox3.Controls.Add(label13);
+            groupBox3.Controls.Add(label10);
+            groupBox3.Location = new Point(18, 41);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(425, 858);
+            groupBox3.TabIndex = 2;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Thông tin chi tiết";
+            // 
+            // txbManufactory
+            // 
+            txbManufactory.Location = new Point(158, 267);
+            txbManufactory.Name = "txbManufactory";
+            txbManufactory.Size = new Size(175, 30);
+            txbManufactory.TabIndex = 25;
+            // 
+            // txbPrice
+            // 
+            txbPrice.Location = new Point(158, 312);
+            txbPrice.Name = "txbPrice";
+            txbPrice.Size = new Size(175, 30);
+            txbPrice.TabIndex = 24;
+            // 
+            // txbWarranty
+            // 
+            txbWarranty.Location = new Point(155, 361);
+            txbWarranty.Name = "txbWarranty";
+            txbWarranty.Size = new Size(175, 30);
+            txbWarranty.TabIndex = 23;
+            // 
+            // txbLaptopName
+            // 
+            txbLaptopName.Location = new Point(157, 231);
+            txbLaptopName.Name = "txbLaptopName";
+            txbLaptopName.Size = new Size(175, 30);
+            txbLaptopName.TabIndex = 22;
+            // 
+            // txbLaptopID
+            // 
+            txbLaptopID.Location = new Point(155, 180);
+            txbLaptopID.Name = "txbLaptopID";
+            txbLaptopID.Size = new Size(175, 30);
+            txbLaptopID.TabIndex = 21;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Location = new Point(31, 215);
+            label31.Name = "label31";
+            label31.Size = new Size(90, 23);
+            label31.TabIndex = 20;
+            label31.Text = "Tên laptop";
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(31, 267);
+            label30.Name = "label30";
+            label30.Size = new Size(107, 23);
+            label30.TabIndex = 19;
+            label30.Text = "Thương hiệu";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(31, 315);
+            label14.Name = "label14";
+            label14.Size = new Size(35, 23);
+            label14.TabIndex = 3;
+            label14.Text = "Giá";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(31, 364);
+            label13.Name = "label13";
+            label13.Size = new Size(83, 23);
+            label13.TabIndex = 2;
+            label13.Text = "Bảo hành";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(31, 175);
+            label10.Name = "label10";
+            label10.Size = new Size(34, 23);
+            label10.TabIndex = 0;
+            label10.Text = "Mã";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(dgvListLaptop);
+            groupBox2.Location = new Point(460, 40);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(666, 859);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Danh sách laptop";
+            // 
+            // dgvListLaptop
+            // 
+            dgvListLaptop.BackgroundColor = SystemColors.ButtonHighlight;
+            dgvListLaptop.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvListLaptop.Columns.AddRange(new DataGridViewColumn[] { ColLaptopID, ColLapTopName, ColPrice, ColManufactory, ColWarrantyPeriod });
+            dgvListLaptop.Location = new Point(15, 29);
+            dgvListLaptop.Name = "dgvListLaptop";
+            dgvListLaptop.RowHeadersWidth = 51;
+            dgvListLaptop.RowTemplate.Height = 29;
+            dgvListLaptop.Size = new Size(629, 814);
+            dgvListLaptop.TabIndex = 0;
+            dgvListLaptop.CellClick += dgvListLaptop_CellClick;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(380, 15);
+            label4.Name = "label4";
+            label4.Size = new Size(192, 23);
+            label4.TabIndex = 0;
+            label4.Text = "THÔNG TIN SẢN PHẨM";
             // 
             // tabPage2
             // 
@@ -428,9 +585,9 @@
             tabPage3.Controls.Add(label5);
             tabPage3.Controls.Add(dgvOrder);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 32);
+            tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 907);
+            tabPage3.Size = new Size(1145, 910);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -555,6 +712,7 @@
             btnHuyOrder.TabIndex = 5;
             btnHuyOrder.Text = "Hủy order";
             btnHuyOrder.UseVisualStyleBackColor = true;
+            btnHuyOrder.Click += btnHuyOrder_Click;
             // 
             // lbTongDonGia
             // 
@@ -588,7 +746,7 @@
             // 
             // Col1
             // 
-            Col1.HeaderText = "ID";
+            Col1.HeaderText = "Mã sản phẩm";
             Col1.MinimumWidth = 6;
             Col1.Name = "Col1";
             Col1.ReadOnly = true;
@@ -600,7 +758,7 @@
             Col2.MinimumWidth = 6;
             Col2.Name = "Col2";
             Col2.ReadOnly = true;
-            Col2.Width = 125;
+            Col2.Width = 250;
             // 
             // Col3
             // 
@@ -635,6 +793,41 @@
             label3.TabIndex = 0;
             label3.Text = "Laptop";
             // 
+            // ColLaptopID
+            // 
+            ColLaptopID.HeaderText = "Mã Laptop";
+            ColLaptopID.MinimumWidth = 6;
+            ColLaptopID.Name = "ColLaptopID";
+            ColLaptopID.Width = 125;
+            // 
+            // ColLapTopName
+            // 
+            ColLapTopName.HeaderText = "Tên Laptop";
+            ColLapTopName.MinimumWidth = 6;
+            ColLapTopName.Name = "ColLapTopName";
+            ColLapTopName.Width = 125;
+            // 
+            // ColPrice
+            // 
+            ColPrice.HeaderText = "Giá";
+            ColPrice.MinimumWidth = 6;
+            ColPrice.Name = "ColPrice";
+            ColPrice.Width = 125;
+            // 
+            // ColManufactory
+            // 
+            ColManufactory.HeaderText = "Thương hiệu";
+            ColManufactory.MinimumWidth = 6;
+            ColManufactory.Name = "ColManufactory";
+            ColManufactory.Width = 125;
+            // 
+            // ColWarrantyPeriod
+            // 
+            ColWarrantyPeriod.HeaderText = "Thời gian bảo hành";
+            ColWarrantyPeriod.MinimumWidth = 6;
+            ColWarrantyPeriod.Name = "ColWarrantyPeriod";
+            ColWarrantyPeriod.Width = 125;
+            // 
             // SellGUI_menu
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -652,6 +845,12 @@
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvListLaptop).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKhachHang).EndInit();
@@ -715,10 +914,28 @@
         private Label label6;
         private TextBox txbSoLuongOrder;
         private Button btnOrderXoa;
+        private GroupBox groupBox2;
+        private DataGridView dgvListLaptop;
+        private Label label4;
+        private GroupBox groupBox3;
+        private Label label31;
+        private Label label30;
+        private Label label14;
+        private Label label13;
+        private TextBox txbManufactory;
+        private TextBox txbPrice;
+        private TextBox txbWarranty;
+        private TextBox txbLaptopName;
+        private TextBox txbLaptopID;
         private DataGridViewTextBoxColumn Col1;
         private DataGridViewTextBoxColumn Col2;
         private DataGridViewTextBoxColumn Col3;
         private DataGridViewTextBoxColumn Col4;
         private DataGridViewTextBoxColumn Col5;
+        private DataGridViewTextBoxColumn ColLaptopID;
+        private DataGridViewTextBoxColumn ColLapTopName;
+        private DataGridViewTextBoxColumn ColPrice;
+        private DataGridViewTextBoxColumn ColManufactory;
+        private DataGridViewTextBoxColumn ColWarrantyPeriod;
     }
 }

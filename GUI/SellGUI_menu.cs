@@ -25,7 +25,7 @@ namespace GUI
         private List<Laptop> laptops = new List<Laptop>();
         private List<Customer> customers = new List<Customer>();
         private List<Staff> staffs = new List<Staff>();
-        decimal sum=0;
+        private List<Manufactory> manufactories = new List<Manufactory>();
         public SellGUI_menu(Staff user)
         {
             this.user = user;
@@ -48,6 +48,16 @@ namespace GUI
                 txbCustomerAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
             }
         }
+        void LoadingTab1()
+        {
+             manufactories = ManufactoryBUS.Instance.get();
+            foreach (Laptop item in LaptopBUS.Instance.get())
+            {
+
+                dgvListLaptop.Rows.Add(item.ID, item.Name, item.Price);
+                foreach
+            }
+        }
         private void LoadingOrder()
         {
             dgvOrder.Rows.Clear();
@@ -65,7 +75,7 @@ namespace GUI
                 txbCustomerAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
             }*/
         }
-        
+
         #endregion
         private void SellGUI_menu_Load(object sender, EventArgs e)
         {
@@ -76,6 +86,7 @@ namespace GUI
             ManageInterface("StartOrder");
             cbTimKiem_CheckedChanged(sender, e);
             tab2Loading1();
+            LoadingTab1();
 
         }
         #region ClickEvent
@@ -109,8 +120,19 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            state = "Add";
-            ManageInterface(state);
+            txbCustomerID.Enabled = false;
+            txbCustomerName.Enabled = true;
+            txbCustomerPhone.Enabled = true;
+            txbCustomerAddress.Enabled = true;
+            btnCustomerThem.Enabled = false;
+            btnCustomerSua.Enabled = false;
+            btnCustomerXoa.Enabled = false;
+            btnCustomerHuy.Enabled = true;
+            btnCustomerGhi.Enabled = true;
+
+            txbCustomerName.Text = "";
+            txbCustomerPhone.Text = "";
+            txbCustomerAddress.Text = "";
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -329,6 +351,12 @@ namespace GUI
             btnOrderXoa.Enabled = true;
             btnTaoOrder.Enabled = false;
             btnGhiOrder.Enabled = false;
+            decimal sum = 0;
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                sum += Convert.ToDecimal(row.Cells["Col5"].Value);
+            }
+            lbTongDonGia.Text = sum.ToString();
         }
         #region TextChangeEvent
         private void txbID_TextChanged(object sender, EventArgs e)
@@ -363,6 +391,9 @@ namespace GUI
             cboOrderLapTop.Enabled = true;
             txbSoLuongOrder.Enabled = true;
             btnGhiOrder.Enabled = true;
+            cboOrderLapTop.Text = "";
+            txbSoLuongOrder.Text = "";
+
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -371,22 +402,20 @@ namespace GUI
             {
                 if (btnThemOrder.Enabled)
                 {
-                    decimal payment = choosenlaptop.Price * choosenlaptop.QuantityBought;
-                    dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.Price, choosenlaptop.QuantityBought, payment);
-                    sum += choosenlaptop.Price * choosenlaptop.QuantityBought;
-                    lbTongDonGia.Text = sum.ToString();
+                    dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.Price, choosenlaptop.QuantityBought, (decimal)choosenlaptop.Price * (decimal)choosenlaptop.QuantityBought);
                 }
 
-                if (btnSuaOrder.Enabled)
+                else
                 {
                     foreach (DataGridViewRow row in dgvOrder.Rows)
                     {
                         if (Convert.ToString(row.Cells["Col2"].Value) == cboOrderLapTop.Text)
                         {
                             dgvOrder.Rows.Remove(row);
-                            dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.Price, choosenlaptop.QuantityBought);
+                            dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.Price, choosenlaptop.QuantityBought, (decimal)choosenlaptop.Price * (decimal)choosenlaptop.QuantityBought);
                         }
                     }
+
                 }
                 tab2loading2();
             }
@@ -431,7 +460,6 @@ namespace GUI
 
         private void btnHoanThanh_Click(object sender, EventArgs e)
         {
-            sum = 0;
             foreach (DataGridViewRow row in dgvOrder.Rows)
             {
                 Laptop LapTop = new();
@@ -506,6 +534,41 @@ namespace GUI
             cboOrderLapTop.Enabled = true;
             txbSoLuongOrder.Enabled = true;
             btnGhiOrder.Enabled = true;
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvListLaptop_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvListLaptop.Rows[e.RowIndex];
+                if (Convert.ToString(row.Cells["ColLaptopID"].Value) != "")
+                {
+                    txbLaptopID.Text = Convert.ToString(row.Cells["ColLaptopID"].Value);
+                    txbLaptopName.Text = Convert.ToString(row.Cells["ColLaptopName"].Value);
+                    txbPrice.Text = Convert.ToString(row.Cells["ColPrice"].Value);
+                    txbManufactory.Text = Convert.ToString(row.Cells["ColManufactory"].Value);
+                    txbWarranty.Text = Convert.ToString(row.Cells["ColWarrantyPeriod"].Value);
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void btnHuyOrder_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn hủy order?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                dgvOrder.Rows.Clear();
+                tab2Loading1();
+            }
         }
     }
 }
