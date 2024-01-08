@@ -122,7 +122,7 @@ namespace DAL
                     cmd.Parameters.Add("@weight", SqlDbType.Float).Value = laptop.Weight;
                     cmd.Parameters.Add("@material", SqlDbType.NVarChar).Value = laptop.Material;
                     cmd.Parameters.Add("@ports", SqlDbType.NVarChar).Value = laptop.Port;
-                    cmd.Parameters.Add("@network_and_connection", SqlDbType.NVarChar).Value = laptop.Connection;
+                    cmd.Parameters.Add("@connection", SqlDbType.NVarChar).Value = laptop.Connection;
                     cmd.Parameters.Add("@security", SqlDbType.NVarChar).Value = laptop.Security;
                     cmd.Parameters.Add("@keyboard", SqlDbType.NVarChar).Value = laptop.Keyboard;
                     cmd.Parameters.Add("@audio", SqlDbType.NVarChar).Value = laptop.Audio;
