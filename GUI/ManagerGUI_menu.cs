@@ -23,6 +23,11 @@ namespace GUI
             this.user = user;
             InitializeComponent();
         }
+        private void tab1Reset()
+        {
+            tabControl1.SelectedIndex = 1;
+        }
+        #region tab0
         #region LoadingEvent
         //Xu ly loading
         private void ManagerGUI_menu_Load(object sender, EventArgs e)
@@ -61,11 +66,7 @@ namespace GUI
                 cbRole.Text = Convert.ToString(row.Cells["Column5"].Value);
             }
         }
-        private void tab1Reset()
-        {
-            tabControl1.SelectedIndex = 1;
-        }
-        
+       
         #endregion
 
         #region ClickEvent
@@ -232,6 +233,6 @@ namespace GUI
             staff.RoleString = cbRole.Text;
         }
         #endregion
-
+        #endregion
     }
 }

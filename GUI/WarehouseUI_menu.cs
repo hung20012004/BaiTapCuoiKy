@@ -276,6 +276,9 @@ namespace GUI
             }
             SUM.Text = Convert.ToString(sum);
         }
+
+        #endregion
+        #region clickEvent
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -293,8 +296,6 @@ namespace GUI
 
             }
         }
-        #endregion
-        #region clickEvent
         private void btTaoHoaDonNhap_Click(object sender, EventArgs e)
         {
             tab2Loading1();
@@ -442,8 +443,6 @@ namespace GUI
         }
         #endregion
         #endregion
-
-
 
 
         private void btnExcelExport_Click(object sender, EventArgs e)

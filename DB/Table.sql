@@ -103,12 +103,16 @@ CREATE TABLE import_invoices(
 	invoice_id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	staff_id INT NOT NULL,
 	provider_id INT NOT NULL,
+	accoutant_id INT NOT NULL,
+	update_status_time DATETIME,
 	import_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	note VARCHAR(255),
 	FOREIGN KEY (staff_id)
 	REFERENCES staffs(staff_id) ON DELETE CASCADE,
 	FOREIGN KEY (provider_id)
-	REFERENCES providers(provider_id) ON DELETE CASCADE
+	REFERENCES providers(provider_id) ON DELETE CASCADE,
+	FOREIGN KEY (accoutant_id)
+	REFERENCES staffs(staff_id)
 );
 
 CREATE TABLE invoice_detail(

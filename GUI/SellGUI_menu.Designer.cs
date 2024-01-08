@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             groupBox1 = new GroupBox();
             btnSanPham = new Button();
             pictureBox1 = new PictureBox();
@@ -39,10 +37,6 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
-            cboTimKiem = new ComboBox();
-            cbTimKiem = new CheckBox();
-            txbTimKiem = new TextBox();
-            btnTimKiem = new Button();
             btnCustomerHuy = new Button();
             txbCustomerAddress = new TextBox();
             txbCustomerPhone = new TextBox();
@@ -62,6 +56,7 @@
             colPhone = new DataGridViewTextBoxColumn();
             colAddress = new DataGridViewTextBoxColumn();
             tabPage3 = new TabPage();
+            SUM = new Label();
             btnOrderXoa = new Button();
             cboOrderKhachHang = new ComboBox();
             label6 = new Label();
@@ -84,6 +79,7 @@
             Col4 = new DataGridViewTextBoxColumn();
             Col5 = new DataGridViewTextBoxColumn();
             label3 = new Label();
+            btnHuy2 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
@@ -92,12 +88,6 @@
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvOrder).BeginInit();
             SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.ImageScalingSize = new Size(24, 24);
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // groupBox1
             // 
@@ -173,20 +163,16 @@
             // 
             // tabPage1
             // 
-            tabPage1.Location = new Point(4, 32);
+            tabPage1.Location = new Point(4, 37);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1145, 907);
+            tabPage1.Size = new Size(1145, 902);
             tabPage1.TabIndex = 2;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(cboTimKiem);
-            tabPage2.Controls.Add(cbTimKiem);
-            tabPage2.Controls.Add(txbTimKiem);
-            tabPage2.Controls.Add(btnTimKiem);
             tabPage2.Controls.Add(btnCustomerHuy);
             tabPage2.Controls.Add(txbCustomerAddress);
             tabPage2.Controls.Add(txbCustomerPhone);
@@ -201,50 +187,13 @@
             tabPage2.Controls.Add(btnCustomerThem);
             tabPage2.Controls.Add(btnCustomerSua);
             tabPage2.Controls.Add(dgvKhachHang);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 910);
+            tabPage2.Size = new Size(1145, 905);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // cboTimKiem
-            // 
-            cboTimKiem.FormattingEnabled = true;
-            cboTimKiem.Items.AddRange(new object[] { "ID", "Tên", "SĐT" });
-            cboTimKiem.Location = new Point(707, 117);
-            cboTimKiem.Name = "cboTimKiem";
-            cboTimKiem.Size = new Size(128, 31);
-            cboTimKiem.TabIndex = 17;
-            // 
-            // cbTimKiem
-            // 
-            cbTimKiem.AutoSize = true;
-            cbTimKiem.Location = new Point(596, 114);
-            cbTimKiem.Name = "cbTimKiem";
-            cbTimKiem.Size = new Size(101, 27);
-            cbTimKiem.TabIndex = 16;
-            cbTimKiem.Text = "Tìm kiếm";
-            cbTimKiem.UseVisualStyleBackColor = true;
-            cbTimKiem.CheckedChanged += cbTimKiem_CheckedChanged;
-            // 
-            // txbTimKiem
-            // 
-            txbTimKiem.Location = new Point(710, 158);
-            txbTimKiem.Name = "txbTimKiem";
-            txbTimKiem.Size = new Size(125, 30);
-            txbTimKiem.TabIndex = 15;
-            // 
-            // btnTimKiem
-            // 
-            btnTimKiem.Location = new Point(596, 158);
-            btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(94, 29);
-            btnTimKiem.TabIndex = 14;
-            btnTimKiem.Text = "Tìm kiếm";
-            btnTimKiem.UseVisualStyleBackColor = true;
-            btnTimKiem.Click += btnTimKiem_Click;
             // 
             // btnCustomerHuy
             // 
@@ -260,7 +209,7 @@
             // 
             txbCustomerAddress.Location = new Point(146, 226);
             txbCustomerAddress.Name = "txbCustomerAddress";
-            txbCustomerAddress.Size = new Size(188, 30);
+            txbCustomerAddress.Size = new Size(188, 34);
             txbCustomerAddress.TabIndex = 12;
             txbCustomerAddress.TextChanged += txbAddress_TextChanged;
             // 
@@ -268,7 +217,7 @@
             // 
             txbCustomerPhone.Location = new Point(148, 172);
             txbCustomerPhone.Name = "txbCustomerPhone";
-            txbCustomerPhone.Size = new Size(186, 30);
+            txbCustomerPhone.Size = new Size(186, 34);
             txbCustomerPhone.TabIndex = 11;
             txbCustomerPhone.TextChanged += txbPhone_TextChanged;
             // 
@@ -277,7 +226,7 @@
             label9.AutoSize = true;
             label9.Location = new Point(40, 218);
             label9.Name = "label9";
-            label9.Size = new Size(65, 23);
+            label9.Size = new Size(74, 28);
             label9.TabIndex = 10;
             label9.Text = "Địa Chỉ";
             // 
@@ -286,7 +235,7 @@
             label8.AutoSize = true;
             label8.Location = new Point(40, 173);
             label8.Name = "label8";
-            label8.Size = new Size(40, 23);
+            label8.Size = new Size(47, 28);
             label8.TabIndex = 9;
             label8.Text = "SĐT";
             // 
@@ -294,7 +243,7 @@
             // 
             txbCustomerName.Location = new Point(149, 110);
             txbCustomerName.Name = "txbCustomerName";
-            txbCustomerName.Size = new Size(185, 30);
+            txbCustomerName.Size = new Size(185, 34);
             txbCustomerName.TabIndex = 8;
             txbCustomerName.TextChanged += txbName_TextChanged;
             // 
@@ -302,7 +251,7 @@
             // 
             txbCustomerID.Location = new Point(149, 49);
             txbCustomerID.Name = "txbCustomerID";
-            txbCustomerID.Size = new Size(185, 30);
+            txbCustomerID.Size = new Size(185, 34);
             txbCustomerID.TabIndex = 7;
             txbCustomerID.TextChanged += txbID_TextChanged;
             // 
@@ -311,7 +260,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(40, 110);
             label2.Name = "label2";
-            label2.Size = new Size(36, 23);
+            label2.Size = new Size(41, 28);
             label2.TabIndex = 6;
             label2.Text = "Tên";
             // 
@@ -320,13 +269,12 @@
             label1.AutoSize = true;
             label1.Location = new Point(40, 52);
             label1.Name = "label1";
-            label1.Size = new Size(27, 23);
+            label1.Size = new Size(31, 28);
             label1.TabIndex = 5;
             label1.Text = "ID";
             // 
             // btnCustomerGhi
             // 
-            btnCustomerGhi.ContextMenuStrip = contextMenuStrip1;
             btnCustomerGhi.DialogResult = DialogResult.Abort;
             btnCustomerGhi.Location = new Point(438, 222);
             btnCustomerGhi.Name = "btnCustomerGhi";
@@ -374,7 +322,7 @@
             dgvKhachHang.Name = "dgvKhachHang";
             dgvKhachHang.RowHeadersWidth = 62;
             dgvKhachHang.RowTemplate.Height = 33;
-            dgvKhachHang.Size = new Size(1140, 604);
+            dgvKhachHang.Size = new Size(1140, 628);
             dgvKhachHang.TabIndex = 0;
             dgvKhachHang.CellClick += dgvKhachHang_CellClick;
             // 
@@ -386,7 +334,7 @@
             colID.MinimumWidth = 6;
             colID.Name = "colID";
             colID.Resizable = DataGridViewTriState.False;
-            colID.Width = 56;
+            colID.Width = 67;
             // 
             // colName
             // 
@@ -411,6 +359,8 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(btnHuy2);
+            tabPage3.Controls.Add(SUM);
             tabPage3.Controls.Add(btnOrderXoa);
             tabPage3.Controls.Add(cboOrderKhachHang);
             tabPage3.Controls.Add(label6);
@@ -428,12 +378,21 @@
             tabPage3.Controls.Add(label5);
             tabPage3.Controls.Add(dgvOrder);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 32);
+            tabPage3.Location = new Point(4, 37);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 907);
+            tabPage3.Size = new Size(1145, 902);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // SUM
+            // 
+            SUM.AutoSize = true;
+            SUM.Location = new Point(162, 844);
+            SUM.Name = "SUM";
+            SUM.Size = new Size(48, 28);
+            SUM.TabIndex = 26;
+            SUM.Text = "sum";
             // 
             // btnOrderXoa
             // 
@@ -450,7 +409,7 @@
             cboOrderKhachHang.FormattingEnabled = true;
             cboOrderKhachHang.Location = new Point(173, 47);
             cboOrderKhachHang.Name = "cboOrderKhachHang";
-            cboOrderKhachHang.Size = new Size(285, 31);
+            cboOrderKhachHang.Size = new Size(285, 36);
             cboOrderKhachHang.TabIndex = 24;
             cboOrderKhachHang.SelectedIndexChanged += cboOrderKhachHang_SelectedIndexChanged;
             // 
@@ -459,7 +418,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(66, 47);
             label6.Name = "label6";
-            label6.Size = new Size(101, 23);
+            label6.Size = new Size(114, 28);
             label6.TabIndex = 23;
             label6.Text = "Khách hàng";
             // 
@@ -467,7 +426,7 @@
             // 
             txbSoLuongOrder.Location = new Point(173, 170);
             txbSoLuongOrder.Name = "txbSoLuongOrder";
-            txbSoLuongOrder.Size = new Size(285, 30);
+            txbSoLuongOrder.Size = new Size(285, 34);
             txbSoLuongOrder.TabIndex = 22;
             txbSoLuongOrder.TextChanged += txbSoLuongOrder_TextChanged;
             // 
@@ -476,7 +435,7 @@
             label11.AutoSize = true;
             label11.Location = new Point(533, 50);
             label11.Name = "label11";
-            label11.Size = new Size(0, 23);
+            label11.Size = new Size(0, 28);
             label11.TabIndex = 21;
             // 
             // btnSuaOrder
@@ -514,7 +473,7 @@
             label7.AutoSize = true;
             label7.Location = new Point(66, 173);
             label7.Name = "label7";
-            label7.Size = new Size(78, 23);
+            label7.Size = new Size(92, 28);
             label7.TabIndex = 13;
             label7.Text = "Số lượng";
             // 
@@ -523,7 +482,7 @@
             cboOrderLapTop.FormattingEnabled = true;
             cboOrderLapTop.Location = new Point(172, 112);
             cboOrderLapTop.Name = "cboOrderLapTop";
-            cboOrderLapTop.Size = new Size(285, 31);
+            cboOrderLapTop.Size = new Size(285, 36);
             cboOrderLapTop.TabIndex = 11;
             cboOrderLapTop.SelectedIndexChanged += cboOrderLapTop_SelectedIndexChanged;
             // 
@@ -535,7 +494,7 @@
             btnGhiOrder.TabIndex = 9;
             btnGhiOrder.Text = "Ghi";
             btnGhiOrder.UseVisualStyleBackColor = true;
-            btnGhiOrder.Click += button11_Click;
+            btnGhiOrder.Click += btnGhiOrder_Click;
             // 
             // btnHoanThanh
             // 
@@ -561,7 +520,7 @@
             lbTongDonGia.AutoSize = true;
             lbTongDonGia.Location = new Point(173, 854);
             lbTongDonGia.Name = "lbTongDonGia";
-            lbTongDonGia.Size = new Size(0, 23);
+            lbTongDonGia.Size = new Size(0, 28);
             lbTongDonGia.TabIndex = 4;
             // 
             // label5
@@ -569,7 +528,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(44, 854);
             label5.Name = "label5";
-            label5.Size = new Size(92, 23);
+            label5.Size = new Size(106, 28);
             label5.TabIndex = 3;
             label5.Text = "Tổng cộng";
             // 
@@ -631,13 +590,23 @@
             label3.AutoSize = true;
             label3.Location = new Point(69, 97);
             label3.Name = "label3";
-            label3.Size = new Size(63, 23);
+            label3.Size = new Size(74, 28);
             label3.TabIndex = 0;
             label3.Text = "Laptop";
             // 
+            // btnHuy2
+            // 
+            btnHuy2.Location = new Point(693, 208);
+            btnHuy2.Name = "btnHuy2";
+            btnHuy2.Size = new Size(112, 34);
+            btnHuy2.TabIndex = 27;
+            btnHuy2.Text = "Hủy";
+            btnHuy2.UseVisualStyleBackColor = true;
+            
+            // 
             // SellGUI_menu
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1478, 944);
             Controls.Add(tabControl1);
@@ -662,8 +631,6 @@
         }
 
         #endregion
-
-        private ContextMenuStrip contextMenuStrip1;
         private GroupBox groupBox1;
         private Button button3;
         private Button btnOrder;
@@ -691,10 +658,6 @@
         private DataGridViewTextBoxColumn colName;
         private DataGridViewTextBoxColumn colPhone;
         private DataGridViewTextBoxColumn colAddress;
-        private TextBox txbTimKiem;
-        private Button btnTimKiem;
-        private ComboBox cboTimKiem;
-        private CheckBox cbTimKiem;
         private TabPage tabPage3;
         private Label label11;
         private Button btnSuaOrder;
@@ -720,5 +683,7 @@
         private DataGridViewTextBoxColumn Col3;
         private DataGridViewTextBoxColumn Col4;
         private DataGridViewTextBoxColumn Col5;
+        private Label SUM;
+        private Button btnHuy2;
     }
 }
