@@ -157,9 +157,10 @@ namespace DAL
                         laptop.QuantityBought = reader.GetInt32("quantity");
                     }
                 }
-                conn.Close();
-                return order;
+               // float totalprice =
             }
+            conn.Close();
+            return order;
         }
     }
 }

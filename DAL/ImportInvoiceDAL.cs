@@ -51,8 +51,17 @@ namespace DAL
                     cmd.Parameters.Add("@staff_id", SqlDbType.Int).Value = importInvoice.WarehouseKeeper.ID;
                     cmd.Parameters.Add("@provider_id", SqlDbType.Int).Value = importInvoice.Provider.ID;
                     cmd.Parameters.Add("@import_time", SqlDbType.DateTime).Value = DateTime.Now;
-                    cmd.Parameters.Add("@note", SqlDbType.VarChar).Value = importInvoice.Note;
                     cmd.ExecuteNonQuery();
+                }
+                using (var cmd = new SqlCommand("getNewImportInvoiceID", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        importInvoice.ID = reader.GetInt32("max_id");
+                    }
+                    reader.Close();
                 }
                 foreach (var item in importInvoice.Laptops)
                 {
@@ -107,7 +116,7 @@ namespace DAL
                 return false;
             }
         }
-        public bool insertDetail(Laptop laptop, ImportInvoice importInvoice)
+        public void insertDetail(Laptop laptop, ImportInvoice importInvoice)
         {
             try
             {
@@ -115,15 +124,15 @@ namespace DAL
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@invoice_id", SqlDbType.Int).Value = importInvoice.ID;
+                    cmd.Parameters.Add("@quantity_import", SqlDbType.Int).Value = laptop.QuantityImport;
                     cmd.Parameters.Add("@laptop_id", SqlDbType.Int).Value = laptop.ID;
-                    cmd.Parameters.Add("@quantity", SqlDbType.Int).Value = laptop.QuantityImport;
                     cmd.ExecuteNonQuery();
                 }
-                return true;
+
             }
             catch (Exception ex)
             {
-                return false;
+               
             }
         }
     }
