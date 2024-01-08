@@ -32,5 +32,9 @@ namespace BUS
         {
             return OrderDAL.Instance.delete(order);
         }
+        public Order getdetail(Order order)
+        {
+            return OrderDAL.Instance.getdetail(order);
+        }
     }
 }
