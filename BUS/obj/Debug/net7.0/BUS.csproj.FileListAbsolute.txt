@@ -135,3 +135,20 @@ C:\C# Hoc ki\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.dll
 C:\C# Hoc ki\BaiTapCuoiKy\BUS\obj\Debug\net7.0\refint\BUS.dll
 C:\C# Hoc ki\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.pdb
 C:\C# Hoc ki\BaiTapCuoiKy\BUS\obj\Debug\net7.0\ref\BUS.dll
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\bin\Debug\net7.0\BUS.deps.json
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\bin\Debug\net7.0\BUS.dll
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\bin\Debug\net7.0\BUS.pdb
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\bin\Debug\net7.0\DAL.dll
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\bin\Debug\net7.0\DTO.dll
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\bin\Debug\net7.0\DAL.pdb
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\bin\Debug\net7.0\DTO.pdb
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.csproj.AssemblyReference.cache
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.AssemblyInfoInputs.cache
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.AssemblyInfo.cs
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.csproj.CoreCompileInputs.cache
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.csproj.CopyComplete
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.dll
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\obj\Debug\net7.0\refint\BUS.dll
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\obj\Debug\net7.0\BUS.pdb
+C:\Users\myduy\OneDrive\Documents\GitHub\BaiTapCuoiKy\BUS\obj\Debug\net7.0\ref\BUS.dll
