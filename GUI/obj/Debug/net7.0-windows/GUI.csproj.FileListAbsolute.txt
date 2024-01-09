@@ -120,3 +120,4 @@ G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.IO.R
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Office.Interop.Excel.dll
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\System.Security.Cryptography.Pkcs.dll
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.Properties.Resources.resources

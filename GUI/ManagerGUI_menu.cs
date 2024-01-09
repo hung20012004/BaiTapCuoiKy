@@ -53,7 +53,7 @@ namespace GUI
             dataGridView1.Rows.Clear();
             foreach (Staff item in StaffBUS.Instance.get())
             {
-                if (item.RoleInt == 0 && item.ID!=user.ID) continue;
+                if (item.RoleInt == 0 && item.ID != user.ID) continue;
                 dataGridView1.Rows.Add(item.ID, item.Name, item.RoleString, item.Username, item.Password);
             }
             DataGridViewRow row = dataGridView1.Rows[0];
@@ -66,7 +66,7 @@ namespace GUI
                 cbRole.Text = Convert.ToString(row.Cells["Column5"].Value);
             }
         }
-       
+
         #endregion
 
         #region ClickEvent
@@ -135,7 +135,7 @@ namespace GUI
             //btnSua1.Enabled = false;
             btnXoa1.Enabled = false;
             btnThem1.Enabled = false;
-            
+
         }
         private void btnXoa1_Click(object sender, EventArgs e)
         {
