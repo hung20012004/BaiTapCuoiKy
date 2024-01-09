@@ -60,12 +60,12 @@ namespace DAL
             try
             {
                 Open();
-                using (var cmd = new SqlCommand("addCustomer", conn))
+                using (var cmd = new SqlCommand("insertCustomer", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
-                    cmd.Parameters.Add("@sdt", SqlDbType.VarChar).Value = customer.Phone;
-                    cmd.Parameters.Add("@diachi", SqlDbType.NVarChar).Value = customer.Address;
+                    cmd.Parameters.Add("@customer_name", SqlDbType.NVarChar).Value = customer.Name;
+                    cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = customer.Phone;
+                    cmd.Parameters.Add("@address", SqlDbType.NVarChar).Value = customer.Address;
                     cmd.ExecuteNonQuery();
                 }
                 Close();

@@ -58,7 +58,7 @@ namespace GUI
                     break;
                 case 4:
                    SellGUI_menu menu4 = new(user);
-                    menu4.Show();
+                    menu4.ShowDialog();
                     break;
             }
 
