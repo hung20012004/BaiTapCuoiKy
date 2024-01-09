@@ -143,6 +143,14 @@ namespace DTO
                     break;
             }
         }
-  
+        public decimal getSUM()
+        {
+            decimal sum = 0;
+            foreach (var item in laptop)
+            {
+                sum += item.QuantityBought * item.Price;
+            }
+            return sum;
+        }
     }
 }

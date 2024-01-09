@@ -234,8 +234,13 @@ namespace GUI
             btnSuaOrder.Enabled = false;
             btnTaoOrder.Enabled = true;
             btnGhiOrder.Enabled = false;
+            btnHuy2.Enabled = false;
+            btnOrderXoa.Enabled = false;
+            btnHoanThanh.Enabled = false;
+            btnHuyOrder.Enabled = false;
             tbSoLuong2.Text = "";
             cboOrderLapTop.Text = "";
+            cboOrderKhachHang.Text = "";
             cboOrderKhachHang.Items.Clear();
             cboOrderLapTop.Items.Clear();
             dgvOrder.Rows.Clear();
@@ -255,14 +260,18 @@ namespace GUI
         }
         void tab2loading2()
         {
+            btnHuy2.Enabled = false;
             cboOrderKhachHang.Enabled = false;
             cboOrderLapTop.Enabled = false;
             tbSoLuong2.Enabled = false;
             btnThemOrder.Enabled = true;
             btnSuaOrder.Enabled = true;
             btnOrderXoa.Enabled = true;
+            
             btnTaoOrder.Enabled = false;
             btnGhiOrder.Enabled = false;
+            btnHuyOrder.Enabled = true;
+            btnHoanThanh.Enabled = true;
             dgvOrder.Enabled = true;
             decimal sum = 0;
             foreach (DataGridViewRow row in dgvOrder.Rows)
@@ -300,7 +309,8 @@ namespace GUI
             tbSoLuong2.Enabled = true;
             btnGhiOrder.Enabled = true;
             dgvOrder.Enabled = false;
-
+            btnHuyOrder.Enabled = true;
+            btnHuy2.Enabled = true;
 
         }
         private void btnSuaOrder_Click(object sender, EventArgs e)
@@ -311,10 +321,15 @@ namespace GUI
             cboOrderLapTop.Enabled = true;
             tbSoLuong2.Enabled = true;
             btnGhiOrder.Enabled = true;
+            btnHuy2.Enabled = true;
         }
         private void btnOrderXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (dgvOrder.Rows.Count==0)
+            {
+                MessageBox.Show("Không có thông tin để xóa!");
+            }
+            else if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 foreach (DataGridViewRow row in dgvOrder.Rows)
                 {
@@ -373,6 +388,31 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập đủ thông tin!");
             }
         }
+        private void btnHuy2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận hủy", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                tab2loading2();
+            }
+            else
+            {
+
+            }
+
+        }
+
+        private void btnHuyOrder_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận hủy", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                tab2Loading1();
+            }
+            else
+            {
+
+            }
+
+        }
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -428,5 +468,6 @@ namespace GUI
 
 
 
+        
     }
 }

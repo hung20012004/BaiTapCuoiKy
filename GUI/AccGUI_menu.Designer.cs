@@ -118,6 +118,8 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
+            label26 = new Label();
+            lbSUM = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage1.SuspendLayout();
@@ -219,9 +221,9 @@
             tabPage1.Controls.Add(label9);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
-            tabPage1.Location = new Point(4, 37);
+            tabPage1.Location = new Point(4, 34);
             tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1145, 902);
+            tabPage1.Size = new Size(1145, 905);
             tabPage1.TabIndex = 4;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -549,6 +551,7 @@
             dataGridView3.RowTemplate.Height = 33;
             dataGridView3.Size = new Size(1140, 604);
             dataGridView3.TabIndex = 0;
+            dataGridView3.CellClick += dataGridView3_CellClick;
             dataGridView3.CellContentClick += dataGridView3_CellContentClick;
             // 
             // ID
@@ -581,13 +584,15 @@
             // 
             // Status
             // 
-            Status.HeaderText = "Trạng thái";
+            Status.HeaderText = "Tổng";
             Status.MinimumWidth = 6;
             Status.Name = "Status";
             Status.Width = 200;
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(lbSUM);
+            tabPage3.Controls.Add(label26);
             tabPage3.Controls.Add(button1);
             tabPage3.Controls.Add(tbOrderDate0);
             tabPage3.Controls.Add(label5);
@@ -974,6 +979,24 @@
             Column5.Name = "Column5";
             Column5.Width = 150;
             // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(340, 842);
+            label26.Name = "label26";
+            label26.Size = new Size(53, 28);
+            label26.TabIndex = 20;
+            label26.Text = "VND";
+            // 
+            // lbSUM
+            // 
+            lbSUM.AutoSize = true;
+            lbSUM.Location = new Point(117, 842);
+            lbSUM.Name = "lbSUM";
+            lbSUM.Size = new Size(55, 28);
+            lbSUM.TabIndex = 21;
+            lbSUM.Text = "SUM";
+            // 
             // AccGUI_menu
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
@@ -1080,11 +1103,6 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private ComboBox cbTrangThai1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn CusName1;
-        private DataGridViewTextBoxColumn SellerName1;
-        private DataGridViewTextBoxColumn OrderDate;
-        private DataGridViewTextBoxColumn Status;
         private Button button1;
         private Label lbkiKH2;
         private Label lbThuNgan;
@@ -1098,5 +1116,12 @@
         private DataGridViewTextBoxColumn Col3;
         private DataGridViewTextBoxColumn Col4;
         private DataGridViewTextBoxColumn Col5;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn CusName1;
+        private DataGridViewTextBoxColumn SellerName1;
+        private DataGridViewTextBoxColumn OrderDate;
+        private DataGridViewTextBoxColumn Status;
+        private Label lbSUM;
+        private Label label26;
     }
 }
