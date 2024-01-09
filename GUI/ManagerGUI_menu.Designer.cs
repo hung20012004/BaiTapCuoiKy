@@ -70,68 +70,93 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = SystemColors.GradientInactiveCaption;
             groupBox1.Controls.Add(btnQuanLyNhanSu);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(btnThongKe);
-            groupBox1.Location = new Point(6, -30);
+            groupBox1.Location = new Point(-3, -7);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(323, 987);
+            groupBox1.Size = new Size(332, 899);
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
             groupBox1.Text = " ";
+            groupBox1.UseWaitCursor = true;
             // 
             // btnQuanLyNhanSu
             // 
             btnQuanLyNhanSu.BackColor = SystemColors.ButtonHighlight;
-            btnQuanLyNhanSu.Location = new Point(0, 288);
+            btnQuanLyNhanSu.Cursor = Cursors.Hand;
+            btnQuanLyNhanSu.FlatAppearance.BorderColor = SystemColors.GradientActiveCaption;
+            btnQuanLyNhanSu.FlatAppearance.BorderSize = 5;
+            btnQuanLyNhanSu.FlatAppearance.MouseDownBackColor = Color.White;
+            btnQuanLyNhanSu.FlatStyle = FlatStyle.Flat;
+            btnQuanLyNhanSu.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnQuanLyNhanSu.Location = new Point(6, 288);
             btnQuanLyNhanSu.Name = "btnQuanLyNhanSu";
             btnQuanLyNhanSu.Size = new Size(323, 83);
             btnQuanLyNhanSu.TabIndex = 4;
             btnQuanLyNhanSu.Text = "Quản lý nhân sự";
             btnQuanLyNhanSu.UseVisualStyleBackColor = false;
+            btnQuanLyNhanSu.UseWaitCursor = true;
             btnQuanLyNhanSu.Click += btnQuanLyNhanSu_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(0, 32);
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Location = new Point(5, 19);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(323, 187);
+            pictureBox1.Size = new Size(324, 214);
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
+            pictureBox1.UseWaitCursor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(0, 823);
+            button3.BackColor = SystemColors.ButtonHighlight;
+            button3.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            button3.FlatAppearance.BorderSize = 5;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(6, 817);
             button3.Name = "button3";
             button3.Size = new Size(323, 76);
             button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            button3.Text = "Đăng xuất";
+            button3.UseVisualStyleBackColor = false;
+            button3.UseWaitCursor = true;
             // 
             // btnThongKe
             // 
-            btnThongKe.Location = new Point(0, 377);
+            btnThongKe.BackColor = SystemColors.ButtonHighlight;
+            btnThongKe.FlatAppearance.BorderColor = SystemColors.GradientActiveCaption;
+            btnThongKe.FlatAppearance.BorderSize = 5;
+            btnThongKe.FlatStyle = FlatStyle.Flat;
+            btnThongKe.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnThongKe.Location = new Point(6, 377);
             btnThongKe.Name = "btnThongKe";
             btnThongKe.Size = new Size(323, 83);
             btnThongKe.TabIndex = 0;
             btnThongKe.Text = "Thống kê";
-            btnThongKe.UseVisualStyleBackColor = true;
+            btnThongKe.UseVisualStyleBackColor = false;
+            btnThongKe.UseWaitCursor = true;
             btnThongKe.Click += btnThongKe_Click;
             // 
             // tabPage3
             // 
-            tabPage3.Location = new Point(4, 29);
+            tabPage3.Location = new Point(4, 32);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 910);
+            tabPage3.Size = new Size(961, 886);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
+            tabPage3.UseWaitCursor = true;
             // 
             // tabPage2
             // 
+            tabPage2.BorderStyle = BorderStyle.FixedSingle;
             tabPage2.Controls.Add(btnXoa1);
             tabPage2.Controls.Add(cbRole);
             tabPage2.Controls.Add(label6);
@@ -153,178 +178,197 @@
             tabPage2.Controls.Add(dataGridView1);
             tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 951);
+            tabPage2.Padding = new Padding(3, 3, 3, 3);
+            tabPage2.Size = new Size(831, 886);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.UseWaitCursor = true;
             // 
             // btnXoa1
             // 
-            btnXoa1.Location = new Point(321, 227);
+            btnXoa1.Location = new Point(304, 241);
             btnXoa1.Name = "btnXoa1";
             btnXoa1.Size = new Size(112, 34);
             btnXoa1.TabIndex = 19;
             btnXoa1.Text = "Xóa";
             btnXoa1.UseVisualStyleBackColor = true;
+            btnXoa1.UseWaitCursor = true;
             btnXoa1.Click += btnXoa1_Click;
             // 
             // cbRole
             // 
             cbRole.FormattingEnabled = true;
             cbRole.Items.AddRange(new object[] { "Quản lý", "Nhân viên bán hàng", "Kế toán", "Thủ kho", "Nhân viên chăm sóc khách hàng" });
-            cbRole.Location = new Point(149, 148);
+            cbRole.Location = new Point(150, 147);
             cbRole.Name = "cbRole";
-            cbRole.Size = new Size(284, 31);
+            cbRole.Size = new Size(280, 31);
             cbRole.TabIndex = 18;
+            cbRole.UseWaitCursor = true;
             cbRole.SelectedIndexChanged += cbRole_SelectedIndexChanged;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(29, 151);
+            label6.Location = new Point(30, 150);
             label6.Name = "label6";
-            label6.Size = new Size(72, 23);
+            label6.Size = new Size(94, 23);
             label6.TabIndex = 17;
-            label6.Text = "Chức vụ";
+            label6.Text = "Chức vụ (*)";
+            label6.UseWaitCursor = true;
             // 
             // tbTimKiem1
             // 
-            tbTimKiem1.Location = new Point(907, 32);
+            tbTimKiem1.Location = new Point(569, 147);
             tbTimKiem1.Name = "tbTimKiem1";
             tbTimKiem1.Size = new Size(226, 30);
             tbTimKiem1.TabIndex = 15;
+            tbTimKiem1.UseWaitCursor = true;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(810, 35);
+            label5.Location = new Point(459, 150);
             label5.Name = "label5";
             label5.Size = new Size(79, 23);
             label5.TabIndex = 14;
             label5.Text = "Tìm kiếm";
+            label5.UseWaitCursor = true;
             // 
             // tbMatKhau
             // 
             tbMatKhau.Enabled = false;
-            tbMatKhau.Location = new Point(569, 93);
+            tbMatKhau.Location = new Point(569, 87);
             tbMatKhau.Name = "tbMatKhau";
             tbMatKhau.Size = new Size(150, 30);
             tbMatKhau.TabIndex = 13;
+            tbMatKhau.UseWaitCursor = true;
             tbMatKhau.TextChanged += tbMatKhau_TextChanged;
             // 
             // tbTaiKhoan
             // 
             tbTaiKhoan.Enabled = false;
-            tbTaiKhoan.Location = new Point(569, 29);
+            tbTaiKhoan.Location = new Point(569, 27);
             tbTaiKhoan.Name = "tbTaiKhoan";
             tbTaiKhoan.Size = new Size(150, 30);
             tbTaiKhoan.TabIndex = 12;
+            tbTaiKhoan.UseWaitCursor = true;
             tbTaiKhoan.TextChanged += tbTaiKhoan_TextChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(459, 35);
+            label4.Location = new Point(459, 30);
             label4.Name = "label4";
-            label4.Size = new Size(82, 23);
+            label4.Size = new Size(86, 23);
             label4.TabIndex = 11;
-            label4.Text = "Tài khoản";
+            label4.Text = "Tài khoản:";
+            label4.UseWaitCursor = true;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(21, 26);
+            label3.Location = new Point(30, 30);
             label3.Name = "label3";
-            label3.Size = new Size(27, 23);
+            label3.Size = new Size(31, 23);
             label3.TabIndex = 10;
-            label3.Text = "ID";
+            label3.Text = "ID:";
+            label3.UseWaitCursor = true;
             // 
             // btnShowLogInfo
             // 
-            btnShowLogInfo.Location = new Point(738, 32);
+            btnShowLogInfo.Location = new Point(742, 24);
             btnShowLogInfo.Name = "btnShowLogInfo";
             btnShowLogInfo.Size = new Size(66, 34);
             btnShowLogInfo.TabIndex = 9;
             btnShowLogInfo.Text = "Show";
             btnShowLogInfo.UseVisualStyleBackColor = true;
+            btnShowLogInfo.UseWaitCursor = true;
             btnShowLogInfo.Click += btnShowLogInfo_Click;
             // 
             // tbID
             // 
-            tbID.Location = new Point(149, 26);
+            tbID.Location = new Point(150, 27);
             tbID.Name = "tbID";
             tbID.ReadOnly = true;
-            tbID.Size = new Size(284, 30);
+            tbID.Size = new Size(280, 30);
             tbID.TabIndex = 8;
+            tbID.UseWaitCursor = true;
             tbID.TextChanged += tbID_TextChanged;
             // 
             // tbHoTen
             // 
-            tbHoTen.Location = new Point(149, 88);
+            tbHoTen.Location = new Point(150, 87);
             tbHoTen.Name = "tbHoTen";
-            tbHoTen.Size = new Size(284, 30);
+            tbHoTen.Size = new Size(280, 30);
             tbHoTen.TabIndex = 7;
+            tbHoTen.UseWaitCursor = true;
             tbHoTen.TextChanged += tbHoTen_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(459, 94);
+            label2.Location = new Point(459, 90);
             label2.Name = "label2";
-            label2.Size = new Size(82, 23);
+            label2.Size = new Size(86, 23);
             label2.TabIndex = 6;
-            label2.Text = "Mật khẩu";
+            label2.Text = "Mật khẩu:";
+            label2.UseWaitCursor = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 93);
+            label1.Location = new Point(30, 90);
             label1.Name = "label1";
-            label1.Size = new Size(62, 23);
+            label1.Size = new Size(84, 23);
             label1.TabIndex = 5;
-            label1.Text = "Họ tên";
+            label1.Text = "Họ tên (*)";
+            label1.UseWaitCursor = true;
             // 
             // btnSua1
             // 
-            btnSua1.Location = new Point(165, 227);
+            btnSua1.Location = new Point(162, 241);
             btnSua1.Name = "btnSua1";
             btnSua1.Size = new Size(112, 34);
             btnSua1.TabIndex = 4;
             btnSua1.Text = "Sửa";
             btnSua1.UseVisualStyleBackColor = true;
+            btnSua1.UseWaitCursor = true;
             btnSua1.Click += btnSua1_Click;
             // 
             // btnThem1
             // 
-            btnThem1.Location = new Point(29, 227);
+            btnThem1.Location = new Point(21, 241);
             btnThem1.Name = "btnThem1";
             btnThem1.Size = new Size(112, 34);
             btnThem1.TabIndex = 3;
             btnThem1.Text = "Thêm";
             btnThem1.UseVisualStyleBackColor = true;
+            btnThem1.UseWaitCursor = true;
             btnThem1.Click += btnThem1_Click;
             // 
             // btnHuy1
             // 
             btnHuy1.Enabled = false;
-            btnHuy1.Location = new Point(477, 227);
+            btnHuy1.Location = new Point(594, 241);
             btnHuy1.Name = "btnHuy1";
             btnHuy1.Size = new Size(112, 34);
             btnHuy1.TabIndex = 2;
             btnHuy1.Text = "Hủy";
             btnHuy1.UseVisualStyleBackColor = true;
+            btnHuy1.UseWaitCursor = true;
             btnHuy1.Click += btnHuy1_Click;
             // 
             // btnGhi1
             // 
             btnGhi1.Enabled = false;
-            btnGhi1.Location = new Point(477, 171);
+            btnGhi1.Location = new Point(449, 241);
             btnGhi1.Name = "btnGhi1";
             btnGhi1.Size = new Size(112, 34);
             btnGhi1.TabIndex = 1;
             btnGhi1.Text = "Ghi";
             btnGhi1.UseVisualStyleBackColor = true;
+            btnGhi1.UseWaitCursor = true;
             btnGhi1.Click += btnGhi1_Click;
             // 
             // dataGridView1
@@ -335,8 +379,9 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(816, 604);
+            dataGridView1.Size = new Size(818, 588);
             dataGridView1.TabIndex = 0;
+            dataGridView1.UseWaitCursor = true;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // Column1
@@ -384,19 +429,23 @@
             tabControl1.Location = new Point(329, -30);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1153, 987);
+            tabControl1.Size = new Size(839, 922);
             tabControl1.TabIndex = 18;
+            tabControl1.UseWaitCursor = true;
             // 
             // ManagerGUI_menu
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1478, 907);
+            BackColor = SystemColors.Highlight;
+            ClientSize = new Size(1167, 893);
             Controls.Add(tabControl1);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ManagerGUI_menu";
-            Text = "ManagerGUI_menu";
+            Text = "Quản lý";
+            UseWaitCursor = true;
             Load += ManagerGUI_menu_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
