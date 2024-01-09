@@ -156,6 +156,6 @@ namespace DTO
             get { return quantityImport; }
             set { quantityImport = value; }
         }
-
+        
     }
 }

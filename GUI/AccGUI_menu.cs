@@ -56,7 +56,9 @@ namespace GUI
                 tbSeller0.Text = Convert.ToString(row.Cells["SellerName"].Value);
                 tbOrderDate0.Text = Convert.ToString(row.Cells["OrderTime"].Value);
                 order = OrderBUS.Instance.getOrderByID(Convert.ToInt32(row.Cells["OrderID"].Value));
+                lbSUM.Text=order.getSUM().ToString();
             }
+            
         }
 
         #endregion
@@ -97,6 +99,7 @@ namespace GUI
             if (MessageBox.Show("Xác nhận hoàn thành", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 order.StatusInt = 2;
+                order.Accountant.ID = user.ID;
                 if (OrderBUS.Instance.update(order))
                 {
                     loadTab0();
@@ -127,6 +130,7 @@ namespace GUI
                     tbSeller0.Text = Convert.ToString(row.Cells["SellerName"].Value);
                     tbOrderDate0.Text = Convert.ToString(row.Cells["OrderTime"].Value);
                     order = OrderBUS.Instance.getOrderByID(Convert.ToInt32(row.Cells["OrderID"].Value));
+                    lbSUM.Text=order.getSUM().ToString();
                 }
             }
             catch { }
@@ -168,10 +172,11 @@ namespace GUI
                 if (item.Accountant.ID == user.ID && item.StatusString == cbTrangThai1.Text)
                 {
                     item.Customer = CustomerBUS.Instance.getCustomer(item.Customer);
+                    order = OrderBUS.Instance.getOrderByID(item.ID);
                     item.Seller = StaffBUS.Instance.getSeller(item.Seller);
                     item.Accountant = StaffBUS.Instance.getAccountant(item.Accountant);
-                    dataGridView3.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.PaymentString);
-                    // order=OrderBUS.Instance.getOrderByID(item.ID);
+                    dataGridView3.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.getSUM());
+
                 }
             }
             DataGridViewRow row = dataGridView3.Rows[0];
@@ -199,17 +204,25 @@ namespace GUI
         {
             ExportData.Instance.ToExcel(dataGridView3, "Thống kê hóa đơn khách hàng");
         }
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dataGridView3.Rows[e.RowIndex];
+                if (Convert.ToString(row.Cells["ID"].Value) != "")
+                {
+                    tbID1.Text = Convert.ToString(row.Cells["ID"].Value);
+                    tbCustomer.Text = Convert.ToString(row.Cells["CusName1"].Value);
+                    tbOrderDate.Text = Convert.ToString(row.Cells["OrderDate"].Value);
+                    order = OrderBUS.Instance.getOrderByID(Convert.ToInt32(row.Cells["ID"].Value));
+                }
+            }
+            catch { }
+        }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = new DataGridViewRow();
-            row = dataGridView3.Rows[e.RowIndex];
-            if (Convert.ToString(row.Cells["ID"].Value) != "")
-            {
-                tbID1.Text = Convert.ToString(row.Cells["ID"].Value);
-                tbCustomer.Text = Convert.ToString(row.Cells["CusName1"].Value);
-                tbOrderDate.Text = Convert.ToString(row.Cells["OrderDate"].Value);
-                order = OrderBUS.Instance.getOrderByID(Convert.ToInt32(row.Cells["ID"].Value));
-            }
+
         }
         #endregion
         #region textChangeEvent

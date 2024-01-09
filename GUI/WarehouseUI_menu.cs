@@ -205,6 +205,10 @@ namespace GUI
 
         #endregion
         #region clickEvent
+        private void btnExcelExport_Click(object sender, EventArgs e)
+        {
+            ExportData.Instance.ToExcel(dataGridView1, "Thống kê số lượng nhà cung cấp");
+        }
         private void btSanPham_Click(object sender, EventArgs e)
         {
             tab0loading();
@@ -341,7 +345,11 @@ namespace GUI
         }
         private void btnXoa2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (dataGridView2.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có thông tin để xóa!");
+            }
+            else if(MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
@@ -445,9 +453,6 @@ namespace GUI
         #endregion
 
 
-        private void btnExcelExport_Click(object sender, EventArgs e)
-        {
-            ExportData.Instance.ToExcel(dataGridView1, "Thống kê số lượng nhà cung cấp");
-        }
+        
     }
 }
