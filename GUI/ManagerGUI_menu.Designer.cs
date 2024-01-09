@@ -90,7 +90,7 @@
             // 
             // btnQuanLyNhanSu
             // 
-            btnQuanLyNhanSu.BackColor = Color.Aquamarine;
+            btnQuanLyNhanSu.BackColor = SystemColors.ButtonHighlight;
             btnQuanLyNhanSu.Cursor = Cursors.Hand;
             btnQuanLyNhanSu.FlatAppearance.BorderColor = SystemColors.GradientActiveCaption;
             btnQuanLyNhanSu.FlatAppearance.BorderSize = 5;
@@ -135,7 +135,7 @@
             // 
             // btnThongKe
             // 
-            btnThongKe.BackColor = Color.Aquamarine;
+            btnThongKe.BackColor = SystemColors.ButtonHighlight;
             btnThongKe.FlatAppearance.BorderColor = SystemColors.GradientActiveCaption;
             btnThongKe.FlatAppearance.BorderSize = 5;
             btnThongKe.FlatStyle = FlatStyle.Flat;

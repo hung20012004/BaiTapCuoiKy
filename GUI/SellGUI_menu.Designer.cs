@@ -172,10 +172,10 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(322, -30);
+            tabControl1.Location = new Point(322, -31);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(899, 805);
+            tabControl1.Size = new Size(899, 806);
             tabControl1.TabIndex = 16;
             // 
             // tabPage1
@@ -183,7 +183,7 @@
             tabPage1.Location = new Point(4, 32);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(891, 769);
+            tabPage1.Size = new Size(891, 738);
             tabPage1.TabIndex = 2;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -192,10 +192,10 @@
             // 
             tabPage2.Controls.Add(groupBox3);
             tabPage2.Controls.Add(groupBox5);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(891, 772);
+            tabPage2.Size = new Size(891, 738);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -299,7 +299,7 @@
             // 
             // btnCustomerHuy
             // 
-            btnCustomerHuy.BackColor = SystemColors.ButtonHighlight;
+            btnCustomerHuy.BackColor = Color.FloralWhite;
             btnCustomerHuy.FlatAppearance.BorderColor = Color.MediumTurquoise;
             btnCustomerHuy.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnCustomerHuy.Location = new Point(667, 86);
@@ -375,7 +375,7 @@
             // 
             // btnCustomerGhi
             // 
-            btnCustomerGhi.BackColor = SystemColors.ButtonHighlight;
+            btnCustomerGhi.BackColor = Color.FloralWhite;
             btnCustomerGhi.DialogResult = DialogResult.Abort;
             btnCustomerGhi.FlatAppearance.BorderColor = Color.MediumTurquoise;
             btnCustomerGhi.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
@@ -388,7 +388,7 @@
             // 
             // btnCustomerXoa
             // 
-            btnCustomerXoa.BackColor = SystemColors.ButtonFace;
+            btnCustomerXoa.BackColor = SystemColors.ButtonHighlight;
             btnCustomerXoa.FlatAppearance.BorderColor = Color.MediumTurquoise;
             btnCustomerXoa.Location = new Point(494, 138);
             btnCustomerXoa.Name = "btnCustomerXoa";
@@ -399,7 +399,7 @@
             // 
             // btnCustomerThem
             // 
-            btnCustomerThem.BackColor = SystemColors.ButtonFace;
+            btnCustomerThem.BackColor = SystemColors.ButtonHighlight;
             btnCustomerThem.FlatAppearance.BorderColor = Color.MediumTurquoise;
             btnCustomerThem.Location = new Point(494, 34);
             btnCustomerThem.Name = "btnCustomerThem";
@@ -410,7 +410,7 @@
             // 
             // btnCustomerSua
             // 
-            btnCustomerSua.BackColor = SystemColors.ButtonFace;
+            btnCustomerSua.BackColor = SystemColors.ButtonHighlight;
             btnCustomerSua.FlatAppearance.BorderColor = Color.MediumTurquoise;
             btnCustomerSua.Location = new Point(494, 87);
             btnCustomerSua.Name = "btnCustomerSua";
@@ -425,9 +425,9 @@
             tabPage3.Controls.Add(groupBox4);
             tabPage3.Controls.Add(groupBox2);
             tabPage3.Controls.Add(lbTongDonGia);
-            tabPage3.Location = new Point(4, 29);
+            tabPage3.Location = new Point(4, 32);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(891, 772);
+            tabPage3.Size = new Size(891, 770);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -463,7 +463,7 @@
             // 
             // btnHuy2
             // 
-            btnHuy2.BackColor = SystemColors.ButtonHighlight;
+            btnHuy2.BackColor = Color.FloralWhite;
             btnHuy2.FlatAppearance.BorderColor = Color.MediumAquamarine;
             btnHuy2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnHuy2.Location = new Point(711, 161);
@@ -475,7 +475,7 @@
             // 
             // btnOrderXoa
             // 
-            btnOrderXoa.BackColor = SystemColors.ButtonFace;
+            btnOrderXoa.BackColor = SystemColors.ButtonHighlight;
             btnOrderXoa.FlatAppearance.BorderColor = Color.MediumAquamarine;
             btnOrderXoa.Location = new Point(572, 161);
             btnOrderXoa.Name = "btnOrderXoa";
@@ -512,7 +512,7 @@
             // 
             // btnSuaOrder
             // 
-            btnSuaOrder.BackColor = SystemColors.ButtonFace;
+            btnSuaOrder.BackColor = SystemColors.ButtonHighlight;
             btnSuaOrder.FlatAppearance.BorderColor = Color.MediumTurquoise;
             btnSuaOrder.Location = new Point(572, 100);
             btnSuaOrder.Name = "btnSuaOrder";
@@ -523,7 +523,7 @@
             // 
             // btnThemOrder
             // 
-            btnThemOrder.BackColor = SystemColors.ButtonFace;
+            btnThemOrder.BackColor = SystemColors.ButtonHighlight;
             btnThemOrder.FlatAppearance.BorderColor = Color.MediumAquamarine;
             btnThemOrder.Location = new Point(572, 37);
             btnThemOrder.Name = "btnThemOrder";
@@ -534,7 +534,7 @@
             // 
             // btnTaoOrder
             // 
-            btnTaoOrder.BackColor = SystemColors.ButtonHighlight;
+            btnTaoOrder.BackColor = Color.FloralWhite;
             btnTaoOrder.FlatAppearance.BorderColor = Color.MediumAquamarine;
             btnTaoOrder.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnTaoOrder.Location = new Point(711, 37);
@@ -563,7 +563,7 @@
             // 
             // btnGhiOrder
             // 
-            btnGhiOrder.BackColor = SystemColors.ButtonHighlight;
+            btnGhiOrder.BackColor = Color.FloralWhite;
             btnGhiOrder.FlatAppearance.BorderColor = Color.MediumAquamarine;
             btnGhiOrder.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnGhiOrder.Location = new Point(711, 100);
