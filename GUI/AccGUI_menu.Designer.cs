@@ -77,6 +77,8 @@
             OrderDate = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
             tabPage3 = new TabPage();
+            lbSUM = new Label();
+            label26 = new Label();
             button1 = new Button();
             tbOrderDate0 = new TextBox();
             label5 = new Label();
@@ -105,7 +107,7 @@
             tbNgayTao3 = new TextBox();
             tbNguoiTao3 = new TextBox();
             tbNhaCungCap3 = new TextBox();
-            tbMaHoaDon1 = new TextBox();
+            tbMaHoaDon3 = new TextBox();
             label22 = new Label();
             label21 = new Label();
             label20 = new Label();
@@ -118,8 +120,8 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            label26 = new Label();
-            lbSUM = new Label();
+            tabPage5 = new TabPage();
+            tabPage6 = new TabPage();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage1.SuspendLayout();
@@ -165,6 +167,7 @@
             btnHoaDonNhapDangCho.TabIndex = 5;
             btnHoaDonNhapDangCho.Text = "Hóa đơn nhập đang chờ";
             btnHoaDonNhapDangCho.UseVisualStyleBackColor = true;
+            btnHoaDonNhapDangCho.Click += btnHoaDonNhapDangCho_Click;
             // 
             // btCho
             // 
@@ -221,9 +224,9 @@
             tabPage1.Controls.Add(label9);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
-            tabPage1.Location = new Point(4, 34);
+            tabPage1.Location = new Point(4, 37);
             tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1145, 905);
+            tabPage1.Size = new Size(1145, 902);
             tabPage1.TabIndex = 4;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -430,10 +433,10 @@
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(btnChiTiet1);
             tabPage2.Controls.Add(dataGridView3);
-            tabPage2.Location = new Point(4, 34);
+            tabPage2.Location = new Point(4, 37);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 905);
+            tabPage2.Size = new Size(1145, 902);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -616,6 +619,24 @@
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lbSUM
+            // 
+            lbSUM.AutoSize = true;
+            lbSUM.Location = new Point(117, 842);
+            lbSUM.Name = "lbSUM";
+            lbSUM.Size = new Size(55, 28);
+            lbSUM.TabIndex = 21;
+            lbSUM.Text = "SUM";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(340, 842);
+            label26.Name = "label26";
+            label26.Size = new Size(53, 28);
+            label26.TabIndex = 20;
+            label26.Text = "VND";
             // 
             // button1
             // 
@@ -803,6 +824,8 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
+            tabControl1.Controls.Add(tabPage6);
             tabControl1.Location = new Point(324, 1);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -816,7 +839,7 @@
             tabPage4.Controls.Add(tbNgayTao3);
             tabPage4.Controls.Add(tbNguoiTao3);
             tabPage4.Controls.Add(tbNhaCungCap3);
-            tabPage4.Controls.Add(tbMaHoaDon1);
+            tabPage4.Controls.Add(tbMaHoaDon3);
             tabPage4.Controls.Add(label22);
             tabPage4.Controls.Add(label21);
             tabPage4.Controls.Add(label20);
@@ -824,10 +847,10 @@
             tabPage4.Controls.Add(btnHuyBo3);
             tabPage4.Controls.Add(label19);
             tabPage4.Controls.Add(dataGridView1);
-            tabPage4.Location = new Point(4, 34);
+            tabPage4.Location = new Point(4, 37);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(1145, 905);
+            tabPage4.Size = new Size(1145, 902);
             tabPage4.TabIndex = 5;
             tabPage4.Text = "tabPage4";
             tabPage4.UseVisualStyleBackColor = true;
@@ -871,12 +894,12 @@
             tbNhaCungCap3.Size = new Size(150, 34);
             tbNhaCungCap3.TabIndex = 8;
             // 
-            // tbMaHoaDon1
+            // tbMaHoaDon3
             // 
-            tbMaHoaDon1.Location = new Point(181, 36);
-            tbMaHoaDon1.Name = "tbMaHoaDon1";
-            tbMaHoaDon1.Size = new Size(150, 34);
-            tbMaHoaDon1.TabIndex = 7;
+            tbMaHoaDon3.Location = new Point(181, 36);
+            tbMaHoaDon3.Name = "tbMaHoaDon3";
+            tbMaHoaDon3.Size = new Size(150, 34);
+            tbMaHoaDon3.TabIndex = 7;
             // 
             // label22
             // 
@@ -979,23 +1002,25 @@
             Column5.Name = "Column5";
             Column5.Width = 150;
             // 
-            // label26
+            // tabPage5
             // 
-            label26.AutoSize = true;
-            label26.Location = new Point(340, 842);
-            label26.Name = "label26";
-            label26.Size = new Size(53, 28);
-            label26.TabIndex = 20;
-            label26.Text = "VND";
+            tabPage5.Location = new Point(4, 37);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(1145, 902);
+            tabPage5.TabIndex = 6;
+            tabPage5.Text = "tabPage5";
+            tabPage5.UseVisualStyleBackColor = true;
             // 
-            // lbSUM
+            // tabPage6
             // 
-            lbSUM.AutoSize = true;
-            lbSUM.Location = new Point(117, 842);
-            lbSUM.Name = "lbSUM";
-            lbSUM.Size = new Size(55, 28);
-            lbSUM.TabIndex = 21;
-            lbSUM.Text = "SUM";
+            tabPage6.Location = new Point(4, 37);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Padding = new Padding(3);
+            tabPage6.Size = new Size(1145, 902);
+            tabPage6.TabIndex = 7;
+            tabPage6.Text = "tabPage6";
+            tabPage6.UseVisualStyleBackColor = true;
             // 
             // AccGUI_menu
             // 
@@ -1084,7 +1109,7 @@
         private TextBox tbNgayTao3;
         private TextBox tbNguoiTao3;
         private TextBox tbNhaCungCap3;
-        private TextBox tbMaHoaDon1;
+        private TextBox tbMaHoaDon3;
         private Label label22;
         private Label label21;
         private Label label20;
@@ -1123,5 +1148,7 @@
         private DataGridViewTextBoxColumn Status;
         private Label lbSUM;
         private Label label26;
+        private TabPage tabPage5;
+        private TabPage tabPage6;
     }
 }

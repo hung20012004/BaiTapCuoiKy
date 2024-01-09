@@ -102,6 +102,13 @@ namespace DAL
                     cmd.Parameters.Add("@accountant_id", SqlDbType.Int).Value = order.Accountant.ID;
                     cmd.ExecuteNonQuery();
                 }
+                if (order.StatusInt == 0)
+                {
+                    foreach (var laptop in order.Laptop)
+                    {
+                        LaptopDAL.Instance.reStock(laptop);
+                    }
+                }
                 conn.Close();
                 return true;
             }

@@ -193,6 +193,13 @@ namespace GUI
         }
         #endregion
         #region textChangeEvent
+        private void txbCustomerPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
         private void txbID_TextChanged(object sender, EventArgs e)
         {
             if (txbCustomerID.Text.Length > 0)
@@ -208,7 +215,10 @@ namespace GUI
 
         private void txbPhone_TextChanged(object sender, EventArgs e)
         {
-
+            if (System.Text.RegularExpressions.Regex.IsMatch(txbCustomerPhone.Text, "  ^ [0-9]"))
+            {
+                txbCustomerPhone.Text = null;
+            }
             customer.Phone = txbCustomerPhone.Text;
         }
 
@@ -238,6 +248,7 @@ namespace GUI
             btnOrderXoa.Enabled = false;
             btnHoanThanh.Enabled = false;
             btnHuyOrder.Enabled = false;
+            SUM.Text = "0";
             tbSoLuong2.Text = "";
             cboOrderLapTop.Text = "";
             cboOrderKhachHang.Text = "";
@@ -267,7 +278,7 @@ namespace GUI
             btnThemOrder.Enabled = true;
             btnSuaOrder.Enabled = true;
             btnOrderXoa.Enabled = true;
-            
+
             btnTaoOrder.Enabled = false;
             btnGhiOrder.Enabled = false;
             btnHuyOrder.Enabled = true;
@@ -325,7 +336,7 @@ namespace GUI
         }
         private void btnOrderXoa_Click(object sender, EventArgs e)
         {
-            if (dgvOrder.Rows.Count==0)
+            if (dgvOrder.Rows.Count == 1)
             {
                 MessageBox.Show("Không có thông tin để xóa!");
             }
@@ -365,7 +376,11 @@ namespace GUI
         {
             if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != "")
             {
-                if (btnCustomerThem.Enabled == true)
+                if (choosenlaptop.QuantityInStock < choosenlaptop.QuantityBought)
+                {
+                    MessageBox.Show("Số lượng vượt quá số hàng trong kho \n( Số lượng trong kho: " + Convert.ToString(choosenlaptop.QuantityInStock) + " )");
+                }
+                else if (btnCustomerThem.Enabled == true)
                 {
                     dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.QuantityBought, choosenlaptop.Price, (decimal)choosenlaptop.Price * (decimal)choosenlaptop.QuantityBought);
                 }
@@ -434,6 +449,10 @@ namespace GUI
         #region textChangeEvent
         private void tbSoLuong2_TextChanged(object sender, EventArgs e)
         {
+            if (System.Text.RegularExpressions.Regex.IsMatch(tbSoLuong2.Text, "  ^ [0-9]"))
+            {
+                tbSoLuong2.Text = null;
+            }
             try
             {
                 choosenlaptop.QuantityBought = Convert.ToInt32(tbSoLuong2.Text);
@@ -463,8 +482,18 @@ namespace GUI
                 }
             }
         }
+        private void tbSoLuong2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
         #endregion
         #endregion
+
+
+
 
 
 

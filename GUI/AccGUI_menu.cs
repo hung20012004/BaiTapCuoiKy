@@ -56,9 +56,9 @@ namespace GUI
                 tbSeller0.Text = Convert.ToString(row.Cells["SellerName"].Value);
                 tbOrderDate0.Text = Convert.ToString(row.Cells["OrderTime"].Value);
                 order = OrderBUS.Instance.getOrderByID(Convert.ToInt32(row.Cells["OrderID"].Value));
-                lbSUM.Text=order.getSUM().ToString();
+                lbSUM.Text = order.getSUM().ToString();
             }
-            
+
         }
 
         #endregion
@@ -75,8 +75,7 @@ namespace GUI
 
         private void btHuy_Click(object sender, EventArgs e)
         {
-            order.StatusInt = 0;
-            OrderBUS.Instance.update(order);
+
             if (MessageBox.Show("Xác nhận hủy đơn", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 order.StatusInt = 0;
@@ -95,7 +94,8 @@ namespace GUI
 
         private void btXong_Click(object sender, EventArgs e)
         {
-            OrderBUS.Instance.update(order);
+
+
             if (MessageBox.Show("Xác nhận hoàn thành", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 order.StatusInt = 2;
@@ -130,7 +130,7 @@ namespace GUI
                     tbSeller0.Text = Convert.ToString(row.Cells["SellerName"].Value);
                     tbOrderDate0.Text = Convert.ToString(row.Cells["OrderTime"].Value);
                     order = OrderBUS.Instance.getOrderByID(Convert.ToInt32(row.Cells["OrderID"].Value));
-                    lbSUM.Text=order.getSUM().ToString();
+                    lbSUM.Text = order.getSUM().ToString();
                 }
             }
             catch { }
@@ -275,6 +275,9 @@ namespace GUI
 
         }
 
+        private void btnHoaDonNhapDangCho_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

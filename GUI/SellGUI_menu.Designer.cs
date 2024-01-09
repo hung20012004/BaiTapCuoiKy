@@ -175,10 +175,10 @@
             tabPage2.Controls.Add(btnCustomerThem);
             tabPage2.Controls.Add(btnCustomerSua);
             tabPage2.Controls.Add(dgvKhachHang);
-            tabPage2.Location = new Point(4, 34);
+            tabPage2.Location = new Point(4, 37);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 908);
+            tabPage2.Size = new Size(1145, 905);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -208,6 +208,7 @@
             txbCustomerPhone.Size = new Size(186, 34);
             txbCustomerPhone.TabIndex = 11;
             txbCustomerPhone.TextChanged += txbPhone_TextChanged;
+            txbCustomerPhone.KeyPress += txbCustomerPhone_KeyPress;
             // 
             // label9
             // 
@@ -380,6 +381,7 @@
             tbSoLuong2.Size = new Size(229, 34);
             tbSoLuong2.TabIndex = 28;
             tbSoLuong2.TextChanged += tbSoLuong2_TextChanged;
+            tbSoLuong2.KeyPress += tbSoLuong2_KeyPress;
             // 
             // btnHuy2
             // 

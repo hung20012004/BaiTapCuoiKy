@@ -176,8 +176,19 @@ namespace GUI
         }
         #endregion
         #region textChangeEvent
+        private void tbPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
         private void tbID_TextChanged(object sender, EventArgs e)
         {
+            if (System.Text.RegularExpressions.Regex.IsMatch(tbID.Text, "  ^ [0-9]"))
+            {
+                tbID.Text = null;
+            }
             if (!string.IsNullOrEmpty(tbID.Text))
             {
                 provider.ID = Convert.ToInt32(tbID.Text);
@@ -241,6 +252,7 @@ namespace GUI
             tbSoluong2.Enabled = false;
             cbLaptop2.Enabled = false;
             btnXoa2.Enabled = false;
+            tbGiaNhap.Enabled = false;
             btnTaoHoaDon.Enabled = true;
             cbNhaCungCap.Enabled = true;
             cbNhaCungCap.Items.Clear();
@@ -263,6 +275,7 @@ namespace GUI
         void tab2Loading2()
         {
             btnXoa2.Enabled = true;
+            tbGiaNhap.Enabled = false;
             btnHoanThanh.Enabled = true;
             btnHuyHoaDon.Enabled = true;
             btnSua2.Enabled = true;
@@ -323,6 +336,7 @@ namespace GUI
             btnHuy2.Enabled = true;
             btnSua2.Enabled = false;
             btnXoa2.Enabled = false;
+            tbGiaNhap.Enabled = true;
             cbLaptop2.Text = "";
             tbSoluong2.Text = "";
         }
@@ -334,6 +348,7 @@ namespace GUI
             btnHuy2.Enabled = true;
             btnThem2.Enabled = false;
             btnXoa2.Enabled = false;
+            tbGiaNhap.Enabled = false;
 
         }
         private void btnHuyHoaDon_Click(object sender, EventArgs e)
@@ -345,11 +360,11 @@ namespace GUI
         }
         private void btnXoa2_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.Rows.Count == 0)
+            if (dataGridView2.Rows.Count == 1)
             {
                 MessageBox.Show("Không có thông tin để xóa!");
             }
-            else if(MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            else if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
@@ -367,11 +382,11 @@ namespace GUI
         }
         private void btnGhi2_Click(object sender, EventArgs e)
         {
-            if (cbLaptop2.Text != "" && tbSoluong2.Text != "")
+            if (cbLaptop2.Text != "" && tbSoluong2.Text != "" && tbGiaNhap.Text != "")
             {
                 if (btnThem2.Enabled)
                 {
-                    dataGridView2.Rows.Add(choosenLaptop.ID, choosenLaptop.Name, choosenLaptop.QuantityBought, choosenLaptop.Price, (decimal)choosenLaptop.Price * (decimal)choosenLaptop.QuantityBought);
+                    dataGridView2.Rows.Add(choosenLaptop.ID, choosenLaptop.Name, choosenLaptop.QuantityBought, choosenLaptop.ImportPrice, (decimal)choosenLaptop.ImportPrice * (decimal)choosenLaptop.QuantityBought);
                 }
                 else
                 {
@@ -382,7 +397,7 @@ namespace GUI
                             dataGridView2.Rows.Remove(row);
                         }
                     }
-                    dataGridView2.Rows.Add(choosenLaptop.ID, choosenLaptop.Name, choosenLaptop.QuantityBought, choosenLaptop.Price, (decimal)choosenLaptop.Price * (decimal)choosenLaptop.QuantityBought);
+                    dataGridView2.Rows.Add(choosenLaptop.ID, choosenLaptop.Name, choosenLaptop.QuantityBought, choosenLaptop.ImportPrice, (decimal)choosenLaptop.ImportPrice * (decimal)choosenLaptop.QuantityBought);
                 }
 
                 tab2Loading2();
@@ -420,7 +435,21 @@ namespace GUI
             }
         }
         #endregion
+
         #region textChangeEvent
+        private void tbGiaNhap_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(tbGiaNhap.Text, "  ^ [0-9]"))
+            {
+                tbGiaNhap.Text = null;
+            }
+            try
+            {
+                if (tbGiaNhap.Text != "")
+                    choosenLaptop.ImportPrice = Convert.ToInt32(tbGiaNhap.Text);
+            }
+            catch { }
+        }
         private void cbLaptop2_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (Laptop item in laptops)
@@ -434,8 +463,16 @@ namespace GUI
         }
         private void tbSoluong2_TextChanged(object sender, EventArgs e)
         {
-            if (tbSoluong2.Text != "")
-                choosenLaptop.QuantityBought = Convert.ToInt32(tbSoluong2.Text);
+            if (System.Text.RegularExpressions.Regex.IsMatch(tbSoluong2.Text, "  ^ [0-9]"))
+            {
+                tbSoluong2.Text = null;
+            }
+            try
+            {
+                if (tbSoluong2.Text != "")
+                    choosenLaptop.QuantityBought = Convert.ToInt32(tbSoluong2.Text);
+            }
+            catch { }
         }
         private void cbNhaCungCap_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -449,9 +486,26 @@ namespace GUI
             }
 
         }
+        private void tbSoluong2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbGiaNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
         #endregion
         #endregion
 
+
+        
 
         
     }
