@@ -24,7 +24,7 @@ namespace DTO
             set { id = value; }
         }
 
-        private Customer customer;
+        private Customer customer=new Customer();
 
         public Customer Customer
         {
@@ -39,7 +39,7 @@ namespace DTO
             set { accountant = value; }
         }
 
-        private Staff seller;
+        private Staff seller=new Staff();
         public Staff Seller
         {
             get { return seller; }

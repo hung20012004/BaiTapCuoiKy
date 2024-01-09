@@ -150,5 +150,58 @@ namespace DAL
 
             }
         }
+        public Order getOrderByID(int ID)
+        {
+            Order order= new Order();
+            conn.Open();
+            using (var cmd = new SqlCommand("getOrderByID", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    order.ID = reader.GetInt32("order_id");
+                    order.Customer = new Customer();
+                    order.Customer.ID = reader.GetInt32("customer_id");
+                    order.Accountant = new Staff();
+                    order.Accountant.ID = reader.GetInt32("accoutant_id");
+                    order.Seller = new Staff();
+                    order.Seller.ID = reader.GetInt32("seller_id");
+                    order.Order_date = reader.GetDateTime("order_date");
+                    order.StatusInt = reader.GetInt32("status");
+                    order.PaymentInt = reader.GetInt32("payment");
+                    try
+                    {
+                        order.UpdateStatusTime = reader.GetDateTime("update_status_time");
+                    }
+                    catch { }   
+                }
+                reader.Close();
+            }
+            order.Customer = CustomerDAL.Instance.GetCustomer(order.Customer);
+            order.Accountant = StaffDAL.Instance.GetAccountant(order.Accountant);
+            order.Seller=StaffDAL.Instance.GetSeller(order.Seller);
+            using (var cmd = new SqlCommand("getOrderDetailByID", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Laptop laptop = new Laptop();
+                    laptop = LaptopDAL.Instance.getLaptopByID(reader.GetInt32("laptop_id"));
+                    laptop.QuantityBought= reader.GetInt32("quantity");
+                    order.Laptop.Add(laptop);
+                }
+                reader.Close ();
+            }
+
+            conn.Close();
+            return order;
+        }
+        
     }
 }

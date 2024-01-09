@@ -28,6 +28,7 @@ namespace GUI
         }
         public void loadTab0()
         {
+            order = new Order();
             order.Accountant = user;
             tabControl1.SelectedIndex = 0;
             tbID0.Enabled = false;
@@ -54,11 +55,16 @@ namespace GUI
                 tbCus0.Text = Convert.ToString(row.Cells["CusName"].Value);
                 tbSeller0.Text = Convert.ToString(row.Cells["SellerName"].Value);
                 tbOrderDate0.Text = Convert.ToString(row.Cells["OrderTime"].Value);
+                order = OrderBUS.Instance.getOrderByID(Convert.ToInt32(row.Cells["OrderID"].Value));
             }
         }
 
         #endregion
         #region ClickEvent
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tab2loading();
+        }
         private void btnCho_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
@@ -106,6 +112,7 @@ namespace GUI
 
             }
         }
+
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -119,6 +126,7 @@ namespace GUI
                     tbCus0.Text = Convert.ToString(row.Cells["CusName"].Value);
                     tbSeller0.Text = Convert.ToString(row.Cells["SellerName"].Value);
                     tbOrderDate0.Text = Convert.ToString(row.Cells["OrderTime"].Value);
+                    order = OrderBUS.Instance.getOrderByID(Convert.ToInt32(row.Cells["OrderID"].Value));
                 }
             }
             catch { }
@@ -163,6 +171,7 @@ namespace GUI
                     item.Seller = StaffBUS.Instance.getSeller(item.Seller);
                     item.Accountant = StaffBUS.Instance.getAccountant(item.Accountant);
                     dataGridView3.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.PaymentString);
+                    // order=OrderBUS.Instance.getOrderByID(item.ID);
                 }
             }
             DataGridViewRow row = dataGridView3.Rows[0];
@@ -172,11 +181,15 @@ namespace GUI
                 tbCustomer.Text = Convert.ToString(row.Cells["CusName1"].Value);
                 tbSeller1.Text = Convert.ToString(row.Cells["SellerName1"].Value);
                 tbOrderDate.Text = Convert.ToString(row.Cells["OrderDate"].Value);
-
+                order = OrderBUS.Instance.getOrderByID(Convert.ToInt32(row.Cells["ID"].Value));
             }
         }
         #endregion
         #region clickEvent
+        private void btnChiTiet1_Click(object sender, EventArgs e)
+        {
+            tab2loading();
+        }
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             cbTrangThai1.SelectedIndex = 0;
@@ -195,7 +208,7 @@ namespace GUI
                 tbID1.Text = Convert.ToString(row.Cells["ID"].Value);
                 tbCustomer.Text = Convert.ToString(row.Cells["CusName1"].Value);
                 tbOrderDate.Text = Convert.ToString(row.Cells["OrderDate"].Value);
-
+                order = OrderBUS.Instance.getOrderByID(Convert.ToInt32(row.Cells["ID"].Value));
             }
         }
         #endregion
@@ -207,6 +220,33 @@ namespace GUI
         #endregion
         #endregion
         #region tab2
+        #region loadingEvent
+        private void tab2loading()
+        {
+            tabControl1.SelectedIndex = 2;
+            lbkiKH2.Text = order.Customer.Name;
+            lbNgay2.Text = order.Order_date.ToString();
+            lbSeller2.Text = order.Seller.Name;
+            lbTrangThai2.Text = order.StatusString;
+            lbTenKH2.Text = order.Customer.Name;
+            if (order.StatusInt == 2)
+            {
+                btnExportW2.Enabled = true;
+                lbThuNgan.Text = user.Name;
+            }
+            else
+            {
+                btnExportW2.Enabled = false;
+                lbThuNgan.Text = "";
+            }
+            dgvOrder.Rows.Clear();
+            foreach (Laptop item in order.Laptop)
+            {
+
+                dgvOrder.Rows.Add(item.ID, item.Name, item.QuantityBought, item.Price, (decimal)item.Price * (decimal)item.QuantityBought);
+            }
+        }
+        #endregion
         #endregion
         #region tab3
         #region loadingEvent
