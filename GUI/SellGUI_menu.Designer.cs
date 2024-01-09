@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            btnSanPham = new Button();
             pictureBox1 = new PictureBox();
             button3 = new Button();
             btnOrder = new Button();
@@ -91,7 +90,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(btnSanPham);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(btnOrder);
@@ -102,16 +100,6 @@
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             groupBox1.Text = " ";
-            // 
-            // btnSanPham
-            // 
-            btnSanPham.Location = new Point(0, 288);
-            btnSanPham.Name = "btnSanPham";
-            btnSanPham.Size = new Size(323, 83);
-            btnSanPham.TabIndex = 4;
-            btnSanPham.Text = "Sản phẩm";
-            btnSanPham.UseVisualStyleBackColor = true;
-            btnSanPham.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -132,7 +120,7 @@
             // 
             // btnOrder
             // 
-            btnOrder.Location = new Point(0, 466);
+            btnOrder.Location = new Point(0, 401);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(323, 83);
             btnOrder.TabIndex = 1;
@@ -142,7 +130,7 @@
             // 
             // btnCustomer
             // 
-            btnCustomer.Location = new Point(0, 377);
+            btnCustomer.Location = new Point(0, 312);
             btnCustomer.Name = "btnCustomer";
             btnCustomer.Size = new Size(323, 83);
             btnCustomer.TabIndex = 0;
@@ -155,10 +143,10 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(322, 1);
+            tabControl1.Location = new Point(322, -2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1153, 943);
+            tabControl1.Size = new Size(1153, 946);
             tabControl1.TabIndex = 16;
             // 
             // tabPage1
@@ -166,7 +154,7 @@
             tabPage1.Location = new Point(4, 37);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1145, 902);
+            tabPage1.Size = new Size(1145, 905);
             tabPage1.TabIndex = 2;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -190,7 +178,7 @@
             tabPage2.Location = new Point(4, 37);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 902);
+            tabPage2.Size = new Size(1145, 905);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -380,7 +368,7 @@
             tabPage3.Controls.Add(label3);
             tabPage3.Location = new Point(4, 37);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 902);
+            tabPage3.Size = new Size(1145, 905);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -638,7 +626,6 @@
         private TabControl tabControl1;
         private TabPage tabPage2;
         private TabPage tabPage1;
-        private Button btnSanPham;
         private Button btnCustomerGhi;
         private Button btnCustomerXoa;
         private Button btnCustomerThem;

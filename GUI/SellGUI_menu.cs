@@ -333,7 +333,7 @@ namespace GUI
                 Laptop laptop = new();
                 laptop.ID = Convert.ToInt32(row.Cells["Col1"].Value);
                 laptop.Name = Convert.ToString(row.Cells["Col2"].Value);
-                laptop.QuantityBought= Convert.ToInt32(row.Cells["Col3"].Value);
+                laptop.QuantityBought = Convert.ToInt32(row.Cells["Col3"].Value);
                 order.Laptop.Add(laptop);
             }
             if (OrderBUS.Instance.insert(order) == true)
@@ -361,6 +361,7 @@ namespace GUI
                         if (Convert.ToString(row.Cells["Col2"].Value) == cboOrderLapTop.Text)
                         {
                             dgvOrder.Rows.Remove(row);
+                            break;
                         }
                     }
                     dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.QuantityBought, choosenlaptop.Price, (decimal)choosenlaptop.Price * (decimal)choosenlaptop.QuantityBought);
@@ -426,6 +427,6 @@ namespace GUI
         #endregion
 
 
-       
+
     }
 }

@@ -54,7 +54,7 @@ namespace DAL
         }
         public bool insert(Order order)
         {
-        //    try
+            try
             {
                 conn.Open();
                 using (var cmd = new SqlCommand("InsertOrder", conn))
@@ -82,9 +82,9 @@ namespace DAL
                 conn.Close();
                 return true;
             }
-          //  catch (Exception ex)
+            catch (Exception ex)
             {
-            //    return false;
+                return false;
             }
         }
         public bool update(Order order)
@@ -98,7 +98,7 @@ namespace DAL
                     cmd.Parameters.Add("@order_id", SqlDbType.Int).Value = order.ID;
                     cmd.Parameters.Add("@payment", SqlDbType.Int).Value = order.PaymentInt;
                     cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = order.StatusInt;
-                    cmd.Parameters.Add("@update_status_date", SqlDbType.DateTime).Value = order.UpdateStatusTime;
+                    cmd.Parameters.Add("@update_status_date", SqlDbType.DateTime).Value = DateTime.Now;
                     cmd.Parameters.Add("@accountant_id", SqlDbType.Int).Value = order.Accountant.ID;
                     cmd.ExecuteNonQuery();
                 }

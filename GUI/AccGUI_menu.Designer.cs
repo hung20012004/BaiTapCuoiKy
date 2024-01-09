@@ -36,14 +36,20 @@
             btnExit = new Button();
             btnCustomer = new Button();
             tabPage1 = new TabPage();
+            label25 = new Label();
+            label24 = new Label();
+            label18 = new Label();
+            label15 = new Label();
+            label14 = new Label();
+            dataGridView4 = new DataGridView();
             button2 = new Button();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             tabPage2 = new TabPage();
+            cbTrangThai1 = new ComboBox();
             btnXuatExcel1 = new Button();
             tbOrderDate = new TextBox();
-            tbStatus = new TextBox();
             tbSeller1 = new TextBox();
             tbID1 = new TextBox();
             tbCustomer = new TextBox();
@@ -75,6 +81,10 @@
             label6 = new Label();
             lb5 = new Label();
             dataGridView2 = new DataGridView();
+            OrderID = new DataGridViewTextBoxColumn();
+            CusName = new DataGridViewTextBoxColumn();
+            SellerName = new DataGridViewTextBoxColumn();
+            OrderTime = new DataGridViewTextBoxColumn();
             label3 = new Label();
             tabControl1 = new TabControl();
             tabPage4 = new TabPage();
@@ -91,16 +101,6 @@
             btnHuyBo3 = new Button();
             label19 = new Label();
             dataGridView1 = new DataGridView();
-            OrderID = new DataGridViewTextBoxColumn();
-            CusName = new DataGridViewTextBoxColumn();
-            SellerName = new DataGridViewTextBoxColumn();
-            OrderTime = new DataGridViewTextBoxColumn();
-            dataGridView4 = new DataGridView();
-            label14 = new Label();
-            label15 = new Label();
-            label18 = new Label();
-            label24 = new Label();
-            label25 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -109,6 +109,7 @@
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tabPage3.SuspendLayout();
@@ -116,7 +117,6 @@
             tabControl1.SuspendLayout();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -201,12 +201,67 @@
             tabPage1.Controls.Add(label9);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
-            tabPage1.Location = new Point(4, 37);
+            tabPage1.Location = new Point(4, 34);
             tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1145, 902);
+            tabPage1.Size = new Size(1145, 905);
             tabPage1.TabIndex = 4;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(25, 255);
+            label25.Name = "label25";
+            label25.Size = new Size(190, 28);
+            label25.TabIndex = 9;
+            label25.Text = "Danh sách sản phẩm";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(23, 178);
+            label24.Name = "label24";
+            label24.Size = new Size(107, 28);
+            label24.TabIndex = 8;
+            label24.Text = "Trạng thái: ";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(19, 131);
+            label18.Name = "label18";
+            label18.Size = new Size(106, 28);
+            label18.TabIndex = 7;
+            label18.Text = "Ngày mua:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(19, 88);
+            label15.Name = "label15";
+            label15.Size = new Size(155, 28);
+            label15.TabIndex = 6;
+            label15.Text = "Tên khách hàng: ";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(453, 34);
+            label14.Name = "label14";
+            label14.Size = new Size(227, 28);
+            label14.TabIndex = 5;
+            label14.Text = "HÓA ĐƠN MUA LAPTOP";
+            // 
+            // dataGridView4
+            // 
+            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView4.Location = new Point(19, 303);
+            dataGridView4.Name = "dataGridView4";
+            dataGridView4.RowHeadersWidth = 62;
+            dataGridView4.RowTemplate.Height = 33;
+            dataGridView4.Size = new Size(1107, 424);
+            dataGridView4.TabIndex = 4;
             // 
             // button2
             // 
@@ -246,9 +301,9 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(cbTrangThai1);
             tabPage2.Controls.Add(btnXuatExcel1);
             tabPage2.Controls.Add(tbOrderDate);
-            tabPage2.Controls.Add(tbStatus);
             tabPage2.Controls.Add(tbSeller1);
             tabPage2.Controls.Add(tbID1);
             tabPage2.Controls.Add(tbCustomer);
@@ -267,6 +322,16 @@
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cbTrangThai1
+            // 
+            cbTrangThai1.FormattingEnabled = true;
+            cbTrangThai1.Items.AddRange(new object[] { "Đã thanh toán", "Đã hủy" });
+            cbTrangThai1.Location = new Point(570, 76);
+            cbTrangThai1.Name = "cbTrangThai1";
+            cbTrangThai1.Size = new Size(182, 36);
+            cbTrangThai1.TabIndex = 14;
+            cbTrangThai1.SelectedIndexChanged += cbTrangThai1_SelectedIndexChanged;
+            // 
             // btnXuatExcel1
             // 
             btnXuatExcel1.Location = new Point(889, 83);
@@ -279,17 +344,10 @@
             // 
             // tbOrderDate
             // 
-            tbOrderDate.Location = new Point(543, 21);
+            tbOrderDate.Location = new Point(602, 27);
             tbOrderDate.Name = "tbOrderDate";
             tbOrderDate.Size = new Size(150, 34);
             tbOrderDate.TabIndex = 8;
-            // 
-            // tbStatus
-            // 
-            tbStatus.Location = new Point(543, 76);
-            tbStatus.Name = "tbStatus";
-            tbStatus.Size = new Size(150, 34);
-            tbStatus.TabIndex = 8;
             // 
             // tbSeller1
             // 
@@ -390,28 +448,28 @@
             CusName1.HeaderText = "Khách hàng";
             CusName1.MinimumWidth = 6;
             CusName1.Name = "CusName1";
-            CusName1.Width = 300;
+            CusName1.Width = 250;
             // 
             // SellerName1
             // 
             SellerName1.HeaderText = "Người tạo hóa đơn";
             SellerName1.MinimumWidth = 6;
             SellerName1.Name = "SellerName1";
-            SellerName1.Width = 300;
+            SellerName1.Width = 250;
             // 
             // OrderDate
             // 
             OrderDate.HeaderText = "Ngày tạo";
             OrderDate.MinimumWidth = 6;
             OrderDate.Name = "OrderDate";
-            OrderDate.Width = 170;
+            OrderDate.Width = 220;
             // 
             // Status
             // 
             Status.HeaderText = "Trạng thái";
             Status.MinimumWidth = 6;
             Status.Name = "Status";
-            Status.Width = 150;
+            Status.Width = 200;
             // 
             // tabPage3
             // 
@@ -474,6 +532,7 @@
             tbID0.Name = "tbID0";
             tbID0.Size = new Size(192, 34);
             tbID0.TabIndex = 13;
+            tbID0.TextChanged += tbID0_TextChanged;
             // 
             // label13
             // 
@@ -570,6 +629,34 @@
             dataGridView2.TabIndex = 2;
             dataGridView2.CellClick += dataGridView2_CellClick;
             // 
+            // OrderID
+            // 
+            OrderID.HeaderText = "ID";
+            OrderID.MinimumWidth = 6;
+            OrderID.Name = "OrderID";
+            OrderID.Width = 125;
+            // 
+            // CusName
+            // 
+            CusName.HeaderText = "Khách hàng";
+            CusName.MinimumWidth = 6;
+            CusName.Name = "CusName";
+            CusName.Width = 125;
+            // 
+            // SellerName
+            // 
+            SellerName.HeaderText = "Người tạo";
+            SellerName.MinimumWidth = 6;
+            SellerName.Name = "SellerName";
+            SellerName.Width = 125;
+            // 
+            // OrderTime
+            // 
+            OrderTime.HeaderText = "Ngày tạo";
+            OrderTime.MinimumWidth = 6;
+            OrderTime.Name = "OrderTime";
+            OrderTime.Width = 125;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -606,10 +693,10 @@
             tabPage4.Controls.Add(btnHuyBo3);
             tabPage4.Controls.Add(label19);
             tabPage4.Controls.Add(dataGridView1);
-            tabPage4.Location = new Point(4, 37);
+            tabPage4.Location = new Point(4, 34);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(1145, 902);
+            tabPage4.Size = new Size(1145, 905);
             tabPage4.TabIndex = 5;
             tabPage4.Text = "tabPage4";
             tabPage4.UseVisualStyleBackColor = true;
@@ -726,89 +813,6 @@
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // OrderID
-            // 
-            OrderID.HeaderText = "ID";
-            OrderID.MinimumWidth = 6;
-            OrderID.Name = "OrderID";
-            OrderID.Width = 125;
-            // 
-            // CusName
-            // 
-            CusName.HeaderText = "Khách hàng";
-            CusName.MinimumWidth = 6;
-            CusName.Name = "CusName";
-            CusName.Width = 125;
-            // 
-            // SellerName
-            // 
-            SellerName.HeaderText = "Người tạo";
-            SellerName.MinimumWidth = 6;
-            SellerName.Name = "SellerName";
-            SellerName.Width = 125;
-            // 
-            // OrderTime
-            // 
-            OrderTime.HeaderText = "Ngày tạo";
-            OrderTime.MinimumWidth = 6;
-            OrderTime.Name = "OrderTime";
-            OrderTime.Width = 125;
-            // 
-            // dataGridView4
-            // 
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(19, 303);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.RowHeadersWidth = 62;
-            dataGridView4.RowTemplate.Height = 33;
-            dataGridView4.Size = new Size(1107, 424);
-            dataGridView4.TabIndex = 4;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(453, 34);
-            label14.Name = "label14";
-            label14.Size = new Size(227, 28);
-            label14.TabIndex = 5;
-            label14.Text = "HÓA ĐƠN MUA LAPTOP";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(19, 88);
-            label15.Name = "label15";
-            label15.Size = new Size(155, 28);
-            label15.TabIndex = 6;
-            label15.Text = "Tên khách hàng: ";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(19, 131);
-            label18.Name = "label18";
-            label18.Size = new Size(106, 28);
-            label18.TabIndex = 7;
-            label18.Text = "Ngày mua:";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Location = new Point(23, 178);
-            label24.Name = "label24";
-            label24.Size = new Size(107, 28);
-            label24.TabIndex = 8;
-            label24.Text = "Trạng thái: ";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Location = new Point(25, 255);
-            label25.Name = "label25";
-            label25.Size = new Size(190, 28);
-            label25.TabIndex = 9;
-            label25.Text = "Danh sách sản phẩm";
-            // 
             // Column1
             // 
             Column1.HeaderText = "Mã hóa đơn";
@@ -860,6 +864,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
@@ -870,7 +875,6 @@
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             ResumeLayout(false);
         }
 
@@ -918,7 +922,6 @@
         private Label label15;
         private Label label12;
         private Label label18;
-        private TextBox tbStatus;
         private Label label17;
         private Button btnHoaDonNhapHang;
         private Button btnHoaDonNhapDangCho;
@@ -937,11 +940,6 @@
         private Label label21;
         private Label label20;
         private Button btnXuatExcel1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn CusName1;
-        private DataGridViewTextBoxColumn SellerName1;
-        private DataGridViewTextBoxColumn OrderDate;
-        private DataGridViewTextBoxColumn Status;
         private DataGridViewTextBoxColumn Pay;
         private DataGridViewTextBoxColumn OrderID;
         private DataGridViewTextBoxColumn CusName;
@@ -956,5 +954,11 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private ComboBox cbTrangThai1;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn CusName1;
+        private DataGridViewTextBoxColumn SellerName1;
+        private DataGridViewTextBoxColumn OrderDate;
+        private DataGridViewTextBoxColumn Status;
     }
 }

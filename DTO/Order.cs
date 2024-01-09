@@ -32,7 +32,7 @@ namespace DTO
             set { customer = value; }
         }
 
-        private Staff accountant;
+        private Staff accountant=new Staff();
         public Staff Accountant
         {
             get { return accountant; }
@@ -53,18 +53,18 @@ namespace DTO
             set { order_date = value; }
         }
 
-        private int statusInt = 0;
+        private int statusInt;
         public int StatusInt
         {
             get { return statusInt; }
             set { statusInt = value; setStatusString(); }
         }
 
-        private string statusString = "Chưa thanh toán";
+        private string statusString;
         public string StatusString
         {
             get { return statusString; }
-            set { statusString = value; setPaymentInt(); }
+            set { statusString = value; setStatusInt(); }
         }
 
         private void setStatusString()
@@ -78,7 +78,7 @@ namespace DTO
                     statusString = "Đã thanh toán";
                     break;
                 case 0:
-                    statusString = "Hủy";
+                    statusString = "Đã hủy";
                     break;
             }
         }
