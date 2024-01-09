@@ -34,9 +34,9 @@ namespace BUS
         {
             return OrderDAL.Instance.delete(order);
         }
-        public Order getdetail(Order order)
+        public Order getOrderByID(int ID)
         {
-            return OrderDAL.Instance.getdetail(order);
+            return OrderDAL.Instance.getOrderByID(ID);
         }
     }
 }

@@ -8,7 +8,8 @@ namespace DTO
 {
     public class Order
     {
-        private List<Laptop> laptop;
+        
+        private List<Laptop> laptop=new List<Laptop>();
         public List<Laptop> Laptop
         {
             get { return laptop; }
@@ -23,7 +24,7 @@ namespace DTO
             set { id = value; }
         }
 
-        private Customer customer;
+        private Customer customer=new Customer();
 
         public Customer Customer
         {
@@ -31,14 +32,14 @@ namespace DTO
             set { customer = value; }
         }
 
-        private Staff accountant;
+        private Staff accountant=new Staff();
         public Staff Accountant
         {
             get { return accountant; }
             set { accountant = value; }
         }
 
-        private Staff seller;
+        private Staff seller=new Staff();
         public Staff Seller
         {
             get { return seller; }
@@ -52,18 +53,18 @@ namespace DTO
             set { order_date = value; }
         }
 
-        private int statusInt = 0;
+        private int statusInt;
         public int StatusInt
         {
             get { return statusInt; }
             set { statusInt = value; setStatusString(); }
         }
 
-        private string statusString = "Chưa thanh toán";
+        private string statusString;
         public string StatusString
         {
             get { return statusString; }
-            set { statusString = value; setPaymentInt(); }
+            set { statusString = value; setStatusInt(); }
         }
 
         private void setStatusString()
@@ -77,7 +78,7 @@ namespace DTO
                     statusString = "Đã thanh toán";
                     break;
                 case 0:
-                    statusString = "Hủy";
+                    statusString = "Đã hủy";
                     break;
             }
         }

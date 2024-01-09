@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using System.Data.SqlClient;
+using System.Reflection.PortableExecutable;
+
 namespace DAL
 
 {
@@ -190,6 +192,60 @@ namespace DAL
                 }
             }
             return category;
+        }
+        public Laptop getLaptopByID(int ID)
+        {
+            Laptop laptop=new Laptop();
+            laptop.ID = ID;
+            try
+            {
+                conn.Open();
+                using (var cmd = new SqlCommand("getLaptopByID", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+                    
+
+                    DbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        
+                        laptop.Name = reader.GetString("laptop_name");
+                        laptop.Category = new();
+                        laptop.Category.ID = reader.GetInt32("category_id");
+                        // laptop.Category=getCategory(laptop.Category);
+                        laptop.Manufactory = new();
+                        laptop.Manufactory.ID = reader.GetInt32("manufactory_id");
+                        //laptop.Manufactory=getManufactory(laptop.Manufactory);
+                        laptop.CPU = reader.GetString("CPU");
+                        laptop.Ram = reader.GetString("ram");
+                        laptop.HardDriver = reader.GetString("hard_drive");
+                        laptop.VGA = reader.GetString("VGA");
+                        laptop.Display = reader.GetString("display");
+                        laptop.Battery = reader.GetString("battery");
+                        laptop.Weight = reader.GetDouble("weight");
+                        laptop.Material = reader.GetString("materials");
+                        laptop.Port = reader.GetString("ports");
+                        laptop.Connection = reader.GetString("network_and_connection");
+                        laptop.Security = reader.GetString("security");
+                        laptop.Keyboard = reader.GetString("keyboard");
+                        laptop.Audio = reader.GetString("audio");
+                        laptop.Size = reader.GetString("size");
+                        laptop.OS = reader.GetString("OS");
+                        laptop.WarrantyPeriod = reader.GetString("warranty_period");
+                        laptop.Price = reader.GetDecimal("price");
+                        laptop.QuantityInStock = reader.GetInt32("quantity");
+                    }
+                    reader.Close();
+                }
+                conn.Close();
+                
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            return laptop;
         }
     }
 }
