@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DAL;
 using DTO;
@@ -46,8 +47,8 @@ namespace BUS
             }
             return false;
         }
-        public Customer getCustomer(Customer cus)
-        {
+        public Customer getCustomer(Customer cus) 
+        { 
             return CustomerDAL.Instance.GetCustomer(cus);
         }
     }

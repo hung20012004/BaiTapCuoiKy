@@ -267,7 +267,7 @@ namespace GUI
             btnThemOrder.Enabled = true;
             btnSuaOrder.Enabled = true;
             btnOrderXoa.Enabled = true;
-            
+
             btnTaoOrder.Enabled = false;
             btnGhiOrder.Enabled = false;
             btnHuyOrder.Enabled = true;
@@ -325,7 +325,7 @@ namespace GUI
         }
         private void btnOrderXoa_Click(object sender, EventArgs e)
         {
-            if (dgvOrder.Rows.Count==0)
+            if (dgvOrder.Rows.Count == 0)
             {
                 MessageBox.Show("Không có thông tin để xóa!");
             }
@@ -468,6 +468,6 @@ namespace GUI
 
 
 
-        
+
     }
 }

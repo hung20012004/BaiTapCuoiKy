@@ -77,3 +77,4 @@ C:\C# Hoc ki\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
 C:\C# Hoc ki\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
 C:\C# Hoc ki\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
 C:\C# Hoc ki\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.AssemblyReference.cache
