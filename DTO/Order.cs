@@ -8,7 +8,8 @@ namespace DTO
 {
     public class Order
     {
-        private List<Laptop> laptop;
+        
+        private List<Laptop> laptop=new List<Laptop>();
         public List<Laptop> Laptop
         {
             get { return laptop; }

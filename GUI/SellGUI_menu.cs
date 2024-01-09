@@ -229,13 +229,13 @@ namespace GUI
             tabControl1.SelectedIndex = 2;
             cboOrderKhachHang.Enabled = true;
             cboOrderLapTop.Enabled = false;
-            txbSoLuongOrder.Enabled = false;
+            tbSoLuong2.Enabled = false;
             btnThemOrder.Enabled = false;
             btnSuaOrder.Enabled = false;
             btnTaoOrder.Enabled = true;
             btnGhiOrder.Enabled = false;
-            txbSoLuong = new();
-            cboOrderLapTop = new();
+            tbSoLuong2.Text = "";
+            cboOrderLapTop.Text = "";
             cboOrderKhachHang.Items.Clear();
             cboOrderLapTop.Items.Clear();
             dgvOrder.Rows.Clear();
@@ -257,12 +257,13 @@ namespace GUI
         {
             cboOrderKhachHang.Enabled = false;
             cboOrderLapTop.Enabled = false;
-            txbSoLuongOrder.Enabled = false;
+            tbSoLuong2.Enabled = false;
             btnThemOrder.Enabled = true;
             btnSuaOrder.Enabled = true;
             btnOrderXoa.Enabled = true;
             btnTaoOrder.Enabled = false;
             btnGhiOrder.Enabled = false;
+            dgvOrder.Enabled = true;
             decimal sum = 0;
             foreach (DataGridViewRow row in dgvOrder.Rows)
             {
@@ -291,13 +292,14 @@ namespace GUI
         private void btnThemOrder_Click(object sender, EventArgs e)
         {
 
-            txbSoLuong.Text = "";
+            tbSoLuong2.Text = "";
             cboOrderLapTop.Text = "";
             btnSuaOrder.Enabled = false;
             btnOrderXoa.Enabled = false;
             cboOrderLapTop.Enabled = true;
-            txbSoLuongOrder.Enabled = true;
+            tbSoLuong2.Enabled = true;
             btnGhiOrder.Enabled = true;
+            dgvOrder.Enabled = false;
 
 
         }
@@ -307,7 +309,7 @@ namespace GUI
             btnThemOrder.Enabled = false;
             btnOrderXoa.Enabled = false;
             cboOrderLapTop.Enabled = true;
-            txbSoLuongOrder.Enabled = true;
+            tbSoLuong2.Enabled = true;
             btnGhiOrder.Enabled = true;
         }
         private void btnOrderXoa_Click(object sender, EventArgs e)
@@ -331,7 +333,7 @@ namespace GUI
                 Laptop laptop = new();
                 laptop.ID = Convert.ToInt32(row.Cells["Col1"].Value);
                 laptop.Name = Convert.ToString(row.Cells["Col2"].Value);
-                laptop.QuantityImport = Convert.ToInt32(row.Cells["Col3"].Value);
+                laptop.QuantityBought= Convert.ToInt32(row.Cells["Col3"].Value);
                 order.Laptop.Add(laptop);
             }
             if (OrderBUS.Instance.insert(order) == true)
@@ -346,7 +348,7 @@ namespace GUI
         }
         private void btnGhiOrder_Click(object sender, EventArgs e)
         {
-            if (cboOrderLapTop.Text != "" && txbSoLuongOrder.Text != "")
+            if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != "")
             {
                 if (btnCustomerThem.Enabled == true)
                 {
@@ -379,7 +381,7 @@ namespace GUI
                 if (Convert.ToString(row.Cells["Col1"].Value) != "")
                 {
                     cboOrderLapTop.Text = Convert.ToString(row.Cells["Col2"].Value);
-                    txbSoLuongOrder.Text = Convert.ToString(row.Cells["Col4"].Value);
+                    tbSoLuong2.Text = Convert.ToString(row.Cells["Col4"].Value);
                 }
             }
             catch
@@ -389,12 +391,13 @@ namespace GUI
         }
         #endregion
         #region textChangeEvent
-        private void txbSoLuongOrder_TextChanged(object sender, EventArgs e)
+        private void tbSoLuong2_TextChanged(object sender, EventArgs e)
         {
-            if (txbSoLuongOrder.Text.Length > 0)
+            try
             {
-                choosenlaptop.QuantityBought = Convert.ToInt32(txbSoLuongOrder.Text);
+                choosenlaptop.QuantityBought = Convert.ToInt32(tbSoLuong2.Text);
             }
+            catch { }
         }
 
         private void cboOrderLapTop_SelectedIndexChanged(object sender, EventArgs e)
@@ -422,6 +425,7 @@ namespace GUI
         #endregion
         #endregion
 
-        
+
+       
     }
 }

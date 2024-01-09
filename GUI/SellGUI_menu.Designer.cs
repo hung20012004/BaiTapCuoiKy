@@ -56,11 +56,12 @@
             colPhone = new DataGridViewTextBoxColumn();
             colAddress = new DataGridViewTextBoxColumn();
             tabPage3 = new TabPage();
+            tbSoLuong2 = new TextBox();
+            btnHuy2 = new Button();
             SUM = new Label();
             btnOrderXoa = new Button();
             cboOrderKhachHang = new ComboBox();
             label6 = new Label();
-            txbSoLuongOrder = new TextBox();
             label11 = new Label();
             btnSuaOrder = new Button();
             btnThemOrder = new Button();
@@ -79,7 +80,6 @@
             Col4 = new DataGridViewTextBoxColumn();
             Col5 = new DataGridViewTextBoxColumn();
             label3 = new Label();
-            btnHuy2 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
@@ -187,10 +187,10 @@
             tabPage2.Controls.Add(btnCustomerThem);
             tabPage2.Controls.Add(btnCustomerSua);
             tabPage2.Controls.Add(dgvKhachHang);
-            tabPage2.Location = new Point(4, 34);
+            tabPage2.Location = new Point(4, 37);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 905);
+            tabPage2.Size = new Size(1145, 902);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -359,12 +359,12 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(tbSoLuong2);
             tabPage3.Controls.Add(btnHuy2);
             tabPage3.Controls.Add(SUM);
             tabPage3.Controls.Add(btnOrderXoa);
             tabPage3.Controls.Add(cboOrderKhachHang);
             tabPage3.Controls.Add(label6);
-            tabPage3.Controls.Add(txbSoLuongOrder);
             tabPage3.Controls.Add(label11);
             tabPage3.Controls.Add(btnSuaOrder);
             tabPage3.Controls.Add(btnThemOrder);
@@ -384,6 +384,23 @@
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tbSoLuong2
+            // 
+            tbSoLuong2.Location = new Point(173, 180);
+            tbSoLuong2.Name = "tbSoLuong2";
+            tbSoLuong2.Size = new Size(229, 34);
+            tbSoLuong2.TabIndex = 28;
+            tbSoLuong2.TextChanged += tbSoLuong2_TextChanged;
+            // 
+            // btnHuy2
+            // 
+            btnHuy2.Location = new Point(693, 208);
+            btnHuy2.Name = "btnHuy2";
+            btnHuy2.Size = new Size(112, 34);
+            btnHuy2.TabIndex = 27;
+            btnHuy2.Text = "Hủy";
+            btnHuy2.UseVisualStyleBackColor = true;
             // 
             // SUM
             // 
@@ -421,14 +438,6 @@
             label6.Size = new Size(114, 28);
             label6.TabIndex = 23;
             label6.Text = "Khách hàng";
-            // 
-            // txbSoLuongOrder
-            // 
-            txbSoLuongOrder.Location = new Point(173, 170);
-            txbSoLuongOrder.Name = "txbSoLuongOrder";
-            txbSoLuongOrder.Size = new Size(285, 34);
-            txbSoLuongOrder.TabIndex = 22;
-            txbSoLuongOrder.TextChanged += txbSoLuongOrder_TextChanged;
             // 
             // label11
             // 
@@ -594,16 +603,6 @@
             label3.TabIndex = 0;
             label3.Text = "Laptop";
             // 
-            // btnHuy2
-            // 
-            btnHuy2.Location = new Point(693, 208);
-            btnHuy2.Name = "btnHuy2";
-            btnHuy2.Size = new Size(112, 34);
-            btnHuy2.TabIndex = 27;
-            btnHuy2.Text = "Hủy";
-            btnHuy2.UseVisualStyleBackColor = true;
-            
-            // 
             // SellGUI_menu
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
@@ -685,5 +684,6 @@
         private DataGridViewTextBoxColumn Col5;
         private Label SUM;
         private Button btnHuy2;
+        private TextBox tbSoLuong2;
     }
 }
