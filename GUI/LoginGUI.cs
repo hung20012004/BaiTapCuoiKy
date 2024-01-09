@@ -21,7 +21,8 @@ namespace GUI
                 this.Hide();
                 userRole();
                 this.Show();
-                
+                usernameTextbox.Text = "";
+                passwordTextbox.Text = "";
             }
             else
             {
