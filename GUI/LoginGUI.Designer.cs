@@ -95,7 +95,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(874, 12);
             button1.Name = "button1";
-            button1.Size = new Size(24, 27);
+            button1.Size = new Size(25, 25);
             button1.TabIndex = 8;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -115,6 +115,7 @@
             Controls.Add(usernameTextbox);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginGUI";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";

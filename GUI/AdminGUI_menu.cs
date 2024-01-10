@@ -13,12 +13,12 @@ using DTO;
 
 namespace GUI
 {
-    public partial class ManagerGUI_menu : Form
+    public partial class AdminGUI_menu : Form
     {
         private Staff staff = new();
         private Staff user = new();
 
-        public ManagerGUI_menu(Staff user)
+        public AdminGUI_menu(Staff user)
         {
             this.user = user;
             InitializeComponent();

@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class ManagerGUI_menu
+    partial class AdminGUI_menu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerGUI_menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminGUI_menu));
             groupBox1 = new GroupBox();
             btnQuanLyNhanSu = new Button();
             pictureBox1 = new PictureBox();
@@ -448,7 +448,7 @@
             tabControl1.TabIndex = 18;
             tabControl1.UseWaitCursor = true;
             // 
-            // ManagerGUI_menu
+            // AdminGUI_menu
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -458,7 +458,7 @@
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "ManagerGUI_menu";
+            Name = "AdminGUI_menu";
             Text = "Quản lý";
             UseWaitCursor = true;
             Load += ManagerGUI_menu_Load;

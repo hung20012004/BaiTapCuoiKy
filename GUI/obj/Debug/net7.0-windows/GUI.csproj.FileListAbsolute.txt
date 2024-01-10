@@ -74,7 +74,6 @@ G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.Ass
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AccGUI_menu.resources
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.CustomerSeviceUI_menu.resources
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.LoginGUI.resources
-G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ManagerGUI_menu.resources
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.SellGUI_menu.resources
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.WarehouseUI_menu.resources
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.GenerateResource.cache
@@ -121,3 +120,4 @@ G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Offi
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\System.Security.Cryptography.Pkcs.dll
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.Properties.Resources.resources
+G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AdminGUI_menu.resources
