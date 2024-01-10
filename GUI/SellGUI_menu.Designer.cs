@@ -80,6 +80,8 @@
             Col4 = new DataGridViewTextBoxColumn();
             Col5 = new DataGridViewTextBoxColumn();
             label3 = new Label();
+            lb = new Label();
+            tbTimKiem1 = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
@@ -162,6 +164,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(tbTimKiem1);
+            tabPage2.Controls.Add(lb);
             tabPage2.Controls.Add(btnExportExcel);
             tabPage2.Controls.Add(btnGhi1);
             tabPage2.Controls.Add(btnCustomerHuy);
@@ -177,10 +181,10 @@
             tabPage2.Controls.Add(btnCustomerThem);
             tabPage2.Controls.Add(btnCustomerSua);
             tabPage2.Controls.Add(dgvKhachHang);
-            tabPage2.Location = new Point(4, 34);
+            tabPage2.Location = new Point(4, 37);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 908);
+            tabPage2.Size = new Size(1145, 905);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -379,9 +383,9 @@
             tabPage3.Controls.Add(label5);
             tabPage3.Controls.Add(dgvOrder);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 37);
+            tabPage3.Location = new Point(4, 34);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 905);
+            tabPage3.Size = new Size(1145, 908);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -557,7 +561,6 @@
             dgvOrder.Size = new Size(1140, 522);
             dgvOrder.TabIndex = 2;
             dgvOrder.CellClick += dgvOrder_CellClick;
-            
             // 
             // Col1
             // 
@@ -607,6 +610,23 @@
             label3.Size = new Size(74, 28);
             label3.TabIndex = 0;
             label3.Text = "Laptop";
+            // 
+            // lb
+            // 
+            lb.AutoSize = true;
+            lb.Location = new Point(765, 48);
+            lb.Name = "lb";
+            lb.Size = new Size(91, 28);
+            lb.TabIndex = 16;
+            lb.Text = "Tìm kiếm";
+            // 
+            // tbTimKiem1
+            // 
+            tbTimKiem1.Location = new Point(858, 45);
+            tbTimKiem1.Name = "tbTimKiem1";
+            tbTimKiem1.Size = new Size(226, 34);
+            tbTimKiem1.TabIndex = 17;
+            tbTimKiem1.TextChanged += tbTimKiem1_TextChanged;
             // 
             // SellGUI_menu
             // 
@@ -690,5 +710,7 @@
         private TextBox tbSoLuong2;
         private Button btnGhi1;
         private Button btnExportExcel;
+        private TextBox tbTimKiem1;
+        private Label lb;
     }
 }

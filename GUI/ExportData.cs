@@ -22,8 +22,7 @@ namespace GUI
         public void ToExcel(DataGridView dataGridView1,string title)
         {
             Microsoft.Office.Interop.Excel.Application excel;
-            Microsoft.Office.Interop.Excel.Workbook workbook;
-            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+            
             string filePath = "";
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";

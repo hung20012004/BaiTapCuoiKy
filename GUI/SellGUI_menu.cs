@@ -43,6 +43,7 @@ namespace GUI
         #region loadingEvent
         private void tab1loading()
         {
+            tbTimKiem1.Enabled = true;
             dgvKhachHang.Enabled = true;
             txbCustomerAddress.Enabled = false;
             txbCustomerName.Enabled = false;
@@ -57,7 +58,8 @@ namespace GUI
             dgvKhachHang.Rows.Clear();
             foreach (Customer item in CustomerBUS.Instance.get())
             {
-                dgvKhachHang.Rows.Add(item.ID, item.Name, item.Phone, item.Address);
+                if (tbTimKiem1.Text == "" || Search.Instance.ContainsString(item.Name, tbTimKiem1.Text))
+                    dgvKhachHang.Rows.Add(item.ID, item.Name, item.Phone, item.Address);
             }
             DataGridViewRow row = dgvKhachHang.Rows[0];
             if (Convert.ToString(row.Cells["colID"].Value) != "")
@@ -107,6 +109,7 @@ namespace GUI
                 txbCustomerName.Text = "";
                 txbCustomerPhone.Text = "";
                 dgvKhachHang.Enabled = false;
+                tbTimKiem1.Enabled = false;
             }
         }
         private void btnSua_Click(object sender, EventArgs e)
@@ -122,6 +125,7 @@ namespace GUI
                 btnCustomerXoa.Enabled = false;
                 dgvKhachHang.Enabled = false;
                 btnCustomerThem.Enabled = false;
+                tbTimKiem1.Enabled = false;
             }
         }
 
@@ -204,6 +208,10 @@ namespace GUI
         }
         #endregion
         #region textChangeEvent
+        private void tbTimKiem1_TextChanged(object sender, EventArgs e)
+        {
+            tab1loading();
+        }
         private void txbCustomerPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -323,28 +331,41 @@ namespace GUI
         }
         private void btnThemOrder_Click(object sender, EventArgs e)
         {
+            if (btnSuaOrder.Enabled == true)
+            {
+                tbSoLuong2.Text = "";
+                cboOrderLapTop.Text = "";
+                btnSuaOrder.Enabled = false;
+                btnOrderXoa.Enabled = false;
+                cboOrderLapTop.Enabled = true;
+                tbSoLuong2.Enabled = true;
+                btnGhiOrder.Enabled = true;
+                dgvOrder.Enabled = false;
+                btnHuyOrder.Enabled = true;
+                btnHuy2.Enabled = true;
+            }
 
-            tbSoLuong2.Text = "";
-            cboOrderLapTop.Text = "";
-            btnSuaOrder.Enabled = false;
-            btnOrderXoa.Enabled = false;
-            cboOrderLapTop.Enabled = true;
-            tbSoLuong2.Enabled = true;
-            btnGhiOrder.Enabled = true;
-            dgvOrder.Enabled = false;
-            btnHuyOrder.Enabled = true;
-            btnHuy2.Enabled = true;
 
         }
         private void btnSuaOrder_Click(object sender, EventArgs e)
         {
-            btnSuaOrder.Enabled = true;
-            btnThemOrder.Enabled = false;
-            btnOrderXoa.Enabled = false;
-            cboOrderLapTop.Enabled = true;
-            tbSoLuong2.Enabled = true;
-            btnGhiOrder.Enabled = true;
-            btnHuy2.Enabled = true;
+            if (dgvOrder.Rows.Count == 1)
+            {
+                MessageBox.Show("Không có thông tin để sửa!");
+            }
+            else if (btnThemOrder.Enabled == true)
+            {
+
+                btnSuaOrder.Enabled = true;
+                btnThemOrder.Enabled = false;
+                btnOrderXoa.Enabled = false;
+                cboOrderLapTop.Enabled = false;
+                tbSoLuong2.Enabled = true;
+                btnGhiOrder.Enabled = true;
+                btnHuy2.Enabled = true;
+
+            }
+
         }
         private void btnOrderXoa_Click(object sender, EventArgs e)
         {
@@ -393,15 +414,31 @@ namespace GUI
         }
         private void btnGhiOrder_Click(object sender, EventArgs e)
         {
+            bool check = true;
             if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != "" && Convert.ToDecimal(tbSoLuong2.Text) != 0)
             {
                 if (choosenlaptop.QuantityInStock < choosenlaptop.QuantityBought)
                 {
                     MessageBox.Show("Số lượng vượt quá số hàng trong kho \n( Số lượng trong kho: " + Convert.ToString(choosenlaptop.QuantityInStock) + " )");
                 }
-                else if (btnCustomerThem.Enabled == true)
+                else if (btnThemOrder.Enabled == true)
                 {
-                    dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.Price, choosenlaptop.QuantityBought, (decimal)choosenlaptop.Price * (decimal)choosenlaptop.QuantityBought);
+                    foreach (DataGridViewRow row in dgvOrder.Rows)
+                    {
+                        if (Convert.ToString(row.Cells["Col2"].Value) == cboOrderLapTop.Text)
+                        {
+                            choosenlaptop.QuantityBought += Convert.ToInt32(row.Cells["Col4"].Value);
+                            dgvOrder.Rows.Remove(row);
+                            dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.Price, choosenlaptop.QuantityBought, (decimal)choosenlaptop.Price * (decimal)choosenlaptop.QuantityBought);
+                            check = false;
+                            break;
+                        }
+                    }
+                    if (check)
+                    {
+                        dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.Price, choosenlaptop.QuantityBought, (decimal)choosenlaptop.Price * (decimal)choosenlaptop.QuantityBought);
+                    }
+                    tab2loading2();
                 }
                 else
                 {
@@ -414,8 +451,9 @@ namespace GUI
                         }
                     }
                     dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.Price, choosenlaptop.QuantityBought, (decimal)choosenlaptop.Price * (decimal)choosenlaptop.QuantityBought);
+                    tab2loading2();
                 }
-                tab2loading2();
+
             }
             else
             {
@@ -510,6 +548,7 @@ namespace GUI
         }
         #endregion
         #endregion
+
 
         
     }

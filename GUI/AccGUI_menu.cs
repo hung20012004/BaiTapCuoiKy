@@ -47,8 +47,12 @@ namespace GUI
                 if (item.StatusInt == 1)
                 {
                     item.Customer = CustomerBUS.Instance.getCustomer(item.Customer);
-                    item.Seller = StaffBUS.Instance.getSeller(item.Seller);
-                    dataGridView2.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date);
+                    if (tbTimKiem1.Text == "" || Search.Instance.ContainsString(item.Customer.Name, tbTimKiem1.Text))
+                    {
+                        
+                        item.Seller = StaffBUS.Instance.getSeller(item.Seller);
+                        dataGridView2.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date);
+                    }
                 }
 
             }
@@ -188,11 +192,14 @@ namespace GUI
                 if (item.Accountant.ID == user.ID && item.StatusString == cbTrangThai1.Text)
                 {
                     item.Customer = CustomerBUS.Instance.getCustomer(item.Customer);
-                    order = OrderBUS.Instance.getOrderByID(item.ID);
-                    item.Seller = StaffBUS.Instance.getSeller(item.Seller);
-                    item.Accountant = StaffBUS.Instance.getAccountant(item.Accountant);
-                    dataGridView3.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.getSUM());
-
+                    if (tbTimKiem2.Text == "" || Search.Instance.ContainsString(item.Customer.Name, tbTimKiem2.Text))
+                    {
+                        
+                        order = OrderBUS.Instance.getOrderByID(item.ID);
+                        item.Seller = StaffBUS.Instance.getSeller(item.Seller);
+                        item.Accountant = StaffBUS.Instance.getAccountant(item.Accountant);
+                        dataGridView3.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.getSUM());
+                    }
                 }
             }
             DataGridViewRow row = dataGridView3.Rows[0];
@@ -308,10 +315,14 @@ namespace GUI
             {
                 if (item.StatusInt == 1)
                 {
-                    importInvoice = ImportInvoiceBUS.Instance.getInvoiceByID(item.ID);
                     item.Provider = ProviderBUS.Instance.getProvider(item.Provider.ID);
-                    item.WarehouseKeeper = StaffBUS.Instance.getSeller(item.WarehouseKeeper);
-                    dataGridView1.Rows.Add(item.ID, item.Provider.Name, item.WarehouseKeeper.Name, item.ImportDate, importInvoice.getSUM());
+                    if (tbTimKiem3.Text == "" || Search.Instance.ContainsString(item.Provider.Name, tbTimKiem3.Text))
+                    {
+                        importInvoice = ImportInvoiceBUS.Instance.getInvoiceByID(item.ID);
+                        
+                        item.WarehouseKeeper = StaffBUS.Instance.getSeller(item.WarehouseKeeper);
+                        dataGridView1.Rows.Add(item.ID, item.Provider.Name, item.WarehouseKeeper.Name, item.ImportDate, importInvoice.getSUM());
+                    }
                 }
 
             }
@@ -375,7 +386,7 @@ namespace GUI
         }
         private void btnChiTiet3_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.Rows.Count > 1)
+            if (dataGridView1.Rows.Count > 1)
             {
                 tab5loading();
             }
@@ -410,10 +421,14 @@ namespace GUI
                 {
                     importInvoice = ImportInvoiceBUS.Instance.getInvoiceByID(item.ID);
                     item.Provider = ProviderBUS.Instance.getProvider(item.Provider.ID);
-                    item.WarehouseKeeper = StaffBUS.Instance.getSeller(item.WarehouseKeeper);
-                    dataGridView4.Rows.Add(item.ID, item.Provider.Name, item.WarehouseKeeper.Name, item.ImportDate, importInvoice.getSUM());
+                    if (tbTimKiem4.Text == "" || Search.Instance.ContainsString(item.Provider.Name, tbTimKiem4.Text))
+                    {
+                        
+                        
+                        item.WarehouseKeeper = StaffBUS.Instance.getSeller(item.WarehouseKeeper);
+                        dataGridView4.Rows.Add(item.ID, item.Provider.Name, item.WarehouseKeeper.Name, item.ImportDate, importInvoice.getSUM());
+                    }
                 }
-
             }
             DataGridViewRow row = dataGridView4.Rows[0];
             if (Convert.ToString(row.Cells["dataGridViewTextBoxColumn1"].Value) != "")
@@ -501,6 +516,25 @@ namespace GUI
         #endregion
         #endregion
 
-        
+
+        private void tbTimKiem1_TextChanged(object sender, EventArgs e)
+        {
+            loadTab0();
+        }
+
+        private void tbTimKiem2_TextChanged(object sender, EventArgs e)
+        {
+            loadTab1();
+        }
+
+        private void tbTimKiem3_TextChanged(object sender, EventArgs e)
+        {
+            tab3loading();
+        }
+
+        private void tbTimKiem4_TextChanged(object sender, EventArgs e)
+        {
+            tab4loading();
+        }
     }
 }

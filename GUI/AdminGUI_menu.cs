@@ -33,9 +33,12 @@ namespace GUI
         private void AdminGUI_menu_Load(object sender, EventArgs e)
         {
             tab0Reset();
+            cbTimKiem.SelectedIndex = 0;
         }
         private void tab0Reset()
         {
+            cbTimKiem.Enabled = true;
+            tbTimKiem1.Enabled = true;
             tbHoTen.Enabled = false;
             tbID.Enabled = false;
             tbMatKhau.Enabled = false;
@@ -51,10 +54,17 @@ namespace GUI
             tabControl1.SelectedIndex = 0;
             dataGridView1.Enabled = true;
             dataGridView1.Rows.Clear();
+
             foreach (Staff item in StaffBUS.Instance.get())
             {
                 if (item.RoleInt == 0 || item.ID == user.ID) continue;
-                dataGridView1.Rows.Add(item.ID, item.Name, item.RoleString, item.Username, item.Password);
+                if (cbTimKiem.Text == "Chức vụ" || item.RoleString == cbTimKiem.Text)
+                    if (tbTimKiem1.Text == "" || Search.Instance.ContainsString(item.Name, tbTimKiem1.Text))
+                    {
+                       // MessageBox.Show(Convert.ToString(Search.Instance.ContainsString(item.Name, tbTimKiem1.Text)));
+                        dataGridView1.Rows.Add(item.ID, item.Name, item.RoleString, item.Username, item.Password);
+                    }
+
             }
             DataGridViewRow row = dataGridView1.Rows[0];
             if (Convert.ToString(row.Cells["Column1"].Value) != "")
@@ -112,6 +122,8 @@ namespace GUI
         {
             if (btnSua1.Enabled == true)
             {
+                cbTimKiem.Enabled = false;
+                tbTimKiem1.Enabled = false;
                 dataGridView1.Enabled = false;
                 tbHoTen.Enabled = true;
                 cbRole.Enabled = true;
@@ -130,6 +142,8 @@ namespace GUI
         {
             if (btnThem1.Enabled == true)
             {
+                cbTimKiem.Enabled = false;
+                tbTimKiem1.Enabled = false;
                 dataGridView1.Enabled = false;
                 tbHoTen.Enabled = true;
                 cbRole.Enabled = true;
@@ -202,7 +216,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Xóa không thành công!");
+                MessageBox.Show("Ghi không thành công!");
             }
         }
         private void btnHuy1_Click(object sender, EventArgs e)
@@ -242,9 +256,21 @@ namespace GUI
         {
             staff.RoleString = cbRole.Text;
         }
+        private void cbTimKiem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tab0Reset();
+        }
+        
+        private void tbTimKiem1_TextChanged(object sender, EventArgs e)
+        {
+            tab0Reset();
+        }
         #endregion
         #endregion
 
-        
+
+
+
+
     }
 }

@@ -33,6 +33,7 @@
             pictureBox1 = new PictureBox();
             button3 = new Button();
             tabPage2 = new TabPage();
+            cbTimKiem = new ComboBox();
             btnExportExcel = new Button();
             btnXoa1 = new Button();
             cbRole = new ComboBox();
@@ -107,6 +108,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(cbTimKiem);
             tabPage2.Controls.Add(btnExportExcel);
             tabPage2.Controls.Add(btnXoa1);
             tabPage2.Controls.Add(cbRole);
@@ -135,9 +137,20 @@
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cbTimKiem
+            // 
+            cbTimKiem.FormattingEnabled = true;
+            cbTimKiem.Items.AddRange(new object[] { "Chức vụ", "Nhân viên bán hàng", "Kế toán", "Thủ kho", "Nhân viên chăm sóc khách hàng" });
+            cbTimKiem.Location = new Point(952, 94);
+            cbTimKiem.Name = "cbTimKiem";
+            cbTimKiem.Size = new Size(181, 36);
+            cbTimKiem.TabIndex = 21;
+            cbTimKiem.SelectedIndexChanged += cbTimKiem_SelectedIndexChanged;
+            
+            // 
             // btnExportExcel
             // 
-            btnExportExcel.Location = new Point(845, 114);
+            btnExportExcel.Location = new Point(640, 171);
             btnExportExcel.Name = "btnExportExcel";
             btnExportExcel.Size = new Size(112, 34);
             btnExportExcel.TabIndex = 20;
@@ -180,6 +193,7 @@
             tbTimKiem1.Name = "tbTimKiem1";
             tbTimKiem1.Size = new Size(226, 34);
             tbTimKiem1.TabIndex = 15;
+            tbTimKiem1.TextChanged += tbTimKiem1_TextChanged;
             // 
             // label5
             // 
@@ -425,5 +439,6 @@
         private DataGridViewTextBoxColumn Column5;
         private Button btnXoa1;
         private Button btnExportExcel;
+        private ComboBox cbTimKiem;
     }
 }

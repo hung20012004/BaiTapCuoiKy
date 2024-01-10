@@ -35,7 +35,7 @@ namespace DAL
                     laptop.Name = reader.GetString("laptop_name");
                     laptop.Category = new();
                     laptop.Category.ID = reader.GetInt32("category_id");
-                   // laptop.Category=getCategory(laptop.Category);
+                    //laptop.Category=getCategory(laptop.Category);
                     laptop.Manufactory = new();
                     laptop.Manufactory.ID = reader.GetInt32("manufactory_id");
                     //laptop.Manufactory=getManufactory(laptop.Manufactory);
@@ -59,6 +59,12 @@ namespace DAL
                     laptop.QuantityInStock = reader.GetInt32("quantity");
                     list.Add(laptop);
                 }
+                reader.Close();
+            }
+            foreach (var item in list)
+            {
+                item.Category = getCategory(item.Category);
+                item.Manufactory=getManufactory(item.Manufactory);
             }
             conn.Close();
             return list;
@@ -180,31 +186,33 @@ namespace DAL
        
         public Manufactory getManufactory(Manufactory manufactory)
         {
-            using (var cmd = new SqlCommand("GetManufactoryData", conn))
+            using (var cmd = new SqlCommand("getManufactoryByID", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = manufactory.ID;
                 DbDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    manufactory.Name = reader.GetString("name");
+                    manufactory.Name = reader.GetString("manufactory_name");
                     manufactory.Address= reader.GetString("address");
                     manufactory.Website = reader.GetString("website");
                 }
+                reader.Close();
             }
             return manufactory;
         }
         public Category getCategory(Category category)
         {
-            using (var cmd = new SqlCommand("GetCategoryData", conn))
+            using (var cmd = new SqlCommand("getCategoryByID", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = category.ID;
                 DbDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    category.Name = reader.GetString("name");
+                    category.Name = reader.GetString("category_name");
                 }
+                reader.Close();
             }
             return category;
         }
@@ -252,6 +260,8 @@ namespace DAL
                         laptop.QuantityInStock = reader.GetInt32("quantity");
                     }
                     reader.Close();
+                    laptop.Category = getCategory(laptop.Category);
+                    laptop.Manufactory = getManufactory(laptop.Manufactory);
                 }
                 conn.Close();
                 
@@ -261,6 +271,49 @@ namespace DAL
                 
             }
             return laptop;
+        }
+        public List<Manufactory> getManufactory()
+        {
+            List<Manufactory> list = new List<Manufactory>();
+            conn.Open();
+            using (var cmd = new SqlCommand("getManufactoryData", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Manufactory manufactory = new Manufactory();
+                    manufactory.ID = reader.GetInt32("manufactory_id");
+                    manufactory.Name = reader.GetString("manufactory_name");
+                    manufactory.Website = reader.GetString("website");
+                    manufactory.Address = reader.GetString("address");
+                    list.Add(manufactory);
+                }
+                reader.Close();
+            }
+            conn.Close();
+            return list;
+        }
+        public List<Category> getCategory()
+        {
+            List<Category> list = new List<Category>();
+            conn.Open();
+            using (var cmd = new SqlCommand("getCategoryData", conn))
+            {
+                
+                cmd.CommandType = CommandType.StoredProcedure;
+                
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Category category = new Category();
+                    category.Name = reader.GetString("category_name");
+                    list.Add(category);
+                }
+                reader.Close();
+            }
+            conn.Close();
+            return list;
         }
     }
 }

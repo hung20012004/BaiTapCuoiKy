@@ -1,3 +1,4 @@
+
 CREATE PROCEDURE getLaptopByID
 @ID int
 AS
