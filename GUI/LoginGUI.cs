@@ -12,13 +12,12 @@ namespace GUI
             InitializeComponent();
         }
         #region clickEvent
-
+        
         private void loginBtn_Click(object sender, EventArgs e)
         {
             if (StaffBUS.Instance.checkLogInfo(ref user))
 
             {
-                lbSai.Visible = false;
                 this.Hide();
                 userRole();
                 this.Show();
@@ -27,12 +26,8 @@ namespace GUI
             }
             else
             {
-                lbSai.Visible = true;
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
             }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
         #endregion
         #region loadEvent
@@ -63,7 +58,7 @@ namespace GUI
                     menu3.ShowDialog();
                     break;
                 case 4:
-                    SellGUI_menu menu4 = new(user);
+                   SellGUI_menu menu4 = new(user);
                     menu4.ShowDialog();
                     break;
             }
@@ -80,9 +75,7 @@ namespace GUI
         {
             user.Password = passwordTextbox.Text;
         }
-
+        
         #endregion
-
-
     }
 }
