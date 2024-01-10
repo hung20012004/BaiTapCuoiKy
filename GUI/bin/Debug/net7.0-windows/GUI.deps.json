@@ -10,8 +10,7 @@
         "dependencies": {
           "BUS": "1.0.0",
           "DTO": "1.0.0",
-          "EPPlus": "7.0.5",
-          "Microsoft.Office.Interop.Excel": "15.0.4795.1001"
+          "EPPlus": "7.0.5"
         },
         "runtime": {
           "GUI.dll": {}
@@ -156,14 +155,6 @@
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
-      "Microsoft.Office.Interop.Excel/15.0.4795.1001": {
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Office.Interop.Excel.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.4795.1000"
-          }
-        }
-      },
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.7.0",
@@ -275,9 +266,7 @@
       "BUS/1.0.0": {
         "dependencies": {
           "DAL": "1.0.0",
-          "DTO": "1.0.0",
-          "EPPlus": "7.0.5",
-          "Microsoft.Office.Interop.Excel": "15.0.4795.1001"
+          "DTO": "1.0.0"
         },
         "runtime": {
           "BUS.dll": {}
@@ -286,8 +275,6 @@
       "DAL/1.0.0": {
         "dependencies": {
           "DTO": "1.0.0",
-          "EPPlus": "7.0.5",
-          "Microsoft.Office.Interop.Excel": "15.0.4795.1001",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
@@ -295,10 +282,6 @@
         }
       },
       "DTO/1.0.0": {
-        "dependencies": {
-          "EPPlus": "7.0.5",
-          "Microsoft.Office.Interop.Excel": "15.0.4795.1001"
-        },
         "runtime": {
           "DTO.dll": {}
         }
@@ -401,13 +384,6 @@
       "sha512": "sha512-z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "path": "microsoft.netcore.platforms/3.1.0",
       "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
-    },
-    "Microsoft.Office.Interop.Excel/15.0.4795.1001": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-cuvqi/U5MYSM0gvR2l90q0m/urRgmg69EiwP5VWp1RcaJ0YT5G26Va5LaOZ3KJFc22FNihS5CUjeePUp2YpGQA==",
-      "path": "microsoft.office.interop.excel/15.0.4795.1001",
-      "hashPath": "microsoft.office.interop.excel.15.0.4795.1001.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/4.7.0": {
       "type": "package",
