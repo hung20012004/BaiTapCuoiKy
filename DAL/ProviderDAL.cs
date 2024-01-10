@@ -101,5 +101,27 @@ namespace DAL
                 return false;
             }
         }
+        public Provider getProvider(int id)
+        {
+            Provider provider = new Provider();
+            provider.ID = id;
+            conn.Open();
+            using (var cmd = new SqlCommand("getProviderByID", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@provider_id", SqlDbType.Int).Value = id;
+
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    provider.Name = reader.GetString("provider_name");
+                    provider.Phone = reader.GetString("phone");
+                    provider.Address = reader.GetString("address");
+
+                }
+            }
+            conn.Close();
+            return provider;
+        }
     }
 }

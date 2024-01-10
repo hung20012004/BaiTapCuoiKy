@@ -22,7 +22,7 @@ namespace DAL
         {
             List<ImportInvoice> list = new List<ImportInvoice>();
             conn.Open();
-            using (var cmd = new SqlCommand("GetImportInvoiceData", conn))
+            using (var cmd = new SqlCommand("getImportInvoice", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 DbDataReader reader = cmd.ExecuteReader();
@@ -33,7 +33,8 @@ namespace DAL
                     importInvoice.WarehouseKeeper.ID = reader.GetInt32("staff_id");
                     importInvoice.Provider.ID = reader.GetInt32("provider_id");
                     importInvoice.ImportDate = reader.GetDateTime("import_time");
-                    importInvoice.Note = reader.GetString("note");
+                    importInvoice.StatusInt = reader.GetInt32("status");
+                    importInvoice.Accountant.ID= reader.GetInt32("accoutant_id");
                     list.Add(importInvoice);
                 }
             }
@@ -80,16 +81,15 @@ namespace DAL
             try
             {
                 conn.Open();
-                using (var cmd = new SqlCommand("UpdateImportInvoice", conn))
+                using (var cmd = new SqlCommand("updateInvoice", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@invoice_id", SqlDbType.Int).Value = importInvoice.ID;
-                    cmd.Parameters.Add("@staff_id", SqlDbType.Int).Value = importInvoice.WarehouseKeeper.ID;
-                    cmd.Parameters.Add("@provider_id", SqlDbType.Int).Value = importInvoice.Provider.ID;
-                    cmd.Parameters.Add("@note", SqlDbType.VarChar).Value = importInvoice.Note;
+                    cmd.Parameters.Add("@status", SqlDbType.Int).Value = importInvoice.StatusInt;
+                    cmd.Parameters.Add("@accountant_id", SqlDbType.Int).Value = importInvoice.Accountant.ID;
+                    cmd.Parameters.Add("@update_status_date", SqlDbType.DateTime).Value = DateTime.Now;
                     cmd.ExecuteNonQuery();
                 }
-                
                 conn.Close();
                 return true;
             }
@@ -136,6 +136,59 @@ namespace DAL
             {
                
             }
+        }
+        public ImportInvoice getInvoiceByID(int ID)
+        {
+            ImportInvoice importInvoice = new ImportInvoice();
+            importInvoice.ID = ID;
+            conn.Open();
+            using (var cmd = new SqlCommand("getInvoiceByID", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    importInvoice.ID = reader.GetInt32("invoice_id");
+                    importInvoice.WarehouseKeeper.ID = reader.GetInt32("staff_id");
+                    importInvoice.Provider.ID = reader.GetInt32("provider_id");
+                    importInvoice.ImportDate = reader.GetDateTime("import_time");
+                    
+                    importInvoice.Accountant.ID = reader.GetInt32("accoutant_id");
+                    importInvoice.StatusInt = reader.GetInt32("status");
+                    try
+                    {
+                        importInvoice.UpdateTime = reader.GetDateTime("update_status_time");
+                    }
+                    catch { }
+                    
+                    
+                }
+                reader.Close();
+            }
+            importInvoice.Provider = ProviderDAL.Instance.getProvider(importInvoice.Provider.ID);
+            importInvoice.Accountant = StaffDAL.Instance.GetAccountant(importInvoice.Accountant);
+            importInvoice.WarehouseKeeper = StaffDAL.Instance.GetSeller(importInvoice.WarehouseKeeper);
+            using (var cmd = new SqlCommand("getInvoiceDetailByID", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Laptop laptop = new Laptop();
+                    laptop = LaptopDAL.Instance.getLaptopByID(reader.GetInt32("laptop_id"));
+                    laptop.QuantityImport = reader.GetInt32("quantity");
+                    laptop.ImportPrice = reader.GetDecimal("unit_price");
+                    importInvoice.Laptops.Add(laptop);
+                }
+                reader.Close();
+            }
+
+            conn.Close();
+            return importInvoice;
         }
     }
 }

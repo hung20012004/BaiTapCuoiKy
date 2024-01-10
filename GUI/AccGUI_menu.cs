@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,8 @@ namespace GUI
     {
         private Staff user = new();
         private Order order = new();
+        private int index = 0;
+        private ImportInvoice importInvoice = new();
         public AccGUI_menu(Staff user)
         {
             this.user = user;
@@ -28,6 +31,7 @@ namespace GUI
         }
         public void loadTab0()
         {
+            index = 0;
             order = new Order();
             order.Accountant = user;
             tabControl1.SelectedIndex = 0;
@@ -63,9 +67,20 @@ namespace GUI
 
         #endregion
         #region ClickEvent
+        private void btnExport0_Click(object sender, EventArgs e)
+        {
+            ExportData.Instance.ToExcel(dataGridView2, "Thống kê hóa đơn khách hàng");
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            tab2loading();
+            if (dataGridView2.Rows.Count > 1)
+            {
+                tab2loading();
+            }
+            else
+            {
+                MessageBox.Show("Không có hóa đơn nào trong danh sách");
+            }
         }
         private void btnCho_Click(object sender, EventArgs e)
         {
@@ -159,6 +174,7 @@ namespace GUI
         #region loadingEvent
         public void loadTab1()
         {
+            index = 1;
             tabControl1.SelectedIndex = 1;
             tbID1.Enabled = false;
             tbSeller1.Enabled = false;
@@ -193,7 +209,14 @@ namespace GUI
         #region clickEvent
         private void btnChiTiet1_Click(object sender, EventArgs e)
         {
-            tab2loading();
+            if (dataGridView3.Rows.Count > 1)
+            {
+                tab2loading();
+            }
+            else
+            {
+                MessageBox.Show("Không có hóa đơn nào trong danh sách");
+            }
         }
         private void btnCustomer_Click(object sender, EventArgs e)
         {
@@ -259,23 +282,225 @@ namespace GUI
                 dgvOrder.Rows.Add(item.ID, item.Name, item.QuantityBought, item.Price, (decimal)item.Price * (decimal)item.QuantityBought);
             }
         }
+        #region clickEvent
+        private void btnBack2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = index;
+        }
+
+        #endregion
         #endregion
         #endregion
         #region tab3
-        #region loadingEvent
+        #region loadingEvent    
+        private void tab3loading()
+        {
+            tabControl1.SelectedIndex = 3;
+            index = 3;
+            btnChiTiet3.Enabled = true;
+            tbMaHoaDon3.Enabled = false;
+            tbNgayTao3.Enabled = false;
+            tbNguoiTao3.Enabled = false;
+            tbNhaCungCap3.Enabled = false;
+            dataGridView1.Enabled = true;
+            dataGridView1.Rows.Clear();
+            foreach (ImportInvoice item in ImportInvoiceBUS.Instance.get())
+            {
+                if (item.StatusInt == 1)
+                {
+                    importInvoice = ImportInvoiceBUS.Instance.getInvoiceByID(item.ID);
+                    item.Provider = ProviderBUS.Instance.getProvider(item.Provider.ID);
+                    item.WarehouseKeeper = StaffBUS.Instance.getSeller(item.WarehouseKeeper);
+                    dataGridView1.Rows.Add(item.ID, item.Provider.Name, item.WarehouseKeeper.Name, item.ImportDate, importInvoice.getSUM());
+                }
 
+            }
+            DataGridViewRow row = dataGridView1.Rows[0];
+            if (Convert.ToString(row.Cells["Column1"].Value) != "")
+            {
+                tbMaHoaDon3.Text = Convert.ToString(row.Cells["Column1"].Value);
+                tbNhaCungCap3.Text = Convert.ToString(row.Cells["Column2"].Value);
+                tbNguoiTao3.Text = Convert.ToString(row.Cells["Column3"].Value);
+                tbNgayTao3.Text = Convert.ToString(row.Cells["Column4"].Value);
+                importInvoice = ImportInvoiceBUS.Instance.getInvoiceByID(Convert.ToInt32(row.Cells["Column1"].Value));
+                lbSUM3.Text = importInvoice.getSUM().ToString();
+            }
+        }
         #endregion
         #region clickEvent
+        private void btnHoaDonNhapDangCho_Click(object sender, EventArgs e)
+        {
+            tab3loading();
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dataGridView1.Rows[e.RowIndex];
+                if (Convert.ToString(row.Cells["Column1"].Value) != "")
+                {
+                    tbMaHoaDon3.Text = Convert.ToString(row.Cells["Column1"].Value);
+                    tbNhaCungCap3.Text = Convert.ToString(row.Cells["Column2"].Value);
+                    tbNguoiTao3.Text = Convert.ToString(row.Cells["Column3"].Value);
+                    tbNgayTao3.Text = Convert.ToString(row.Cells["Column4"].Value);
+                    importInvoice = ImportInvoiceBUS.Instance.getInvoiceByID(Convert.ToInt32(row.Cells["Column1"].Value));
+                    lbSUM3.Text = importInvoice.getSUM().ToString();
+                }
+            }
+            catch { }
+
+        }
+        private void btnHoanThanh3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận hoàn thành", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                importInvoice.StatusInt = 2;
+                importInvoice.Accountant.ID = user.ID;
+                if (ImportInvoiceBUS.Instance.update(importInvoice))
+                {
+
+                    tab3loading();
+                    MessageBox.Show("Thành công!", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Không thành công!", "Thông báo");
+                }
+            }
+            else
+            {
+
+            }
+        }
+        private void btnChiTiet3_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.Rows.Count > 1)
+            {
+                tab5loading();
+            }
+            else
+            {
+                MessageBox.Show("Không có hóa đơn nào trong danh sách");
+            }
+        }
+        private void btnExport3_Click(object sender, EventArgs e)
+        {
+            ExportData.Instance.ToExcel(dataGridView1, "Thống kê hóa đơn nhập hàng");
+        }
         #endregion
         #region textChangeEvent
         #endregion
         #endregion
-        
-        private void btnHoaDonNhapDangCho_Click(object sender, EventArgs e)
+        #region tab4
+        #region loadingEvent
+        public void tab4loading()
         {
+            index = 4;
+            tabControl1.SelectedIndex = 4;
+            tbNguoiTao4.Enabled = false;
+            tbNgayTao4.Enabled = false;
+            tbMaHoaDon4.Enabled = false;
+            tbNhaCungCap4.Enabled = false;
+
+            dataGridView4.Rows.Clear();
+            foreach (ImportInvoice item in ImportInvoiceBUS.Instance.get())
+            {
+                if (item.StatusInt == 2)
+                {
+                    importInvoice = ImportInvoiceBUS.Instance.getInvoiceByID(item.ID);
+                    item.Provider = ProviderBUS.Instance.getProvider(item.Provider.ID);
+                    item.WarehouseKeeper = StaffBUS.Instance.getSeller(item.WarehouseKeeper);
+                    dataGridView4.Rows.Add(item.ID, item.Provider.Name, item.WarehouseKeeper.Name, item.ImportDate, importInvoice.getSUM());
+                }
+
+            }
+            DataGridViewRow row = dataGridView4.Rows[0];
+            if (Convert.ToString(row.Cells["dataGridViewTextBoxColumn1"].Value) != "")
+            {
+                tbMaHoaDon4.Text = Convert.ToString(row.Cells["dataGridViewTextBoxColumn1"].Value);
+                tbNhaCungCap4.Text = Convert.ToString(row.Cells["dataGridViewTextBoxColumn2"].Value);
+                tbNguoiTao4.Text = Convert.ToString(row.Cells["dataGridViewTextBoxColumn3"].Value);
+                tbNgayTao4.Text = Convert.ToString(row.Cells["dataGridViewTextBoxColumn4"].Value);
+                importInvoice = ImportInvoiceBUS.Instance.getInvoiceByID(Convert.ToInt32(row.Cells["dataGridViewTextBoxColumn1"].Value));
+            }
+        }
+        #endregion
+        #region clickEvent
+        private void btnChiTiet4_Click(object sender, EventArgs e)
+        {
+            if (dataGridView4.Rows.Count > 1)
+            {
+                tab5loading();
+            }
+            else
+            {
+                MessageBox.Show("Không có hóa đơn nào trong danh sách");
+            }
 
         }
 
+        private void btnExportExcel4_Click(object sender, EventArgs e)
+        {
+            ExportData.Instance.ToExcel(dataGridView4, "Danh sách hóa đơn nhập hàng");
+        }
+        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dataGridView1.Rows[e.RowIndex];
+                if (Convert.ToString(row.Cells["dataGridViewTextBoxColumn1"].Value) != "")
+                {
+                    tbMaHoaDon4.Text = Convert.ToString(row.Cells["dataGridViewTextBoxColumn1"].Value);
+                    tbNhaCungCap4.Text = Convert.ToString(row.Cells["dataGridViewTextBoxColumn2"].Value);
+                    tbNguoiTao4.Text = Convert.ToString(row.Cells["dataGridViewTextBoxColumn3"].Value);
+                    tbNgayTao4.Text = Convert.ToString(row.Cells["dataGridViewTextBoxColumn4"].Value);
+                    importInvoice = ImportInvoiceBUS.Instance.getInvoiceByID(Convert.ToInt32(row.Cells["dataGridViewTextBoxColumn1"].Value));
+                }
+            }
+            catch { }
+        }
+        private void btnHoaDonNhapHang_Click(object sender, EventArgs e)
+        {
+            tab4loading();
+        }
+        #endregion
+        #region textChangeEvent
+        #endregion
+        #endregion
+        #region tab5
+        #region loadingEvent
+
+        private void tab5loading()
+        {
+
+            tabControl1.SelectedIndex = 5;
+            lbNCC52.Text = importInvoice.Provider.Name;
+            lbNCC5.Text = importInvoice.Provider.Name;
+            lb5.Text = importInvoice.ImportDate.ToString();
+            lbNguoiTaoHoaDon5.Text = importInvoice.WarehouseKeeper.Name;
+            lbThuNgan5.Text = importInvoice.Accountant.Name;
+            lbTrangThai5.Text = importInvoice.StatusString;
+            dataGridView5.Rows.Clear();
+            foreach (Laptop item in importInvoice.Laptops)
+            {
+
+                dataGridView5.Rows.Add(item.ID, item.Name, item.QuantityImport, item.ImportPrice, item.QuantityImport * item.ImportPrice);
+            }
+        }
+        #endregion
+        #region clickEvent
+        private void btnBack5_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = index;
+        }
+        #endregion
+        #region textChangeEvent
+        #endregion
+        #endregion
+
+        
     }
 }

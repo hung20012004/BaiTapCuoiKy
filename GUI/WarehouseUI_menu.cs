@@ -471,7 +471,7 @@ namespace GUI
                 tbGiaNhap.Text = null;
             }
             if (tbGiaNhap.Text != "")
-                choosenLaptop.ImportPrice = Convert.ToInt32(tbGiaNhap.Text);
+                choosenLaptop.ImportPrice = Convert.ToDecimal(tbGiaNhap.Text);
         }
         private void cbLaptop2_SelectedIndexChanged(object sender, EventArgs e)
         {

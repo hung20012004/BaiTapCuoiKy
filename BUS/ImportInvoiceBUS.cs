@@ -31,5 +31,9 @@ namespace BUS
         {
             return ImportInvoiceDAL.Instance.delete(importInvoice);
         }
+        public ImportInvoice getInvoiceByID(int id)
+        {
+            return ImportInvoiceDAL.Instance.getInvoiceByID(id);
+        }
     }
 }

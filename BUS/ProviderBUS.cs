@@ -32,5 +32,9 @@ namespace BUS
         {
             return ProviderDAL.Instance.delete(provider);
         }
+        public Provider getProvider(int id) { 
+            return ProviderDAL.Instance.getProvider(id);
+        }
+
     }
 }

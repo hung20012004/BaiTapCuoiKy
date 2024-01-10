@@ -4,7 +4,7 @@ CREATE PROC InsertImportInvoiceData
 @import_time DATETIME 
 AS
 BEGIN
-	INSERT INTO import_invoices(provider_id,staff_id,import_time,accountant_id) 
-	VALUES(@provider_id,@staff_id,@import_time,0);
+	INSERT INTO import_invoices(provider_id,staff_id,import_time,accoutant_id,status) 
+	VALUES(@provider_id,@staff_id,@import_time,0,1);
 END;
 drop proc InsertImportInvoiceData

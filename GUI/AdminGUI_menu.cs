@@ -128,7 +128,7 @@ namespace GUI
         }
         private void btnSua1_Click(object sender, EventArgs e)
         {
-            if (btnGhi1.Enabled == true)
+            if (btnThem1.Enabled == true)
             {
                 dataGridView1.Enabled = false;
                 tbHoTen.Enabled = true;

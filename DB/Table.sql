@@ -104,6 +104,7 @@ CREATE TABLE import_invoices(
 	staff_id INT NOT NULL,
 	provider_id INT NOT NULL,
 	accoutant_id INT NOT NULL,
+	status INT NOT NULL,
 	update_status_time DATETIME,
 	import_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	note VARCHAR(255),
