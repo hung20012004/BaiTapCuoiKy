@@ -23,11 +23,6 @@ namespace GUI
             this.user = user;
             InitializeComponent();
         }
-        private void tab1Reset()
-        {
-            tabControl1.SelectedIndex = 1;
-        }
-        #region tab0
         #region LoadingEvent
         //Xu ly loading
         private void ManagerGUI_menu_Load(object sender, EventArgs e)
@@ -53,7 +48,7 @@ namespace GUI
             dataGridView1.Rows.Clear();
             foreach (Staff item in StaffBUS.Instance.get())
             {
-                if (item.RoleInt == 0 && item.ID!=user.ID) continue;
+                if (item.RoleInt == 0 && item.ID != user.ID) continue;
                 dataGridView1.Rows.Add(item.ID, item.Name, item.RoleString, item.Username, item.Password);
             }
             DataGridViewRow row = dataGridView1.Rows[0];
@@ -66,7 +61,11 @@ namespace GUI
                 cbRole.Text = Convert.ToString(row.Cells["Column5"].Value);
             }
         }
-       
+        private void tab1Reset()
+        {
+            tabControl1.SelectedIndex = 1;
+        }
+
         #endregion
 
         #region ClickEvent
@@ -135,7 +134,7 @@ namespace GUI
             //btnSua1.Enabled = false;
             btnXoa1.Enabled = false;
             btnThem1.Enabled = false;
-            
+
         }
         private void btnXoa1_Click(object sender, EventArgs e)
         {
@@ -233,6 +232,10 @@ namespace GUI
             staff.RoleString = cbRole.Text;
         }
         #endregion
-        #endregion
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
