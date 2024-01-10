@@ -11,12 +11,10 @@ namespace BUS
 {
     public class OrderBUS
     {
-
         private static OrderBUS instance = new();
-        
         public static OrderBUS Instance
         {
-           get { return instance; }
+            get {  return instance; }
         }
         public List<Order> get()
         {

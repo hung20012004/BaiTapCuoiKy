@@ -225,15 +225,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Office.Interop.Excel/15.0.4795.1001": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Office.Interop.Excel.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Office.Interop.Excel.dll": {}
-        }
-      },
       "Microsoft.Win32.Registry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -539,9 +530,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "DAL": "1.0.0",
-          "DTO": "1.0.0",
-          "EPPlus": "7.0.5",
-          "Microsoft.Office.Interop.Excel": "15.0.4795.1001"
+          "DTO": "1.0.0"
         },
         "compile": {
           "bin/placeholder/BUS.dll": {}
@@ -555,8 +544,6 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "DTO": "1.0.0",
-          "EPPlus": "7.0.5",
-          "Microsoft.Office.Interop.Excel": "15.0.4795.1001",
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
@@ -569,10 +556,6 @@
       "DTO/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "EPPlus": "7.0.5",
-          "Microsoft.Office.Interop.Excel": "15.0.4795.1001"
-        },
         "compile": {
           "bin/placeholder/DTO.dll": {}
         },
@@ -907,19 +890,6 @@
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "Microsoft.Office.Interop.Excel/15.0.4795.1001": {
-      "sha512": "cuvqi/U5MYSM0gvR2l90q0m/urRgmg69EiwP5VWp1RcaJ0YT5G26Va5LaOZ3KJFc22FNihS5CUjeePUp2YpGQA==",
-      "type": "package",
-      "path": "microsoft.office.interop.excel/15.0.4795.1001",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net20/Microsoft.Office.Interop.Excel.dll",
-        "lib/netstandard2.0/Microsoft.Office.Interop.Excel.dll",
-        "microsoft.office.interop.excel.15.0.4795.1001.nupkg.sha512",
-        "microsoft.office.interop.excel.nuspec"
       ]
     },
     "Microsoft.Win32.Registry/4.7.0": {
@@ -1595,28 +1565,27 @@
     "net7.0-windows7.0": [
       "BUS >= 1.0.0",
       "DTO >= 1.0.0",
-      "EPPlus >= 7.0.5",
-      "Microsoft.Office.Interop.Excel >= 15.0.4795.1001"
+      "EPPlus >= 7.0.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hi\\.nuget\\packages\\": {},
+    "C:\\Users\\Manh Hung\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\GUI\\GUI.csproj",
+      "projectUniqueName": "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\GUI\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\GUI\\GUI.csproj",
-      "packagesPath": "C:\\Users\\Hi\\.nuget\\packages\\",
-      "outputPath": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\GUI\\obj\\",
+      "projectPath": "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\GUI\\GUI.csproj",
+      "packagesPath": "C:\\Users\\Manh Hung\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\GUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Manh Hung\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1625,18 +1594,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\BUS\\BUS.csproj": {
-              "projectPath": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\BUS\\BUS.csproj"
+            "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\BUS\\BUS.csproj": {
+              "projectPath": "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\BUS\\BUS.csproj"
             },
-            "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
-              "projectPath": "G:\\C#\\CS\\Cuoi_Ky\\GitHub\\BaiTapCuoiKy\\DTO\\DTO.csproj"
+            "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\Manh Hung\\Desktop\\BT cuoi ky\\BaiTapCuoiKy\\DTO\\DTO.csproj"
             }
           }
         }
@@ -1654,10 +1623,6 @@
           "EPPlus": {
             "target": "Package",
             "version": "[7.0.5, )"
-          },
-          "Microsoft.Office.Interop.Excel": {
-            "target": "Package",
-            "version": "[15.0.4795.1001, )"
           }
         },
         "imports": [
@@ -1679,7 +1644,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

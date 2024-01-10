@@ -124,7 +124,7 @@ namespace DAL
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@customer_id", SqlDbType.Int).Value = cus.ID;
-                
+
                 DbDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
