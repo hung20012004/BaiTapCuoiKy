@@ -77,3 +77,15 @@ C:\C# Hoc ki\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
 C:\C# Hoc ki\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
 C:\C# Hoc ki\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
 C:\C# Hoc ki\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll
+C:\GIT\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.deps.json
+C:\GIT\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.dll
+C:\GIT\BaiTapCuoiKy\DTO\bin\Debug\net7.0\DTO.pdb
+C:\GIT\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.AssemblyReference.cache
+C:\GIT\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\GIT\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
+C:\GIT\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
+C:\GIT\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
+C:\GIT\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.dll
+C:\GIT\BaiTapCuoiKy\DTO\obj\Debug\net7.0\refint\DTO.dll
+C:\GIT\BaiTapCuoiKy\DTO\obj\Debug\net7.0\DTO.pdb
+C:\GIT\BaiTapCuoiKy\DTO\obj\Debug\net7.0\ref\DTO.dll

@@ -30,6 +30,7 @@ namespace GUI
         private void SellGUI_menu_Load(object sender, EventArgs e)
         {
             tab1loading();
+           // tab2Loading1();
         }
         #region tab0
         private void button1_Click(object sender, EventArgs e)
@@ -393,7 +394,7 @@ namespace GUI
         }
         private void btnGhiOrder_Click(object sender, EventArgs e)
         {
-            if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != "" && Convert.ToDecimal(tbSoLuong2.Text) == 0)
+            if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != "" && Convert.ToDecimal(tbSoLuong2.Text) != 0)
             {
                 if (choosenlaptop.QuantityInStock < choosenlaptop.QuantityBought)
                 {
@@ -511,5 +512,6 @@ namespace GUI
         #endregion
         #endregion
 
+        
     }
 }
