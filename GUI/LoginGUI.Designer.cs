@@ -28,73 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            username = new Label();
-            password = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginGUI));
             usernameTextbox = new TextBox();
             passwordTextbox = new TextBox();
             loginBtn = new Button();
+            lbSai = new Label();
+            button1 = new Button();
             SuspendLayout();
-            // 
-            // username
-            // 
-            username.AutoSize = true;
-            username.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            username.Location = new Point(109, 148);
-            username.Name = "username";
-            username.Size = new Size(94, 28);
-            username.TabIndex = 0;
-            username.Text = "Tài khoản";
-            // 
-            // password
-            // 
-            password.AutoSize = true;
-            password.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            password.Location = new Point(109, 220);
-            password.Name = "password";
-            password.Size = new Size(94, 28);
-            password.TabIndex = 1;
-            password.Text = "Mật khẩu";
             // 
             // usernameTextbox
             // 
-            usernameTextbox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            usernameTextbox.Location = new Point(262, 148);
+            usernameTextbox.Cursor = Cursors.IBeam;
+            usernameTextbox.Font = new Font(".VnLucida sans", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            usernameTextbox.Location = new Point(332, 260);
             usernameTextbox.Name = "usernameTextbox";
-            usernameTextbox.Size = new Size(492, 34);
+            usernameTextbox.Size = new Size(243, 29);
             usernameTextbox.TabIndex = 2;
+            usernameTextbox.Text = "username";
             usernameTextbox.TextChanged += usernameTextbox_TextChanged;
             // 
             // passwordTextbox
             // 
-            passwordTextbox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordTextbox.Location = new Point(262, 217);
+            passwordTextbox.Cursor = Cursors.IBeam;
+            passwordTextbox.Font = new Font(".VnLucida sans", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            passwordTextbox.Location = new Point(332, 297);
             passwordTextbox.Name = "passwordTextbox";
-            passwordTextbox.Size = new Size(492, 34);
+            passwordTextbox.Size = new Size(243, 29);
             passwordTextbox.TabIndex = 3;
+            passwordTextbox.Text = "password";
             passwordTextbox.TextChanged += passwordTextbox_TextChanged;
             // 
             // loginBtn
             // 
-            loginBtn.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            loginBtn.Location = new Point(318, 332);
+            loginBtn.BackColor = Color.SeaShell;
+            loginBtn.FlatAppearance.BorderColor = Color.Ivory;
+            loginBtn.FlatAppearance.BorderSize = 3;
+            loginBtn.FlatStyle = FlatStyle.Flat;
+            loginBtn.Font = new Font("Berlin Sans FB Demi", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            loginBtn.Location = new Point(332, 332);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(209, 52);
+            loginBtn.Size = new Size(243, 42);
             loginBtn.TabIndex = 4;
-            loginBtn.Text = "Đăng nhập";
-            loginBtn.UseVisualStyleBackColor = true;
+            loginBtn.Text = "Login";
+            loginBtn.UseVisualStyleBackColor = false;
             loginBtn.Click += loginBtn_Click;
+            // 
+            // lbSai
+            // 
+            lbSai.AutoSize = true;
+            lbSai.BackColor = Color.MintCream;
+            lbSai.Font = new Font("Sylfaen", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lbSai.ForeColor = Color.DarkGreen;
+            lbSai.Location = new Point(332, 540);
+            lbSai.Name = "lbSai";
+            lbSai.Size = new Size(254, 22);
+            lbSai.TabIndex = 7;
+            lbSai.Text = "* Incorrect username or password";
+            lbSai.Visible = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.CadetBlue;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(874, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(25, 25);
+            button1.TabIndex = 8;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // LoginGUI
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(880, 504);
+            BackColor = Color.Honeydew;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(910, 590);
+            Controls.Add(button1);
+            Controls.Add(lbSai);
             Controls.Add(loginBtn);
             Controls.Add(passwordTextbox);
             Controls.Add(usernameTextbox);
-            Controls.Add(password);
-            Controls.Add(username);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginGUI";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";
@@ -104,11 +125,10 @@
         }
 
         #endregion
-
-        private Label username;
-        private Label password;
         private TextBox usernameTextbox;
         private TextBox passwordTextbox;
         private Button loginBtn;
+        private Label lbSai;
+        private Button button1;
     }
 }

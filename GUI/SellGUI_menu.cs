@@ -49,7 +49,7 @@ namespace GUI
             txbCustomerPhone.Enabled = false;
             txbCustomerID.Enabled = false;
             btnCustomerThem.Enabled = true;
-            btnGhi1.Enabled = false;
+            btnCustomerGhi.Enabled = false;
             btnCustomerHuy.Enabled = false;
             btnCustomerSua.Enabled = true;
             btnCustomerXoa.Enabled = true;
@@ -70,10 +70,6 @@ namespace GUI
         }
         #endregion
         #region clickEvent
-        private void btnExportExcel_Click(object sender, EventArgs e)
-        {
-            ExportData.Instance.ToExcel(dgvKhachHang, "Danh sách khách hàng");
-        }
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 1;
@@ -93,36 +89,30 @@ namespace GUI
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (btnCustomerSua.Enabled == true)
-            {
-                txbCustomerAddress.Enabled = true;
-                txbCustomerName.Enabled = true;
-                txbCustomerPhone.Enabled = true;
-                btnGhi1.Enabled = true;
-                btnCustomerHuy.Enabled = true;
-                btnCustomerSua.Enabled = false;
-                btnCustomerXoa.Enabled = false;
-                txbCustomerID.Text = "";
-                txbCustomerAddress.Text = "";
-                txbCustomerName.Text = "";
-                txbCustomerPhone.Text = "";
-                dgvKhachHang.Enabled = false;
-            }
+            txbCustomerAddress.Enabled = true;
+            txbCustomerName.Enabled = true;
+            txbCustomerPhone.Enabled = true;
+            btnCustomerGhi.Enabled = true;
+            btnCustomerHuy.Enabled = true;
+            btnCustomerSua.Enabled = false;
+            btnCustomerXoa.Enabled = false;
+            txbCustomerID.Text = "";
+            txbCustomerAddress.Text = "";
+            txbCustomerName.Text = "";
+            txbCustomerPhone.Text = "";
+            dgvKhachHang.Enabled = false;
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (btnCustomerThem.Enabled == true)
-            {
-                txbCustomerAddress.Enabled = true;
-                txbCustomerName.Enabled = true;
-                txbCustomerPhone.Enabled = true;
-                btnGhi1.Enabled = true;
-                btnCustomerHuy.Enabled = true;
-                btnCustomerSua.Enabled = true;
-                btnCustomerXoa.Enabled = false;
-                dgvKhachHang.Enabled = false;
-                btnCustomerThem.Enabled = false;
-            }
+            txbCustomerAddress.Enabled = true;
+            txbCustomerName.Enabled = true;
+            txbCustomerPhone.Enabled = true;
+            btnCustomerGhi.Enabled = true;
+            btnCustomerHuy.Enabled = true;
+            btnCustomerSua.Enabled = true;
+            btnCustomerXoa.Enabled = false;
+            dgvKhachHang.Enabled = false;
+            btnCustomerThem.Enabled = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -144,7 +134,7 @@ namespace GUI
                 MessageBox.Show("Xóa không thành công!");
             }
         }
-        private void btnGhi1_Click(object sender, EventArgs e)
+        private void btnGhi_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Xác nhận ghi", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -156,7 +146,10 @@ namespace GUI
                         {
                             MessageBox.Show("Số điện thoại đã tồn tại");
                         }
-
+                        else if (customer.Phone.Length != 10)
+                        {
+                            MessageBox.Show("Số điện thoại phải đúng đủ 10 số!");
+                        }
                         else
                         {
                             if (CustomerBUS.Instance.insert(customer))
@@ -189,10 +182,6 @@ namespace GUI
             {
                 MessageBox.Show("Ghi không thành công!");
             }
-        }
-        private void btnGhi_Click(object sender, EventArgs e)
-        {
-
 
         }
         private void btnHuy_Click(object sender, EventArgs e)
@@ -204,14 +193,6 @@ namespace GUI
         }
         #endregion
         #region textChangeEvent
-        private void txbCustomerPhone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-        }
         private void txbID_TextChanged(object sender, EventArgs e)
         {
             if (txbCustomerID.Text.Length > 0)
@@ -227,10 +208,7 @@ namespace GUI
 
         private void txbPhone_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txbCustomerPhone.Text, "  ^ [0-9]"))
-            {
-                txbCustomerPhone.Text = null;
-            }
+
             customer.Phone = txbCustomerPhone.Text;
         }
 
@@ -260,7 +238,6 @@ namespace GUI
             btnOrderXoa.Enabled = false;
             btnHoanThanh.Enabled = false;
             btnHuyOrder.Enabled = false;
-            SUM.Text = "0";
             tbSoLuong2.Text = "";
             cboOrderLapTop.Text = "";
             cboOrderKhachHang.Text = "";
@@ -348,7 +325,7 @@ namespace GUI
         }
         private void btnOrderXoa_Click(object sender, EventArgs e)
         {
-            if (dgvOrder.Rows.Count == 1)
+            if (dgvOrder.Rows.Count == 0)
             {
                 MessageBox.Show("Không có thông tin để xóa!");
             }
@@ -366,40 +343,29 @@ namespace GUI
         }
         private void btnHoanThanh_Click(object sender, EventArgs e)
         {
-            if (dgvOrder.Rows.Count == 1)
+            foreach (DataGridViewRow row in dgvOrder.Rows)
             {
-                MessageBox.Show("Vui lòng thêm sản phẩm vào danh sách!");
+                Laptop laptop = new();
+                laptop.ID = Convert.ToInt32(row.Cells["Col1"].Value);
+                laptop.Name = Convert.ToString(row.Cells["Col2"].Value);
+                laptop.QuantityBought = Convert.ToInt32(row.Cells["Col3"].Value);
+                order.Laptop.Add(laptop);
+            }
+            if (OrderBUS.Instance.insert(order) == true)
+            {
+                tab2Loading1();
+                MessageBox.Show("Ghi thành công!");
             }
             else
             {
-                foreach (DataGridViewRow row in dgvOrder.Rows)
-                {
-                    Laptop laptop = new();
-                    laptop.ID = Convert.ToInt32(row.Cells["Col1"].Value);
-                    laptop.Name = Convert.ToString(row.Cells["Col2"].Value);
-                    laptop.QuantityBought = Convert.ToInt32(row.Cells["Col3"].Value);
-                    order.Laptop.Add(laptop);
-                }
-                if (OrderBUS.Instance.insert(order) == true)
-                {
-                    tab2Loading1();
-                    MessageBox.Show("Ghi thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Ghi không thành công!");
-                }
+                MessageBox.Show("Ghi không thành công!");
             }
         }
         private void btnGhiOrder_Click(object sender, EventArgs e)
         {
-            if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != "" && Convert.ToDecimal(tbSoLuong2.Text) == 0)
+            if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != "")
             {
-                if (choosenlaptop.QuantityInStock < choosenlaptop.QuantityBought)
-                {
-                    MessageBox.Show("Số lượng vượt quá số hàng trong kho \n( Số lượng trong kho: " + Convert.ToString(choosenlaptop.QuantityInStock) + " )");
-                }
-                else if (btnCustomerThem.Enabled == true)
+                if (btnCustomerThem.Enabled == true)
                 {
                     dgvOrder.Rows.Add(choosenlaptop.ID, choosenlaptop.Name, choosenlaptop.QuantityBought, choosenlaptop.Price, (decimal)choosenlaptop.Price * (decimal)choosenlaptop.QuantityBought);
                 }
@@ -468,10 +434,6 @@ namespace GUI
         #region textChangeEvent
         private void tbSoLuong2_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(tbSoLuong2.Text, "  ^ [0-9]"))
-            {
-                tbSoLuong2.Text = null;
-            }
             try
             {
                 choosenlaptop.QuantityBought = Convert.ToInt32(tbSoLuong2.Text);
@@ -501,15 +463,11 @@ namespace GUI
                 }
             }
         }
-        private void tbSoLuong2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
         #endregion
         #endregion
+
+
+
 
     }
 }
