@@ -49,7 +49,7 @@ namespace GUI
             txbCustomerPhone.Enabled = false;
             txbCustomerID.Enabled = false;
             btnCustomerThem.Enabled = true;
-            btnCustomerGhi.Enabled = false;
+            btnGhi1.Enabled = false;
             btnCustomerHuy.Enabled = false;
             btnCustomerSua.Enabled = true;
             btnCustomerXoa.Enabled = true;
@@ -89,30 +89,36 @@ namespace GUI
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            txbCustomerAddress.Enabled = true;
-            txbCustomerName.Enabled = true;
-            txbCustomerPhone.Enabled = true;
-            btnCustomerGhi.Enabled = true;
-            btnCustomerHuy.Enabled = true;
-            btnCustomerSua.Enabled = false;
-            btnCustomerXoa.Enabled = false;
-            txbCustomerID.Text = "";
-            txbCustomerAddress.Text = "";
-            txbCustomerName.Text = "";
-            txbCustomerPhone.Text = "";
-            dgvKhachHang.Enabled = false;
+            if (btnCustomerSua.Enabled == true)
+            {
+                txbCustomerAddress.Enabled = true;
+                txbCustomerName.Enabled = true;
+                txbCustomerPhone.Enabled = true;
+                btnGhi1.Enabled = true;
+                btnCustomerHuy.Enabled = true;
+                btnCustomerSua.Enabled = false;
+                btnCustomerXoa.Enabled = false;
+                txbCustomerID.Text = "";
+                txbCustomerAddress.Text = "";
+                txbCustomerName.Text = "";
+                txbCustomerPhone.Text = "";
+                dgvKhachHang.Enabled = false;
+            }
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-            txbCustomerAddress.Enabled = true;
-            txbCustomerName.Enabled = true;
-            txbCustomerPhone.Enabled = true;
-            btnCustomerGhi.Enabled = true;
-            btnCustomerHuy.Enabled = true;
-            btnCustomerSua.Enabled = true;
-            btnCustomerXoa.Enabled = false;
-            dgvKhachHang.Enabled = false;
-            btnCustomerThem.Enabled = false;
+            if (btnCustomerThem.Enabled == true)
+            {
+                txbCustomerAddress.Enabled = true;
+                txbCustomerName.Enabled = true;
+                txbCustomerPhone.Enabled = true;
+                btnGhi1.Enabled = true;
+                btnCustomerHuy.Enabled = true;
+                btnCustomerSua.Enabled = true;
+                btnCustomerXoa.Enabled = false;
+                dgvKhachHang.Enabled = false;
+                btnCustomerThem.Enabled = false;
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -134,7 +140,7 @@ namespace GUI
                 MessageBox.Show("Xóa không thành công!");
             }
         }
-        private void btnGhi_Click(object sender, EventArgs e)
+        private void btnGhi1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Xác nhận ghi", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -146,10 +152,7 @@ namespace GUI
                         {
                             MessageBox.Show("Số điện thoại đã tồn tại");
                         }
-                        else if (customer.Phone.Length != 10)
-                        {
-                            MessageBox.Show("Số điện thoại phải đúng đủ 10 số!");
-                        }
+
                         else
                         {
                             if (CustomerBUS.Instance.insert(customer))
@@ -182,6 +185,10 @@ namespace GUI
             {
                 MessageBox.Show("Ghi không thành công!");
             }
+        }
+        private void btnGhi_Click(object sender, EventArgs e)
+        {
+
 
         }
         private void btnHuy_Click(object sender, EventArgs e)
@@ -199,6 +206,7 @@ namespace GUI
             {
                 e.Handled = true;
             }
+
         }
         private void txbID_TextChanged(object sender, EventArgs e)
         {
@@ -354,27 +362,34 @@ namespace GUI
         }
         private void btnHoanThanh_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgvOrder.Rows)
+            if (dgvOrder.Rows.Count == 1)
             {
-                Laptop laptop = new();
-                laptop.ID = Convert.ToInt32(row.Cells["Col1"].Value);
-                laptop.Name = Convert.ToString(row.Cells["Col2"].Value);
-                laptop.QuantityBought = Convert.ToInt32(row.Cells["Col3"].Value);
-                order.Laptop.Add(laptop);
-            }
-            if (OrderBUS.Instance.insert(order) == true)
-            {
-                tab2Loading1();
-                MessageBox.Show("Ghi thành công!");
+                MessageBox.Show("Vui lòng thêm sản phẩm vào danh sách!");
             }
             else
             {
-                MessageBox.Show("Ghi không thành công!");
+                foreach (DataGridViewRow row in dgvOrder.Rows)
+                {
+                    Laptop laptop = new();
+                    laptop.ID = Convert.ToInt32(row.Cells["Col1"].Value);
+                    laptop.Name = Convert.ToString(row.Cells["Col2"].Value);
+                    laptop.QuantityBought = Convert.ToInt32(row.Cells["Col3"].Value);
+                    order.Laptop.Add(laptop);
+                }
+                if (OrderBUS.Instance.insert(order) == true)
+                {
+                    tab2Loading1();
+                    MessageBox.Show("Ghi thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Ghi không thành công!");
+                }
             }
         }
         private void btnGhiOrder_Click(object sender, EventArgs e)
         {
-            if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != "")
+            if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != ""&&Convert.ToDecimal(tbSoLuong2.Text)==0)
             {
                 if (choosenlaptop.QuantityInStock < choosenlaptop.QuantityBought)
                 {
@@ -497,6 +512,7 @@ namespace GUI
 
 
 
-        
+
+
     }
 }

@@ -65,28 +65,34 @@ namespace GUI
         #region clickEvent
         private void btThem_Click(object sender, EventArgs e)
         {
-            btGhi.Enabled = true;
-            btHuy.Enabled = true;
-            btSua.Enabled = false;
-            tbID.Text = "";
-            btXoa.Enabled = false;
-            tbAddress.Enabled = true;
-            tbPhone.Enabled = true;
-            tbName.Enabled = true;
-            tbAddress.Text = "";
-            tbName.Text = "";
-            tbPhone.Text = "";
+            if (btSua.Enabled == true)
+            {
+                btGhi.Enabled = true;
+                btHuy.Enabled = true;
+                btSua.Enabled = false;
+                tbID.Text = "";
+                btXoa.Enabled = false;
+                tbAddress.Enabled = true;
+                tbPhone.Enabled = true;
+                tbName.Enabled = true;
+                tbAddress.Text = "";
+                tbName.Text = "";
+                tbPhone.Text = "";
+            }
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            btGhi.Enabled = true;
-            btHuy.Enabled = true;
-            btThem.Enabled = false;
-            btXoa.Enabled = false;
-            tbAddress.Enabled = true;
-            tbPhone.Enabled = true;
-            tbName.Enabled = true;
+            if (btThem.Enabled == true)
+            {
+                btGhi.Enabled = true;
+                btHuy.Enabled = true;
+                btThem.Enabled = false;
+                btXoa.Enabled = false;
+                tbAddress.Enabled = true;
+                tbPhone.Enabled = true;
+                tbName.Enabled = true;
+            }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
@@ -138,14 +144,29 @@ namespace GUI
         }
         private void btGhi_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Xác nhận ghi", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (tbID.Text != "" && tbAddress.Text != "" && tbPhone.Text != "" && tbName.Text != "")
             {
-                if (btThem.Enabled == true)
+                if (MessageBox.Show("Xác nhận ghi", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (tbName.Text != "" && tbPhone.Text != "" && tbAddress.Text != "")
+                    if (btThem.Enabled == true)
                     {
+                        if (tbName.Text != "" && tbPhone.Text != "" && tbAddress.Text != "")
+                        {
 
-                        if (ProviderBUS.Instance.insert(provider))
+                            if (ProviderBUS.Instance.insert(provider))
+                            {
+                                tab0loading();
+                                MessageBox.Show("Đã ghi thành công!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ghi không thành công!");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (ProviderBUS.Instance.update(provider))
                         {
                             tab0loading();
                             MessageBox.Show("Đã ghi thành công!");
@@ -158,20 +179,12 @@ namespace GUI
                 }
                 else
                 {
-                    if (ProviderBUS.Instance.update(provider))
-                    {
-                        tab0loading();
-                        MessageBox.Show("Đã ghi thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ghi không thành công!");
-                    }
+                    MessageBox.Show("Xóa không thành công!");
                 }
             }
             else
             {
-                MessageBox.Show("Xóa không thành công!");
+                MessageBox.Show("Vui lòng điền đầy đủ các trường");
             }
         }
         #endregion
@@ -330,25 +343,31 @@ namespace GUI
         }
         private void btnThem2_Click(object sender, EventArgs e)
         {
-            cbLaptop2.Enabled = true;
-            tbSoluong2.Enabled = true;
-            btnGhi2.Enabled = true;
-            btnHuy2.Enabled = true;
-            btnSua2.Enabled = false;
-            btnXoa2.Enabled = false;
-            tbGiaNhap.Enabled = true;
-            cbLaptop2.Text = "";
-            tbSoluong2.Text = "";
+            if (btnSua2.Enabled == true)
+            {
+                cbLaptop2.Enabled = true;
+                tbSoluong2.Enabled = true;
+                btnGhi2.Enabled = true;
+                btnHuy2.Enabled = true;
+                btnSua2.Enabled = false;
+                btnXoa2.Enabled = false;
+                tbGiaNhap.Enabled = true;
+                cbLaptop2.Text = "";
+                tbSoluong2.Text = "";
+            }
         }
         private void btnSua2_Click(object sender, EventArgs e)
         {
-            cbLaptop2.Enabled = true;
-            tbSoluong2.Enabled = true;
-            btnGhi2.Enabled = true;
-            btnHuy2.Enabled = true;
-            btnThem2.Enabled = false;
-            btnXoa2.Enabled = false;
-            tbGiaNhap.Enabled = false;
+            if (btnThem2.Enabled == true)
+            {
+                cbLaptop2.Enabled = true;
+                tbSoluong2.Enabled = true;
+                btnGhi2.Enabled = true;
+                btnHuy2.Enabled = true;
+                btnThem2.Enabled = false;
+                btnXoa2.Enabled = false;
+                tbGiaNhap.Enabled = false;
+            }
 
         }
         private void btnHuyHoaDon_Click(object sender, EventArgs e)
@@ -382,7 +401,7 @@ namespace GUI
         }
         private void btnGhi2_Click(object sender, EventArgs e)
         {
-            if (cbLaptop2.Text != "" && tbSoluong2.Text != "" && tbGiaNhap.Text != "")
+            if (cbLaptop2.Text != "" && tbSoluong2.Text != "" && tbGiaNhap.Text != ""&& Convert.ToDecimal(tbSoluong2.Text) != 0 && Convert.ToDecimal(tbGiaNhap.Text) != 0)
             {
                 if (btnThem2.Enabled)
                 {
@@ -416,22 +435,30 @@ namespace GUI
         }
         private void btnHoanThanh_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            if (dataGridView2.Rows.Count == 1)
             {
-                Laptop laptop = new();
-                laptop.ID = Convert.ToInt32(row.Cells["Col1"].Value);
-                laptop.Name = Convert.ToString(row.Cells["Col2"].Value);
-                laptop.QuantityImport = Convert.ToInt32(row.Cells["Col3"].Value);
-                importInvoice.Laptops.Add(laptop);
-            }
-            if (ImportInvoiceBUS.Instance.insert(importInvoice))
-            {
-                tab2Loading1();
-                MessageBox.Show("Ghi thành công!");
+                MessageBox.Show("Vui lòng thêm sản phẩm vào danh sách!");
             }
             else
             {
-                MessageBox.Show("Ghi không thành công!");
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    Laptop laptop = new();
+                    laptop.ID = Convert.ToInt32(row.Cells["Col1"].Value);
+                    laptop.Name = Convert.ToString(row.Cells["Col2"].Value);
+                    laptop.QuantityImport = Convert.ToInt32(row.Cells["Col3"].Value);
+                    laptop.ImportPrice = Convert.ToInt32(row.Cells["Col4"].Value);
+                    importInvoice.Laptops.Add(laptop);
+                }
+                if (ImportInvoiceBUS.Instance.insert(importInvoice))
+                {
+                    tab2Loading1();
+                    MessageBox.Show("Ghi thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Ghi không thành công!");
+                }
             }
         }
         #endregion
@@ -443,12 +470,8 @@ namespace GUI
             {
                 tbGiaNhap.Text = null;
             }
-            try
-            {
-                if (tbGiaNhap.Text != "")
-                    choosenLaptop.ImportPrice = Convert.ToInt32(tbGiaNhap.Text);
-            }
-            catch { }
+            if (tbGiaNhap.Text != "")
+                choosenLaptop.ImportPrice = Convert.ToInt32(tbGiaNhap.Text);
         }
         private void cbLaptop2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -505,8 +528,8 @@ namespace GUI
         #endregion
 
 
-        
 
-        
+
+
     }
 }

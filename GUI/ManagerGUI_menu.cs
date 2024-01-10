@@ -110,31 +110,37 @@ namespace GUI
         }
         private void btnThem1_Click(object sender, EventArgs e)
         {
-            dataGridView1.Enabled = false;
-            tbHoTen.Enabled = true;
-            cbRole.Enabled = true;
-            btnGhi1.Enabled = true;
-            btnHuy1.Enabled = true;
-            btnSua1.Enabled = false;
-            btnXoa1.Enabled = false;
-            tbID.Text = "";
-            tbHoTen.Text = "";
-            tbTaiKhoan.Text = "********";
-            tbMatKhau.Text = "********";
-            cbRole.Text = "";
+            if (btnSua1.Enabled == true)
+            {
+                dataGridView1.Enabled = false;
+                tbHoTen.Enabled = true;
+                cbRole.Enabled = true;
+                btnGhi1.Enabled = true;
+                btnHuy1.Enabled = true;
+                btnSua1.Enabled = false;
+                btnXoa1.Enabled = false;
+                tbID.Text = "";
+                tbHoTen.Text = "";
+                tbTaiKhoan.Text = "********";
+                tbMatKhau.Text = "********";
+                cbRole.Text = "";
+            }
         }
         private void btnSua1_Click(object sender, EventArgs e)
         {
-            dataGridView1.Enabled = false;
-            tbHoTen.Enabled = true;
-            cbRole.Enabled = true;
-            tbTaiKhoan.Enabled = false;
-            tbMatKhau.Enabled = true;
-            btnGhi1.Enabled = true;
-            btnHuy1.Enabled = true;
-            //btnSua1.Enabled = false;
-            btnXoa1.Enabled = false;
-            btnThem1.Enabled = false;
+            if (btnGhi1.Enabled == true)
+            {
+                dataGridView1.Enabled = false;
+                tbHoTen.Enabled = true;
+                cbRole.Enabled = true;
+                tbTaiKhoan.Enabled = false;
+                tbMatKhau.Enabled = true;
+                btnGhi1.Enabled = true;
+                btnHuy1.Enabled = true;
+                //btnSua1.Enabled = false;
+                btnXoa1.Enabled = false;
+                btnThem1.Enabled = false;
+            }
             
         }
         private void btnXoa1_Click(object sender, EventArgs e)

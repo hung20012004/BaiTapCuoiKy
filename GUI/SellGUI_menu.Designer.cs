@@ -36,6 +36,7 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            btnGhi1 = new Button();
             btnCustomerHuy = new Button();
             txbCustomerAddress = new TextBox();
             txbCustomerPhone = new TextBox();
@@ -45,7 +46,6 @@
             txbCustomerID = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            btnCustomerGhi = new Button();
             btnCustomerXoa = new Button();
             btnCustomerThem = new Button();
             btnCustomerSua = new Button();
@@ -161,6 +161,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnGhi1);
             tabPage2.Controls.Add(btnCustomerHuy);
             tabPage2.Controls.Add(txbCustomerAddress);
             tabPage2.Controls.Add(txbCustomerPhone);
@@ -170,7 +171,6 @@
             tabPage2.Controls.Add(txbCustomerID);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label1);
-            tabPage2.Controls.Add(btnCustomerGhi);
             tabPage2.Controls.Add(btnCustomerXoa);
             tabPage2.Controls.Add(btnCustomerThem);
             tabPage2.Controls.Add(btnCustomerSua);
@@ -182,6 +182,16 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnGhi1
+            // 
+            btnGhi1.Location = new Point(438, 226);
+            btnGhi1.Name = "btnGhi1";
+            btnGhi1.Size = new Size(112, 34);
+            btnGhi1.TabIndex = 14;
+            btnGhi1.Text = "Ghi";
+            btnGhi1.UseVisualStyleBackColor = true;
+            btnGhi1.Click += btnGhi1_Click;
             // 
             // btnCustomerHuy
             // 
@@ -204,6 +214,7 @@
             // txbCustomerPhone
             // 
             txbCustomerPhone.Location = new Point(148, 172);
+            txbCustomerPhone.MaxLength = 10;
             txbCustomerPhone.Name = "txbCustomerPhone";
             txbCustomerPhone.Size = new Size(186, 34);
             txbCustomerPhone.TabIndex = 11;
@@ -261,17 +272,6 @@
             label1.Size = new Size(31, 28);
             label1.TabIndex = 5;
             label1.Text = "ID";
-            // 
-            // btnCustomerGhi
-            // 
-            btnCustomerGhi.DialogResult = DialogResult.Abort;
-            btnCustomerGhi.Location = new Point(438, 222);
-            btnCustomerGhi.Name = "btnCustomerGhi";
-            btnCustomerGhi.Size = new Size(112, 34);
-            btnCustomerGhi.TabIndex = 4;
-            btnCustomerGhi.Text = "Ghi";
-            btnCustomerGhi.UseVisualStyleBackColor = true;
-            btnCustomerGhi.Click += btnGhi_Click;
             // 
             // btnCustomerXoa
             // 
@@ -367,9 +367,9 @@
             tabPage3.Controls.Add(label5);
             tabPage3.Controls.Add(dgvOrder);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 37);
+            tabPage3.Location = new Point(4, 34);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 905);
+            tabPage3.Size = new Size(1145, 908);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -630,7 +630,6 @@
         private TabControl tabControl1;
         private TabPage tabPage2;
         private TabPage tabPage1;
-        private Button btnCustomerGhi;
         private Button btnCustomerXoa;
         private Button btnCustomerThem;
         private Button btnCustomerSua;
@@ -676,5 +675,6 @@
         private Label SUM;
         private Button btnHuy2;
         private TextBox tbSoLuong2;
+        private Button btnGhi1;
     }
 }

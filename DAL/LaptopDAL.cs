@@ -177,6 +177,7 @@ namespace DAL
             conn.Close();
             
         }
+       
         public Manufactory getManufactory(Manufactory manufactory)
         {
             using (var cmd = new SqlCommand("GetManufactoryData", conn))
