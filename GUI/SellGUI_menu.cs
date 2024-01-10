@@ -30,6 +30,7 @@ namespace GUI
         private void SellGUI_menu_Load(object sender, EventArgs e)
         {
             tab1loading();
+           // tab2Loading1();
         }
         #region tab0
         private void button1_Click(object sender, EventArgs e)

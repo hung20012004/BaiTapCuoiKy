@@ -52,55 +52,30 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             tabPage1 = new TabPage();
+            cbbLapTopName = new ComboBox();
+            btnLaptopDetail = new Button();
             btHuy1 = new Button();
             cbbManufactory_ID = new ComboBox();
             cbbCategory_ID = new ComboBox();
             tbQuantity = new TextBox();
             tbPrice = new TextBox();
-            tbWP = new TextBox();
-            tbOS = new TextBox();
-            tbSize = new TextBox();
-            tbAudio = new TextBox();
-            tbKeyboard = new TextBox();
-            tbSecurity = new TextBox();
-            tbNAC = new TextBox();
-            tbPorts = new TextBox();
-            tbMaterials = new TextBox();
-            tbWeight = new TextBox();
-            tbBattery = new TextBox();
-            tbDisplay = new TextBox();
-            tbRAM = new TextBox();
-            tbCPU = new TextBox();
-            tbLaptop_Name = new TextBox();
             label33 = new Label();
             label32 = new Label();
             label31 = new Label();
-            label30 = new Label();
-            label29 = new Label();
-            label28 = new Label();
-            label27 = new Label();
-            label26 = new Label();
-            label25 = new Label();
-            label24 = new Label();
-            label23 = new Label();
-            label22 = new Label();
-            label21 = new Label();
-            label20 = new Label();
-            label19 = new Label();
-            label18 = new Label();
             label17 = new Label();
-            label16 = new Label();
             label15 = new Label();
-            label14 = new Label();
             label6 = new Label();
-            label5 = new Label();
             btThem1 = new Button();
             tbLaptop_ID = new TextBox();
-            tbHD = new TextBox();
-            tbVGA = new TextBox();
             btSua1 = new Button();
             btGhi1 = new Button();
             dataGridView3 = new DataGridView();
+            Colum5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
+            Column10 = new DataGridViewTextBoxColumn();
             btXoa1 = new Button();
             label9 = new Label();
             label8 = new Label();
@@ -129,6 +104,40 @@
             Col5 = new DataGridViewTextBoxColumn();
             label4 = new Label();
             label3 = new Label();
+            tabPage4 = new TabPage();
+            groupBox2 = new GroupBox();
+            textBox15 = new TextBox();
+            textBox16 = new TextBox();
+            label50 = new Label();
+            label51 = new Label();
+            textBox13 = new TextBox();
+            textBox14 = new TextBox();
+            label48 = new Label();
+            label49 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            textBox7 = new TextBox();
+            textBox8 = new TextBox();
+            textBox9 = new TextBox();
+            textBox10 = new TextBox();
+            label36 = new Label();
+            label37 = new Label();
+            label38 = new Label();
+            label39 = new Label();
+            label40 = new Label();
+            label41 = new Label();
+            label42 = new Label();
+            label43 = new Label();
+            label44 = new Label();
+            label45 = new Label();
+            label46 = new Label();
+            label47 = new Label();
+            textBox11 = new TextBox();
+            textBox12 = new TextBox();
             pictureBox1 = new PictureBox();
             button3 = new Button();
             btSanPham = new Button();
@@ -142,6 +151,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            tabPage4.SuspendLayout();
+            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -151,7 +162,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(50, 110);
             label2.Name = "label2";
-            label2.Size = new Size(128, 28);
+            label2.Size = new Size(111, 23);
             label2.TabIndex = 6;
             label2.Text = "Số điện thoại";
             // 
@@ -160,7 +171,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(50, 60);
             label1.Name = "label1";
-            label1.Size = new Size(71, 28);
+            label1.Size = new Size(62, 23);
             label1.TabIndex = 5;
             label1.Text = "Địa chỉ";
             // 
@@ -169,7 +180,7 @@
             cbLaptop2.FormattingEnabled = true;
             cbLaptop2.Location = new Point(197, 120);
             cbLaptop2.Name = "cbLaptop2";
-            cbLaptop2.Size = new Size(283, 36);
+            cbLaptop2.Size = new Size(283, 31);
             cbLaptop2.TabIndex = 12;
             cbLaptop2.SelectedIndexChanged += cbLaptop2_SelectedIndexChanged;
             // 
@@ -178,7 +189,7 @@
             cbNhaCungCap.FormattingEnabled = true;
             cbNhaCungCap.Location = new Point(197, 33);
             cbNhaCungCap.Name = "cbNhaCungCap";
-            cbNhaCungCap.Size = new Size(182, 36);
+            cbNhaCungCap.Size = new Size(182, 31);
             cbNhaCungCap.TabIndex = 11;
             cbNhaCungCap.SelectedIndexChanged += cbNhaCungCap_SelectedIndexChanged;
             // 
@@ -187,6 +198,7 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
             tabControl1.Location = new Point(324, 1);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -210,10 +222,10 @@
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Location = new Point(4, 37);
+            tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 902);
+            tabPage2.Size = new Size(1145, 907);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -233,7 +245,7 @@
             tbPhone.Location = new Point(202, 104);
             tbPhone.MaxLength = 10;
             tbPhone.Name = "tbPhone";
-            tbPhone.Size = new Size(150, 34);
+            tbPhone.Size = new Size(150, 30);
             tbPhone.TabIndex = 22;
             tbPhone.TextChanged += tbPhone_TextChanged;
             tbPhone.KeyPress += tbPhone_KeyPress;
@@ -242,7 +254,7 @@
             // 
             tbAddress.Location = new Point(202, 54);
             tbAddress.Name = "tbAddress";
-            tbAddress.Size = new Size(150, 34);
+            tbAddress.Size = new Size(150, 30);
             tbAddress.TabIndex = 21;
             tbAddress.TextChanged += tbAddress_TextChanged;
             // 
@@ -280,7 +292,7 @@
             // 
             tbID.Location = new Point(202, 10);
             tbID.Name = "tbID";
-            tbID.Size = new Size(150, 34);
+            tbID.Size = new Size(150, 30);
             tbID.TabIndex = 15;
             tbID.TextChanged += tbID_TextChanged;
             // 
@@ -289,7 +301,7 @@
             label11.AutoSize = true;
             label11.Location = new Point(34, 163);
             label11.Name = "label11";
-            label11.Size = new Size(162, 28);
+            label11.Size = new Size(145, 23);
             label11.TabIndex = 14;
             label11.Text = "Tên nhà cung cấp";
             // 
@@ -297,7 +309,7 @@
             // 
             tbName.Location = new Point(202, 157);
             tbName.Name = "tbName";
-            tbName.Size = new Size(150, 34);
+            tbName.Size = new Size(150, 30);
             tbName.TabIndex = 13;
             tbName.TextChanged += tbName_TextChanged;
             // 
@@ -306,7 +318,7 @@
             label10.AutoSize = true;
             label10.Location = new Point(52, 19);
             label10.Name = "label10";
-            label10.Size = new Size(31, 28);
+            label10.Size = new Size(27, 23);
             label10.TabIndex = 12;
             label10.Text = "ID";
             // 
@@ -372,52 +384,21 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(cbbLapTopName);
+            tabPage1.Controls.Add(btnLaptopDetail);
             tabPage1.Controls.Add(btHuy1);
             tabPage1.Controls.Add(cbbManufactory_ID);
             tabPage1.Controls.Add(cbbCategory_ID);
             tabPage1.Controls.Add(tbQuantity);
             tabPage1.Controls.Add(tbPrice);
-            tabPage1.Controls.Add(tbWP);
-            tabPage1.Controls.Add(tbOS);
-            tabPage1.Controls.Add(tbSize);
-            tabPage1.Controls.Add(tbAudio);
-            tabPage1.Controls.Add(tbKeyboard);
-            tabPage1.Controls.Add(tbSecurity);
-            tabPage1.Controls.Add(tbNAC);
-            tabPage1.Controls.Add(tbPorts);
-            tabPage1.Controls.Add(tbMaterials);
-            tabPage1.Controls.Add(tbWeight);
-            tabPage1.Controls.Add(tbBattery);
-            tabPage1.Controls.Add(tbDisplay);
-            tabPage1.Controls.Add(tbRAM);
-            tabPage1.Controls.Add(tbCPU);
-            tabPage1.Controls.Add(tbLaptop_Name);
             tabPage1.Controls.Add(label33);
             tabPage1.Controls.Add(label32);
             tabPage1.Controls.Add(label31);
-            tabPage1.Controls.Add(label30);
-            tabPage1.Controls.Add(label29);
-            tabPage1.Controls.Add(label28);
-            tabPage1.Controls.Add(label27);
-            tabPage1.Controls.Add(label26);
-            tabPage1.Controls.Add(label25);
-            tabPage1.Controls.Add(label24);
-            tabPage1.Controls.Add(label23);
-            tabPage1.Controls.Add(label22);
-            tabPage1.Controls.Add(label21);
-            tabPage1.Controls.Add(label20);
-            tabPage1.Controls.Add(label19);
-            tabPage1.Controls.Add(label18);
             tabPage1.Controls.Add(label17);
-            tabPage1.Controls.Add(label16);
             tabPage1.Controls.Add(label15);
-            tabPage1.Controls.Add(label14);
             tabPage1.Controls.Add(label6);
-            tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(btThem1);
             tabPage1.Controls.Add(tbLaptop_ID);
-            tabPage1.Controls.Add(tbHD);
-            tabPage1.Controls.Add(tbVGA);
             tabPage1.Controls.Add(btSua1);
             tabPage1.Controls.Add(btGhi1);
             tabPage1.Controls.Add(dataGridView3);
@@ -425,16 +406,34 @@
             tabPage1.Controls.Add(label9);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
-            tabPage1.Location = new Point(4, 34);
+            tabPage1.Location = new Point(4, 32);
             tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1145, 905);
+            tabPage1.Size = new Size(1145, 907);
             tabPage1.TabIndex = 4;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cbbLapTopName
+            // 
+            cbbLapTopName.FormattingEnabled = true;
+            cbbLapTopName.Location = new Point(159, 80);
+            cbbLapTopName.Name = "cbbLapTopName";
+            cbbLapTopName.Size = new Size(151, 31);
+            cbbLapTopName.TabIndex = 57;
+            cbbLapTopName.SelectedIndexChanged += cbbLapTopName_SelectedIndexChanged;
+            // 
+            // btnLaptopDetail
+            // 
+            btnLaptopDetail.Location = new Point(863, 33);
+            btnLaptopDetail.Name = "btnLaptopDetail";
+            btnLaptopDetail.Size = new Size(94, 29);
+            btnLaptopDetail.TabIndex = 56;
+            btnLaptopDetail.Text = "Chi tiet";
+            btnLaptopDetail.UseVisualStyleBackColor = true;
+            // 
             // btHuy1
             // 
-            btHuy1.Location = new Point(924, 206);
+            btHuy1.Location = new Point(538, 168);
             btHuy1.Name = "btHuy1";
             btHuy1.Size = new Size(112, 34);
             btHuy1.TabIndex = 55;
@@ -445,154 +444,53 @@
             // 
             cbbManufactory_ID.FormattingEnabled = true;
             cbbManufactory_ID.Items.AddRange(new object[] { "Asus", "Dell", "Lenovo", "HP", "MSI", "Acer", "MacBook", "LG Gram", "Surface", "Gigabyte", "Samsung", "Huawei" });
-            cbbManufactory_ID.Location = new Point(100, 146);
+            cbbManufactory_ID.Location = new Point(160, 165);
             cbbManufactory_ID.Name = "cbbManufactory_ID";
-            cbbManufactory_ID.Size = new Size(150, 36);
+            cbbManufactory_ID.Size = new Size(150, 31);
             cbbManufactory_ID.TabIndex = 54;
+            cbbManufactory_ID.SelectedIndexChanged += cbbManufactory_ID_SelectedIndexChanged;
             // 
             // cbbCategory_ID
             // 
             cbbCategory_ID.FormattingEnabled = true;
             cbbCategory_ID.Items.AddRange(new object[] { "Văn phòng", "Gaming", "Đồ họa", "Mỏng nhẹ" });
-            cbbCategory_ID.Location = new Point(100, 110);
+            cbbCategory_ID.Location = new Point(160, 128);
             cbbCategory_ID.Name = "cbbCategory_ID";
-            cbbCategory_ID.Size = new Size(149, 36);
+            cbbCategory_ID.Size = new Size(149, 31);
             cbbCategory_ID.TabIndex = 53;
+            cbbCategory_ID.SelectedIndexChanged += cbbCategory_ID_SelectedIndexChanged;
             // 
             // tbQuantity
             // 
-            tbQuantity.Location = new Point(840, 150);
+            tbQuantity.Location = new Point(485, 94);
             tbQuantity.Name = "tbQuantity";
-            tbQuantity.Size = new Size(150, 34);
+            tbQuantity.Size = new Size(150, 30);
             tbQuantity.TabIndex = 52;
+            tbQuantity.TextChanged += tbQuantity_TextChanged;
             // 
             // tbPrice
             // 
-            tbPrice.Location = new Point(840, 105);
+            tbPrice.Location = new Point(485, 30);
             tbPrice.Name = "tbPrice";
-            tbPrice.Size = new Size(150, 34);
+            tbPrice.Size = new Size(150, 30);
             tbPrice.TabIndex = 51;
-            // 
-            // tbWP
-            // 
-            tbWP.Location = new Point(840, 67);
-            tbWP.Name = "tbWP";
-            tbWP.Size = new Size(150, 34);
-            tbWP.TabIndex = 50;
-            // 
-            // tbOS
-            // 
-            tbOS.Location = new Point(840, 21);
-            tbOS.Name = "tbOS";
-            tbOS.Size = new Size(150, 34);
-            tbOS.TabIndex = 49;
-            // 
-            // tbSize
-            // 
-            tbSize.Location = new Point(610, 221);
-            tbSize.Name = "tbSize";
-            tbSize.Size = new Size(150, 34);
-            tbSize.TabIndex = 48;
-            // 
-            // tbAudio
-            // 
-            tbAudio.Location = new Point(610, 187);
-            tbAudio.Name = "tbAudio";
-            tbAudio.Size = new Size(150, 34);
-            tbAudio.TabIndex = 47;
-            // 
-            // tbKeyboard
-            // 
-            tbKeyboard.Location = new Point(604, 152);
-            tbKeyboard.Name = "tbKeyboard";
-            tbKeyboard.Size = new Size(150, 34);
-            tbKeyboard.TabIndex = 46;
-            // 
-            // tbSecurity
-            // 
-            tbSecurity.Location = new Point(604, 110);
-            tbSecurity.Name = "tbSecurity";
-            tbSecurity.Size = new Size(150, 34);
-            tbSecurity.TabIndex = 45;
-            // 
-            // tbNAC
-            // 
-            tbNAC.Location = new Point(604, 69);
-            tbNAC.Name = "tbNAC";
-            tbNAC.Size = new Size(150, 34);
-            tbNAC.TabIndex = 44;
-            // 
-            // tbPorts
-            // 
-            tbPorts.Location = new Point(604, 30);
-            tbPorts.Name = "tbPorts";
-            tbPorts.Size = new Size(150, 34);
-            tbPorts.TabIndex = 43;
-            // 
-            // tbMaterials
-            // 
-            tbMaterials.Location = new Point(350, 221);
-            tbMaterials.Name = "tbMaterials";
-            tbMaterials.Size = new Size(150, 34);
-            tbMaterials.TabIndex = 42;
-            // 
-            // tbWeight
-            // 
-            tbWeight.Location = new Point(350, 190);
-            tbWeight.Name = "tbWeight";
-            tbWeight.Size = new Size(150, 34);
-            tbWeight.TabIndex = 41;
-            // 
-            // tbBattery
-            // 
-            tbBattery.Location = new Point(350, 144);
-            tbBattery.Name = "tbBattery";
-            tbBattery.Size = new Size(150, 34);
-            tbBattery.TabIndex = 40;
-            // 
-            // tbDisplay
-            // 
-            tbDisplay.Location = new Point(350, 104);
-            tbDisplay.Name = "tbDisplay";
-            tbDisplay.Size = new Size(150, 34);
-            tbDisplay.TabIndex = 39;
-            // 
-            // tbRAM
-            // 
-            tbRAM.Location = new Point(100, 221);
-            tbRAM.Name = "tbRAM";
-            tbRAM.Size = new Size(150, 34);
-            tbRAM.TabIndex = 38;
-            // 
-            // tbCPU
-            // 
-            tbCPU.Location = new Point(100, 190);
-            tbCPU.Name = "tbCPU";
-            tbCPU.Size = new Size(150, 34);
-            tbCPU.TabIndex = 37;
-            // 
-            // tbLaptop_Name
-            // 
-            tbLaptop_Name.Location = new Point(99, 72);
-            tbLaptop_Name.Name = "tbLaptop_Name";
-            tbLaptop_Name.Size = new Size(150, 34);
-            tbLaptop_Name.TabIndex = 35;
+            tbPrice.TextChanged += tbPrice_TextChanged;
             // 
             // label33
             // 
             label33.AutoSize = true;
-            label33.Location = new Point(781, 105);
+            label33.Location = new Point(377, 37);
             label33.Name = "label33";
-            label33.Size = new Size(41, 28);
+            label33.Size = new Size(35, 23);
             label33.TabIndex = 33;
             label33.Text = "Giá";
             // 
             // label32
             // 
             label32.AutoSize = true;
-            label32.Location = new Point(781, 150);
+            label32.Location = new Point(377, 97);
             label32.Name = "label32";
-            label32.Size = new Size(92, 28);
+            label32.Size = new Size(78, 23);
             label32.TabIndex = 32;
             label32.Text = "Số lượng";
             // 
@@ -603,123 +501,6 @@
             label31.Size = new Size(100, 23);
             label31.TabIndex = 0;
             // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Location = new Point(255, 110);
-            label30.Name = "label30";
-            label30.Size = new Size(94, 28);
-            label30.TabIndex = 30;
-            label30.Text = "Màn hình";
-            // 
-            // label29
-            // 
-            label29.AutoSize = true;
-            label29.Location = new Point(255, 150);
-            label29.Name = "label29";
-            label29.Size = new Size(39, 28);
-            label29.TabIndex = 29;
-            label29.Text = "Pin";
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Location = new Point(255, 190);
-            label28.Name = "label28";
-            label28.Size = new Size(119, 28);
-            label28.TabIndex = 28;
-            label28.Text = "Trọng lượng";
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(510, 30);
-            label27.Name = "label27";
-            label27.Size = new Size(124, 28);
-            label27.TabIndex = 27;
-            label27.Text = "Cổng kết nối";
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(510, 100);
-            label26.Name = "label26";
-            label26.Size = new Size(84, 28);
-            label26.TabIndex = 26;
-            label26.Text = "Bảo mật";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Location = new Point(510, 150);
-            label25.Name = "label25";
-            label25.Size = new Size(94, 28);
-            label25.TabIndex = 25;
-            label25.Text = "Bàn phím";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Location = new Point(510, 64);
-            label24.Name = "label24";
-            label24.Size = new Size(52, 28);
-            label24.TabIndex = 24;
-            label24.Text = "NAC";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(510, 190);
-            label23.Name = "label23";
-            label23.Size = new Size(97, 28);
-            label23.TabIndex = 23;
-            label23.Text = "Âm thanh";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(5, 221);
-            label22.Name = "label22";
-            label22.Size = new Size(55, 28);
-            label22.TabIndex = 22;
-            label22.Text = "RAM";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(255, 221);
-            label21.Name = "label21";
-            label21.Size = new Size(88, 28);
-            label21.TabIndex = 21;
-            label21.Text = "Chất liệu";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(510, 221);
-            label20.Name = "label20";
-            label20.Size = new Size(75, 28);
-            label20.TabIndex = 20;
-            label20.Text = "Kích cỡ";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(781, 24);
-            label19.Name = "label19";
-            label19.Size = new Size(127, 28);
-            label19.TabIndex = 19;
-            label19.Text = "Hệ điều hành";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(781, 67);
-            label18.Name = "label18";
-            label18.Size = new Size(93, 28);
-            label18.TabIndex = 18;
-            label18.Text = "Bảo hành";
-            // 
             // label17
             // 
             label17.Location = new Point(0, 0);
@@ -727,32 +508,14 @@
             label17.Size = new Size(100, 23);
             label17.TabIndex = 31;
             // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(255, 70);
-            label16.Name = "label16";
-            label16.Size = new Size(51, 28);
-            label16.TabIndex = 16;
-            label16.Text = "VGA";
-            // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(5, 150);
+            label15.Location = new Point(41, 168);
             label15.Name = "label15";
-            label15.Size = new Size(59, 28);
+            label15.Size = new Size(51, 23);
             label15.TabIndex = 15;
             label15.Text = "Hãng";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(255, 30);
-            label14.Name = "label14";
-            label14.Size = new Size(76, 28);
-            label14.TabIndex = 13;
-            label14.Text = "Ổ cứng";
             // 
             // label6
             // 
@@ -761,48 +524,27 @@
             label6.Size = new Size(100, 23);
             label6.TabIndex = 14;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(5, 190);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 28);
-            label5.TabIndex = 11;
-            label5.Text = "CPU";
-            // 
             // btThem1
             // 
-            btThem1.Location = new Point(1026, 14);
+            btThem1.Location = new Point(686, 30);
             btThem1.Name = "btThem1";
             btThem1.Size = new Size(112, 34);
             btThem1.TabIndex = 10;
             btThem1.Text = "Thêm";
             btThem1.UseVisualStyleBackColor = true;
+            btThem1.Click += btThem1_Click;
             // 
             // tbLaptop_ID
             // 
-            tbLaptop_ID.Location = new Point(100, 30);
+            tbLaptop_ID.Location = new Point(160, 30);
             tbLaptop_ID.Name = "tbLaptop_ID";
-            tbLaptop_ID.Size = new Size(150, 34);
+            tbLaptop_ID.Size = new Size(150, 30);
             tbLaptop_ID.TabIndex = 9;
-            // 
-            // tbHD
-            // 
-            tbHD.Location = new Point(350, 30);
-            tbHD.Name = "tbHD";
-            tbHD.Size = new Size(150, 34);
-            tbHD.TabIndex = 8;
-            // 
-            // tbVGA
-            // 
-            tbVGA.Location = new Point(350, 64);
-            tbVGA.Name = "tbVGA";
-            tbVGA.Size = new Size(150, 34);
-            tbVGA.TabIndex = 7;
+            tbLaptop_ID.TextChanged += tbLaptop_ID_TextChanged;
             // 
             // btSua1
             // 
-            btSua1.Location = new Point(1033, 72);
+            btSua1.Location = new Point(686, 94);
             btSua1.Name = "btSua1";
             btSua1.Size = new Size(112, 34);
             btSua1.TabIndex = 6;
@@ -811,26 +553,70 @@
             // 
             // btGhi1
             // 
-            btGhi1.Location = new Point(781, 206);
+            btGhi1.Location = new Point(377, 165);
             btGhi1.Name = "btGhi1";
             btGhi1.Size = new Size(112, 34);
             btGhi1.TabIndex = 5;
             btGhi1.Text = "Ghi";
             btGhi1.UseVisualStyleBackColor = true;
+            btGhi1.Click += btGhi1_Click;
             // 
             // dataGridView3
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(5, 290);
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { Colum5, Column6, Column7, Column8, Column9, Column10 });
+            dataGridView3.Location = new Point(5, 273);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 62;
             dataGridView3.RowTemplate.Height = 33;
             dataGridView3.Size = new Size(1140, 604);
             dataGridView3.TabIndex = 4;
             // 
+            // Colum5
+            // 
+            Colum5.HeaderText = "ID";
+            Colum5.MinimumWidth = 6;
+            Colum5.Name = "Colum5";
+            Colum5.Width = 125;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Tên Laptop";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Loại";
+            Column7.MinimumWidth = 6;
+            Column7.Name = "Column7";
+            Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            Column8.HeaderText = "Hãng";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            Column8.Width = 125;
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Giá";
+            Column9.MinimumWidth = 6;
+            Column9.Name = "Column9";
+            Column9.Width = 125;
+            // 
+            // Column10
+            // 
+            Column10.HeaderText = "Số lượng";
+            Column10.MinimumWidth = 6;
+            Column10.Name = "Column10";
+            Column10.Width = 125;
+            // 
             // btXoa1
             // 
-            btXoa1.Location = new Point(1026, 140);
+            btXoa1.Location = new Point(686, 165);
             btXoa1.Name = "btXoa1";
             btXoa1.Size = new Size(112, 34);
             btXoa1.TabIndex = 3;
@@ -840,9 +626,9 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(5, 110);
+            label9.Location = new Point(41, 131);
             label9.Name = "label9";
-            label9.Size = new Size(48, 28);
+            label9.Size = new Size(41, 23);
             label9.TabIndex = 2;
             label9.Text = "Loại";
             // 
@@ -851,7 +637,7 @@
             label8.AutoSize = true;
             label8.Location = new Point(5, 70);
             label8.Name = "label8";
-            label8.Size = new Size(130, 28);
+            label8.Size = new Size(116, 23);
             label8.TabIndex = 1;
             label8.Text = "Tên sản phẩm";
             // 
@@ -860,7 +646,7 @@
             label7.AutoSize = true;
             label7.Location = new Point(5, 30);
             label7.Name = "label7";
-            label7.Size = new Size(31, 28);
+            label7.Size = new Size(27, 23);
             label7.TabIndex = 0;
             label7.Text = "ID";
             // 
@@ -886,9 +672,9 @@
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Controls.Add(label4);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 37);
+            tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 902);
+            tabPage3.Size = new Size(1145, 910);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -897,7 +683,7 @@
             // 
             tbGiaNhap.Location = new Point(221, 250);
             tbGiaNhap.Name = "tbGiaNhap";
-            tbGiaNhap.Size = new Size(171, 34);
+            tbGiaNhap.Size = new Size(171, 30);
             tbGiaNhap.TabIndex = 31;
             tbGiaNhap.TextChanged += tbGiaNhap_TextChanged;
             tbGiaNhap.KeyPress += tbGiaNhap_KeyPress;
@@ -907,7 +693,7 @@
             label35.AutoSize = true;
             label35.Location = new Point(115, 243);
             label35.Name = "label35";
-            label35.Size = new Size(90, 28);
+            label35.Size = new Size(79, 23);
             label35.TabIndex = 30;
             label35.Text = "Giá nhập";
             // 
@@ -916,7 +702,7 @@
             label34.AutoSize = true;
             label34.Location = new Point(112, 203);
             label34.Name = "label34";
-            label34.Size = new Size(92, 28);
+            label34.Size = new Size(78, 23);
             label34.TabIndex = 29;
             label34.Text = "Số lượng";
             // 
@@ -925,7 +711,7 @@
             label12.AutoSize = true;
             label12.Location = new Point(271, 827);
             label12.Name = "label12";
-            label12.Size = new Size(53, 28);
+            label12.Size = new Size(46, 23);
             label12.TabIndex = 28;
             label12.Text = "VND";
             // 
@@ -943,7 +729,7 @@
             // 
             tbSoluong2.Location = new Point(197, 191);
             tbSoluong2.Name = "tbSoluong2";
-            tbSoluong2.Size = new Size(150, 34);
+            tbSoluong2.Size = new Size(150, 30);
             tbSoluong2.TabIndex = 26;
             tbSoluong2.TextChanged += tbSoluong2_TextChanged;
             tbSoluong2.KeyPress += tbSoluong2_KeyPress;
@@ -1023,7 +809,7 @@
             SUM.AutoSize = true;
             SUM.Location = new Point(185, 824);
             SUM.Name = "SUM";
-            SUM.Size = new Size(67, 28);
+            SUM.Size = new Size(55, 23);
             SUM.TabIndex = 18;
             SUM.Text = "20000";
             // 
@@ -1032,7 +818,7 @@
             label13.AutoSize = true;
             label13.Location = new Point(30, 824);
             label13.Name = "label13";
-            label13.Size = new Size(106, 28);
+            label13.Size = new Size(92, 23);
             label13.TabIndex = 17;
             label13.Text = "Tổng cộng";
             // 
@@ -1088,7 +874,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(112, 120);
             label4.Name = "label4";
-            label4.Size = new Size(32, 28);
+            label4.Size = new Size(27, 23);
             label4.TabIndex = 1;
             label4.Text = "sp";
             // 
@@ -1097,9 +883,317 @@
             label3.AutoSize = true;
             label3.Location = new Point(37, 36);
             label3.Name = "label3";
-            label3.Size = new Size(132, 28);
+            label3.Size = new Size(117, 23);
             label3.TabIndex = 0;
             label3.Text = "Nhà cung cấp";
+            // 
+            // tabPage4
+            // 
+            tabPage4.Controls.Add(groupBox2);
+            tabPage4.Location = new Point(4, 32);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(1145, 907);
+            tabPage4.TabIndex = 5;
+            tabPage4.Text = "tabPage4";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(textBox15);
+            groupBox2.Controls.Add(textBox16);
+            groupBox2.Controls.Add(label50);
+            groupBox2.Controls.Add(label51);
+            groupBox2.Controls.Add(textBox13);
+            groupBox2.Controls.Add(textBox14);
+            groupBox2.Controls.Add(label48);
+            groupBox2.Controls.Add(label49);
+            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(textBox4);
+            groupBox2.Controls.Add(textBox5);
+            groupBox2.Controls.Add(textBox6);
+            groupBox2.Controls.Add(textBox7);
+            groupBox2.Controls.Add(textBox8);
+            groupBox2.Controls.Add(textBox9);
+            groupBox2.Controls.Add(textBox10);
+            groupBox2.Controls.Add(label36);
+            groupBox2.Controls.Add(label37);
+            groupBox2.Controls.Add(label38);
+            groupBox2.Controls.Add(label39);
+            groupBox2.Controls.Add(label40);
+            groupBox2.Controls.Add(label41);
+            groupBox2.Controls.Add(label42);
+            groupBox2.Controls.Add(label43);
+            groupBox2.Controls.Add(label44);
+            groupBox2.Controls.Add(label45);
+            groupBox2.Controls.Add(label46);
+            groupBox2.Controls.Add(label47);
+            groupBox2.Controls.Add(textBox11);
+            groupBox2.Controls.Add(textBox12);
+            groupBox2.Location = new Point(88, 44);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(1074, 555);
+            groupBox2.TabIndex = 0;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "groupBox2";
+            // 
+            // textBox15
+            // 
+            textBox15.Location = new Point(135, 219);
+            textBox15.Name = "textBox15";
+            textBox15.Size = new Size(150, 30);
+            textBox15.TabIndex = 80;
+            // 
+            // textBox16
+            // 
+            textBox16.Location = new Point(135, 174);
+            textBox16.Name = "textBox16";
+            textBox16.Size = new Size(150, 30);
+            textBox16.TabIndex = 79;
+            // 
+            // label50
+            // 
+            label50.AutoSize = true;
+            label50.Location = new Point(17, 174);
+            label50.Name = "label50";
+            label50.Size = new Size(113, 23);
+            label50.TabIndex = 78;
+            label50.Text = "Hệ điều hành";
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Location = new Point(29, 222);
+            label51.Name = "label51";
+            label51.Size = new Size(83, 23);
+            label51.TabIndex = 77;
+            label51.Text = "Bảo hành";
+            // 
+            // textBox13
+            // 
+            textBox13.Location = new Point(135, 109);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(150, 30);
+            textBox13.TabIndex = 76;
+            // 
+            // textBox14
+            // 
+            textBox14.Location = new Point(135, 53);
+            textBox14.Name = "textBox14";
+            textBox14.Size = new Size(150, 30);
+            textBox14.TabIndex = 75;
+            // 
+            // label48
+            // 
+            label48.AutoSize = true;
+            label48.Location = new Point(47, 112);
+            label48.Name = "label48";
+            label48.Size = new Size(46, 23);
+            label48.TabIndex = 74;
+            label48.Text = "RAM";
+            // 
+            // label49
+            // 
+            label49.AutoSize = true;
+            label49.Location = new Point(50, 56);
+            label49.Name = "label49";
+            label49.Size = new Size(43, 23);
+            label49.TabIndex = 73;
+            label49.Text = "CPU";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(540, 328);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 30);
+            textBox1.TabIndex = 72;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(540, 280);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(150, 30);
+            textBox2.TabIndex = 71;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(540, 226);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(150, 30);
+            textBox3.TabIndex = 70;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(540, 174);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(150, 30);
+            textBox4.TabIndex = 69;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(540, 126);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(150, 30);
+            textBox5.TabIndex = 68;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(540, 69);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(150, 30);
+            textBox6.TabIndex = 67;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(135, 417);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(150, 30);
+            textBox7.TabIndex = 66;
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(135, 365);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(150, 30);
+            textBox8.TabIndex = 65;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(135, 453);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(150, 30);
+            textBox9.TabIndex = 64;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(135, 505);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(150, 30);
+            textBox10.TabIndex = 63;
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Location = new Point(17, 365);
+            label36.Name = "label36";
+            label36.Size = new Size(83, 23);
+            label36.TabIndex = 62;
+            label36.Text = "Màn hình";
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Location = new Point(29, 505);
+            label37.Name = "label37";
+            label37.Size = new Size(34, 23);
+            label37.TabIndex = 61;
+            label37.Text = "Pin";
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Location = new Point(17, 408);
+            label38.Name = "label38";
+            label38.Size = new Size(103, 23);
+            label38.TabIndex = 60;
+            label38.Text = "Trọng lượng";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(353, 56);
+            label39.Name = "label39";
+            label39.Size = new Size(108, 23);
+            label39.TabIndex = 59;
+            label39.Text = "Cổng kết nối";
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Location = new Point(362, 174);
+            label40.Name = "label40";
+            label40.Size = new Size(74, 23);
+            label40.TabIndex = 58;
+            label40.Text = "Bảo mật";
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Location = new Point(353, 226);
+            label41.Name = "label41";
+            label41.Size = new Size(83, 23);
+            label41.TabIndex = 57;
+            label41.Text = "Bàn phím";
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Location = new Point(362, 98);
+            label42.Name = "label42";
+            label42.Size = new Size(45, 23);
+            label42.TabIndex = 56;
+            label42.Text = "NAC";
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Location = new Point(353, 280);
+            label43.Name = "label43";
+            label43.Size = new Size(86, 23);
+            label43.TabIndex = 55;
+            label43.Text = "Âm thanh";
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Location = new Point(22, 450);
+            label44.Name = "label44";
+            label44.Size = new Size(78, 23);
+            label44.TabIndex = 54;
+            label44.Text = "Chất liệu";
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Location = new Point(362, 328);
+            label45.Name = "label45";
+            label45.Size = new Size(65, 23);
+            label45.TabIndex = 53;
+            label45.Text = "Kích cỡ";
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Location = new Point(29, 324);
+            label46.Name = "label46";
+            label46.Size = new Size(44, 23);
+            label46.TabIndex = 52;
+            label46.Text = "VGA";
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Location = new Point(29, 272);
+            label47.Name = "label47";
+            label47.Size = new Size(66, 23);
+            label47.TabIndex = 51;
+            label47.Text = "Ổ cứng";
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(135, 280);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(150, 30);
+            textBox11.TabIndex = 50;
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(135, 328);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(150, 30);
+            textBox12.TabIndex = 49;
             // 
             // pictureBox1
             // 
@@ -1164,7 +1258,7 @@
             // 
             // WarehouseUI_menu
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1478, 944);
             Controls.Add(tabControl1);
@@ -1184,14 +1278,15 @@
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            tabPage4.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private TextBox textBox1;
         private Label label2;
         private Label label1;
         private Button button5;
@@ -1203,13 +1298,7 @@
         private Label label4;
         private Label label3;
         private TabPage tabPage2;
-        private TextBox textBox2;
         private DataGridView dataGridView1;
-        private TabPage tabPage1;
-        private Button btXoa1;
-        private Label label9;
-        private Label label8;
-        private Label label7;
         private Button btnHuy2;
         private PictureBox pictureBox1;
         private Button button3;
@@ -1219,13 +1308,6 @@
         private Button button10;
         private Button btGhi;
         private Button btThem;
-        private Button btSua1;
-        private Button btGhi1;
-        private DataGridView dataGridView3;
-        private TextBox tbLaptop_ID;
-        private TextBox tbHD;
-        private TextBox tbVGA;
-        private Button btThem1;
         private TextBox tbID;
         private Label label11;
         private TextBox tbName;
@@ -1243,48 +1325,6 @@
         private Button btXoa;
         private Button btHuy;
         private Button btSua;
-        private Label label14;
-        private Label label6;
-        private Label label5;
-        private Label label15;
-        private Label label31;
-        private Label label30;
-        private Label label29;
-        private Label label28;
-        private Label label27;
-        private Label label26;
-        private Label label25;
-        private Label label24;
-        private Label label23;
-        private Label label22;
-        private Label label21;
-        private Label label20;
-        private Label label19;
-        private Label label18;
-        private Label label17;
-        private Label label16;
-        private TextBox tbQuantity;
-        private TextBox tbPrice;
-        private TextBox tbWP;
-        private TextBox tbOS;
-        private TextBox tbSize;
-        private TextBox tbAudio;
-        private TextBox tbKeyboard;
-        private TextBox tbSecurity;
-        private TextBox tbNAC;
-        private TextBox tbPorts;
-        private TextBox tbMaterials;
-        private TextBox tbWeight;
-        private TextBox tbBattery;
-        private TextBox tbDisplay;
-        private TextBox tbRAM;
-        private TextBox tbCPU;
-        private TextBox tbLaptop_Name;
-        private Label label33;
-        private Label label32;
-        private ComboBox cbbManufactory_ID;
-        private ComboBox cbbCategory_ID;
-        private Button btHuy1;
         private TextBox tbPhone;
         private TextBox tbAddress;
         private Button btNhaCungCap;
@@ -1302,5 +1342,68 @@
         private TextBox tbGiaNhap;
         private Label label35;
         private Label label34;
+        private TabPage tabPage4;
+        private GroupBox groupBox2;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private TextBox textBox5;
+        private TextBox textBox6;
+        private TextBox textBox7;
+        private TextBox textBox8;
+        private TextBox textBox9;
+        private TextBox textBox10;
+        private Label label36;
+        private Label label37;
+        private Label label38;
+        private Label label39;
+        private Label label40;
+        private Label label41;
+        private Label label42;
+        private Label label43;
+        private Label label44;
+        private Label label45;
+        private Label label46;
+        private Label label47;
+        private TextBox textBox11;
+        private TextBox textBox12;
+        private TextBox textBox13;
+        private TextBox textBox14;
+        private Label label48;
+        private Label label49;
+        private TextBox textBox15;
+        private TextBox textBox16;
+        private Label label50;
+        private Label label51;
+        private TabPage tabPage1;
+        private Button btnLaptopDetail;
+        private Button btHuy1;
+        private ComboBox cbbManufactory_ID;
+        private ComboBox cbbCategory_ID;
+        private TextBox tbQuantity;
+        private TextBox tbPrice;
+        private Label label33;
+        private Label label32;
+        private Label label31;
+        private Label label17;
+        private Label label15;
+        private Label label6;
+        private Button btThem1;
+        private TextBox tbLaptop_ID;
+        private Button btSua1;
+        private Button btGhi1;
+        private DataGridView dataGridView3;
+        private Button btXoa1;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private DataGridViewTextBoxColumn Colum5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column10;
+        private ComboBox cbbLapTopName;
     }
 }

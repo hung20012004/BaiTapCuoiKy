@@ -35,7 +35,7 @@ namespace DTO
         }
         public string toString
         {
-            get { return id + "/" + name + "/" + phone; }
+            get { return id + ". " + name + " / " + phone; }
         }
     }
 }

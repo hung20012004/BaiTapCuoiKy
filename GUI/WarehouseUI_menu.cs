@@ -226,7 +226,52 @@ namespace GUI
         #endregion
         #region tab1
         #region loadingEvent
+        void tab1loading()
+        {
+            tabControl1.SelectedIndex = 1;
+            tbLaptop_ID.Enabled = false;
+            tbLaptop_Name.Enabled = false;
+            cbbCategory_ID.Enabled = false;
+            cbbManufactory_ID.Enabled = false;
+            tbPrice.Enabled = false;
+            tbQuantity.Enabled = false;
+            btThem1.Enabled = true;
+            btSua1.Enabled = true;
+            btXoa1.Enabled = true;
+            btGhi1.Enabled = false;
+            btHuy1.Enabled = false;
+            dataGridView1.Enabled = true;
+            cbbManufactory_ID.Items.Clear();
 
+            foreach (Manufactory item in ManufactoryBUS.Instance.get())
+            {
+                cbbManufactory_ID.Items.Add(item.Name);
+            }
+            dataGridView1.Enabled = true;
+            dataGridView1.Rows.Clear();
+            DataGridViewRow row = dataGridView3.Rows[0];
+            List<Manufactory> list = LaptopBUS.Instance.getManufactory();
+            List<Category> list2 = LaptopBUS.Instance.getCategory();
+            foreach (Laptop item in LaptopBUS.Instance.get())
+            {
+                foreach (Manufactory item2 in list)
+                {
+                    foreach (Category item3 in list2)
+                    {
+                        if (item2.ID == item.Manufactory.ID && item3.ID == item.Category.ID)
+                            dataGridView3.Rows.Add(item.ID, item.Name, item3.Name, item2.Name, item.Price, item.QuantityInStock);
+                    }
+                }
+            }
+
+            /*if (Convert.ToString(row.Cells["Column1"].Value) != "")
+            {
+                tbID.Text = Convert.ToString(row.Cells["Column1"].Value);
+                tbName.Text = Convert.ToString(row.Cells["Column2"].Value);
+                tbAddress.Text = Convert.ToString(row.Cells["Column3"].Value);
+                tbPhone.Text = Convert.ToString(row.Cells["Column4"].Value);
+            }*/
+        }
         #endregion
         #region clickEvent
         private void btnExcelExport_Click(object sender, EventArgs e)
@@ -235,7 +280,7 @@ namespace GUI
         }
         private void btSanPham_Click(object sender, EventArgs e)
         {
-            tab0loading();
+            tab1loading();
         }
         #endregion
         #region textChangeEvent
@@ -531,5 +576,82 @@ namespace GUI
 
 
 
+        private void tbCPU_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btThem1_Click(object sender, EventArgs e)
+        {
+            tbLaptop_ID.Enabled = false;
+            cbbLapTopName.Enabled = true;
+            tbQuantity.Enabled = true;
+            tbPrice.Enabled = true;
+            cbbCategory_ID.Enabled = true;
+            cbbManufactory_ID.Enabled = true;
+            btnSua2.Enabled = false;
+            btnXoa2.Enabled = false;
+            tbLaptop_ID.Text = "";
+            cbbLapTopName.Text = "";
+            cbbCategory_ID.Text = "";
+            cbbManufactory_ID.Text = "";
+            dataGridView3.Enabled = false;
+        }
+
+        private void btGhi1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận ghi", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (btnThem2.Enabled)
+                {
+                    if (cbbLapTopName.Text != "" && cbbCategory_ID.Text != "" && cbbManufactory_ID.Text != "" && tbPrice.Text != "" && tbQuantity.Text != "")
+                    {
+
+                        if (LaptopBUS.Instance.insert(choosenLaptop))
+                        {
+                            tab1loading();
+                            MessageBox.Show("Đã ghi thành công!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ghi không thành công!");
+
+                        }
+                    }
+                    else
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                }
+            }
+        }
+
+        private void tbLaptop_ID_TextChanged(object sender, EventArgs e)
+        {
+            choosenLaptop.ID = Convert.ToInt32(tbLaptop_ID.Text);
+        }
+
+        private void cbbLapTopName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            choosenLaptop.Name = Convert.ToString(cbbLapTopName.Text);
+        }
+
+        private void cbbCategory_ID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            choosenLaptop.Category.Name = Convert.ToString(cbbCategory_ID.Text);
+        }
+
+        private void cbbManufactory_ID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            choosenLaptop.Manufactory.Name = Convert.ToString(cbbManufactory_ID.Text);
+        }
+
+        private void tbPrice_TextChanged(object sender, EventArgs e)
+        {
+            choosenLaptop.Price = Convert.ToInt32(tbPrice.Text);
+        }
+
+        private void tbQuantity_TextChanged(object sender, EventArgs e)
+        {
+            choosenLaptop.QuantityInStock = Convert.ToInt32(tbQuantity.Text);
+        }
     }
 }

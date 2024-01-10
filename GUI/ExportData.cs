@@ -22,17 +22,15 @@ namespace GUI
         public void ToExcel(DataGridView dataGridView1,string title)
         {
             Microsoft.Office.Interop.Excel.Application excel;
-            Microsoft.Office.Interop.Excel.Workbook workbook;
-            Microsoft.Office.Interop.Excel.Worksheet worksheet;
-            string filePath = "";
+            string filePath = ""; // đường dẫn
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";
-            dialog.ShowDialog();
-            filePath = dialog.FileName;
+            dialog.ShowDialog(); // hiện lên
+            filePath = dialog.FileName; // tên đường dẫn
             if (string.IsNullOrEmpty(filePath))
             {
                 MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
-                return;
+                return; // thoát ct lun
             }
             try
             {
@@ -45,7 +43,7 @@ namespace GUI
                 {
                     p.Workbook.Properties.Title = filePath;
                     p.Workbook.Worksheets.Add("sheet1");
-                    ExcelWorksheet ws = p.Workbook.Worksheets[0];
+                    ExcelWorksheet ws = p.Workbook.Worksheets[0];// trỏ vào sheet vừa set để làm việc
                     ws.Cells.Style.Font.Size = 12;
                     ws.Cells.Style.Font.Name = "Calibri";
                     List<string> arrColumnHeader = new List<string>();
@@ -98,7 +96,7 @@ namespace GUI
                             
                         } 
                     }
-                    ws.Cells[1, 1, dataGridView1.RowCount + 5, 4].AutoFitColumns(15);
+                    ws.Cells[1, 1, dataGridView1.RowCount + 5, 4].AutoFitColumns(15); // căn chỉnh colum
                     Byte[] bin = p.GetAsByteArray();
                     File.WriteAllBytes(filePath, bin);
                     excel.Quit();

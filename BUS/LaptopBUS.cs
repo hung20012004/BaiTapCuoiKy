@@ -32,6 +32,13 @@ namespace BUS
         {
             return LaptopDAL.Instance.delete(laptop);
         }
-        
+        public List<Manufactory> getManufactory()
+        {
+            return LaptopDAL.Instance.getManufactory();
+        }
+        public List<Category> getCategory()
+        {
+            return LaptopDAL.Instance.getCategory();
+        }
     }
 }

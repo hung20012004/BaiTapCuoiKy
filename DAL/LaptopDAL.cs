@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using DTO;
 using System.Data.SqlClient;
 using System.Reflection.PortableExecutable;
+using System.ComponentModel;
 
 namespace DAL
 
@@ -175,10 +176,50 @@ namespace DAL
                 cmd.ExecuteNonQuery();
             }
             conn.Close();
-            
         }
-       
-        public Manufactory getManufactory(Manufactory manufactory)
+        public List<Manufactory> getManufactory()
+        {
+            List<Manufactory> list = new List<Manufactory>();
+            conn.Open();
+            using (var cmd = new SqlCommand("GetManufactory", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    
+                    Manufactory manufactory = new Manufactory();
+                    manufactory.ID = reader.GetInt32("manufactory_id");
+                    manufactory.Name = reader.GetString("manufactory_name");
+                    manufactory.Website = reader.GetString("website");
+                    manufactory.Address = reader.GetString("address");
+                    list.Add(manufactory);
+                }
+            }
+            conn.Close();
+            return list;
+        }
+        public List<Category> getCategory()
+        {
+            List<Category> list = new List<Category>();
+            conn.Open();
+            using (var cmd = new SqlCommand("GetCategory", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                DbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    Category category = new Category();
+                    category.ID = reader.GetInt32("category_id");
+                    category.Name = reader.GetString("category_name");
+                    list.Add(category);
+                }
+            }
+            conn.Close();
+            return list;
+        }
+        public Manufactory getManufactoryByID(Manufactory manufactory)
         {
             using (var cmd = new SqlCommand("GetManufactoryData", conn))
             {
@@ -194,7 +235,7 @@ namespace DAL
             }
             return manufactory;
         }
-        public Category getCategory(Category category)
+        public Category getCategoryByID(Category category)
         {
             using (var cmd = new SqlCommand("GetCategoryData", conn))
             {
@@ -208,6 +249,7 @@ namespace DAL
             }
             return category;
         }
+
         public Laptop getLaptopByID(int ID)
         {
             Laptop laptop=new Laptop();
