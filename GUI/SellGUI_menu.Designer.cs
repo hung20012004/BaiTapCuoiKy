@@ -152,10 +152,10 @@
             // 
             // tabPage1
             // 
-            tabPage1.Location = new Point(4, 32);
+            tabPage1.Location = new Point(4, 37);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1145, 910);
+            tabPage1.Size = new Size(1145, 905);
             tabPage1.TabIndex = 2;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -177,10 +177,10 @@
             tabPage2.Controls.Add(btnCustomerThem);
             tabPage2.Controls.Add(btnCustomerSua);
             tabPage2.Controls.Add(dgvKhachHang);
-            tabPage2.Location = new Point(4, 32);
+            tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 910);
+            tabPage2.Size = new Size(1145, 908);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@
             // 
             txbCustomerAddress.Location = new Point(146, 226);
             txbCustomerAddress.Name = "txbCustomerAddress";
-            txbCustomerAddress.Size = new Size(188, 30);
+            txbCustomerAddress.Size = new Size(188, 34);
             txbCustomerAddress.TabIndex = 12;
             txbCustomerAddress.TextChanged += txbAddress_TextChanged;
             // 
@@ -228,7 +228,7 @@
             txbCustomerPhone.Location = new Point(148, 172);
             txbCustomerPhone.MaxLength = 10;
             txbCustomerPhone.Name = "txbCustomerPhone";
-            txbCustomerPhone.Size = new Size(186, 30);
+            txbCustomerPhone.Size = new Size(186, 34);
             txbCustomerPhone.TabIndex = 11;
             txbCustomerPhone.TextChanged += txbPhone_TextChanged;
             txbCustomerPhone.KeyPress += txbCustomerPhone_KeyPress;
@@ -238,7 +238,7 @@
             label9.AutoSize = true;
             label9.Location = new Point(40, 218);
             label9.Name = "label9";
-            label9.Size = new Size(65, 23);
+            label9.Size = new Size(74, 28);
             label9.TabIndex = 10;
             label9.Text = "Địa Chỉ";
             // 
@@ -247,7 +247,7 @@
             label8.AutoSize = true;
             label8.Location = new Point(40, 173);
             label8.Name = "label8";
-            label8.Size = new Size(40, 23);
+            label8.Size = new Size(47, 28);
             label8.TabIndex = 9;
             label8.Text = "SĐT";
             // 
@@ -255,7 +255,7 @@
             // 
             txbCustomerName.Location = new Point(149, 110);
             txbCustomerName.Name = "txbCustomerName";
-            txbCustomerName.Size = new Size(185, 30);
+            txbCustomerName.Size = new Size(185, 34);
             txbCustomerName.TabIndex = 8;
             txbCustomerName.TextChanged += txbName_TextChanged;
             // 
@@ -263,7 +263,7 @@
             // 
             txbCustomerID.Location = new Point(149, 49);
             txbCustomerID.Name = "txbCustomerID";
-            txbCustomerID.Size = new Size(185, 30);
+            txbCustomerID.Size = new Size(185, 34);
             txbCustomerID.TabIndex = 7;
             txbCustomerID.TextChanged += txbID_TextChanged;
             // 
@@ -272,7 +272,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(40, 110);
             label2.Name = "label2";
-            label2.Size = new Size(36, 23);
+            label2.Size = new Size(41, 28);
             label2.TabIndex = 6;
             label2.Text = "Tên";
             // 
@@ -281,7 +281,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(40, 52);
             label1.Name = "label1";
-            label1.Size = new Size(27, 23);
+            label1.Size = new Size(31, 28);
             label1.TabIndex = 5;
             label1.Text = "ID";
             // 
@@ -335,7 +335,7 @@
             colID.MinimumWidth = 6;
             colID.Name = "colID";
             colID.Resizable = DataGridViewTriState.False;
-            colID.Width = 56;
+            colID.Width = 67;
             // 
             // colName
             // 
@@ -379,9 +379,9 @@
             tabPage3.Controls.Add(label5);
             tabPage3.Controls.Add(dgvOrder);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 32);
+            tabPage3.Location = new Point(4, 37);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 910);
+            tabPage3.Size = new Size(1145, 905);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
@@ -390,7 +390,7 @@
             // 
             tbSoLuong2.Location = new Point(173, 180);
             tbSoLuong2.Name = "tbSoLuong2";
-            tbSoLuong2.Size = new Size(229, 30);
+            tbSoLuong2.Size = new Size(229, 34);
             tbSoLuong2.TabIndex = 28;
             tbSoLuong2.TextChanged += tbSoLuong2_TextChanged;
             tbSoLuong2.KeyPress += tbSoLuong2_KeyPress;
@@ -410,7 +410,7 @@
             SUM.AutoSize = true;
             SUM.Location = new Point(162, 844);
             SUM.Name = "SUM";
-            SUM.Size = new Size(42, 23);
+            SUM.Size = new Size(48, 28);
             SUM.TabIndex = 26;
             SUM.Text = "sum";
             // 
@@ -429,7 +429,7 @@
             cboOrderKhachHang.FormattingEnabled = true;
             cboOrderKhachHang.Location = new Point(173, 47);
             cboOrderKhachHang.Name = "cboOrderKhachHang";
-            cboOrderKhachHang.Size = new Size(285, 31);
+            cboOrderKhachHang.Size = new Size(285, 36);
             cboOrderKhachHang.TabIndex = 24;
             cboOrderKhachHang.SelectedIndexChanged += cboOrderKhachHang_SelectedIndexChanged;
             // 
@@ -438,7 +438,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(66, 47);
             label6.Name = "label6";
-            label6.Size = new Size(101, 23);
+            label6.Size = new Size(114, 28);
             label6.TabIndex = 23;
             label6.Text = "Khách hàng";
             // 
@@ -447,7 +447,7 @@
             label11.AutoSize = true;
             label11.Location = new Point(533, 50);
             label11.Name = "label11";
-            label11.Size = new Size(0, 23);
+            label11.Size = new Size(0, 28);
             label11.TabIndex = 21;
             // 
             // btnSuaOrder
@@ -485,7 +485,7 @@
             label7.AutoSize = true;
             label7.Location = new Point(66, 173);
             label7.Name = "label7";
-            label7.Size = new Size(78, 23);
+            label7.Size = new Size(92, 28);
             label7.TabIndex = 13;
             label7.Text = "Số lượng";
             // 
@@ -494,7 +494,7 @@
             cboOrderLapTop.FormattingEnabled = true;
             cboOrderLapTop.Location = new Point(172, 112);
             cboOrderLapTop.Name = "cboOrderLapTop";
-            cboOrderLapTop.Size = new Size(285, 31);
+            cboOrderLapTop.Size = new Size(285, 36);
             cboOrderLapTop.TabIndex = 11;
             cboOrderLapTop.SelectedIndexChanged += cboOrderLapTop_SelectedIndexChanged;
             // 
@@ -533,7 +533,7 @@
             lbTongDonGia.AutoSize = true;
             lbTongDonGia.Location = new Point(173, 854);
             lbTongDonGia.Name = "lbTongDonGia";
-            lbTongDonGia.Size = new Size(0, 23);
+            lbTongDonGia.Size = new Size(0, 28);
             lbTongDonGia.TabIndex = 4;
             // 
             // label5
@@ -541,7 +541,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(44, 854);
             label5.Name = "label5";
-            label5.Size = new Size(92, 23);
+            label5.Size = new Size(106, 28);
             label5.TabIndex = 3;
             label5.Text = "Tổng cộng";
             // 
@@ -557,6 +557,7 @@
             dgvOrder.Size = new Size(1140, 522);
             dgvOrder.TabIndex = 2;
             dgvOrder.CellClick += dgvOrder_CellClick;
+            
             // 
             // Col1
             // 
@@ -603,13 +604,13 @@
             label3.AutoSize = true;
             label3.Location = new Point(69, 97);
             label3.Name = "label3";
-            label3.Size = new Size(63, 23);
+            label3.Size = new Size(74, 28);
             label3.TabIndex = 0;
             label3.Text = "Laptop";
             // 
             // SellGUI_menu
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1478, 944);
             Controls.Add(tabControl1);
