@@ -56,7 +56,6 @@ C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AccGUI_menu.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.CustomerSeviceUI_menu.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.LoginGUI.resources
-C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.ManagerGUI_menu.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.SellGUI_menu.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.WarehouseUI_menu.resources
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.GenerateResource.cache
@@ -121,3 +120,20 @@ G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\System.Securit
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.Properties.Resources.resources
 G:\C#\CS\Cuoi_Ky\GitHub\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AdminGUI_menu.resources
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AdminGUI_menu.resources
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.Properties.Resources.resources
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\EPPlus.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\EPPlus.Interfaces.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\EPPlus.System.Drawing.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\Microsoft.Office.Interop.Excel.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
