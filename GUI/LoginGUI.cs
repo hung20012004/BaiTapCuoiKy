@@ -41,7 +41,7 @@ namespace GUI
             switch (user.RoleInt)
             {
                 case 0:
-                    ManagerGUI_menu menu0 = new(user);
+                    AdminGUI_menu menu0 = new(user);
                     menu0.ShowDialog();
                     break;
                 case 1:

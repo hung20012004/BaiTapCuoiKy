@@ -401,7 +401,7 @@ namespace GUI
         }
         private void btnGhi2_Click(object sender, EventArgs e)
         {
-            if (cbLaptop2.Text != "" && tbSoluong2.Text != "" && tbGiaNhap.Text != ""&& Convert.ToDecimal(tbSoluong2.Text) != 0 && Convert.ToDecimal(tbGiaNhap.Text) != 0)
+            if (cbLaptop2.Text != "" && tbSoluong2.Text != "" && tbGiaNhap.Text != "" && Convert.ToDecimal(tbSoluong2.Text) != 0 && Convert.ToDecimal(tbGiaNhap.Text) != 0)
             {
                 if (btnThem2.Enabled)
                 {

@@ -79,6 +79,7 @@
             Col4 = new DataGridViewTextBoxColumn();
             Col5 = new DataGridViewTextBoxColumn();
             label3 = new Label();
+            btnExportExcel = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
@@ -161,6 +162,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnExportExcel);
             tabPage2.Controls.Add(btnGhi1);
             tabPage2.Controls.Add(btnCustomerHuy);
             tabPage2.Controls.Add(txbCustomerAddress);
@@ -595,6 +597,16 @@
             label3.TabIndex = 0;
             label3.Text = "Laptop";
             // 
+            // btnExportExcel
+            // 
+            btnExportExcel.Location = new Point(718, 116);
+            btnExportExcel.Name = "btnExportExcel";
+            btnExportExcel.Size = new Size(112, 34);
+            btnExportExcel.TabIndex = 15;
+            btnExportExcel.Text = "Xuất Excel";
+            btnExportExcel.UseVisualStyleBackColor = true;
+            btnExportExcel.Click += btnExportExcel_Click;
+            // 
             // SellGUI_menu
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
@@ -676,5 +688,6 @@
         private Button btnHuy2;
         private TextBox tbSoLuong2;
         private Button btnGhi1;
+        private Button btnExportExcel;
     }
 }

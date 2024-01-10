@@ -70,6 +70,10 @@ namespace GUI
         }
         #endregion
         #region clickEvent
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            ExportData.Instance.ToExcel(dgvKhachHang, "Danh sách khách hàng");
+        }
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 1;
@@ -389,7 +393,7 @@ namespace GUI
         }
         private void btnGhiOrder_Click(object sender, EventArgs e)
         {
-            if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != ""&&Convert.ToDecimal(tbSoLuong2.Text)==0)
+            if (cboOrderLapTop.Text != "" && tbSoLuong2.Text != "" && Convert.ToDecimal(tbSoLuong2.Text) == 0)
             {
                 if (choosenlaptop.QuantityInStock < choosenlaptop.QuantityBought)
                 {
@@ -506,13 +510,6 @@ namespace GUI
         }
         #endregion
         #endregion
-
-
-
-
-
-
-
 
     }
 }
