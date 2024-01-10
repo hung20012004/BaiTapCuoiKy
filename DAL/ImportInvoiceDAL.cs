@@ -89,6 +89,7 @@ namespace DAL
                     cmd.Parameters.Add("@note", SqlDbType.VarChar).Value = importInvoice.Note;
                     cmd.ExecuteNonQuery();
                 }
+                
                 conn.Close();
                 return true;
             }
@@ -126,6 +127,7 @@ namespace DAL
                     cmd.Parameters.Add("@invoice_id", SqlDbType.Int).Value = importInvoice.ID;
                     cmd.Parameters.Add("@quantity_import", SqlDbType.Int).Value = laptop.QuantityImport;
                     cmd.Parameters.Add("@laptop_id", SqlDbType.Int).Value = laptop.ID;
+                    cmd.Parameters.Add("@price", SqlDbType.Decimal).Value = laptop.ImportPrice;
                     cmd.ExecuteNonQuery();
                 }
 

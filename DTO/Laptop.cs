@@ -156,6 +156,12 @@ namespace DTO
             get { return quantityImport; }
             set { quantityImport = value; }
         }
+        private decimal importPrice;
+        public decimal ImportPrice
+        {
+            get { return importPrice; }
+            set { importPrice = value; }
+        } 
         
     }
 }

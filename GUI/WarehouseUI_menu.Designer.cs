@@ -47,6 +47,10 @@
             btGhi = new Button();
             btThem = new Button();
             dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             tabPage1 = new TabPage();
             btHuy1 = new Button();
             cbbManufactory_ID = new ComboBox();
@@ -102,6 +106,9 @@
             label8 = new Label();
             label7 = new Label();
             tabPage3 = new TabPage();
+            tbGiaNhap = new TextBox();
+            label35 = new Label();
+            label34 = new Label();
             label12 = new Label();
             btnHuy2 = new Button();
             tbSoluong2 = new TextBox();
@@ -128,10 +135,6 @@
             groupBox1 = new GroupBox();
             btNhaCungCap = new Button();
             btTaoHoaDonNhap = new Button();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -228,10 +231,12 @@
             // tbPhone
             // 
             tbPhone.Location = new Point(202, 104);
+            tbPhone.MaxLength = 10;
             tbPhone.Name = "tbPhone";
             tbPhone.Size = new Size(150, 34);
             tbPhone.TabIndex = 22;
             tbPhone.TextChanged += tbPhone_TextChanged;
+            tbPhone.KeyPress += tbPhone_KeyPress;
             // 
             // tbAddress
             // 
@@ -336,6 +341,34 @@
             dataGridView1.Size = new Size(1101, 604);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 8;
+            Column1.Name = "Column1";
+            Column1.Width = 160;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Nhà cung cấp";
+            Column2.MinimumWidth = 8;
+            Column2.Name = "Column2";
+            Column2.Width = 300;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Địa chỉ";
+            Column3.MinimumWidth = 8;
+            Column3.Name = "Column3";
+            Column3.Width = 300;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Số điện thoại";
+            Column4.MinimumWidth = 8;
+            Column4.Name = "Column4";
+            Column4.Width = 270;
             // 
             // tabPage1
             // 
@@ -833,6 +866,9 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(tbGiaNhap);
+            tabPage3.Controls.Add(label35);
+            tabPage3.Controls.Add(label34);
             tabPage3.Controls.Add(label12);
             tabPage3.Controls.Add(btnHuy2);
             tabPage3.Controls.Add(tbSoluong2);
@@ -850,12 +886,39 @@
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Controls.Add(label4);
             tabPage3.Controls.Add(label3);
-            tabPage3.Location = new Point(4, 34);
+            tabPage3.Location = new Point(4, 37);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1145, 905);
+            tabPage3.Size = new Size(1145, 902);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tbGiaNhap
+            // 
+            tbGiaNhap.Location = new Point(221, 250);
+            tbGiaNhap.Name = "tbGiaNhap";
+            tbGiaNhap.Size = new Size(171, 34);
+            tbGiaNhap.TabIndex = 31;
+            tbGiaNhap.TextChanged += tbGiaNhap_TextChanged;
+            tbGiaNhap.KeyPress += tbGiaNhap_KeyPress;
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Location = new Point(115, 243);
+            label35.Name = "label35";
+            label35.Size = new Size(90, 28);
+            label35.TabIndex = 30;
+            label35.Text = "Giá nhập";
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Location = new Point(112, 203);
+            label34.Name = "label34";
+            label34.Size = new Size(92, 28);
+            label34.TabIndex = 29;
+            label34.Text = "Số lượng";
             // 
             // label12
             // 
@@ -883,6 +946,7 @@
             tbSoluong2.Size = new Size(150, 34);
             tbSoluong2.TabIndex = 26;
             tbSoluong2.TextChanged += tbSoluong2_TextChanged;
+            tbSoluong2.KeyPress += tbSoluong2_KeyPress;
             // 
             // btnXoa2
             // 
@@ -1098,34 +1162,6 @@
             btTaoHoaDonNhap.UseVisualStyleBackColor = true;
             btTaoHoaDonNhap.Click += btTaoHoaDonNhap_Click;
             // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 8;
-            Column1.Name = "Column1";
-            Column1.Width = 160;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Nhà cung cấp";
-            Column2.MinimumWidth = 8;
-            Column2.Name = "Column2";
-            Column2.Width = 300;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Địa chỉ";
-            Column3.MinimumWidth = 8;
-            Column3.Name = "Column3";
-            Column3.Width = 300;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Số điện thoại";
-            Column4.MinimumWidth = 8;
-            Column4.Name = "Column4";
-            Column4.Width = 270;
-            // 
             // WarehouseUI_menu
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
@@ -1263,5 +1299,8 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private TextBox tbGiaNhap;
+        private Label label35;
+        private Label label34;
     }
 }

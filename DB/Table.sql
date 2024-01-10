@@ -119,6 +119,7 @@ CREATE TABLE invoice_detail(
 	invoice_id INT NOT NULL,
 	laptop_id INT NOT NULL,
 	quantity INT NOT NULL DEFAULT 1,
+	unit_price DECIMAL NOT NULL,
 	PRIMARY KEY(invoice_id,laptop_id),
 	FOREIGN KEY (invoice_id)
 	REFERENCES import_invoices(invoice_id) ON DELETE CASCADE,

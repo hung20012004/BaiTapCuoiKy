@@ -70,7 +70,7 @@ namespace DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id", SqlDbType.Int).Value = provider.ID;
                     cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = provider.Name;
-                    cmd.Parameters.Add("@address", SqlDbType.VarChar).Value = provider.Address;
+                    cmd.Parameters.Add("@address", SqlDbType.NVarChar).Value = provider.Address;
                     cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = provider.Phone;
                     cmd.ExecuteNonQuery();
                 }

@@ -163,6 +163,21 @@ namespace DAL
                 return false;
             }
         }
+        public void reStock(Laptop laptop)
+        {
+            
+            conn.Open();
+            using (var cmd = new SqlCommand("RecoverLaptop", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@laptop_id", SqlDbType.Int).Value = laptop.ID;
+                cmd.Parameters.Add("@quantity", SqlDbType.Int).Value = laptop.QuantityBought;
+                cmd.ExecuteNonQuery();
+            }
+            conn.Close();
+            
+        }
+       
         public Manufactory getManufactory(Manufactory manufactory)
         {
             using (var cmd = new SqlCommand("GetManufactoryData", conn))
