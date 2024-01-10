@@ -102,6 +102,8 @@
             label3 = new Label();
             tabControl1 = new TabControl();
             tabPage4 = new TabPage();
+            lb27 = new Label();
+            lbSUM3 = new Label();
             btnChiTiet3 = new Button();
             label23 = new Label();
             tbNgayTao3 = new TextBox();
@@ -112,7 +114,6 @@
             label21 = new Label();
             label20 = new Label();
             btnHoanThanh3 = new Button();
-            btnHuyBo3 = new Button();
             label19 = new Label();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -121,7 +122,42 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             tabPage5 = new TabPage();
+            button2 = new Button();
+            dataGridView4 = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            textBox2 = new TextBox();
+            button3 = new Button();
+            label30 = new Label();
+            label31 = new Label();
+            textBox1 = new TextBox();
+            label27 = new Label();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            label29 = new Label();
             tabPage6 = new TabPage();
+            dataGridView5 = new DataGridView();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
+            lbNCC52 = new Label();
+            lbThuNgan5 = new Label();
+            lbNguoiTaoHoaDon5 = new Label();
+            lbNgay5 = new Label();
+            lbNCC5 = new Label();
+            label37 = new Label();
+            label39 = new Label();
+            label40 = new Label();
+            label41 = new Label();
+            button4 = new Button();
+            label42 = new Label();
+            label43 = new Label();
+            label44 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage1.SuspendLayout();
@@ -133,6 +169,10 @@
             tabControl1.SuspendLayout();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -433,10 +473,10 @@
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(btnChiTiet1);
             tabPage2.Controls.Add(dataGridView3);
-            tabPage2.Location = new Point(4, 37);
+            tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 902);
+            tabPage2.Size = new Size(1145, 905);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -834,6 +874,8 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(lb27);
+            tabPage4.Controls.Add(lbSUM3);
             tabPage4.Controls.Add(btnChiTiet3);
             tabPage4.Controls.Add(label23);
             tabPage4.Controls.Add(tbNgayTao3);
@@ -844,7 +886,6 @@
             tabPage4.Controls.Add(label21);
             tabPage4.Controls.Add(label20);
             tabPage4.Controls.Add(btnHoanThanh3);
-            tabPage4.Controls.Add(btnHuyBo3);
             tabPage4.Controls.Add(label19);
             tabPage4.Controls.Add(dataGridView1);
             tabPage4.Location = new Point(4, 37);
@@ -854,6 +895,24 @@
             tabPage4.TabIndex = 5;
             tabPage4.Text = "tabPage4";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // lb27
+            // 
+            lb27.AutoSize = true;
+            lb27.Location = new Point(281, 849);
+            lb27.Name = "lb27";
+            lb27.Size = new Size(53, 28);
+            lb27.TabIndex = 14;
+            lb27.Text = "VND";
+            // 
+            // lbSUM3
+            // 
+            lbSUM3.AutoSize = true;
+            lbSUM3.Location = new Point(167, 847);
+            lbSUM3.Name = "lbSUM3";
+            lbSUM3.Size = new Size(51, 28);
+            lbSUM3.TabIndex = 13;
+            lbSUM3.Text = "Sum";
             // 
             // btnChiTiet3
             // 
@@ -937,15 +996,6 @@
             btnHoanThanh3.Text = "Hoàn thành";
             btnHoanThanh3.UseVisualStyleBackColor = true;
             // 
-            // btnHuyBo3
-            // 
-            btnHuyBo3.Location = new Point(819, 843);
-            btnHuyBo3.Name = "btnHuyBo3";
-            btnHuyBo3.Size = new Size(112, 34);
-            btnHuyBo3.TabIndex = 2;
-            btnHuyBo3.Text = "Hủy bỏ";
-            btnHuyBo3.UseVisualStyleBackColor = true;
-            // 
             // label19
             // 
             label19.AutoSize = true;
@@ -965,7 +1015,7 @@
             dataGridView1.RowTemplate.Height = 33;
             dataGridView1.Size = new Size(1140, 522);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            
             // 
             // Column1
             // 
@@ -1004,6 +1054,17 @@
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(button2);
+            tabPage5.Controls.Add(dataGridView4);
+            tabPage5.Controls.Add(textBox2);
+            tabPage5.Controls.Add(button3);
+            tabPage5.Controls.Add(label30);
+            tabPage5.Controls.Add(label31);
+            tabPage5.Controls.Add(textBox1);
+            tabPage5.Controls.Add(label27);
+            tabPage5.Controls.Add(textBox3);
+            tabPage5.Controls.Add(textBox4);
+            tabPage5.Controls.Add(label29);
             tabPage5.Location = new Point(4, 37);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
@@ -1012,8 +1073,150 @@
             tabPage5.Text = "tabPage5";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            button2.Location = new Point(847, 85);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 34);
+            button2.TabIndex = 25;
+            button2.Text = "Xuất file";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView4
+            // 
+            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView4.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
+            dataGridView4.Location = new Point(5, 295);
+            dataGridView4.Name = "dataGridView4";
+            dataGridView4.RowHeadersWidth = 62;
+            dataGridView4.RowTemplate.Height = 33;
+            dataGridView4.Size = new Size(1140, 604);
+            dataGridView4.TabIndex = 15;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Mã hóa đơn";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Khách hàng";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "Người tạo hóa đơn";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.HeaderText = "Ngày tạo";
+            dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.Width = 220;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.HeaderText = "Tổng";
+            dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.Width = 200;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(288, 121);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(150, 34);
+            textBox2.TabIndex = 22;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(852, 45);
+            button3.Name = "button3";
+            button3.Size = new Size(164, 34);
+            button3.TabIndex = 15;
+            button3.Text = "Hóa đơn chi tiết";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(47, 140);
+            label30.Name = "label30";
+            label30.Size = new Size(180, 28);
+            label30.TabIndex = 18;
+            label30.Text = "Người tạo hóa đơn";
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Location = new Point(47, 45);
+            label31.Name = "label31";
+            label31.Size = new Size(118, 28);
+            label31.TabIndex = 19;
+            label31.Text = "Mã hóa đơn";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(309, 185);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 34);
+            textBox1.TabIndex = 21;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(47, 91);
+            label27.Name = "label27";
+            label27.Size = new Size(132, 28);
+            label27.TabIndex = 20;
+            label27.Text = "Nhà cung cấp";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(273, 26);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(150, 34);
+            textBox3.TabIndex = 23;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(273, 66);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(150, 34);
+            textBox4.TabIndex = 24;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(56, 195);
+            label29.Name = "label29";
+            label29.Size = new Size(171, 28);
+            label29.TabIndex = 17;
+            label29.Text = "Ngày tạo hóa đơn";
+            // 
             // tabPage6
             // 
+            tabPage6.Controls.Add(dataGridView5);
+            tabPage6.Controls.Add(lbNCC52);
+            tabPage6.Controls.Add(label44);
+            tabPage6.Controls.Add(lbThuNgan5);
+            tabPage6.Controls.Add(label43);
+            tabPage6.Controls.Add(lbNguoiTaoHoaDon5);
+            tabPage6.Controls.Add(label42);
+            tabPage6.Controls.Add(button4);
+            tabPage6.Controls.Add(lbNgay5);
+            tabPage6.Controls.Add(label41);
+            tabPage6.Controls.Add(lbNCC5);
+            tabPage6.Controls.Add(label40);
+            tabPage6.Controls.Add(label37);
+            tabPage6.Controls.Add(label39);
             tabPage6.Location = new Point(4, 37);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
@@ -1022,11 +1225,180 @@
             tabPage6.Text = "tabPage6";
             tabPage6.UseVisualStyleBackColor = true;
             // 
+            // dataGridView5
+            // 
+            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView5.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10 });
+            dataGridView5.Location = new Point(2, 322);
+            dataGridView5.Name = "dataGridView5";
+            dataGridView5.ReadOnly = true;
+            dataGridView5.RowHeadersWidth = 62;
+            dataGridView5.RowTemplate.Height = 33;
+            dataGridView5.Size = new Size(1140, 440);
+            dataGridView5.TabIndex = 34;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.HeaderText = "ID";
+            dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
+            dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.HeaderText = "Laptop";
+            dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.ReadOnly = true;
+            dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewTextBoxColumn8.HeaderText = "Đơn giá";
+            dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            dataGridViewTextBoxColumn8.ReadOnly = true;
+            dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewTextBoxColumn9.HeaderText = "Số lượng";
+            dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.ReadOnly = true;
+            dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            dataGridViewTextBoxColumn10.HeaderText = "Tổng đơn giá";
+            dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            dataGridViewTextBoxColumn10.ReadOnly = true;
+            dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // lbNCC52
+            // 
+            lbNCC52.AutoSize = true;
+            lbNCC52.Location = new Point(943, 858);
+            lbNCC52.Name = "lbNCC52";
+            lbNCC52.Size = new Size(41, 28);
+            lbNCC52.TabIndex = 33;
+            lbNCC52.Text = "ncc";
+            // 
+            // lbThuNgan5
+            // 
+            lbThuNgan5.AutoSize = true;
+            lbThuNgan5.Location = new Point(335, 851);
+            lbThuNgan5.Name = "lbThuNgan5";
+            lbThuNgan5.Size = new Size(85, 28);
+            lbThuNgan5.TabIndex = 32;
+            lbThuNgan5.Text = "thungan";
+            // 
+            // lbNguoiTaoHoaDon5
+            // 
+            lbNguoiTaoHoaDon5.AutoSize = true;
+            lbNguoiTaoHoaDon5.Location = new Point(43, 853);
+            lbNguoiTaoHoaDon5.Name = "lbNguoiTaoHoaDon5";
+            lbNguoiTaoHoaDon5.Size = new Size(57, 28);
+            lbNguoiTaoHoaDon5.TabIndex = 31;
+            lbNguoiTaoHoaDon5.Text = "seller";
+            // 
+            // lbNgay5
+            // 
+            lbNgay5.AutoSize = true;
+            lbNgay5.Location = new Point(151, 169);
+            lbNgay5.Name = "lbNgay5";
+            lbNgay5.Size = new Size(55, 28);
+            lbNgay5.TabIndex = 29;
+            lbNgay5.Text = "ngay";
+            // 
+            // lbNCC5
+            // 
+            lbNCC5.AutoSize = true;
+            lbNCC5.Location = new Point(184, 127);
+            lbNCC5.Name = "lbNCC5";
+            lbNCC5.Size = new Size(40, 28);
+            lbNCC5.TabIndex = 28;
+            lbNCC5.Text = "ten";
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Location = new Point(22, 288);
+            label37.Name = "label37";
+            label37.Size = new Size(190, 28);
+            label37.TabIndex = 27;
+            label37.Text = "Danh sách sản phẩm";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(16, 164);
+            label39.Name = "label39";
+            label39.Size = new Size(106, 28);
+            label39.TabIndex = 25;
+            label39.Text = "Ngày mua:";
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Location = new Point(16, 121);
+            label40.Name = "label40";
+            label40.Size = new Size(136, 28);
+            label40.TabIndex = 24;
+            label40.Text = "Nhà cung cấp:";
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Location = new Point(450, 67);
+            label41.Name = "label41";
+            label41.Size = new Size(222, 28);
+            label41.TabIndex = 23;
+            label41.Text = "HÓA ĐƠN NHẬP HÀNG";
+            // 
+            // button4
+            // 
+            button4.Location = new Point(1001, 61);
+            button4.Name = "button4";
+            button4.Size = new Size(112, 34);
+            button4.TabIndex = 22;
+            button4.Text = "In hóa đơn";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Location = new Point(947, 799);
+            label42.Name = "label42";
+            label42.Size = new Size(132, 28);
+            label42.TabIndex = 21;
+            label42.Text = "Nhà cung cấp";
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Location = new Point(320, 785);
+            label43.Name = "label43";
+            label43.Size = new Size(93, 28);
+            label43.TabIndex = 20;
+            label43.Text = "Thu ngân";
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Location = new Point(52, 785);
+            label44.Name = "label44";
+            label44.Size = new Size(180, 28);
+            label44.TabIndex = 19;
+            label44.Text = "Người tạo hóa đơn";
+            // 
             // AccGUI_menu
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1478, 944);
+            ClientSize = new Size(1475, 944);
             Controls.Add(tabControl1);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1049,6 +1421,12 @@
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            tabPage6.ResumeLayout(false);
+            tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
             ResumeLayout(false);
         }
 
@@ -1102,7 +1480,6 @@
         private TabPage tabPage4;
         private DataGridView dataGridView1;
         private Button btnHoanThanh3;
-        private Button btnHuyBo3;
         private Label label19;
         private Button btnChiTiet3;
         private Label label23;
@@ -1150,5 +1527,42 @@
         private Label label26;
         private TabPage tabPage5;
         private TabPage tabPage6;
+        private Label lb27;
+        private Label lbSUM3;
+        private Button button2;
+        private DataGridView dataGridView4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private TextBox textBox2;
+        private Button button3;
+        private Label label30;
+        private Label label31;
+        private TextBox textBox1;
+        private Label label27;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private Label label29;
+        private DataGridView dataGridView5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private Label lbNCC52;
+        private Label label44;
+        private Label lbThuNgan5;
+        private Label label43;
+        private Label lbNguoiTaoHoaDon5;
+        private Label label42;
+        private Button button4;
+        private Label lbNgay5;
+        private Label label41;
+        private Label lbNCC5;
+        private Label label40;
+        private Label label37;
+        private Label label39;
     }
 }
