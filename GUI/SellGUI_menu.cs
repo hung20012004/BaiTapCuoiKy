@@ -473,7 +473,7 @@ namespace GUI
                 }
                 else
                 {
-                    
+
                     foreach (DataGridViewRow row in dgvOrder.Rows)
                     {
                         if (Convert.ToString(row.Cells["Col2"].Value) == cboOrderLapTop.Text)

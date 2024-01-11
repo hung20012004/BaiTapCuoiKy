@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginGUI));
             username = new Label();
             password = new Label();
             usernameTextbox = new TextBox();
@@ -39,7 +40,7 @@
             // 
             username.AutoSize = true;
             username.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            username.Location = new Point(109, 148);
+            username.Location = new Point(210, 245);
             username.Name = "username";
             username.Size = new Size(94, 28);
             username.TabIndex = 0;
@@ -49,7 +50,7 @@
             // 
             password.AutoSize = true;
             password.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            password.Location = new Point(109, 220);
+            password.Location = new Point(210, 288);
             password.Name = "password";
             password.Size = new Size(94, 28);
             password.TabIndex = 1;
@@ -58,27 +59,27 @@
             // usernameTextbox
             // 
             usernameTextbox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            usernameTextbox.Location = new Point(262, 148);
+            usernameTextbox.Location = new Point(331, 245);
             usernameTextbox.Name = "usernameTextbox";
-            usernameTextbox.Size = new Size(492, 34);
+            usernameTextbox.Size = new Size(246, 34);
             usernameTextbox.TabIndex = 2;
             usernameTextbox.TextChanged += usernameTextbox_TextChanged;
             // 
             // passwordTextbox
             // 
             passwordTextbox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordTextbox.Location = new Point(262, 217);
+            passwordTextbox.Location = new Point(331, 285);
             passwordTextbox.Name = "passwordTextbox";
-            passwordTextbox.Size = new Size(492, 34);
+            passwordTextbox.Size = new Size(246, 34);
             passwordTextbox.TabIndex = 3;
             passwordTextbox.TextChanged += passwordTextbox_TextChanged;
             // 
             // loginBtn
             // 
             loginBtn.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            loginBtn.Location = new Point(318, 332);
+            loginBtn.Location = new Point(331, 322);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(209, 52);
+            loginBtn.Size = new Size(246, 35);
             loginBtn.TabIndex = 4;
             loginBtn.Text = "Đăng nhập";
             loginBtn.UseVisualStyleBackColor = true;
@@ -88,13 +89,16 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(880, 504);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(904, 568);
             Controls.Add(loginBtn);
             Controls.Add(passwordTextbox);
             Controls.Add(usernameTextbox);
             Controls.Add(password);
             Controls.Add(username);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginGUI";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";

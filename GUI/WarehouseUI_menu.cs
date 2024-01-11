@@ -299,6 +299,8 @@ namespace GUI
             btThem1.Enabled = true;
             btXoa1.Enabled = true;
             btSua1.Enabled = true;
+            cbSearchC.Items.Clear();
+            cbSearchM.Items.Clear();
             dataGridView3.Enabled = true;
             cbbCategory_ID.Items.Clear();
             cbbManufactory_ID.Items.Clear();
@@ -339,6 +341,7 @@ namespace GUI
                 tbQuantity.Text = newLaptop.QuantityInStock.ToString();
                 tbPrice.Text = newLaptop.Price.ToString();
 
+                //tbLaptop_ID.Text = Convert.ToString(newLaptop.ID);
                 tbCPU.Text = newLaptop.CPU;
                 tbRAM.Text = newLaptop.Ram;
                 tbHD.Text = newLaptop.HardDriver;
@@ -361,6 +364,8 @@ namespace GUI
                 tbNhaSanXuat4.Text = newLaptop.Manufactory.Name;
                 tbTen4.Text = newLaptop.Name;
             }
+            //cbSearchC.Text=cbbCategory_ID.Text;
+            // cbSearchM.Text=cbbManufactory_ID.Text;
         }
         #endregion
         #region clickEvent
@@ -443,6 +448,7 @@ namespace GUI
                     tbGia4.Text = newLaptop.Price.ToString();
                     tbNhaSanXuat4.Text = newLaptop.Manufactory.Name;
                     tbTen4.Text = newLaptop.Name;
+                    tbLaptop_ID.Text = Convert.ToString(newLaptop.ID);
                 }
 
 

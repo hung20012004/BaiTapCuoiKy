@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminGUI_menu));
             groupBox1 = new GroupBox();
             btnQuanLyNhanSu = new Button();
             pictureBox1 = new PictureBox();
@@ -69,29 +70,36 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.LightSteelBlue;
             groupBox1.Controls.Add(btnQuanLyNhanSu);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(button3);
-            groupBox1.Location = new Point(6, 14);
+            groupBox1.Location = new Point(-1, -9);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(323, 943);
+            groupBox1.Size = new Size(339, 966);
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
             groupBox1.Text = " ";
             // 
             // btnQuanLyNhanSu
             // 
-            btnQuanLyNhanSu.Location = new Point(0, 288);
+            btnQuanLyNhanSu.BackColor = Color.CornflowerBlue;
+            btnQuanLyNhanSu.FlatAppearance.BorderColor = Color.White;
+            btnQuanLyNhanSu.FlatAppearance.BorderSize = 3;
+            btnQuanLyNhanSu.FlatStyle = FlatStyle.Flat;
+            btnQuanLyNhanSu.Location = new Point(6, 300);
             btnQuanLyNhanSu.Name = "btnQuanLyNhanSu";
             btnQuanLyNhanSu.Size = new Size(323, 83);
             btnQuanLyNhanSu.TabIndex = 4;
             btnQuanLyNhanSu.Text = "Quản lý nhân sự";
-            btnQuanLyNhanSu.UseVisualStyleBackColor = true;
+            btnQuanLyNhanSu.UseVisualStyleBackColor = false;
             btnQuanLyNhanSu.Click += btnQuanLyNhanSu_Click;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(6, 21);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(323, 175);
             pictureBox1.TabIndex = 3;
@@ -99,12 +107,16 @@
             // 
             // button3
             // 
-            button3.Location = new Point(0, 867);
+            button3.BackColor = Color.CornflowerBlue;
+            button3.FlatAppearance.BorderColor = Color.White;
+            button3.FlatAppearance.BorderSize = 3;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(6, 875);
             button3.Name = "button3";
             button3.Size = new Size(323, 76);
             button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            button3.Text = "Đăng xuất";
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // tabPage2
@@ -133,7 +145,7 @@
             tabPage2.Location = new Point(4, 37);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1145, 902);
+            tabPage2.Size = new Size(1136, 937);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -142,7 +154,7 @@
             // 
             cbTimKiem.FormattingEnabled = true;
             cbTimKiem.Items.AddRange(new object[] { "Chức vụ", "Nhân viên bán hàng", "Kế toán", "Thủ kho", "Nhân viên chăm sóc khách hàng" });
-            cbTimKiem.Location = new Point(952, 94);
+            cbTimKiem.Location = new Point(824, 151);
             cbTimKiem.Name = "cbTimKiem";
             cbTimKiem.Size = new Size(181, 36);
             cbTimKiem.TabIndex = 21;
@@ -150,7 +162,8 @@
             // 
             // btnExportExcel
             // 
-            btnExportExcel.Location = new Point(640, 171);
+            btnExportExcel.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnExportExcel.Location = new Point(893, 227);
             btnExportExcel.Name = "btnExportExcel";
             btnExportExcel.Size = new Size(112, 34);
             btnExportExcel.TabIndex = 20;
@@ -189,7 +202,7 @@
             // 
             // tbTimKiem1
             // 
-            tbTimKiem1.Location = new Point(907, 32);
+            tbTimKiem1.Location = new Point(569, 151);
             tbTimKiem1.Name = "tbTimKiem1";
             tbTimKiem1.Size = new Size(226, 34);
             tbTimKiem1.TabIndex = 15;
@@ -198,7 +211,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(810, 35);
+            label5.Location = new Point(456, 151);
             label5.Name = "label5";
             label5.Size = new Size(91, 28);
             label5.TabIndex = 14;
@@ -242,11 +255,11 @@
             // 
             // btnShowLogInfo
             // 
-            btnShowLogInfo.Location = new Point(738, 32);
+            btnShowLogInfo.Location = new Point(738, 56);
             btnShowLogInfo.Name = "btnShowLogInfo";
-            btnShowLogInfo.Size = new Size(41, 34);
+            btnShowLogInfo.Size = new Size(70, 44);
             btnShowLogInfo.TabIndex = 9;
-            btnShowLogInfo.Text = "button13";
+            btnShowLogInfo.Text = "Hiện";
             btnShowLogInfo.UseVisualStyleBackColor = true;
             btnShowLogInfo.Click += btnShowLogInfo_Click;
             // 
@@ -287,7 +300,7 @@
             // 
             // btnSua1
             // 
-            btnSua1.Location = new Point(165, 227);
+            btnSua1.Location = new Point(177, 227);
             btnSua1.Name = "btnSua1";
             btnSua1.Size = new Size(112, 34);
             btnSua1.TabIndex = 4;
@@ -307,35 +320,37 @@
             // 
             // btnHuy1
             // 
+            btnHuy1.BackColor = Color.MintCream;
             btnHuy1.Enabled = false;
             btnHuy1.Location = new Point(477, 227);
             btnHuy1.Name = "btnHuy1";
             btnHuy1.Size = new Size(112, 34);
             btnHuy1.TabIndex = 2;
             btnHuy1.Text = "Hủy";
-            btnHuy1.UseVisualStyleBackColor = true;
+            btnHuy1.UseVisualStyleBackColor = false;
             btnHuy1.Click += btnHuy1_Click;
             // 
             // btnGhi1
             // 
+            btnGhi1.BackColor = Color.MintCream;
             btnGhi1.Enabled = false;
-            btnGhi1.Location = new Point(477, 171);
+            btnGhi1.Location = new Point(626, 227);
             btnGhi1.Name = "btnGhi1";
             btnGhi1.Size = new Size(112, 34);
             btnGhi1.TabIndex = 1;
             btnGhi1.Text = "Ghi";
-            btnGhi1.UseVisualStyleBackColor = true;
+            btnGhi1.UseVisualStyleBackColor = false;
             btnGhi1.Click += btnGhi1_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column5, Column3, Column4 });
-            dataGridView1.Location = new Point(5, 290);
+            dataGridView1.Location = new Point(6, 290);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(1140, 604);
+            dataGridView1.Size = new Size(1121, 641);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -380,10 +395,10 @@
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(329, 14);
+            tabControl1.Location = new Point(334, -36);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1153, 943);
+            tabControl1.Size = new Size(1144, 978);
             tabControl1.TabIndex = 18;
             // 
             // AdminGUI_menu
@@ -394,8 +409,9 @@
             Controls.Add(tabControl1);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminGUI_menu";
-            Text = "AdminGUI_menu";
+            Text = "Quản lý nhân viên";
             Load += AdminGUI_menu_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

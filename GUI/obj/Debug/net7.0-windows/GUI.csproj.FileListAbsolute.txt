@@ -122,3 +122,4 @@ C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\bin\Debug\net7.0-windows\
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.csproj.ResolveComReference.cache
 C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.AdminGUI_menu.resources
+C:\Users\Manh Hung\Desktop\BT cuoi ky\BaiTapCuoiKy\GUI\obj\Debug\net7.0-windows\GUI.Properties.Resources.resources
