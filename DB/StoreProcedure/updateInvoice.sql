@@ -11,4 +11,5 @@ BEGIN
 		update_status_time=@update_status_date
 	WHERE invoice_id = @invoice_id
 END;
-DROP PROC updateInvoice
+exec updateInvoice 1,2,0,1
+DROP PROC updateInvoice 

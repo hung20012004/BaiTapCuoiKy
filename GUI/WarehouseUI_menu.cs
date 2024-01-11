@@ -86,6 +86,7 @@ namespace GUI
                 tbAddress.Text = "";
                 tbName.Text = "";
                 tbPhone.Text = "";
+                dataGridView1.Enabled = false;
             }
         }
 
@@ -101,6 +102,7 @@ namespace GUI
                 tbAddress.Enabled = true;
                 tbPhone.Enabled = true;
                 tbName.Enabled = true;
+                dataGridView1.Enabled = false;
             }
         }
 
@@ -159,7 +161,7 @@ namespace GUI
                 {
                     if (btThem.Enabled == true)
                     {
-                        if (tbName.Text != "" && tbPhone.Text != "" && tbAddress.Text != "")
+                        if (tbPhone.Text.Length == 10)
                         {
 
                             if (ProviderBUS.Instance.insert(provider))
@@ -172,17 +174,28 @@ namespace GUI
                                 MessageBox.Show("Ghi không thành công!");
                             }
                         }
+                        else
+                        {
+                            MessageBox.Show("Số điện thoại không hợp lệ");
+                        }
                     }
                     else
                     {
-                        if (ProviderBUS.Instance.update(provider))
+                        if (tbPhone.Text.Length == 10)
                         {
-                            tab0loading();
-                            MessageBox.Show("Đã ghi thành công!");
+                            if (ProviderBUS.Instance.update(provider))
+                            {
+                                tab0loading();
+                                MessageBox.Show("Đã ghi thành công!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ghi không thành công!");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Ghi không thành công!");
+                            MessageBox.Show("Số điện thoại không hợp lệ");
                         }
                     }
                 }
@@ -289,6 +302,7 @@ namespace GUI
             dataGridView3.Enabled = true;
             cbbCategory_ID.Items.Clear();
             cbbManufactory_ID.Items.Clear();
+            dataGridView3.Enabled = true;
             dataGridView3.Rows.Clear();
             foreach (var item in LaptopBUS.Instance.getManufactory())
             {
@@ -352,16 +366,17 @@ namespace GUI
         #region clickEvent
         private void btGhi1_Click(object sender, EventArgs e)
         {
+
             if (MessageBox.Show("Xác nhận ghi", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (btThem1.Enabled == true)
                 {
                     if (tbLaptop_Name.Text != "" && cbbCategory_ID.Text != "" && cbbManufactory_ID.Text != "")
                     {
-
+                        MessageBox.Show(Convert.ToString(newLaptop.Manufactory.ID) + "  " + Convert.ToString(newLaptop.Category.ID));
                         if (LaptopBUS.Instance.insert(newLaptop))
                         {
-                            tab0loading();
+                            tab1loading();
                             MessageBox.Show("Đã ghi thành công!");
                         }
                         else
@@ -441,6 +456,7 @@ namespace GUI
         {
             if (btThem1.Enabled)
             {
+                dataGridView3.Enabled = false;
                 cbSearchC.Enabled = false;
                 cbSearchM.Enabled = false;
                 tbTimKiem1.Enabled = false;
@@ -473,18 +489,63 @@ namespace GUI
                 btThem1.Enabled = false;
                 btXoa1.Enabled = false;
                 btSua1.Enabled = true;
-                dataGridView3.Enabled = true;
+
             }
         }
 
         private void btXoa1_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (LaptopBUS.Instance.delete(newLaptop))
+                {
+                    tab1loading();
+                    MessageBox.Show("Đã xóa thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Xóa không thành công!");
+            }
         }
         private void btThem1_Click(object sender, EventArgs e)
         {
             if (btSua1.Enabled)
             {
+
+                cbSearchC.Enabled = false;
+                cbSearchM.Enabled = false;
+                tbTimKiem1.Enabled = false;
+                tbLaptop_Name.Text = "";
+                cbbCategory_ID.Text = "";
+                cbbManufactory_ID.Text = "";
+                tbQuantity.Text = "";
+                tbPrice.Text = "";
+
+                tbCPU.Text = "";
+                tbRAM.Text = "";
+                tbHD.Text = "";
+                tbVGA.Text = "";
+                tbSize.Text = "";
+                tbWeight.Text = "";
+                tbMaterials.Text = "";
+                tbKeyboard.Text = "";
+                tbPorts.Text = "";
+                tbAudio.Text = "";
+                tbBattery.Text = "";
+                tbDisplay.Text = "";
+                tbKetNoi.Text = "";
+                tbWP.Text = "";
+                tbOS.Text = "";
+                tbSecurity.Text = "";
+
+
+
+                dataGridView3.Enabled = false;
                 cbSearchC.Enabled = false;
                 cbSearchM.Enabled = false;
                 tbTimKiem1.Enabled = false;
@@ -517,7 +578,6 @@ namespace GUI
                 btThem1.Enabled = true;
                 btXoa1.Enabled = false;
                 btSua1.Enabled = false;
-                dataGridView3.Enabled = true;
             }
         }
 
@@ -658,7 +718,11 @@ namespace GUI
 
         private void tbWeight_TextChanged(object sender, EventArgs e)
         {
-            newLaptop.Weight = Convert.ToDouble(tbWeight.Text);
+            try
+            {
+                newLaptop.Weight = Convert.ToDouble(tbWeight.Text);
+            }
+            catch (Exception ex) { }
         }
 
         private void tbMaterials_TextChanged(object sender, EventArgs e)
@@ -1037,6 +1101,11 @@ namespace GUI
         private void cbSearchC_SelectedIndexChanged(object sender, EventArgs e)
         {
             tab1loading();
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

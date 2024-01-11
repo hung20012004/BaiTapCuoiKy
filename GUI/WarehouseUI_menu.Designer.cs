@@ -154,7 +154,7 @@
             tbMaterials = new TextBox();
             tbSecurity = new TextBox();
             pictureBox1 = new PictureBox();
-            button3 = new Button();
+            btnDangXuat = new Button();
             btSanPham = new Button();
             groupBox1 = new GroupBox();
             btNhaCungCap = new Button();
@@ -444,9 +444,9 @@
             tabPage1.Controls.Add(label9);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
-            tabPage1.Location = new Point(4, 37);
+            tabPage1.Location = new Point(4, 34);
             tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1145, 902);
+            tabPage1.Size = new Size(1145, 905);
             tabPage1.TabIndex = 4;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -1383,14 +1383,15 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
-            // button3
+            // btnDangXuat
             // 
-            button3.Location = new Point(0, 867);
-            button3.Name = "button3";
-            button3.Size = new Size(323, 76);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btnDangXuat.Location = new Point(0, 867);
+            btnDangXuat.Name = "btnDangXuat";
+            btnDangXuat.Size = new Size(323, 76);
+            btnDangXuat.TabIndex = 2;
+            btnDangXuat.Text = "button3";
+            btnDangXuat.UseVisualStyleBackColor = true;
+            btnDangXuat.Click += btnDangXuat_Click;
             // 
             // btSanPham
             // 
@@ -1407,7 +1408,7 @@
             groupBox1.Controls.Add(btNhaCungCap);
             groupBox1.Controls.Add(btTaoHoaDonNhap);
             groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Controls.Add(button3);
+            groupBox1.Controls.Add(btnDangXuat);
             groupBox1.Controls.Add(btSanPham);
             groupBox1.Location = new Point(1, 1);
             groupBox1.Name = "groupBox1";
@@ -1488,7 +1489,7 @@
         private Label label7;
         private Button btnHuy2;
         private PictureBox pictureBox1;
-        private Button button3;
+        private Button btnDangXuat;
         private Button btSanPham;
         private GroupBox groupBox1;
         private Button btTaoHoaDonNhap;

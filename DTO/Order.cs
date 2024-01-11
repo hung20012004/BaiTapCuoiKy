@@ -148,7 +148,7 @@ namespace DTO
             decimal sum = 0;
             foreach (var item in laptop)
             {
-                sum += item.QuantityBought * item.Price;
+                sum += (decimal)item.QuantityBought * item.Price;
             }
             return sum;
         }

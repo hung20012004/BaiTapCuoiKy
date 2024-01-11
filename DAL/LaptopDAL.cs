@@ -82,13 +82,13 @@ namespace DAL
                     cmd.Parameters.Add("@manufactory_id", SqlDbType.Int).Value = laptop.Manufactory.ID;
                     cmd.Parameters.Add("@CPU", SqlDbType.NVarChar).Value = laptop.CPU;
                     cmd.Parameters.Add("@RAM", SqlDbType.NVarChar).Value = laptop.Ram;
-                    cmd.Parameters.Add("@hard_driver", SqlDbType.NVarChar).Value = laptop.HardDriver;
+                    cmd.Parameters.Add("@hard_drive", SqlDbType.NVarChar).Value = laptop.HardDriver;
                     cmd.Parameters.Add("@VGA", SqlDbType.NVarChar).Value = laptop.VGA;
                     cmd.Parameters.Add("@display", SqlDbType.NVarChar).Value = laptop.Display;
                     cmd.Parameters.Add("@battery", SqlDbType.NVarChar).Value = laptop.Battery;
                     cmd.Parameters.Add("@weight", SqlDbType.Float).Value = laptop.Weight;
                     cmd.Parameters.Add("@material", SqlDbType.NVarChar).Value = laptop.Material;
-                    cmd.Parameters.Add("@port", SqlDbType.NVarChar).Value = laptop.Port;
+                    cmd.Parameters.Add("@ports", SqlDbType.NVarChar).Value = laptop.Port;
                     cmd.Parameters.Add("@connection", SqlDbType.NVarChar).Value = laptop.Connection;
                     cmd.Parameters.Add("@security", SqlDbType.NVarChar).Value = laptop.Security;
                     cmd.Parameters.Add("@keyboard", SqlDbType.NVarChar).Value = laptop.Keyboard;
@@ -123,14 +123,14 @@ namespace DAL
                     cmd.Parameters.Add("@manufactory_id", SqlDbType.Int).Value = laptop.Manufactory.ID;
                     cmd.Parameters.Add("@CPU", SqlDbType.NVarChar).Value = laptop.CPU;
                     cmd.Parameters.Add("@RAM", SqlDbType.NVarChar).Value = laptop.Ram;
-                    cmd.Parameters.Add("@hard_driver", SqlDbType.NVarChar).Value = laptop.HardDriver;
+                    cmd.Parameters.Add("@hard_drive", SqlDbType.NVarChar).Value = laptop.HardDriver;
                     cmd.Parameters.Add("@VGA", SqlDbType.NVarChar).Value = laptop.VGA;
                     cmd.Parameters.Add("@display", SqlDbType.NVarChar).Value = laptop.Display;
                     cmd.Parameters.Add("@battery", SqlDbType.NVarChar).Value = laptop.Battery;
                     cmd.Parameters.Add("@weight", SqlDbType.Float).Value = laptop.Weight;
                     cmd.Parameters.Add("@material", SqlDbType.NVarChar).Value = laptop.Material;
                     cmd.Parameters.Add("@ports", SqlDbType.NVarChar).Value = laptop.Port;
-                    cmd.Parameters.Add("@network_and_connection", SqlDbType.NVarChar).Value = laptop.Connection;
+                    cmd.Parameters.Add("@connection", SqlDbType.NVarChar).Value = laptop.Connection;
                     cmd.Parameters.Add("@security", SqlDbType.NVarChar).Value = laptop.Security;
                     cmd.Parameters.Add("@keyboard", SqlDbType.NVarChar).Value = laptop.Keyboard;
                     cmd.Parameters.Add("@audio", SqlDbType.NVarChar).Value = laptop.Audio;
@@ -307,6 +307,7 @@ namespace DAL
                 while (reader.Read())
                 {
                     Category category = new Category();
+                    category.ID = reader.GetInt32("category_id");
                     category.Name = reader.GetString("category_name");
                     list.Add(category);
                 }

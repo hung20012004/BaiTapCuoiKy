@@ -36,6 +36,8 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            tbTimKiem1 = new TextBox();
+            lb = new Label();
             btnExportExcel = new Button();
             btnGhi1 = new Button();
             btnCustomerHuy = new Button();
@@ -80,8 +82,6 @@
             Col4 = new DataGridViewTextBoxColumn();
             Col5 = new DataGridViewTextBoxColumn();
             label3 = new Label();
-            lb = new Label();
-            tbTimKiem1 = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
@@ -120,6 +120,7 @@
             button3.TabIndex = 2;
             button3.Text = "Đăng xuất";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // btnOrder
             // 
@@ -188,6 +189,23 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tbTimKiem1
+            // 
+            tbTimKiem1.Location = new Point(858, 45);
+            tbTimKiem1.Name = "tbTimKiem1";
+            tbTimKiem1.Size = new Size(226, 34);
+            tbTimKiem1.TabIndex = 17;
+            tbTimKiem1.TextChanged += tbTimKiem1_TextChanged;
+            // 
+            // lb
+            // 
+            lb.AutoSize = true;
+            lb.Location = new Point(765, 48);
+            lb.Name = "lb";
+            lb.Size = new Size(91, 28);
+            lb.TabIndex = 16;
+            lb.Text = "Tìm kiếm";
             // 
             // btnExportExcel
             // 
@@ -610,23 +628,6 @@
             label3.Size = new Size(74, 28);
             label3.TabIndex = 0;
             label3.Text = "Laptop";
-            // 
-            // lb
-            // 
-            lb.AutoSize = true;
-            lb.Location = new Point(765, 48);
-            lb.Name = "lb";
-            lb.Size = new Size(91, 28);
-            lb.TabIndex = 16;
-            lb.Text = "Tìm kiếm";
-            // 
-            // tbTimKiem1
-            // 
-            tbTimKiem1.Location = new Point(858, 45);
-            tbTimKiem1.Name = "tbTimKiem1";
-            tbTimKiem1.Size = new Size(226, 34);
-            tbTimKiem1.TabIndex = 17;
-            tbTimKiem1.TextChanged += tbTimKiem1_TextChanged;
             // 
             // SellGUI_menu
             // 

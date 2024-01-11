@@ -49,7 +49,7 @@ namespace GUI
                     item.Customer = CustomerBUS.Instance.getCustomer(item.Customer);
                     if (tbTimKiem1.Text == "" || Search.Instance.ContainsString(item.Customer.Name, tbTimKiem1.Text))
                     {
-                        
+
                         item.Seller = StaffBUS.Instance.getSeller(item.Seller);
                         dataGridView2.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date);
                     }
@@ -194,10 +194,11 @@ namespace GUI
                     item.Customer = CustomerBUS.Instance.getCustomer(item.Customer);
                     if (tbTimKiem2.Text == "" || Search.Instance.ContainsString(item.Customer.Name, tbTimKiem2.Text))
                     {
-                        
+
                         order = OrderBUS.Instance.getOrderByID(item.ID);
                         item.Seller = StaffBUS.Instance.getSeller(item.Seller);
                         item.Accountant = StaffBUS.Instance.getAccountant(item.Accountant);
+
                         dataGridView3.Rows.Add(item.ID, item.Customer.Name, item.Seller.Name, item.Order_date, item.getSUM());
                     }
                 }
@@ -319,7 +320,7 @@ namespace GUI
                     if (tbTimKiem3.Text == "" || Search.Instance.ContainsString(item.Provider.Name, tbTimKiem3.Text))
                     {
                         importInvoice = ImportInvoiceBUS.Instance.getInvoiceByID(item.ID);
-                        
+
                         item.WarehouseKeeper = StaffBUS.Instance.getSeller(item.WarehouseKeeper);
                         dataGridView1.Rows.Add(item.ID, item.Provider.Name, item.WarehouseKeeper.Name, item.ImportDate, importInvoice.getSUM());
                     }
@@ -423,8 +424,8 @@ namespace GUI
                     item.Provider = ProviderBUS.Instance.getProvider(item.Provider.ID);
                     if (tbTimKiem4.Text == "" || Search.Instance.ContainsString(item.Provider.Name, tbTimKiem4.Text))
                     {
-                        
-                        
+
+
                         item.WarehouseKeeper = StaffBUS.Instance.getSeller(item.WarehouseKeeper);
                         dataGridView4.Rows.Add(item.ID, item.Provider.Name, item.WarehouseKeeper.Name, item.ImportDate, importInvoice.getSUM());
                     }

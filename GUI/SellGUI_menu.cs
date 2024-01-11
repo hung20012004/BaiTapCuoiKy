@@ -82,15 +82,19 @@ namespace GUI
         }
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = new DataGridViewRow();
-            row = dgvKhachHang.Rows[e.RowIndex];
-            if (Convert.ToString(row.Cells["colID"]) != null)
+            try
             {
-                txbCustomerID.Text = Convert.ToString(row.Cells["colID"].Value);
-                txbCustomerName.Text = Convert.ToString(row.Cells["colName"].Value);
-                txbCustomerPhone.Text = Convert.ToString(row.Cells["colPhone"].Value);
-                txbCustomerAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvKhachHang.Rows[e.RowIndex];
+                if (Convert.ToString(row.Cells["colID"]) != null)
+                {
+                    txbCustomerID.Text = Convert.ToString(row.Cells["colID"].Value);
+                    txbCustomerName.Text = Convert.ToString(row.Cells["colName"].Value);
+                    txbCustomerPhone.Text = Convert.ToString(row.Cells["colPhone"].Value);
+                    txbCustomerAddress.Text = Convert.ToString(row.Cells["colAddress"].Value);
+                }
             }
+            catch { }
 
         }
         private void btnThem_Click(object sender, EventArgs e)
@@ -156,37 +160,64 @@ namespace GUI
                 {
                     if (txbCustomerName.Text != "" && txbCustomerPhone.Text != "" && txbCustomerAddress.Text != "")
                     {
-                        if (CustomerBUS.Instance.CheckPhone(customer) == true)
+                        if (txbCustomerPhone.Text.Length == 10)
                         {
-                            MessageBox.Show("Số điện thoại đã tồn tại");
-                        }
+                            if (CustomerBUS.Instance.CheckPhone(customer) == true)
+                            {
+                                MessageBox.Show("Số điện thoại đã tồn tại");
+                            }
 
+                            else
+                            {
+                                if (CustomerBUS.Instance.insert(customer))
+                                {
+                                    tab1loading();
+                                    MessageBox.Show("Đã ghi thành công!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Ghi không thành công!");
+                                }
+                            }
+                        }
                         else
                         {
-                            if (CustomerBUS.Instance.insert(customer))
+                            MessageBox.Show("Số điện thoại không hợp lệ");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng điền đủ các trường");
+                    }
+                }
+                else
+                {
+                    if (txbCustomerName.Text != "" && txbCustomerPhone.Text != "" && txbCustomerAddress.Text != "")
+                    {
+
+                        if (txbCustomerPhone.Text.Length == 10)
+                        {
+                            customer.Name = txbCustomerName.Text;
+                            if (CustomerBUS.Instance.update(customer))
                             {
-                                tab1loading();
                                 MessageBox.Show("Đã ghi thành công!");
+                                tab1loading();
                             }
                             else
                             {
                                 MessageBox.Show("Ghi không thành công!");
                             }
                         }
-                    }
-                }
-                else
-                {
-                    if (CustomerBUS.Instance.update(customer))
-                    {
-                        MessageBox.Show("Đã ghi thành công!");
-                        tab1loading();
+                        else
+                        {
+                            MessageBox.Show("Số điện thoại không hợp lệ");
+
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Ghi không thành công!");
+                        MessageBox.Show("Vui lòng điền đủ các trường");
                     }
-
                 }
             }
             else
@@ -442,6 +473,7 @@ namespace GUI
                 }
                 else
                 {
+                    
                     foreach (DataGridViewRow row in dgvOrder.Rows)
                     {
                         if (Convert.ToString(row.Cells["Col2"].Value) == cboOrderLapTop.Text)
@@ -550,6 +582,10 @@ namespace GUI
         #endregion
 
 
-        
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

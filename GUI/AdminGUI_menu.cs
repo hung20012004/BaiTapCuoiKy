@@ -61,7 +61,7 @@ namespace GUI
                 if (cbTimKiem.Text == "Chức vụ" || item.RoleString == cbTimKiem.Text)
                     if (tbTimKiem1.Text == "" || Search.Instance.ContainsString(item.Name, tbTimKiem1.Text))
                     {
-                       // MessageBox.Show(Convert.ToString(Search.Instance.ContainsString(item.Name, tbTimKiem1.Text)));
+                        // MessageBox.Show(Convert.ToString(Search.Instance.ContainsString(item.Name, tbTimKiem1.Text)));
                         dataGridView1.Rows.Add(item.ID, item.Name, item.RoleString, item.Username, item.Password);
                     }
 
@@ -260,7 +260,7 @@ namespace GUI
         {
             tab0Reset();
         }
-        
+
         private void tbTimKiem1_TextChanged(object sender, EventArgs e)
         {
             tab0Reset();
@@ -272,5 +272,9 @@ namespace GUI
 
 
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
